@@ -1,0 +1,3341 @@
+Template 0:
+    Name: Nothing
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 1:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 2:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 3:
+    Name: Spiked Goomba
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 4:
+    Name: Paragoomba
+    DropItemChance: 3
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 5:
+    Name: Flip Goomba
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 6:
+    Name: Spiked Goomba
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 7:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 8:
+    Name: Green Koopa Troopa
+    DropItemChance: 9
+    DropItemList:
+        Turtley Leaf: 100
+        Catch Card: 10
+        NULL: 0
+Template 9:
+    Name: Red Koopa Troopa
+    DropItemChance: 9
+    DropItemList:
+        Turtley Leaf: 100
+        Catch Card: 10
+        NULL: 0
+Template 10:
+    Name: (Unused) Shady Koopa
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 11:
+    Name: Koopatrol
+    DropItemChance: 5
+    DropItemList:
+        Turtley Leaf: 100
+        Thunder Rage: 300
+        Catch Card: 20
+        NULL: 0
+Template 12:
+    Name: Flip Red Koopa Troopa
+    DropItemChance: 9
+    DropItemList:
+        Turtley Leaf: 100
+        Catch Card: 10
+        NULL: 0
+Template 13:
+    Name: (Unused) Flip Shady Koopa
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 14:
+    Name: Green Paratroopa
+    DropItemChance: 3
+    DropItemList:
+        Turtley Leaf: 100
+        Catch Card: 10
+        NULL: 0
+Template 15:
+    Name: Red Paratroopa
+    DropItemChance: 3
+    DropItemList:
+        Turtley Leaf: 100
+        Catch Card: 10
+        NULL: 0
+Template 16:
+    Name: (Unused) Shady Paratroopa
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 17:
+    Name: Flip Red Paratroopa
+    DropItemChance: 3
+    DropItemList:
+        Turtley Leaf: 100
+        Catch Card: 10
+        NULL: 0
+Template 18:
+    Name: (Unused) Flip Shady Paratroopa
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 19:
+    Name: Clubba
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Fire Burst: 800
+        Catch Card: 50
+        NULL: 0
+Template 20:
+    Name: PatrolMeow
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 21:
+    Name: AirMeow
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 22:
+    Name: SurpriseMeow
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 23:
+    Name: MeowBomb
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 24:
+    Name: Hammer Bro.
+    DropItemChance: 5
+    DropItemList:
+        Super Shroom Shake: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Fire Burst: 400
+        Catch Card: 50
+        NULL: 0
+Template 25:
+    Name: Green Cheep Cheep
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Shroom Shake: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Volt Shroom: 800
+        Catch Card: 50
+        NULL: 0
+Template 26:
+    Name: Blooper
+    DropItemChance: 15
+    DropItemList:
+        Inky Sauce: 100
+        Catch Card: 10
+        NULL: 0
+Template 27:
+    Name: Thwomp
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 28:
+    Name: Lava Bubble
+    DropItemChance: 4
+    DropItemList:
+        Fire Burst: 100
+        Catch Card: 10
+        NULL: 0
+Template 29:
+    Name: Spiny Tromp
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 30:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 31:
+    Name: Piranha Plant
+    DropItemChance: 10
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Catch Card: 40
+        NULL: 0
+Template 32:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 33:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 34:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 35:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 36:
+    Name: Dry Bones
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Shroom Shake: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Ice Storm: 800
+        Catch Card: 50
+        NULL: 0
+Template 37:
+    Name: Rubee
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 38:
+    Name: Dull Bones
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Shroom Shake: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Ice Storm: 800
+        Catch Card: 50
+        NULL: 0
+Template 39:
+    Name: Boomerang Bro
+    DropItemChance: 5
+    DropItemList:
+        Super Shroom Shake: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Fire Burst: 400
+        Catch Card: 50
+        NULL: 0
+Template 40:
+    Name: Fire Bro
+    DropItemChance: 5
+    DropItemList:
+        Super Shroom Shake: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Fire Burst: 800
+        Catch Card: 50
+        NULL: 0
+Template 41:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 42:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 43:
+    Name: Fracktail
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 44:
+    Name: Wracktail
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 45:
+    Name: Flip Blooper
+    DropItemChance: 15
+    DropItemList:
+        Inky Sauce: 100
+        Catch Card: 10
+        NULL: 0
+Template 46:
+    Name: Flip Hammer Bro.
+    DropItemChance: 5
+    DropItemList:
+        Super Shroom Shake: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Fire Burst: 400
+        Catch Card: 50
+        NULL: 0
+Template 47:
+    Name: Small Spiky Tromp
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 48:
+    Name: Nothing?
+    DropItemChance: 10
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Catch Card: 40
+        NULL: 0
+Template 49:
+    Name: Putrid Piranha
+    DropItemChance: 100
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 200
+        Fresh Veggie: 100
+        Horsetail: 600
+        Catch Card: 40
+        NULL: 0
+Template 50:
+    Name: Nothing?
+    DropItemChance: 10
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 200
+        Fresh Veggie: 100
+        Horsetail: 600
+        Catch Card: 40
+        NULL: 0
+Template 51:
+    Name: Frost Piranha
+    DropItemChance: 10
+    DropItemList:
+        Ice Storm: 100
+        Catch Card: 10
+        NULL: 0
+Template 52:
+    Name: Nothing?
+    DropItemChance: 10
+    DropItemList:
+        Ice Storm: 100
+        Catch Card: 10
+        NULL: 0
+Template 53:
+    Name: Buzzy Beetle
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 54:
+    Name: Nothing?
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 55:
+    Name: Flip Buzzy Beetle 
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 56:
+    Name: Spike Top
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Cake Mix: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 57:
+    Name: Parabuzzy
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 58:
+    Name: Spiky Parabuzzy
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Cake Mix: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 59:
+    Name: Spiny
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Mighty Tonic: 800
+        Catch Card: 50
+        NULL: 0
+Template 60:
+    Name: (UNUSED?) Weird Spiny
+    DropItemChance: 4
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Mighty Tonic: 800
+        Catch Card: 50
+        NULL: 0
+Template 61:
+    Name: Lakitu
+    DropItemChance: 10
+    DropItemList:
+        Thunder Rage: 100
+        Mystery Box: 100
+        Shroom Shake: 100
+        Catch Card: 30
+        NULL: 0
+Template 62:
+    Name: Flip Lakitu
+    DropItemChance: 10
+    DropItemList:
+        Thunder Rage: 100
+        Mystery Box: 100
+        Shroom Shake: 100
+        Catch Card: 30
+        NULL: 0
+Template 63:
+    Name: Mega Koopa
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 64:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 65:
+    Name: Chain Chomp
+    DropItemChance: 5
+    DropItemList:
+        Power Steak: 100
+        Thunder Rage: 200
+        Shroom Shake: 100
+        Catch Card: 30
+        NULL: 0
+Template 66:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 67:
+    Name: Red Cheep Cheep
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Shroom Shake: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Volt Shroom: 800
+        Catch Card: 50
+        NULL: 0
+Template 68:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 69:
+    Name: Flip Cheep Cheep
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Shroom Shake: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Volt Shroom: 800
+        Catch Card: 50
+        NULL: 0
+Template 70:
+    Name: Swooper
+    DropItemChance: 3
+    DropItemList:
+        Peachy Peach: 100
+        Shroom Shake: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Sleepy Sleep: 800
+        Catch Card: 50
+        NULL: 0
+Template 71:
+    Name: Glitchy Dark Koopa
+    DropItemChance: 5
+    DropItemList:
+        Turtley Leaf: 100
+        Catch Card: 10
+        NULL: 0
+Template 72:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 73:
+    Name: Glitchy Koopa
+    DropItemChance: 9
+    DropItemList:
+        Turtley Leaf: 100
+        Catch Card: 10
+        NULL: 0
+Template 74:
+    Name: Spinia
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 75:
+    Name: Spania
+    DropItemChance: 3
+    DropItemList:
+        Long-Last Shake: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Mystery Box: 800
+        Catch Card: 50
+        NULL: 0
+Template 76:
+    Name: Spunia
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 77:
+    Name: Bald Cleft
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 78:
+    Name: Moon Cleft
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 79:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 80:
+    Name: Magikoopa
+    DropItemChance: 5
+    DropItemList:
+        Turtley Leaf: 100
+        Fire Burst: 100
+        Ice Storm: 100
+        Thunder Rage: 100
+        Catch Card: 100
+        NULL: 0
+Template 81:
+    Name: Broom Magikoopa
+    DropItemChance: 5
+    DropItemList:
+        Turtley Leaf: 100
+        Fire Burst: 100
+        Ice Storm: 100
+        Thunder Rage: 100
+        Catch Card: 100
+        NULL: 0
+Template 82:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 83:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 84:
+    Name: Headbonk Goomba
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 85:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 86:
+    Name: Barribad
+    DropItemChance: 5
+    DropItemList:
+        Power Steak: 100
+        Shroom Shake: 100
+        Hot Sauce: 100
+        Block Block: 1200
+        Catch Card: 50
+        NULL: 0
+Template 87:
+    Name: Barribad Projectile?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 88:
+    Name: Pigarithm
+    DropItemChance: 5
+    DropItemList:
+        Long-Last Shake: 200
+        Thunder Rage: 200
+        Shell Shock: 200
+        Volt Shroom: 200
+        Sleepy Sleep: 200
+        Mystery Box: 200
+        Catch Card: 50
+        NULL: 0
+Template 89:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 90:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 91:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 92:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 93:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 94:
+    Name: Zombie Shroom
+    DropItemChance: 5
+    DropItemList:
+        Poison Shroom: 200
+        Ghost Shroom: 100
+        Shroom Shake: 100
+        Catch Card: 30
+        NULL: 0
+Template 95:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 96:
+    Name: Stone Buzzy
+    DropItemChance: 3
+    DropItemList:
+        Peachy Peach: 100
+        Cake Mix: 100
+        Hot Sauce: 100
+        Horsetail: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 97:
+    Name: Longator
+    DropItemChance: 3
+    DropItemList:
+        Peachy Peach: 100
+        Shroom Shake: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Stop Watch: 800
+        Catch Card: 50
+        NULL: 0
+Template 98:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 99:
+    Name: Flip Spiny
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Mighty Tonic: 800
+        Catch Card: 50
+        NULL: 0
+Template 100:
+    Name: Mister I
+    DropItemChance: 10
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Shroom Shake: 100
+        Sleepy Sleep: 800
+        Catch Card: 50
+        NULL: 0
+Template 101:
+    Name: (Unused) Flip Spike Top
+    DropItemChance: 4
+    DropItemList:
+        Power Steak: 100
+        Cake Mix: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 102:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 103:
+    Name: Projectile?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 104:
+    Name: Howl
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 105:
+    Name: Growl
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 106:
+    Name: Bullet Bill
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 107:
+    Name: Bill Blaster
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 108:
+    Name: (Unused) Giant Bombshell Bill
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 109:
+    Name: (Unused) Giant Bombshell Bill Blaster
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 110:
+    Name: Boo
+    DropItemChance: 4
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Long-Last Shake: 100
+        Horsetail: 100
+        Sleepy Sleep: 400
+        Ghost Shroom: 400
+        Catch Card: 50
+        NULL: 0
+Template 111:
+    Name: Dark Boo
+    DropItemChance: 4
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Long-Last Shake: 100
+        Horsetail: 100
+        Sleepy Sleep: 400
+        Ghost Shroom: 800
+        Catch Card: 50
+        NULL: 0
+Template 112:
+    Name: Atomic Boo
+    DropItemChance: 20
+    DropItemList:
+        Ghost Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 113:
+    Name: (Unused) Dark Atomic Boo
+    DropItemChance: 10
+    DropItemList:
+        Ghost Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 114:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 115:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 116:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 117:
+    Name: Fuzzy
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Life Shroom: 400
+        Catch Card: 50
+        NULL: 0
+Template 118:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 119:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 120:
+    Name: Pink Fuzzy
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Life Shroom: 400
+        Catch Card: 10
+        NULL: 0
+Template 121:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 122:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 123:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 124:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 125:
+    Name: Weak Ruff Puff
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 126:
+    Name: Pokey
+    DropItemChance: 3
+    DropItemList:
+        Peachy Peach: 100
+        Shroom Shake: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Catch Card: 40
+        NULL: 0
+Template 127:
+    Name: Poison Pokey
+    DropItemChance: 100
+    DropItemList:
+        Peachy Peach: 100
+        Shroom Shake: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Dried Shroom: 800
+        Catch Card: 50
+        NULL: 0
+Template 128:
+    Name: Koopa Striker
+    DropItemChance: 5
+    DropItemList:
+        Shroom Shake: 100
+        Turtley Leaf: 100
+        Catch Card: 20
+        NULL: 0
+Template 129:
+    Name: Koopa Striker's Shell
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 130:
+    Name: Mimi
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 131:
+    Name: Chasing Mimi
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 132:
+    Name: Bowser
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 133:
+    Name: Bittacuda
+    DropItemChance: 7
+    DropItemList:
+        Power Steak: 100
+        Shroom Shake: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Volt Shroom: 800
+        Catch Card: 50
+        NULL: 0
+Template 134:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 135:
+    Name: BombMeow
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 136:
+    Name: Big Blooper
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 137:
+    Name: Mr. L
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 138:
+    Name: Brobot
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 139:
+    Name: Brobot Missile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 140:
+    Name: Brobot Mustache
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 141:
+    Name: Jawbus
+    DropItemChance: 10
+    DropItemList:
+        Fire Burst: 300
+        Ice Storm: 200
+        Thunder Rage: 100
+        Catch Card: 30
+        NULL: 0
+Template 142:
+    Name: Dimentio
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 143:
+    Name: Dimentio Magic
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 144:
+    Name: Sproing-Oing
+    DropItemChance: 5
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Long-Last Shake: 400
+        Catch Card: 50
+        NULL: 0
+Template 145:
+    Name: Mini Sproing-Oing
+    DropItemChance: 2
+    DropItemList:
+        Dried Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 146:
+    Name: Rubee
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 147:
+    Name: Shlurp
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Fire Burst: 400
+        POW Block: 400
+        Catch Card: 50
+        NULL: 0
+Template 148:
+    Name: Squig
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Shroom Shake: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Ice Storm: 400
+        Catch Card: 50
+        NULL: 0
+Template 149:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 150:
+    Name: King Croacus
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 151:
+    Name: Slow Cursya
+    DropItemChance: 10
+    DropItemList:
+        Poison Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 152:
+    Name: Megabite
+    DropItemChance: 10
+    DropItemList:
+        Shooting Star: 100
+        Ghost Shroom: 200
+        Catch Card SP: 200
+        Catch Card: 30
+        NULL: 0
+Template 153:
+    Name: Boomboxer
+    DropItemChance: 3
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Volt Shroom: 400
+        Catch Card: 50
+        NULL: 0
+Template 154:
+    Name: Choppa
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Long-Last Shake: 400
+        Catch Card: 50
+        NULL: 0
+Template 155:
+    Name: Croacus Petal
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 156:
+    Name: Croacus Petal
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 157:
+    Name: Croacus Petal
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 158:
+    Name: Boomboxer Attack
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 159:
+    Name: Ruff Puff
+    DropItemChance: 3
+    DropItemList:
+        Shroom Shake: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Long-Last Shake: 800
+        Catch Card: 50
+        NULL: 0
+Template 160:
+    Name: Tileoid G
+    DropItemChance: 3
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Block Block: 400
+        Stop Watch: 800
+        Catch Card: 50
+        NULL: 0
+Template 161:
+    Name: Tileoid B
+    DropItemChance: 3
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Block Block: 400
+        Stop Watch: 800
+        Catch Card: 50
+        NULL: 0
+Template 162:
+    Name: Tileoid R
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Block Block: 400
+        Stop Watch: 400
+        Catch Card: 50
+        NULL: 0
+Template 163:
+    Name: Tileoid Y
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Fresh Pasta Bunch: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Block Block: 400
+        Stop Watch: 400
+        Catch Card: 50
+        NULL: 0
+Template 164:
+    Name: Growmeba
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 165:
+    Name: Growmeba Part
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 166:
+    Name: Boomerang
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 167:
+    Name: Fire Bro Fireball
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 168:
+    Name: BigMeow
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 169:
+    Name: Eeligon
+    DropItemChance: 5
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Long-Last Shake: 100
+        Block Block: 800
+        Catch Card: 50
+        NULL: 0
+Template 170:
+    Name: Jellien
+    DropItemChance: 2
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Volt Shroom: 400
+        Thunder Rage: 200
+        Catch Card: 50
+        NULL: 0
+Template 171:
+    Name: Foton
+    DropItemChance: 2
+    DropItemList:
+        Peachy Peach: 100
+        Shooting Star: 50
+        Fresh Veggie: 100
+        Horsetail: 100
+        Stop Watch: 800
+        Catch Card: 50
+        NULL: 0
+Template 172:
+    Name: Warpid
+    DropItemChance: 2
+    DropItemList:
+        Peachy Peach: 100
+        Shooting Star: 50
+        Fresh Veggie: 100
+        Horsetail: 100
+        Stop Watch: 800
+        Catch Card: 50
+        NULL: 0
+Template 173:
+    Name: Muth
+    DropItemChance: 20
+    DropItemList:
+        Bone-In Cut: 100
+        Catch Card: 10
+        NULL: 0
+Template 174:
+    Name: Veggiefied O'Chunks
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 175:
+    Name: Floro Cragnon (Round)
+    DropItemChance: 7
+    DropItemList:
+        Keel Mango: 100
+        Primordial Fruit: 100
+        Catch Card: 20
+        NULL: 0
+Template 176:
+    Name: Floro Cragnon (Triangular)
+    DropItemChance: 7
+    DropItemList:
+        Keel Mango: 100
+        Primordial Fruit: 100
+        Catch Card: 20
+        NULL: 0
+Template 177:
+    Name: Trap Gold Bar x3
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 178:
+    Name: Ninjoe
+    DropItemChance: 7
+    DropItemList:
+        Thunder Rage: 100
+        Volt Shroom: 100
+        Stop Watch: 200
+        Shroom Shake: 100
+        Catch Card: 30
+        NULL: 0
+Template 179:
+    Name: Player Pinwheel
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 180:
+    Name: Projectile?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 181:
+    Name: O'Chunks
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 182:
+    Name: O'Chunks
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 183:
+    Name: Giant O'Chunks
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 184:
+    Name: Small Dimentio Dimension Cube
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 185:
+    Name: Medium Dimentio Dimension Cube
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 186:
+    Name: Big Dimentio Dimension Cube
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 187:
+    Name: World 6 Mimi
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 188:
+    Name: Brobot L Type
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 189:
+    Name: Bonechill
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 190:
+    Name: Bonechill Projectile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 191:
+    Name: Bonechill Icicle
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 192:
+    Name: Ninjoe Attack
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 193:
+    Name: "FRY_BAKUDAN" (Nothing?)
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 194:
+    Name: Skellobit
+    DropItemChance: 3
+    DropItemList:
+        Big Egg: 100
+        Power Steak: 100
+        Peachy Peach: 100
+        Ice Storm: 300
+        Ghost Shroom: 100
+        Shroom Shake: 100
+        Catch Card: 50
+        NULL: 0
+Template 195:
+    Name: Spiky Skellobit
+    DropItemChance: 5
+    DropItemList:
+        Big Egg: 100
+        Power Steak: 100
+        Peachy Peach: 100
+        POW Block: 300
+        Ghost Shroom: 100
+        Super Shroom Shake: 100
+        Catch Card: 50
+        NULL: 0
+Template 196:
+    Name: Count Bleck
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 197:
+    Name: Void
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 198:
+    Name: Big Void
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 199:
+    Name: Particle
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 200:
+    Name: Nastasia?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 201:
+    Name: Disappearing Count Bleck
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 202:
+    Name: Boomerang
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 203:
+    Name: Fire Bro Fire
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 204:
+    Name: Pokey Part
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 205:
+    Name: Poison Pokey Part
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 206:
+    Name: Back Cursya
+    DropItemChance: 10
+    DropItemList:
+        Poison Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 207:
+    Name: Tech Cursya
+    DropItemChance: 10
+    DropItemList:
+        Poison Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 208:
+    Name: Heavy Cursya
+    DropItemChance: 10
+    DropItemList:
+        Poison Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 209:
+    Name: Reversya Cursya
+    DropItemChance: 10
+    DropItemList:
+        Poison Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 210:
+    Name: Hooligon
+    DropItemChance: 5
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Long-Last Shake: 100
+        Block Block: 800
+        Catch Card: 50
+        NULL: 0
+Template 211:
+    Name: Eeligon Part
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 212:
+    Name: Hooligon Part
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 213:
+    Name: Overworld Underchomp (3)
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 214:
+    Name: Overworld Blue Underchomp
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 215:
+    Name: Overworld Yellow Underchomp
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 216:
+    Name: Overworld Red Underchomp
+    DropItemChance: 5
+    DropItemList:
+        Power Steak: 100
+        POW Block: 200
+        Shroom Shake: 100
+        Catch Card: 30
+        NULL: 0
+Template 217:
+    Name: Crazee Dayzee
+    DropItemChance: 15
+    DropItemList:
+        Dayzee Tear: 100
+        Catch Card: 10
+        NULL: 0
+Template 218:
+    Name: Dayzee Attack
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 219:
+    Name: Stench
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 220:
+    Name: Freeze
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 221:
+    Name: Skellobomber w/Skellobait
+    DropItemChance: 3
+    DropItemList:
+        Big Egg: 100
+        Power Steak: 100
+        Peachy Peach: 100
+        Ice Storm: 300
+        Ghost Shroom: 100
+        Shroom Shake: 100
+        Catch Card: 50
+        NULL: 0
+Template 222:
+    Name: Skellobomber
+    DropItemChance: 3
+    DropItemList:
+        Big Egg: 100
+        Power Steak: 100
+        Peachy Peach: 100
+        Ice Storm: 300
+        Ghost Shroom: 100
+        Shroom Shake: 100
+        Catch Card: 50
+        NULL: 0
+Template 223:
+    Name: Skellobait
+    DropItemChance: 2
+    DropItemList:
+        Big Egg: 100
+        Power Steak: 100
+        Peachy Peach: 100
+        Ice Storm: 300
+        Ghost Shroom: 100
+        Shroom Shake: 100
+        Catch Card: 50
+        NULL: 0
+Template 224:
+    Name: Spiky Skellobait
+    DropItemChance: 2
+    DropItemList:
+        Big Egg: 100
+        Power Steak: 100
+        Peachy Peach: 100
+        Ice Storm: 300
+        Ghost Shroom: 100
+        Shroom Shake: 100
+        Catch Card: 50
+        NULL: 0
+Template 225:
+    Name: Dimentio
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 226:
+    Name: Dimentio
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 227:
+    Name: Skellobomber Head
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 228:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 229:
+    Name: Red Magiblot
+    DropItemChance: 4
+    DropItemList:
+        Catch Card: 300
+        Catch Card SP: 100
+        Shroom Shake: 100
+        NULL: 0
+Template 230:
+    Name: Blue Magiblot
+    DropItemChance: 4
+    DropItemList:
+        Catch Card: 200
+        Catch Card SP: 100
+        Shroom Shake: 100
+        NULL: 0
+Template 231:
+    Name: Yellow Magiblot
+    DropItemChance: 4
+    DropItemList:
+        Catch Card: 100
+        Catch Card SP: 100
+        Shroom Shake: 100
+        NULL: 0
+Template 232:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 233:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 234:
+    Name: Nothing? 
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 235:
+    Name: Gloomba
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 236:
+    Name: Bone
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 237:
+    Name: Glasses-less Koopa
+    DropItemChance: 9
+    DropItemList:
+        Turtley Leaf: 100
+        Catch Card: 10
+        NULL: 0
+Template 238:
+    Name: Glasses-less Paratroopa
+    DropItemChance: 3
+    DropItemList:
+        Turtley Leaf: 100
+        Catch Card: 10
+        NULL: 0
+Template 239:
+    Name: Floro Sapien
+    DropItemChance: 8
+    DropItemList:
+        Sap Soup: 100
+        Catch Card: 10
+        NULL: 0
+Template 240:
+    Name: Floro Sapien Head
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 241:
+    Name: 8-Bit Shell
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 242:
+    Name: Small 8-Bit Shell
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 243:
+    Name: Purple Floro Sapien
+    DropItemChance: 8
+    DropItemList:
+        Sap Soup: 100
+        Catch Card: 10
+        NULL: 0
+Template 244:
+    Name: Purple Floro Sapien Head
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 245:
+    Name: Red Floro Sapien
+    DropItemChance: 8
+    DropItemList:
+        Sap Soup: 100
+        Catch Card: 10
+        NULL: 0
+Template 246:
+    Name: Red Floro Sapien Head
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 247:
+    Name: Free Underhand
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 248:
+    Name: Bound Underhand
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 249:
+    Name: Disappearing Bound Underhand
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 250:
+    Name: Squiglet
+    DropItemChance: 3
+    DropItemList:
+        Peachy Peach: 100
+        Shroom Shake: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Fire Burst: 400
+        Catch Card: 50
+        NULL: 0
+Template 251:
+    Name: Squog
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Shroom Shake: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Thunder Rage: 400
+        Catch Card: 50
+        NULL: 0
+Template 252:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 253:
+    Name: Spike Top
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Cake Mix: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 254:
+    Name: Broken Flip Koopa Troopa
+    DropItemChance: 9
+    DropItemList:
+        Turtley Leaf: 100
+        Catch Card: 10
+        NULL: 0
+Template 255:
+    Name: Super Dimentio
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 256:
+    Name: Pal Pill Luigi
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 257:
+    Name: Gold Bar
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 258:
+    Name: Gold Bar x3
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 259:
+    Name: Ninjohn
+    DropItemChance: 8
+    DropItemList:
+        Thunder Rage: 100
+        Volt Shroom: 200
+        Stop Watch: 100
+        Shroom Shake: 100
+        Catch Card: 30
+        NULL: 0
+Template 260:
+    Name: Ninjohn Projectile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 261:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 262:
+    Name: Ninjerry
+    DropItemChance: 9
+    DropItemList:
+        Thunder Rage: 200
+        Volt Shroom: 100
+        Stop Watch: 100
+        Super Shroom Shake: 100
+        Catch Card: 30
+        NULL: 0
+Template 263:
+    Name: Ninjerry Projectile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 264:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 265:
+    Name: Gigabite
+    DropItemChance: 10
+    DropItemList:
+        POW Block: 100
+        Ghost Shroom: 100
+        Catch Card SP: 100
+        Catch Card: 30
+        NULL: 0
+Template 266:
+    Name: Blomeba
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 267:
+    Name: Chromeba
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 268:
+    Name: Flip Koopa Stiker
+    DropItemChance: 5
+    DropItemList:
+        Super Shroom Shake: 100
+        Turtley Leaf: 200
+        Catch Card: 20
+        NULL: 0
+Template 269:
+    Name: Flip Toopa Striker
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 270:
+    Name: Soopa Striker
+    DropItemChance: 5
+    DropItemList:
+        Super Shroom Shake: 100
+        Turtley Leaf: 200
+        Catch Card: 20
+        NULL: 0
+Template 271:
+    Name: Soopa Striker's Shell
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 272:
+    Name: Ghoul Shroom
+    DropItemChance: 5
+    DropItemList:
+        Poison Shroom: 200
+        Ghost Shroom: 100
+        Shroom Shake: 100
+        Catch Card: 30
+        NULL: 0
+Template 273:
+    Name: Longadile
+    DropItemChance: 3
+    DropItemList:
+        Peachy Peach: 100
+        Shroom Shake: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Stop Watch: 800
+        Catch Card: 50
+        NULL: 0
+Template 274:
+    Name: Beepboxer
+    DropItemChance: 3
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Volt Shroom: 400
+        Catch Card: 50
+        NULL: 0
+Template 275:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 276:
+    Name: (Unused) Boomboxer Recolor
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 277:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 278:
+    Name: Copta
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Long-Last Shake: 400
+        Catch Card: 50
+        NULL: 0
+Template 279:
+    Name: (Unused) Muth Recolor
+    DropItemChance: 100
+    DropItemList:
+        NULL: 100
+Template 280:
+    Name: Red I
+    DropItemChance: 10
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Shroom Shake: 100
+        Sleepy Sleep: 800
+        Catch Card: 50
+        NULL: 0
+Template 281:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 282:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 283:
+    Name: Squoinker
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Shroom Shake: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shooting Star: 400
+        Catch Card: 50
+        NULL: 0
+Template 284:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 285:
+    Name: Dark Bowser
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 286:
+    Name: Dark Luigi
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 287:
+    Name: Dark Mario
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 288:
+    Name: Dark Peach
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 289:
+    Name: Boing-Oing
+    DropItemChance: 5
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Long-Last Shake: 400
+        Catch Card: 50
+        NULL: 0
+Template 290:
+    Name: Mini Boing-Oing
+    DropItemChance: 2
+    DropItemList:
+        Dried Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 291:
+    Name: Zoing-Oing
+    DropItemChance: 5
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Long-Last Shake: 400
+        Catch Card: 50
+        NULL: 0
+Template 292:
+    Name: Mini Zoing-Oing
+    DropItemChance: 2
+    DropItemList:
+        Dried Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 293:
+    Name: Mega Muth
+    DropItemChance: 20
+    DropItemList:
+        Bone-In Cut: 100
+        Catch Card: 10
+        NULL: 0
+Template 294:
+    Name: Blastboxer
+    DropItemChance: 3
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Volt Shroom: 400
+        Catch Card: 50
+        NULL: 0
+Template 295:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 296:
+    Name: Rawbus
+    DropItemChance: 10
+    DropItemList:
+        Fire Burst: 100
+        Ice Storm: 100
+        Thunder Rage: 100
+        Catch Card: 30
+        NULL: 0
+Template 297:
+    Name: Gawbus
+    DropItemChance: 10
+    DropItemList:
+        Fire Burst: 100
+        Ice Storm: 200
+        Thunder Rage: 300
+        Catch Card: 30
+        NULL: 0
+Template 298:
+    Name: Sobarribad
+    DropItemChance: 5
+    DropItemList:
+        Power Steak: 100
+        Shroom Shake: 100
+        Hot Sauce: 100
+        Block Block: 1200
+        Catch Card: 50
+        NULL: 0
+Template 299:
+    Name: Sobarribad Projectile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 300:
+    Name: Hogarithm
+    DropItemChance: 5
+    DropItemList:
+        Long-Last Shake: 200
+        Shooting Star: 200
+        Block Block: 200
+        Ghost Shroom: 200
+        Stop Watch: 200
+        Mighty Tonic: 200
+        Catch Card: 50
+        NULL: 0
+Template 301:
+    Name: Shlorp
+    DropItemChance: 3
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Fire Burst: 400
+        POW Block: 800
+        Catch Card: 50
+        NULL: 0
+Template 302:
+    Name: Amazee Dayzee
+    DropItemChance: 70
+    DropItemList:
+        Golden Leaf: 200
+        Dayzee Tear: 100
+        Catch Card: 20
+        NULL: 0
+Template 303:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 304:
+    Name: Flip Gloomba
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 305:
+    Name: Invincible Underchomp
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 306:
+    Name: Invincible Blue Underchomp
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 307:
+    Name: Invincible Yellow Underchomp
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 308:
+    Name: Invincible Red Underchomp
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 309:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 310:
+    Name: Flip Boomerang Bro
+    DropItemChance: 5
+    DropItemList:
+        Super Shroom Shake: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Fire Burst: 400
+        Catch Card: 50
+        NULL: 0
+Template 311:
+    Name: Flip Fire Bro
+    DropItemChance: 5
+    DropItemList:
+        Super Shroom Shake: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Fire Burst: 800
+        Catch Card: 50
+        NULL: 0
+Template 312:
+    Name: Flip Skellobit
+    DropItemChance: 3
+    DropItemList:
+        Big Egg: 100
+        Power Steak: 100
+        Peachy Peach: 100
+        Ice Storm: 300
+        Ghost Shroom: 100
+        Shroom Shake: 100
+        Catch Card: 50
+        NULL: 0
+Template 313:
+    Name: Flip Spiky Skellobit
+    DropItemChance: 5
+    DropItemList:
+        Big Egg: 100
+        Power Steak: 100
+        Peachy Peach: 100
+        POW Block: 300
+        Ghost Shroom: 100
+        Super Shroom Shake: 100
+        Catch Card: 50
+        NULL: 0
+Template 314:
+    Name: Flip Skellobomber w/Skellobait
+    DropItemChance: 3
+    DropItemList:
+        Big Egg: 100
+        Power Steak: 100
+        Peachy Peach: 100
+        Ice Storm: 300
+        Ghost Shroom: 100
+        Shroom Shake: 100
+        Catch Card: 50
+        NULL: 0
+Template 315:
+    Name: Flip Skellobomber
+    DropItemChance: 3
+    DropItemList:
+        Big Egg: 100
+        Power Steak: 100
+        Peachy Peach: 100
+        Ice Storm: 300
+        Ghost Shroom: 100
+        Shroom Shake: 100
+        Catch Card: 50
+        NULL: 0
+Template 316:
+    Name: (Unused) Green Magikoopa
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 317:
+    Name: (Unused) Broom Green Magikoopa
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 318:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 319:
+    Name: (Unused) White Magikoopa
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 320:
+    Name: (Unused) Broom White Magikoopa
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 321:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 322:
+    Name: (Unused) Red Magikoopa
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 323:
+    Name: (Unused) Broom Red Magikoopa
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 324:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 325:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 326:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 327:
+    Name: Dark Spiked Goomba
+    DropItemChance: 4
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 328:
+    Name: Dark Paragoomba
+    DropItemChance: 4
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 329:
+    Name: Dark Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 330:
+    Name: Dark Headbonk Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 331:
+    Name: Dark Koopatrol
+    DropItemChance: 7
+    DropItemList:
+        Turtley Leaf: 100
+        Thunder Rage: 300
+        Catch Card: 20
+        NULL: 0
+Template 332:
+    Name: Dark Shady Koopa
+    DropItemChance: 4
+    DropItemList:
+        NULL: 100
+Template 333:
+    Name: Dark Paratroopa
+    DropItemChance: 5
+    DropItemList:
+        Turtley Leaf: 100
+        Catch Card: 10
+        NULL: 0
+Template 334:
+    Name: Dark Spike Top
+    DropItemChance: 5
+    DropItemList:
+        Power Steak: 100
+        Cake Mix: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 335:
+    Name: Dark Stone Buzzy
+    DropItemChance: 5
+    DropItemList:
+        Peachy Peach: 100
+        Cake Mix: 100
+        Hot Sauce: 100
+        Horsetail: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 336:
+    Name: Dark Spiny
+    DropItemChance: 5
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Mighty Tonic: 800
+        Catch Card: 50
+        NULL: 0
+Template 337:
+    Name: Dark Dull Bones
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Shroom Shake: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Ice Storm: 800
+        Catch Card: 50
+        NULL: 0
+Template 338:
+    Name: Dark Bone
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 339:
+    Name: Dark Hammer Bro
+    DropItemChance: 7
+    DropItemList:
+        Super Shroom Shake: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Fire Burst: 400
+        Catch Card: 50
+        NULL: 0
+Template 340:
+    Name: Dark Boomerang Bro
+    DropItemChance: 7
+    DropItemList:
+        Super Shroom Shake: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Fire Burst: 400
+        Catch Card: 50
+        NULL: 0
+Template 341:
+    Name: Dark Fire Bro
+    DropItemChance: 7
+    DropItemList:
+        Super Shroom Shake: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Fire Burst: 800
+        Catch Card: 50
+        NULL: 0
+Template 342:
+    Name: Dark Hammer
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 343:
+    Name: Dark Boomerang
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 344:
+    Name: Dark Fire Bro Fireball
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 345:
+    Name: Dark Magikoopa
+    DropItemChance: 7
+    DropItemList:
+        Turtley Leaf: 100
+        Fire Burst: 100
+        Ice Storm: 100
+        Thunder Rage: 100
+        Catch Card: 100
+        NULL: 0
+Template 346:
+    Name: Broom Dark Magikoopa
+    DropItemChance: 7
+    DropItemList:
+        Turtley Leaf: 100
+        Fire Burst: 100
+        Ice Storm: 100
+        Thunder Rage: 100
+        Catch Card: 100
+        NULL: 0
+Template 347:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 348:
+    Name: Dark Striker
+    DropItemChance: 7
+    DropItemList:
+        Super Shroom Shake: 100
+        Turtley Leaf: 200
+        Catch Card: 20
+        NULL: 0
+Template 349:
+    Name: Dark Striker's Shell
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 350:
+    Name: Dark Clubba
+    DropItemChance: 5
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Fire Burst: 800
+        Catch Card: 50
+        NULL: 0
+Template 351:
+    Name: Dark Dayzee
+    DropItemChance: 15
+    DropItemList:
+        Golden Leaf: 200
+        Dayzee Tear: 100
+        Catch Card: 20
+        NULL: 0
+Template 352:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 353:
+    Name: Goomba
+    DropItemChance: 4
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Shroom Shake: 200
+        Catch Card: 50
+        NULL: 0
+Template 354:
+    Name: Dark Fuzzy
+    DropItemChance: 5
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Life Shroom: 400
+        Catch Card: 10
+        NULL: 0
+Template 355:
+    Name: Dark Pokey
+    DropItemChance: 50
+    DropItemList:
+        Peachy Peach: 100
+        Shroom Shake: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Dried Shroom: 800
+        Catch Card: 50
+        NULL: 0
+Template 356:
+    Name: Dark Pokey Part
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 357:
+    Name: Dark Ruff Puff
+    DropItemChance: 4
+    DropItemList:
+        Shroom Shake: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Long-Last Shake: 800
+        Catch Card: 50
+        NULL: 0
+Template 358:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 359:
+    Name: Dark Spania
+    DropItemChance: 5
+    DropItemList:
+        NULL: 100
+Template 360:
+    Name: Dark Cursya
+    DropItemChance: 15
+    DropItemList:
+        Poison Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 361:
+    Name: (Unused) Dark Back Cursya
+    DropItemChance: 10
+    DropItemList:
+        Poison Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 362:
+    Name: Dark Tech Cursya
+    DropItemChance: 15
+    DropItemList:
+        Poison Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 363:
+    Name: Dark Heavy Cursya
+    DropItemChance: 15
+    DropItemList:
+        Poison Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 364:
+    Name: Dark Reversya Cursya
+    DropItemChance: 15
+    DropItemList:
+        Poison Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 365:
+    Name: Dark Chomp
+    DropItemChance: 7
+    DropItemList:
+        Power Steak: 100
+        Thunder Rage: 200
+        Shroom Shake: 100
+        Catch Card: 30
+        NULL: 0
+Template 366:
+    Name: Dark Dark Boo
+    DropItemChance: 6
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Long-Last Shake: 100
+        Horsetail: 100
+        Sleepy Sleep: 400
+        Ghost Shroom: 800
+        Catch Card: 50
+        NULL: 0
+Template 367:
+    Name: Dark Cleft
+    DropItemChance: 5
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Courage Shell: 800
+        Catch Card: 50
+        NULL: 0
+Template 368:
+    Name: Dark Shlurp
+    DropItemChance: 4
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Fire Burst: 400
+        POW Block: 800
+        Catch Card: 50
+        NULL: 0
+Template 369:
+    Name: Dark Squiglet
+    DropItemChance: 5
+    DropItemList:
+        Power Steak: 100
+        Shroom Shake: 100
+        Hot Sauce: 100
+        Smelly Herb: 100
+        Thunder Rage: 400
+        Catch Card: 50
+        NULL: 0
+Template 370:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 371:
+    Name: Dark Sproing-Oing
+    DropItemChance: 7
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Long-Last Shake: 400
+        Catch Card: 50
+        NULL: 0
+Template 372:
+    Name: Mini Dark Sproing-Oing
+    DropItemChance: 3
+    DropItemList:
+        Dried Shroom: 100
+        Catch Card: 10
+        NULL: 0
+Template 373:
+    Name: Dark Boomboxer
+    DropItemChance: 5
+    DropItemList:
+        Peachy Peach: 100
+        Keel Mango: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Volt Shroom: 400
+        Catch Card: 50
+        NULL: 0
+Template 374:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 375:
+    Name: Dark Jawbus
+    DropItemChance: 15
+    DropItemList:
+        Fire Burst: 100
+        Ice Storm: 200
+        Thunder Rage: 300
+        Catch Card: 30
+        NULL: 0
+Template 376:
+    Name: (Unused) Dark I
+    DropItemChance: 10
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Shroom Shake: 100
+        Sleepy Sleep: 800
+        Catch Card: 50
+        NULL: 0
+Template 377:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 378:
+    Name: Dark Growmeba
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 379:
+    Name: Dark Tileoid 
+    DropItemChance: 5
+    DropItemList:
+        Dried Shroom: 100
+        Fresh Pasta Bunch: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Block Block: 400
+        Stop Watch: 400
+        Catch Card: 50
+        NULL: 0
+Template 380:
+    Name: Dark Eeligon
+    DropItemChance: 7
+    DropItemList:
+        Power Steak: 100
+        Fresh Pasta Bunch: 100
+        Hot Sauce: 100
+        Long-Last Shake: 100
+        Block Block: 800
+        Catch Card: 50
+        NULL: 0
+Template 381:
+    Name: Dark Eeligon Part
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 382:
+    Name: Dark Longator
+    DropItemChance: 5
+    DropItemList:
+        Peachy Peach: 100
+        Shroom Shake: 100
+        Fresh Veggie: 100
+        Horsetail: 100
+        Stop Watch: 800
+        Catch Card: 50
+        NULL: 0
+Template 383:
+    Name: Dark Barribad
+    DropItemChance: 7
+    DropItemList:
+        Power Steak: 100
+        Shroom Shake: 100
+        Hot Sauce: 100
+        Block Block: 1200
+        Catch Card: 50
+        NULL: 0
+Template 384:
+    Name: Dark Barribad Projectile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 385:
+    Name: Dark Pigarithm
+    DropItemChance: 7
+    DropItemList:
+        Long-Last Shake: 200
+        Shooting Star: 200
+        Block Block: 200
+        Ghost Shroom: 200
+        Stop Watch: 200
+        Mighty Tonic: 200
+        Catch Card: 50
+        NULL: 0
+Template 386:
+    Name: Dark Choppa
+    DropItemChance: 5
+    DropItemList:
+        Dried Shroom: 100
+        Cake Mix: 100
+        Big Egg: 100
+        Honey Jar: 100
+        Long-Last Shake: 400
+        Catch Card: 50
+        NULL: 0
+Template 387:
+    Name: Dark Muth
+    DropItemChance: 25
+    DropItemList:
+        Bone-In Cut: 100
+        Catch Card: 10
+        NULL: 0
+Template 388:
+    Name: Dark Ninjoe
+    DropItemChance: 10
+    DropItemList:
+        Thunder Rage: 200
+        Volt Shroom: 100
+        Stop Watch: 100
+        Super Shroom Shake: 100
+        Catch Card: 30
+        NULL: 0
+Template 389:
+    Name: Dark Ninjoe Projectile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 390:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 391:
+    Name: Dark Skellobit
+    DropItemChance: 5
+    DropItemList:
+        Big Egg: 100
+        Power Steak: 100
+        Peachy Peach: 100
+        Ice Storm: 300
+        Ghost Shroom: 100
+        Shroom Shake: 100
+        Catch Card: 50
+        NULL: 0
+Template 392:
+    Name: Dark Spiky Skellobit
+    DropItemChance: 7
+    DropItemList:
+        Big Egg: 100
+        Power Steak: 100
+        Peachy Peach: 100
+        POW Block: 300
+        Ghost Shroom: 100
+        Super Shroom Shake: 100
+        Catch Card: 50
+        NULL: 0
+Template 393:
+    Name: Dark Megabite
+    DropItemChance: 15
+    DropItemList:
+        POW Block: 100
+        Ghost Shroom: 100
+        Catch Card SP: 100
+        Catch Card: 30
+        NULL: 0
+Template 394:
+    Name: Dark Magiblot
+    DropItemChance: 6
+    DropItemList:
+        Catch Card: 100
+        Catch Card SP: 100
+        Shroom Shake: 100
+        NULL: 0
+Template 395:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 396:
+    Name: Brobot Fist
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 397:
+    Name: Mimi 2
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 398:
+    Name: Bowser 2
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 399:
+    Name: Dark Dimentio Cube
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 400:
+    Name: Big Dark Dimentio Cube
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 401:
+    Name: Giant Dark Dimentio Cube
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 402:
+    Name: Rubee
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 403:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 404:
+    Name: Dimentio Attack
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 405:
+    Name: Dimentio
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 406:
+    Name: Dimentio
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 407:
+    Name: Dimentio
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 408:
+    Name: Stench
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 409:
+    Name: Cherbil
+    DropItemChance: 4
+    DropItemList:
+        Peachy Peach: 100
+        Sleepy Sleep: 100
+        Long-Last Shake: 100
+        Catch Card: 20
+        NULL: 0
+Template 410:
+    Name: Cherbil's Projectile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 411:
+    Name: Poison Cherbil
+    DropItemChance: 100
+    DropItemList:
+        Peachy Peach: 100
+        Dried Shroom: 500
+        Long-Last Shake: 50
+        Catch Card: 20
+        NULL: 0
+Template 412:
+    Name: Poison Cherbil's Projectile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 413:
+    Name: Ice Cherbil
+    DropItemChance: 4
+    DropItemList:
+        Peachy Peach: 100
+        Ice Storm: 100
+        Long-Last Shake: 100
+        Catch Card: 20
+        NULL: 0
+Template 414:
+    Name: Ice Cherbil's Projectile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 415:
+    Name: Dark Cherbil
+    DropItemChance: 50
+    DropItemList:
+        Peachy Peach: 100
+        Sleepy Sleep: 100
+        Long-Last Shake: 100
+        Catch Card: 20
+        NULL: 0
+Template 416:
+    Name: Dark Cherbil's Projectile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 417:
+    Name: Ice Dark Cherbil's Projectile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 418:
+    Name: Poison Dark Cherbil's Projectile
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 419:
+    Name: Frackle
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 420:
+    Name: Wrackle
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 421:
+    Name: Nothing?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 422:
+    Name: Enemy Mario
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 423:
+    Name: Glitchy Enemy Mario
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 424:
+    Name: Enemy Luigi?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 425:
+    Name: Enemy Luigi?
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 426:
+    Name: Sammer Guy
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 427:
+    Name: Stationary Enemy Mario
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 428:
+    Name: Stationary Enemy Luigi
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 429:
+    Name: Stationary Enemy Peach
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 430:
+    Name: Stationary Enemy Bowser
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 431:
+    Name: Two Koopa Strikers at once
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 432:
+    Name: Giant Shell
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
+Template 433:
+    Name: (No name)
+    DropItemChance: 0
+    DropItemList:
+        NULL: 100
