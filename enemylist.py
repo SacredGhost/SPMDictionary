@@ -79,7 +79,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 1",
         0.04,
         EnemyDrops (
@@ -93,7 +93,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 2",
         0.04,
         EnemyDrops (
@@ -107,7 +107,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Spiked Goomba",
-        None,
+        0x11B,
         "Template 3",
         0.03,
         EnemyDrops (
@@ -121,7 +121,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Paragoomba",
-        None,
+        0x11D,
         "Template 4",
         0.03,
         EnemyDrops (
@@ -135,7 +135,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Flip Goomba",
-        None,
+        0x11A,
         "Template 5",
         0.03,
         EnemyDrops (
@@ -149,7 +149,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Spiked Goomba",
-        None,
+        0x11B,
         "Template 6",
         0.03,
         EnemyDrops (
@@ -163,7 +163,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 7",
         0.04,
         EnemyDrops (
@@ -177,7 +177,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Green Koopa Troopa",
-        None,
+        0x123,
         "Template 8",
         0.09,
         EnemyDrops (
@@ -187,7 +187,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Red Koopa Troopa",
-        None,
+        0x123,
         "Template 9",
         0.09,
         EnemyDrops (
@@ -201,12 +201,12 @@ EnemyList = {
         "Template 10",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Koopatrol",
-        None,
+        0x124,
         "Template 11",
         0.05,
         EnemyDrops (
@@ -217,7 +217,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Flip Red Koopa Troopa",
-        None,
+        0x123,
         "Template 12",
         0.09,
         EnemyDrops (
@@ -231,12 +231,12 @@ EnemyList = {
         "Template 13",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Green Paratroopa",
-        None,
+        0x128,
         "Template 14",
         0.03,
         EnemyDrops (
@@ -246,7 +246,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Red Paratroopa",
-        None,
+        0x128,
         "Template 15",
         0.03,
         EnemyDrops (
@@ -260,12 +260,12 @@ EnemyList = {
         "Template 16",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Flip Red Paratroopa",
-        None,
+        0x128,
         "Template 17",
         0.03,
         EnemyDrops (
@@ -279,12 +279,12 @@ EnemyList = {
         "Template 18",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Clubba",
-        None,
+        0x143,
         "Template 19",
         0.03,
         EnemyDrops (
@@ -298,43 +298,43 @@ EnemyList = {
     ),
     EnemyEntry (
         "PatrolMeow",
-        None,
+        0x194,
         "Template 20",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "AirMeow",
-        None,
+        0x195,
         "Template 21",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "SurpriseMeow",
-        None,
+        0x196,
         "Template 22",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
-        "MeowBomb",
-        None,
+        "MeowBomb (SurpriseMeow)",
+        0x193,
         "Template 23",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Hammer Bro.",
-        None,
+        0x137,
         "Template 24",
         0.05,
         EnemyDrops (
@@ -348,7 +348,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Green Cheep Cheep",
-        None,
+        0x152,
         "Template 25",
         0.03,
         EnemyDrops (
@@ -362,7 +362,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Blooper",
-        None,
+        0x153,
         "Template 26",
         0.15,
         EnemyDrops (
@@ -372,16 +372,16 @@ EnemyList = {
     ),
     EnemyEntry (
         "Thwomp",
-        None,
+        0x170,
         "Template 27",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Lava Bubble",
-        None,
+        0x165,
         "Template 28",
         0.04,
         EnemyDrops (
@@ -391,16 +391,16 @@ EnemyList = {
     ),
     EnemyEntry (
         "Spiny Tromp",
-        None,
+        0x171,
         "Template 29",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 30",
         0.04,
         EnemyDrops (
@@ -414,7 +414,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Piranha Plant",
-        None,
+        0x145,
         "Template 31",
         0.1,
         EnemyDrops (
@@ -427,7 +427,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 32",
         0.04,
         EnemyDrops (
@@ -441,7 +441,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 33",
         0.04,
         EnemyDrops (
@@ -455,7 +455,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 34",
         0.04,
         EnemyDrops (
@@ -469,7 +469,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 35",
         0.04,
         EnemyDrops (
@@ -483,7 +483,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dry Bones",
-        None,
+        0x136,
         "Template 36",
         0.03,
         EnemyDrops (
@@ -499,14 +499,14 @@ EnemyList = {
         "Rubee",
         None,
         "Template 37",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dull Bones",
-        None,
+        0x134,
         "Template 38",
         0.04,
         EnemyDrops (
@@ -520,7 +520,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Boomerang Bro",
-        None,
+        0x138,
         "Template 39",
         0.05,
         EnemyDrops (
@@ -534,7 +534,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Fire Bro",
-        None,
+        0x139,
         "Template 40",
         0.05,
         EnemyDrops (
@@ -548,7 +548,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 41",
         0.04,
         EnemyDrops (
@@ -562,7 +562,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 42",
         0.04,
         EnemyDrops (
@@ -576,25 +576,25 @@ EnemyList = {
     ),
     EnemyEntry (
         "Fracktail",
-        None,
+        0x1C8,
         "Template 43",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Wracktail",
-        None,
+        0x1C9,
         "Template 44",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Flip Blooper",
-        None,
+        0x153,
         "Template 45",
         0.15,
         EnemyDrops (
@@ -604,7 +604,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Flip Hammer Bro.",
-        None,
+        0x137,
         "Template 46",
         0.05,
         EnemyDrops (
@@ -618,11 +618,11 @@ EnemyList = {
     ),
     EnemyEntry (
         "Small Spiky Tromp",
-        None,
+        0x172,
         "Template 47",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
@@ -640,9 +640,9 @@ EnemyList = {
     ),
     EnemyEntry (
         "Putrid Piranha",
-        None,
+        0x146,
         "Template 49",
-        1.0,
+        1,
         EnemyDrops (
             Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
             Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 200),
@@ -666,7 +666,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Frost Piranha",
-        None,
+        0x147,
         "Template 51",
         0.1,
         EnemyDrops (
@@ -686,7 +686,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Buzzy Beetle",
-        None,
+        0x12A,
         "Template 53",
         0.03,
         EnemyDrops (
@@ -714,7 +714,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Flip Buzzy Beetle",
-        None,
+        0x12A,
         "Template 55",
         0.04,
         EnemyDrops (
@@ -728,7 +728,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Spike Top",
-        None,
+        0x12B,
         "Template 56",
         0.03,
         EnemyDrops (
@@ -742,7 +742,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Parabuzzy",
-        None,
+        0x12D,
         "Template 57",
         0.03,
         EnemyDrops (
@@ -756,7 +756,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Spiky Parabuzzy",
-        None,
+        0x12E,
         "Template 58",
         0.03,
         EnemyDrops (
@@ -770,7 +770,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Spiny",
-        None,
+        0x131,
         "Template 59",
         0.03,
         EnemyDrops (
@@ -784,7 +784,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "(UNUSED?) Weird Spiny",
-        None,
+        0x131,
         "Template 60",
         0.04,
         EnemyDrops (
@@ -798,7 +798,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Lakitu",
-        None,
+        0x133,
         "Template 61",
         0.1,
         EnemyDrops (
@@ -812,7 +812,7 @@ EnemyList = {
         "Flip Lakitu",
         None,
         "Template 62",
-        0.1,
+        0x133,
         EnemyDrops (
             Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 100),
             Drop (item_name = "Mystery Box", hex_value = get_hex_value("Mystery Box"), weight = 100),
@@ -822,16 +822,16 @@ EnemyList = {
     ),
     EnemyEntry (
         "Mega Koopa",
-        None,
+        0x127,
         "Template 63",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 64",
         0.04,
         EnemyDrops (
@@ -845,7 +845,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Chain Chomp",
-        None,
+        0x166,
         "Template 65",
         0.05,
         EnemyDrops (
@@ -857,7 +857,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 66",
         0.04,
         EnemyDrops (
@@ -871,7 +871,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Red Cheep Cheep",
-        None,
+        0x152,
         "Template 67",
         0.03,
         EnemyDrops (
@@ -885,7 +885,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 68",
         0.04,
         EnemyDrops (
@@ -899,7 +899,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Flip Cheep Cheep",
-        None,
+        0x152,
         "Template 69",
         0.03,
         EnemyDrops (
@@ -913,7 +913,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Swooper",
-        None,
+        0x151,
         "Template 70",
         0.03,
         EnemyDrops (
@@ -937,7 +937,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 72",
         0.04,
         EnemyDrops (
@@ -960,17 +960,17 @@ EnemyList = {
         )
     ),
     EnemyEntry (
-        "Spinia",
+        "(Unused) Spinia",
         None,
         "Template 74",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Spania",
-        None,
+        0x157,
         "Template 75",
         0.03,
         EnemyDrops (
@@ -983,17 +983,17 @@ EnemyList = {
         )
     ),
     EnemyEntry (
-        "Spunia",
+        "(Unused) Spunia",
         None,
         "Template 76",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Bald Cleft",
-        None,
+        0x16A,
         "Template 77",
         0.04,
         EnemyDrops (
@@ -1007,7 +1007,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Moon Cleft",
-        None,
+        0x16B,
         "Template 78",
         0.04,
         EnemyDrops (
@@ -1021,7 +1021,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 79",
         0.04,
         EnemyDrops (
@@ -1035,7 +1035,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Magikoopa",
-        None,
+        0x13D,
         "Template 80",
         0.05,
         EnemyDrops (
@@ -1048,7 +1048,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Broom Magikoopa",
-        None,
+        0x13D,
         "Template 81",
         0.05,
         EnemyDrops (
@@ -1063,14 +1063,14 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 82",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 83",
         0.04,
         EnemyDrops (
@@ -1084,7 +1084,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Headbonk Goomba",
-        None,
+        0x120,
         "Template 84",
         0.03,
         EnemyDrops (
@@ -1098,7 +1098,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 85",
         0.04,
         EnemyDrops (
@@ -1112,7 +1112,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Barribad",
-        None,
+        0x1A1,
         "Template 86",
         0.05,
         EnemyDrops (
@@ -1127,14 +1127,14 @@ EnemyList = {
         "Barribad Projectile?",
         None,
         "Template 87",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Pigarithm",
-        None,
+        0x1A4,
         "Template 88",
         0.05,
         EnemyDrops (
@@ -1149,7 +1149,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 89",
         0.04,
         EnemyDrops (
@@ -1163,7 +1163,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 90",
         0.04,
         EnemyDrops (
@@ -1177,7 +1177,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 91",
         0.04,
         EnemyDrops (
@@ -1191,7 +1191,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 92",
         0.04,
         EnemyDrops (
@@ -1205,7 +1205,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 93",
         0.04,
         EnemyDrops (
@@ -1219,7 +1219,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Zombie Shroom",
-        None,
+        0x1C3,
         "Template 94",
         0.05,
         EnemyDrops (
@@ -1231,7 +1231,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 95",
         0.04,
         EnemyDrops (
@@ -1245,7 +1245,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Stone Buzzy",
-        None,
+        0x12F,
         "Template 96",
         0.03,
         EnemyDrops (
@@ -1259,7 +1259,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Longator",
-        None,
+        0x19E,
         "Template 97",
         0.03,
         EnemyDrops (
@@ -1273,7 +1273,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 98",
         0.04,
         EnemyDrops (
@@ -1287,7 +1287,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Flip Spiny",
-        None,
+        0x131,
         "Template 99",
         0.03,
         EnemyDrops (
@@ -1301,7 +1301,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Mister I",
-        None,
+        0x188,
         "Template 100",
         0.1,
         EnemyDrops (
@@ -1315,7 +1315,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "(Unused) Flip Spike Top",
-        None,
+        0x12B,
         "Template 101",
         0.04,
         EnemyDrops (
@@ -1331,54 +1331,54 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 102",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Projectile?",
         None,
         "Template 103",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
-        "Howl",
-        None,
+        "Gnip / Howl",
+        0x186,
         "Template 104",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
-        "Growl",
-        None,
+        "Gnaw / Growl",
+        0x187,
         "Template 105",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Bullet Bill",
-        None,
+        0x173,
         "Template 106",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Bill Blaster",
-        None,
+        0x174,
         "Template 107",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
@@ -1387,21 +1387,21 @@ EnemyList = {
         "Template 108",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "(Unused) Giant Bombshell Bill Blaster",
         None,
         "Template 109",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Boo",
-        None,
+        0x162,
         "Template 110",
         0.04,
         EnemyDrops (
@@ -1416,7 +1416,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Boo",
-        None,
+        0x163,
         "Template 111",
         0.04,
         EnemyDrops (
@@ -1431,7 +1431,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Atomic Boo",
-        None,
+        0x20D,
         "Template 112",
         0.2,
         EnemyDrops (
@@ -1451,7 +1451,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 114",
         0.04,
         EnemyDrops (
@@ -1465,7 +1465,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 115",
         0.04,
         EnemyDrops (
@@ -1479,7 +1479,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 116",
         0.04,
         EnemyDrops (
@@ -1493,7 +1493,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Fuzzy",
-        None,
+        0x14B,
         "Template 117",
         0.03,
         EnemyDrops (
@@ -1507,7 +1507,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 118",
         0.04,
         EnemyDrops (
@@ -1521,7 +1521,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 119",
         0.04,
         EnemyDrops (
@@ -1535,7 +1535,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Pink Fuzzy",
-        None,
+        0x14C,
         "Template 120",
         0.03,
         EnemyDrops (
@@ -1549,7 +1549,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 121",
         0.04,
         EnemyDrops (
@@ -1563,7 +1563,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 122",
         0.04,
         EnemyDrops (
@@ -1577,7 +1577,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 123",
         0.04,
         EnemyDrops (
@@ -1591,7 +1591,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 124",
         0.04,
         EnemyDrops (
@@ -1605,16 +1605,16 @@ EnemyList = {
     ),
     EnemyEntry (
         "Weak Ruff Puff",
-        None,
+        0x155,
         "Template 125",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Pokey",
-        None,
+        0x14E,
         "Template 126",
         0.03,
         EnemyDrops (
@@ -1627,9 +1627,9 @@ EnemyList = {
     ),
     EnemyEntry (
         "Poison Pokey",
-        None,
+        0x14F,
         "Template 127",
-        1.0,
+        1,
         EnemyDrops (
             Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
             Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
@@ -1641,7 +1641,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Koopa Striker",
-        None,
+        0x13F,
         "Template 128",
         0.05,
         EnemyDrops (
@@ -1654,41 +1654,41 @@ EnemyList = {
         "Koopa Striker's Shell",
         None,
         "Template 129",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Mimi",
-        None,
+        0x1C7,
         "Template 130",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Chasing Mimi",
-        None,
+        0x1C7,
         "Template 131",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Bowser",
-        None,
+        0x1CA,
         "Template 132",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Bittacuda",
-        None,
+        0x154,
         "Template 133",
         0.07,
         EnemyDrops (
@@ -1704,68 +1704,68 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 134",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
-        "BombMeow",
-        None,
+        "MeowBomb (Francis)",
+        0x193,
         "Template 135",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Big Blooper",
-        None,
+        0x1CF,
         "Template 136",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Mr. L",
-        None,
+        0x1D2,
         "Template 137",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Brobot",
-        None,
+        0x1D3,
         "Template 138",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Brobot Missile",
         None,
         "Template 139",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Brobot Mustache",
         None,
         "Template 140",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Jawbus",
-        None,
+        0x182,
         "Template 141",
         0.1,
         EnemyDrops (
@@ -1777,25 +1777,25 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dimentio",
-        None,
+        0x1C6,
         "Template 142",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dimentio Magic",
         None,
         "Template 143",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Sproing-Oing",
-        None,
+        0x17A,
         "Template 144",
         0.05,
         EnemyDrops (
@@ -1809,7 +1809,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Mini Sproing-Oing",
-        None,
+        0x17A,
         "Template 145",
         0.02,
         EnemyDrops (
@@ -1821,14 +1821,14 @@ EnemyList = {
         "Rubee",
         None,
         "Template 146",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Shlurp",
-        None,
+        0x16D,
         "Template 147",
         0.03,
         EnemyDrops (
@@ -1843,7 +1843,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Squig",
-        None,
+        0x176,
         "Template 148",
         0.03,
         EnemyDrops (
@@ -1859,23 +1859,23 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 149",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "King Croacus",
-        None,
+        0x1D1,
         "Template 150",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Slow Cursya",
-        None,
+        0x159,
         "Template 151",
         0.1,
         EnemyDrops (
@@ -1885,7 +1885,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Megabite",
-        None,
+        0x1BB,
         "Template 152",
         0.1,
         EnemyDrops (
@@ -1897,7 +1897,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Boomboxer",
-        None,
+        0x17E,
         "Template 153",
         0.03,
         EnemyDrops (
@@ -1911,7 +1911,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Choppa",
-        None,
+        0x1A7,
         "Template 154",
         0.03,
         EnemyDrops (
@@ -1927,41 +1927,41 @@ EnemyList = {
         "Croacus Petal",
         None,
         "Template 155",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Croacus Petal",
         None,
         "Template 156",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Croacus Petal",
         None,
         "Template 157",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Boomboxer Attack",
         None,
         "Template 158",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Ruff Puff",
-        None,
+        0x155,
         "Template 159",
         0.03,
         EnemyDrops (
@@ -1975,7 +1975,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Tileoid G",
-        None,
+        0x18E,
         "Template 160",
         0.03,
         EnemyDrops (
@@ -1990,7 +1990,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Tileoid B",
-        None,
+        0x18F,
         "Template 161",
         0.03,
         EnemyDrops (
@@ -2005,7 +2005,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Tileoid R",
-        None,
+        0x190,
         "Template 162",
         0.03,
         EnemyDrops (
@@ -2020,7 +2020,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Tileoid Y",
-        None,
+        0x191,
         "Template 163",
         0.03,
         EnemyDrops (
@@ -2035,52 +2035,52 @@ EnemyList = {
     ),
     EnemyEntry (
         "Growmeba",
-        None,
+        0x18A,
         "Template 164",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Growmeba Part",
         None,
         "Template 165",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Boomerang",
         None,
         "Template 166",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Fire Bro Fireball",
         None,
         "Template 167",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "BigMeow",
-        None,
+        0x197,
         "Template 168",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Eeligon",
-        None,
+        0x19B,
         "Template 169",
         0.05,
         EnemyDrops (
@@ -2094,7 +2094,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Jellien",
-        None,
+        0x198,
         "Template 170",
         0.02,
         EnemyDrops (
@@ -2109,7 +2109,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Foton",
-        None,
+        0x199,
         "Template 171",
         0.02,
         EnemyDrops (
@@ -2123,7 +2123,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Warpid",
-        None,
+        0x19A,
         "Template 172",
         0.02,
         EnemyDrops (
@@ -2137,7 +2137,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Muth",
-        None,
+        0x1AA,
         "Template 173",
         0.2,
         EnemyDrops (
@@ -2147,16 +2147,16 @@ EnemyList = {
     ),
     EnemyEntry (
         "Veggiefied O'Chunks",
-        None,
+        0x1C5,
         "Template 174",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Floro Cragnon (Round)",
-        None,
+        0x1AE,
         "Template 175",
         0.07,
         EnemyDrops (
@@ -2167,7 +2167,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Floro Cragnon (Triangular)",
-        None,
+        0x1AE,
         "Template 176",
         0.07,
         EnemyDrops (
@@ -2180,14 +2180,14 @@ EnemyList = {
         "Trap Gold Bar x3",
         None,
         "Template 177",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Ninjoe",
-        None,
+        0x1AF,
         "Template 178",
         0.07,
         EnemyDrops (
@@ -2202,140 +2202,140 @@ EnemyList = {
         "Player Pinwheel",
         None,
         "Template 179",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Projectile?",
         None,
         "Template 180",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "O'Chunks",
-        None,
+        0x1C5,
         "Template 181",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "O'Chunks",
-        None,
+        0x1C5,
         "Template 182",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Giant O'Chunks",
-        None,
+        0x1C5,
         "Template 183",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Small Dimentio Dimension Cube",
         None,
         "Template 184",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Medium Dimentio Dimension Cube",
         None,
         "Template 185",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Big Dimentio Dimension Cube",
         None,
         "Template 186",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "World 6 Mimi",
-        None,
+        0x1C7,
         "Template 187",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Brobot L Type",
-        None,
+        0x1D4,
         "Template 188",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Bonechill",
-        None,
+        0x1D5,
         "Template 189",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Bonechill Projectile",
         None,
         "Template 190",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Bonechill Icicle",
         None,
         "Template 191",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Ninjoe Attack",
         None,
         "Template 192",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "FRY_BAKUDAN (Nothing?)",
         None,
         "Template 193",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Skellobit",
-        None,
+        0x1B4,
         "Template 194",
         0.03,
         EnemyDrops (
@@ -2350,7 +2350,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Spiky Skellobit",
-        None,
+        0x1B5,
         "Template 195",
         0.05,
         EnemyDrops (
@@ -2365,97 +2365,97 @@ EnemyList = {
     ),
     EnemyEntry (
         "Count Bleck",
-        None,
+        0x1D6,
         "Template 196",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Void",
         None,
         "Template 197",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Big Void",
         None,
         "Template 198",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Particle",
         None,
         "Template 199",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nastasia?",
         None,
         "Template 200",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Disappearing Count Bleck",
         None,
         "Template 201",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Boomerang",
         None,
         "Template 202",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Fire Bro Fire",
         None,
         "Template 203",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Pokey Part",
         None,
         "Template 204",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Poison Pokey Part",
         None,
         "Template 205",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Back Cursya",
-        None,
+        0x15A,
         "Template 206",
         0.1,
         EnemyDrops (
@@ -2465,7 +2465,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Tech Cursya",
-        None,
+        0x15B,
         "Template 207",
         0.1,
         EnemyDrops (
@@ -2475,7 +2475,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Heavy Cursya",
-        None,
+        0x15C,
         "Template 208",
         0.1,
         EnemyDrops (
@@ -2485,7 +2485,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Reversya Cursya",
-        None,
+        0x15D,
         "Template 209",
         0.1,
         EnemyDrops (
@@ -2495,7 +2495,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Hooligon",
-        None,
+        0x19C,
         "Template 210",
         0.05,
         EnemyDrops (
@@ -2511,50 +2511,50 @@ EnemyList = {
         "Eeligon Part",
         None,
         "Template 211",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Hooligon Part",
         None,
         "Template 212",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Overworld Underchomp (3)",
         None,
         "Template 213",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Overworld Blue Underchomp",
         None,
         "Template 214",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Overworld Yellow Underchomp",
         None,
         "Template 215",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Overworld Red Underchomp",
-        None,
+        0x168,
         "Template 216",
         0.05,
         EnemyDrops (
@@ -2566,7 +2566,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Crazee Dayzee",
-        None,
+        0x148,
         "Template 217",
         0.15,
         EnemyDrops (
@@ -2578,32 +2578,32 @@ EnemyList = {
         "Dayzee Attack",
         None,
         "Template 218",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Stench",
         None,
         "Template 219",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Freeze",
         None,
         "Template 220",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Skellobomber w/Skellobait",
-        None,
+        0x1B8,
         "Template 221",
         0.03,
         EnemyDrops (
@@ -2618,7 +2618,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Skellobomber",
-        None,
+        0x1B8,
         "Template 222",
         0.03,
         EnemyDrops (
@@ -2633,7 +2633,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Skellobait",
-        None,
+        0x1B9,
         "Template 223",
         0.02,
         EnemyDrops (
@@ -2648,7 +2648,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Spiky Skellobait",
-        None,
+        0x1BA,
         "Template 224",
         0.02,
         EnemyDrops (
@@ -2663,43 +2663,43 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dimentio",
-        None,
+        0x1C6,
         "Template 225",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dimentio",
-        None,
+        0x1C6,
         "Template 226",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Skellobomber Head",
         None,
         "Template 227",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 228",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Red Magiblot",
-        None,
+        0x1BE,
         "Template 229",
         0.04,
         EnemyDrops (
@@ -2710,7 +2710,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Blue Magiblot",
-        None,
+        0x1BF,
         "Template 230",
         0.04,
         EnemyDrops (
@@ -2721,7 +2721,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Yellow Magiblot",
-        None,
+        0x1C0,
         "Template 231",
         0.04,
         EnemyDrops (
@@ -2734,32 +2734,32 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 232",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 233",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 234",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Gloomba",
-        None,
+        0x11F,
         "Template 235",
         0.03,
         EnemyDrops (
@@ -2775,14 +2775,14 @@ EnemyList = {
         "Bone",
         None,
         "Template 236",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Glasses-less Koopa",
-        None,
+        0x123,
         "Template 237",
         0.09,
         EnemyDrops (
@@ -2792,7 +2792,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Glasses-less Paratroopa",
-        None,
+        0x128,
         "Template 238",
         0.03,
         EnemyDrops (
@@ -2802,7 +2802,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Floro Sapien",
-        None,
+        0x1AD,
         "Template 239",
         0.08,
         EnemyDrops (
@@ -2814,32 +2814,32 @@ EnemyList = {
         "Floro Sapien Head",
         None,
         "Template 240",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "8-Bit Shell",
         None,
         "Template 241",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Small 8-Bit Shell",
         None,
         "Template 242",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Purple Floro Sapien",
-        None,
+        0x1AD,
         "Template 243",
         0.08,
         EnemyDrops (
@@ -2851,14 +2851,14 @@ EnemyList = {
         "Purple Floro Sapien Head",
         None,
         "Template 244",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Red Floro Sapien",
-        None,
+        0x1AD,
         "Template 245",
         0.08,
         EnemyDrops (
@@ -2870,41 +2870,41 @@ EnemyList = {
         "Red Floro Sapien Head",
         None,
         "Template 246",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Free Underhand",
-        None,
+        0x1B3,
         "Template 247",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Bound Underhand",
-        None,
+        0x1B3,
         "Template 248",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Disappearing Bound Underhand",
-        None,
+        0x1B3,
         "Template 249",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Squiglet",
-        None,
+        0x175,
         "Template 250",
         0.03,
         EnemyDrops (
@@ -2918,7 +2918,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Squog",
-        None,
+        0x177,
         "Template 251",
         0.03,
         EnemyDrops (
@@ -2934,14 +2934,14 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 252",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Spike Top",
-        None,
+        0x12B,
         "Template 253",
         0.03,
         EnemyDrops (
@@ -2955,7 +2955,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Broken Flip Koopa Troopa",
-        None,
+        0x123,
         "Template 254",
         0.09,
         EnemyDrops (
@@ -2965,43 +2965,43 @@ EnemyList = {
     ),
     EnemyEntry (
         "Super Dimentio",
-        None,
+        0x1D8,
         "Template 255",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Pal Pill Luigi",
         None,
         "Template 256",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Gold Bar",
-        None,
+        0x047,
         "Template 257",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Gold Bar x3",
-        None,
+        0x048,
         "Template 258",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Ninjohn",
-        None,
+        0x1B0,
         "Template 259",
         0.08,
         EnemyDrops (
@@ -3016,23 +3016,23 @@ EnemyList = {
         "Ninjohn Projectile",
         None,
         "Template 260",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 261",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Ninjerry",
-        None,
+        0x1B1,
         "Template 262",
         0.09,
         EnemyDrops (
@@ -3047,23 +3047,23 @@ EnemyList = {
         "Ninjerry Projectile",
         None,
         "Template 263",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 264",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Gigabite",
-        None,
+        0x1BC,
         "Template 265",
         0.1,
         EnemyDrops (
@@ -3075,25 +3075,25 @@ EnemyList = {
     ),
     EnemyEntry (
         "Blomeba",
-        None,
+        0x18B,
         "Template 266",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Chromeba",
-        None,
+        0x18C,
         "Template 267",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Flip Koopa Stiker",
-        None,
+        0x13F,
         "Template 268",
         0.05,
         EnemyDrops (
@@ -3104,16 +3104,16 @@ EnemyList = {
     ),
     EnemyEntry (
         "Flip Toopa Striker",
-        None,
+        0x140,
         "Template 269",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Soopa Striker",
-        None,
+        0x141,
         "Template 270",
         0.05,
         EnemyDrops (
@@ -3126,14 +3126,14 @@ EnemyList = {
         "Soopa Striker's Shell",
         None,
         "Template 271",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Ghoul Shroom",
-        None,
+        0x1C4,
         "Template 272",
         0.05,
         EnemyDrops (
@@ -3145,7 +3145,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Longadile",
-        None,
+        0x19F,
         "Template 273",
         0.03,
         EnemyDrops (
@@ -3159,7 +3159,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Beepboxer",
-        None,
+        0x17F,
         "Template 274",
         0.03,
         EnemyDrops (
@@ -3175,9 +3175,9 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 275",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
@@ -3186,21 +3186,21 @@ EnemyList = {
         "Template 276",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 277",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Copta",
-        None,
+        0x1A8,
         "Template 278",
         0.03,
         EnemyDrops (
@@ -3216,14 +3216,14 @@ EnemyList = {
         "(Unused) Muth Recolor",
         None,
         "Template 279",
-        1.0,
+        1,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Red I",
-        None,
+        0x189,
         "Template 280",
         0.1,
         EnemyDrops (
@@ -3239,23 +3239,23 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 281",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 282",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Squoinker",
-        None,
+        0x179,
         "Template 283",
         0.03,
         EnemyDrops (
@@ -3271,50 +3271,50 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 284",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Bowser",
-        None,
+        0x1CB,
         "Template 285",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Luigi",
-        None,
+        0x1CC,
         "Template 286",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Mario",
-        None,
+        0x1CD,
         "Template 287",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Peach",
-        None,
+        0x1CE,
         "Template 288",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Boing-Oing",
-        None,
+        0x17B,
         "Template 289",
         0.05,
         EnemyDrops (
@@ -3328,7 +3328,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Mini Boing-Oing",
-        None,
+        0x17B,
         "Template 290",
         0.02,
         EnemyDrops (
@@ -3338,7 +3338,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Zoing-Oing",
-        None,
+        0x17C,
         "Template 291",
         0.05,
         EnemyDrops (
@@ -3352,7 +3352,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Mini Zoing-Oing",
-        None,
+        0x17C,
         "Template 292",
         0.02,
         EnemyDrops (
@@ -3362,7 +3362,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Mega Muth",
-        None,
+        0x1AC,
         "Template 293",
         0.2,
         EnemyDrops (
@@ -3372,7 +3372,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Blastboxer",
-        None,
+        0x181,
         "Template 294",
         0.03,
         EnemyDrops (
@@ -3388,14 +3388,14 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 295",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Rawbus",
-        None,
+        0x183,
         "Template 296",
         0.1,
         EnemyDrops (
@@ -3407,7 +3407,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Gawbus",
-        None,
+        0x185,
         "Template 297",
         0.1,
         EnemyDrops (
@@ -3419,7 +3419,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Sobarribad",
-        None,
+        0x1A2,
         "Template 298",
         0.05,
         EnemyDrops (
@@ -3434,14 +3434,14 @@ EnemyList = {
         "Sobarribad Projectile",
         None,
         "Template 299",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Hogarithm",
-        None,
+        0x1A5,
         "Template 300",
         0.05,
         EnemyDrops (
@@ -3456,7 +3456,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Shlorp",
-        None,
+        0x16E,
         "Template 301",
         0.03,
         EnemyDrops (
@@ -3471,7 +3471,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Amazee Dayzee",
-        None,
+        0x149,
         "Template 302",
         0.7,
         EnemyDrops (
@@ -3484,14 +3484,14 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 303",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Flip Gloomba",
-        None,
+        0x11F,
         "Template 304",
         0.03,
         EnemyDrops (
@@ -3507,50 +3507,50 @@ EnemyList = {
         "Invincible Underchomp",
         None,
         "Template 305",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Invincible Blue Underchomp",
         None,
         "Template 306",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Invincible Yellow Underchomp",
         None,
         "Template 307",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Invincible Red Underchomp",
         None,
         "Template 308",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 309",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Flip Boomerang Bro",
-        None,
+        0x138,
         "Template 310",
         0.05,
         EnemyDrops (
@@ -3564,7 +3564,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Flip Fire Bro",
-        None,
+        0x139,
         "Template 311",
         0.05,
         EnemyDrops (
@@ -3578,7 +3578,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Flip Skellobit",
-        None,
+        0x1B4,
         "Template 312",
         0.03,
         EnemyDrops (
@@ -3593,7 +3593,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Flip Spiky Skellobit",
-        None,
+        0x1B5,
         "Template 313",
         0.05,
         EnemyDrops (
@@ -3608,7 +3608,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Flip Skellobomber w/Skellobait",
-        None,
+        0x1B8,
         "Template 314",
         0.03,
         EnemyDrops (
@@ -3623,7 +3623,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Flip Skellobomber",
-        None,
+        0x1B8,
         "Template 315",
         0.03,
         EnemyDrops (
@@ -3642,7 +3642,7 @@ EnemyList = {
         "Template 316",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
@@ -3651,16 +3651,16 @@ EnemyList = {
         "Template 317",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 318",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
@@ -3669,7 +3669,7 @@ EnemyList = {
         "Template 319",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
@@ -3678,16 +3678,16 @@ EnemyList = {
         "Template 320",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 321",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
@@ -3696,7 +3696,7 @@ EnemyList = {
         "Template 322",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
@@ -3705,39 +3705,39 @@ EnemyList = {
         "Template 323",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 324",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 325",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 326",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Spiked Goomba",
-        None,
+        0x11C,
         "Template 327",
         0.04,
         EnemyDrops (
@@ -3751,7 +3751,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Paragoomba",
-        None,
+        0x11E,
         "Template 328",
         0.04,
         EnemyDrops (
@@ -3765,7 +3765,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Goomba",
-        None,
+        0x122,
         "Template 329",
         0.04,
         EnemyDrops (
@@ -3779,7 +3779,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Headbonk Goomba",
-        None,
+        0x121,
         "Template 330",
         0.04,
         EnemyDrops (
@@ -3793,7 +3793,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Koopatrol",
-        None,
+        0x125,
         "Template 331",
         0.07,
         EnemyDrops (
@@ -3808,12 +3808,12 @@ EnemyList = {
         "Template 332",
         0.04,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Paratroopa",
-        None,
+        0x129,
         "Template 333",
         0.05,
         EnemyDrops (
@@ -3823,7 +3823,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Spike Top",
-        None,
+        0x12C,
         "Template 334",
         0.05,
         EnemyDrops (
@@ -3837,7 +3837,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Stone Buzzy",
-        None,
+        0x130,
         "Template 335",
         0.05,
         EnemyDrops (
@@ -3851,7 +3851,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Spiny",
-        None,
+        0x132,
         "Template 336",
         0.05,
         EnemyDrops (
@@ -3865,7 +3865,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Dull Bones",
-        None,
+        0x135,
         "Template 337",
         0.04,
         EnemyDrops (
@@ -3881,14 +3881,14 @@ EnemyList = {
         "Dark Bone",
         None,
         "Template 338",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Hammer Bro",
-        None,
+        0x13A,
         "Template 339",
         0.07,
         EnemyDrops (
@@ -3902,7 +3902,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Boomerang Bro",
-        None,
+        0x13B,
         "Template 340",
         0.07,
         EnemyDrops (
@@ -3916,7 +3916,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Fire Bro",
-        None,
+        0x13C,
         "Template 341",
         0.07,
         EnemyDrops (
@@ -3932,32 +3932,32 @@ EnemyList = {
         "Dark Hammer",
         None,
         "Template 342",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Boomerang",
         None,
         "Template 343",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Fire Bro Fireball",
         None,
         "Template 344",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Magikoopa",
-        None,
+        0x13E,
         "Template 345",
         0.07,
         EnemyDrops (
@@ -3970,7 +3970,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Broom Dark Magikoopa",
-        None,
+        0x13E,
         "Template 346",
         0.07,
         EnemyDrops (
@@ -3985,14 +3985,14 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 347",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Striker",
-        None,
+        0x142,
         "Template 348",
         0.07,
         EnemyDrops (
@@ -4005,14 +4005,14 @@ EnemyList = {
         "Dark Striker's Shell",
         None,
         "Template 349",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Clubba",
-        None,
+        0x144,
         "Template 350",
         0.05,
         EnemyDrops (
@@ -4026,7 +4026,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Dayzee",
-        None,
+        0x14A,
         "Template 351",
         0.15,
         EnemyDrops (
@@ -4039,14 +4039,14 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 352",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Goomba",
-        None,
+        0x11A,
         "Template 353",
         0.04,
         EnemyDrops (
@@ -4060,7 +4060,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Fuzzy",
-        None,
+        0x14D,
         "Template 354",
         0.05,
         EnemyDrops (
@@ -4074,7 +4074,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Pokey",
-        None,
+        0x150,
         "Template 355",
         0.5,
         EnemyDrops (
@@ -4090,14 +4090,14 @@ EnemyList = {
         "Dark Pokey Part",
         None,
         "Template 356",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Ruff Puff",
-        None,
+        0x156,
         "Template 357",
         0.04,
         EnemyDrops (
@@ -4113,23 +4113,23 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 358",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Spania",
-        None,
+        0x158,
         "Template 359",
         0.05,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Cursya",
-        None,
+        0x15E,
         "Template 360",
         0.15,
         EnemyDrops (
@@ -4149,7 +4149,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Tech Cursya",
-        None,
+        0x15F,
         "Template 362",
         0.15,
         EnemyDrops (
@@ -4159,7 +4159,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Heavy Cursya",
-        None,
+        0x160,
         "Template 363",
         0.15,
         EnemyDrops (
@@ -4169,7 +4169,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Reversya Cursya",
-        None,
+        0x161,
         "Template 364",
         0.15,
         EnemyDrops (
@@ -4179,7 +4179,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Chomp",
-        None,
+        0x167,
         "Template 365",
         0.07,
         EnemyDrops (
@@ -4191,7 +4191,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Dark Boo",
-        None,
+        0x164,
         "Template 366",
         0.06,
         EnemyDrops (
@@ -4206,7 +4206,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Cleft",
-        None,
+        0x16C,
         "Template 367",
         0.05,
         EnemyDrops (
@@ -4220,7 +4220,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Shlurp",
-        None,
+        0x16F,
         "Template 368",
         0.04,
         EnemyDrops (
@@ -4235,7 +4235,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Squiglet",
-        None,
+        0x178,
         "Template 369",
         0.05,
         EnemyDrops (
@@ -4251,14 +4251,14 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 370",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Sproing-Oing",
-        None,
+        0x17D,
         "Template 371",
         0.07,
         EnemyDrops (
@@ -4272,7 +4272,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Mini Dark Sproing-Oing",
-        None,
+        0x17D,
         "Template 372",
         0.03,
         EnemyDrops (
@@ -4282,7 +4282,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Boomboxer",
-        None,
+        0x180,
         "Template 373",
         0.05,
         EnemyDrops (
@@ -4298,14 +4298,14 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 374",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Jawbus",
-        None,
+        0x184,
         "Template 375",
         0.15,
         EnemyDrops (
@@ -4333,23 +4333,23 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 377",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Growmeba",
-        None,
+        0x18D,
         "Template 378",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Tileoid",
-        None,
+        0x192,
         "Template 379",
         0.05,
         EnemyDrops (
@@ -4364,7 +4364,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Eeligon",
-        None,
+        0x19D,
         "Template 380",
         0.07,
         EnemyDrops (
@@ -4380,14 +4380,14 @@ EnemyList = {
         "Dark Eeligon Part",
         None,
         "Template 381",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Longator",
-        None,
+        0x1A0,
         "Template 382",
         0.05,
         EnemyDrops (
@@ -4401,7 +4401,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Barribad",
-        None,
+        0x1A3,
         "Template 383",
         0.07,
         EnemyDrops (
@@ -4416,14 +4416,14 @@ EnemyList = {
         "Dark Barribad Projectile",
         None,
         "Template 384",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Pigarithm",
-        None,
+        0x1A6,
         "Template 385",
         0.07,
         EnemyDrops (
@@ -4438,7 +4438,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Choppa",
-        None,
+        0x1A9,
         "Template 386",
         0.05,
         EnemyDrops (
@@ -4452,7 +4452,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Muth",
-        None,
+        0x1AB,
         "Template 387",
         0.25,
         EnemyDrops (
@@ -4462,7 +4462,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Ninjoe",
-        None,
+        0x1AF,
         "Template 388",
         0.1,
         EnemyDrops (
@@ -4477,23 +4477,23 @@ EnemyList = {
         "Dark Ninjoe Projectile",
         None,
         "Template 389",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 390",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Skellobit",
-        None,
+        0x1B6,
         "Template 391",
         0.05,
         EnemyDrops (
@@ -4508,7 +4508,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Spiky Skellobit",
-        None,
+        0x1B7,
         "Template 392",
         0.07,
         EnemyDrops (
@@ -4523,7 +4523,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Megabite",
-        None,
+        0x1BD,
         "Template 393",
         0.15,
         EnemyDrops (
@@ -4535,7 +4535,7 @@ EnemyList = {
     ),
     EnemyEntry (
         "Dark Magiblot",
-        None,
+        0x1C1,
         "Template 394",
         0.06,
         EnemyDrops (
@@ -4548,131 +4548,131 @@ EnemyList = {
         "Nothing?",
         None,
         "Template 395",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Brobot Fist",
         None,
         "Template 396",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Mimi 2",
-        None,
+        0x1C7,
         "Template 397",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Bowser 2",
-        None,
+        0x1CA,
         "Template 398",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Dimentio Cube",
         None,
         "Template 399",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Big Dark Dimentio Cube",
         None,
         "Template 400",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Giant Dark Dimentio Cube",
         None,
         "Template 401",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Rubee",
         None,
         "Template 402",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 403",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dimentio Attack",
         None,
         "Template 404",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dimentio",
-        None,
+        0x1C6,
         "Template 405",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dimentio",
-        None,
+        0x1C6,
         "Template 406",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dimentio",
-        None,
+        0x1C6,
         "Template 407",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Stench",
         None,
         "Template 408",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Cherbil",
-        None,
+        0x210,
         "Template 409",
         0.04,
         EnemyDrops (
@@ -4686,16 +4686,16 @@ EnemyList = {
         "Cherbil's Projectile",
         None,
         "Template 410",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Poison Cherbil",
-        None,
+        0x212,
         "Template 411",
-        1.0,
+        1,
         EnemyDrops (
             Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
             Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 500),
@@ -4707,14 +4707,14 @@ EnemyList = {
         "Poison Cherbil's Projectile",
         None,
         "Template 412",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Ice Cherbil",
-        None,
+        0x211,
         "Template 413",
         0.04,
         EnemyDrops (
@@ -4728,14 +4728,14 @@ EnemyList = {
         "Ice Cherbil's Projectile",
         None,
         "Template 414",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Dark Cherbil",
-        None,
+        0x217,
         "Template 415",
         0.5,
         EnemyDrops (
@@ -4749,163 +4749,162 @@ EnemyList = {
         "Dark Cherbil's Projectile",
         None,
         "Template 416",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Ice Dark Cherbil's Projectile",
         None,
         "Template 417",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Poison Dark Cherbil's Projectile",
         None,
         "Template 418",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Frackle",
-        None,
+        0x213,
         "Template 419",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Wrackle",
-        None,
+        0x214,
         "Template 420",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Nothing?",
         None,
         "Template 421",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Enemy Mario",
         None,
         "Template 422",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Glitchy Enemy Mario",
         None,
         "Template 423",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Enemy Luigi?",
         None,
         "Template 424",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Enemy Luigi?",
         None,
         "Template 425",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Sammer Guy",
         None,
         "Template 426",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Stationary Enemy Mario",
         None,
         "Template 427",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Stationary Enemy Luigi",
         None,
         "Template 428",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Stationary Enemy Peach",
         None,
         "Template 429",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Stationary Enemy Bowser",
         None,
         "Template 430",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Two Koopa Strikers at once",
         None,
         "Template 431",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "Giant Shell",
         None,
         "Template 432",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     ),
     EnemyEntry (
         "(No name)",
         None,
         "Template 433",
-        0.0,
+        0,
         EnemyDrops (
-            
+            None
         )
     )
 }
-    
