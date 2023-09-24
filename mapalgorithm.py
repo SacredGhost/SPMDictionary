@@ -1,6 +1,7 @@
 from enum import Enum
 
 from bighexlist import ListType, ItemType
+from enemylist import EnemyList, EnemyEntry
 
 class Map():
     def __init__(self, MapName, MapArea, MapType, MapEnemies, MapItems, ShopItems, MapEntrance):
@@ -111,6 +112,39 @@ class Item():
         self.ItemType = ItemType
         self.ItemLocation = ItemLocation
 
+class MapEnemies():
+    def __init__(self, *item):
+        self.item = list(item)
+
+    def add_item(self, item):
+        self.item.append(item)
+
+    def remove_item(self, item):
+        self.item.remove(item)
+
+    def get_item(self, index):
+        if 0 <= index < len(self.item):
+            return self.item[index]
+        else:
+            return None
+        
+class Enemy():
+    def __init__(self, EnemyName, TemplateID, EnemyLocation):
+        self.EnemyName = EnemyName
+        self.TemplateID = TemplateID
+        self.EnemyLocation = EnemyLocation
+
+class EnemyLocation():
+    def __init__(self, EnemyState, xpos, ypos, zpos):
+        self.EnemyState = EnemyState
+        self.xpos = xpos
+        self.ypos = ypos
+        self.zpos = zpos
+
+class EnemyState(Enum):
+    IN2D = 0
+    IN3D = 1
+
 class MapShop():
     def __init__(self, ShopID, ShopLocation):
         self.ShopID = ShopID
@@ -188,7 +222,22 @@ MapList = [
         "an1_02",
         "an1",
         MapType.MAIN,
-        None,
+        MapEnemies (
+            Enemy ("Dry Bones", EnemyList["36"], EnemyLocation (EnemyState.IN2D, -362, 0, 137)),
+            Enemy ("Dry Bones", EnemyList["36"], EnemyLocation (EnemyState.IN2D, -813, 0, -125)),
+            Enemy ("Dry Bones", EnemyList["36"], EnemyLocation (EnemyState.IN2D, -675, 275, 125)),
+            Enemy ("Dry Bones", EnemyList["36"], EnemyLocation (EnemyState.IN2D, -550, 275, -125)),
+            Enemy ("Frost Piranha", EnemyList["51"], EnemyLocation (EnemyState.IN2D, -750, 450, 0)),
+            Enemy ("Frost Piranha", EnemyList["51"], EnemyLocation (EnemyState.IN2D, 250, 450, 0)),
+            Enemy ("Lava Bubble", EnemyList["28"], EnemyLocation (EnemyState.IN2D, 75, -100, 0)),
+            Enemy ("Lava Bubble", EnemyList["28"], EnemyLocation (EnemyState.IN2D, -125, -100, 0)),
+            Enemy ("Dry Bones", EnemyList["36"], EnemyLocation (EnemyState.IN3D, -837, 275, 0)),
+            Enemy ("Dry Bones", EnemyList["36"], EnemyLocation (EnemyState.IN3D, -837, 0, 0)),
+            Enemy ("Dry Bones", EnemyList["36"], EnemyLocation (EnemyState.IN3D, 950, 275, 0)),
+            Enemy ("Lava Bubble", EnemyList["28"], EnemyLocation (EnemyState.IN2D, -500, -100, 0)),
+            Enemy ("Frost Piranha", EnemyList["51"], EnemyLocation (EnemyState.IN2D, -250, 450, 0)),
+            Enemy ("Poison Cherbil", EnemyList["441"], EnemyLocation (EnemyState.IN2D, 125, 275, 125))
+        ),
         MapItems (
             Item ("Super Shroom Shake", 0x51, ListType.ITEM, ItemType.CONSUMABLE, ItemPos (ItemState.GROUND, 1225, 150, 0))
         ),

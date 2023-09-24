@@ -1,5 +1,6 @@
 import dolphin_memory_engine as dme
 from bighexlist import BigList
+from watches import game_region, game_revision
 
 class EnemyEntry():
     def __init__ (self, EnemyName, EnemyID, DropTemplate, DropPercent, EnemyDrops):
@@ -47,9 +48,6 @@ class Drop():
         self.ItemID = ItemID
         self.ItemWeight = ItemWeight
 
-game_region = chr(dme.read_byte(0x80000003))
-game_revision = dme.read_byte(0x80000007)
-
 def get_itemPercent(name: str) -> int:
     drop = EnemyList[name]
     dropies = drop["Drop %"][game_region][game_revision]
@@ -63,7 +61,7 @@ def get_hex_value(item_name):
     return ItemHexValues.get(item_name)
 
 EnemyList = {
-    EnemyEntry (
+    '0':EnemyEntry (
         "Nothing",
         None,
         "Template 0",
@@ -77,7 +75,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '1':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 1",
@@ -91,7 +89,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '2':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 2",
@@ -105,7 +103,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '3':EnemyEntry (
         "Spiked Goomba",
         0x11B,
         "Template 3",
@@ -119,7 +117,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '4':EnemyEntry (
         "Paragoomba",
         0x11D,
         "Template 4",
@@ -133,7 +131,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '5':EnemyEntry (
         "Flip Goomba",
         0x11A,
         "Template 5",
@@ -147,7 +145,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '6':EnemyEntry (
         "Spiked Goomba",
         0x11B,
         "Template 6",
@@ -161,7 +159,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '7':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 7",
@@ -175,7 +173,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '8':EnemyEntry (
         "Green Koopa Troopa",
         0x123,
         "Template 8",
@@ -185,7 +183,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '9':EnemyEntry (
         "Red Koopa Troopa",
         0x123,
         "Template 9",
@@ -195,7 +193,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '10':EnemyEntry (
         "(Unused) Shady Koopa",
         None,
         "Template 10",
@@ -204,7 +202,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '11':EnemyEntry (
         "Koopatrol",
         0x124,
         "Template 11",
@@ -215,7 +213,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '12':EnemyEntry (
         "Flip Red Koopa Troopa",
         0x123,
         "Template 12",
@@ -225,7 +223,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '13':EnemyEntry (
         "(Unused) Flip Shady Koopa",
         None,
         "Template 13",
@@ -234,7 +232,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '14':EnemyEntry (
         "Green Paratroopa",
         0x128,
         "Template 14",
@@ -244,7 +242,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '15':EnemyEntry (
         "Red Paratroopa",
         0x128,
         "Template 15",
@@ -254,7 +252,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '16':EnemyEntry (
         "(Unused) Shady Paratroopa",
         None,
         "Template 16",
@@ -263,7 +261,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '17':EnemyEntry (
         "Flip Red Paratroopa",
         0x128,
         "Template 17",
@@ -273,7 +271,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '18':EnemyEntry (
         "(Unused) Flip Shady Paratroopa",
         None,
         "Template 18",
@@ -282,7 +280,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '19':EnemyEntry (
         "Clubba",
         0x143,
         "Template 19",
@@ -296,7 +294,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '20':EnemyEntry (
         "PatrolMeow",
         0x194,
         "Template 20",
@@ -305,7 +303,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '21':EnemyEntry (
         "AirMeow",
         0x195,
         "Template 21",
@@ -314,7 +312,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '22':EnemyEntry (
         "SurpriseMeow",
         0x196,
         "Template 22",
@@ -323,7 +321,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '23':EnemyEntry (
         "MeowBomb (SurpriseMeow)",
         0x193,
         "Template 23",
@@ -332,7 +330,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '24':EnemyEntry (
         "Hammer Bro.",
         0x137,
         "Template 24",
@@ -346,7 +344,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '25':EnemyEntry (
         "Green Cheep Cheep",
         0x152,
         "Template 25",
@@ -360,7 +358,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '26':EnemyEntry (
         "Blooper",
         0x153,
         "Template 26",
@@ -370,7 +368,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '27':EnemyEntry (
         "Thwomp",
         0x170,
         "Template 27",
@@ -379,7 +377,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '28':EnemyEntry (
         "Lava Bubble",
         0x165,
         "Template 28",
@@ -389,7 +387,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '29':EnemyEntry (
         "Spiny Tromp",
         0x171,
         "Template 29",
@@ -398,7 +396,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '30':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 30",
@@ -412,7 +410,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '31':EnemyEntry (
         "Piranha Plant",
         0x145,
         "Template 31",
@@ -425,7 +423,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 40),
         )
     ),
-    EnemyEntry (
+    '32':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 32",
@@ -439,7 +437,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '33':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 33",
@@ -453,7 +451,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '34':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 34",
@@ -467,7 +465,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '35':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 35",
@@ -481,7 +479,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '36':EnemyEntry (
         "Dry Bones",
         0x136,
         "Template 36",
@@ -495,7 +493,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '37':EnemyEntry (
         "Rubee",
         None,
         "Template 37",
@@ -504,7 +502,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '38':EnemyEntry (
         "Dull Bones",
         0x134,
         "Template 38",
@@ -518,7 +516,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '39':EnemyEntry (
         "Boomerang Bro",
         0x138,
         "Template 39",
@@ -532,7 +530,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '40':EnemyEntry (
         "Fire Bro",
         0x139,
         "Template 40",
@@ -546,7 +544,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '41':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 41",
@@ -560,7 +558,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '42':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 42",
@@ -574,7 +572,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '43':EnemyEntry (
         "Fracktail",
         0x1C8,
         "Template 43",
@@ -583,7 +581,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '44':EnemyEntry (
         "Wracktail",
         0x1C9,
         "Template 44",
@@ -592,7 +590,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '45':EnemyEntry (
         "Flip Blooper",
         0x153,
         "Template 45",
@@ -602,7 +600,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '46':EnemyEntry (
         "Flip Hammer Bro.",
         0x137,
         "Template 46",
@@ -616,7 +614,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '47':EnemyEntry (
         "Small Spiky Tromp",
         0x172,
         "Template 47",
@@ -625,7 +623,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '48':EnemyEntry (
         "Nothing?",
         None,
         "Template 48",
@@ -638,7 +636,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 40),
         )
     ),
-    EnemyEntry (
+    '49':EnemyEntry (
         "Putrid Piranha",
         0x146,
         "Template 49",
@@ -651,7 +649,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 40),
         )
     ),
-    EnemyEntry (
+    '50':EnemyEntry (
         "Nothing?",
         None,
         "Template 50",
@@ -664,7 +662,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 40),
         )
     ),
-    EnemyEntry (
+    '51':EnemyEntry (
         "Frost Piranha",
         0x147,
         "Template 51",
@@ -674,7 +672,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '52':EnemyEntry (
         "Nothing?",
         None,
         "Template 52",
@@ -684,7 +682,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '53':EnemyEntry (
         "Buzzy Beetle",
         0x12A,
         "Template 53",
@@ -698,7 +696,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '54':EnemyEntry (
         "Nothing?",
         None,
         "Template 54",
@@ -712,7 +710,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '55':EnemyEntry (
         "Flip Buzzy Beetle",
         0x12A,
         "Template 55",
@@ -726,7 +724,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '56':EnemyEntry (
         "Spike Top",
         0x12B,
         "Template 56",
@@ -740,7 +738,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '57':EnemyEntry (
         "Parabuzzy",
         0x12D,
         "Template 57",
@@ -754,7 +752,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '58':EnemyEntry (
         "Spiky Parabuzzy",
         0x12E,
         "Template 58",
@@ -768,7 +766,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '59':EnemyEntry (
         "Spiny",
         0x131,
         "Template 59",
@@ -782,7 +780,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '60':EnemyEntry (
         "(UNUSED?) Weird Spiny",
         0x131,
         "Template 60",
@@ -796,7 +794,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '61':EnemyEntry (
         "Lakitu",
         0x133,
         "Template 61",
@@ -808,7 +806,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '62':EnemyEntry (
         "Flip Lakitu",
         None,
         "Template 62",
@@ -820,7 +818,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '63':EnemyEntry (
         "Mega Koopa",
         0x127,
         "Template 63",
@@ -829,7 +827,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '64':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 64",
@@ -843,7 +841,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '65':EnemyEntry (
         "Chain Chomp",
         0x166,
         "Template 65",
@@ -855,7 +853,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '66':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 66",
@@ -869,7 +867,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '67':EnemyEntry (
         "Red Cheep Cheep",
         0x152,
         "Template 67",
@@ -883,7 +881,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '68':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 68",
@@ -897,7 +895,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '69':EnemyEntry (
         "Flip Cheep Cheep",
         0x152,
         "Template 69",
@@ -911,7 +909,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '70':EnemyEntry (
         "Swooper",
         0x151,
         "Template 70",
@@ -925,7 +923,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '71':EnemyEntry (
         "Glitchy Dark Koopa",
         None,
         "Template 71",
@@ -935,7 +933,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '72':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 72",
@@ -949,7 +947,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '73':EnemyEntry (
         "Glitchy Koopa",
         None,
         "Template 73",
@@ -959,7 +957,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '74':EnemyEntry (
         "(Unused) Spinia",
         None,
         "Template 74",
@@ -968,7 +966,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '75':EnemyEntry (
         "Spania",
         0x157,
         "Template 75",
@@ -982,7 +980,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '76':EnemyEntry (
         "(Unused) Spunia",
         None,
         "Template 76",
@@ -991,7 +989,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '77':EnemyEntry (
         "Bald Cleft",
         0x16A,
         "Template 77",
@@ -1005,7 +1003,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '78':EnemyEntry (
         "Moon Cleft",
         0x16B,
         "Template 78",
@@ -1019,7 +1017,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '79':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 79",
@@ -1033,7 +1031,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '80':EnemyEntry (
         "Magikoopa",
         0x13D,
         "Template 80",
@@ -1046,7 +1044,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 100),
         )
     ),
-    EnemyEntry (
+    '81':EnemyEntry (
         "Broom Magikoopa",
         0x13D,
         "Template 81",
@@ -1059,7 +1057,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 100),
         )
     ),
-    EnemyEntry (
+    '82':EnemyEntry (
         "Nothing?",
         None,
         "Template 82",
@@ -1068,7 +1066,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '83':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 83",
@@ -1082,7 +1080,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '84':EnemyEntry (
         "Headbonk Goomba",
         0x120,
         "Template 84",
@@ -1096,7 +1094,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '85':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 85",
@@ -1110,7 +1108,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '86':EnemyEntry (
         "Barribad",
         0x1A1,
         "Template 86",
@@ -1123,7 +1121,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '87':EnemyEntry (
         "Barribad Projectile?",
         None,
         "Template 87",
@@ -1132,7 +1130,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '88':EnemyEntry (
         "Pigarithm",
         0x1A4,
         "Template 88",
@@ -1147,7 +1145,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '89':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 89",
@@ -1161,7 +1159,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '90':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 90",
@@ -1175,7 +1173,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '91':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 91",
@@ -1189,7 +1187,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '92':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 92",
@@ -1203,7 +1201,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '93':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 93",
@@ -1217,7 +1215,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '94':EnemyEntry (
         "Zombie Shroom",
         0x1C3,
         "Template 94",
@@ -1229,7 +1227,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '95':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 95",
@@ -1243,7 +1241,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '96':EnemyEntry (
         "Stone Buzzy",
         0x12F,
         "Template 96",
@@ -1257,7 +1255,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '97':EnemyEntry (
         "Longator",
         0x19E,
         "Template 97",
@@ -1271,7 +1269,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '98':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 98",
@@ -1285,7 +1283,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '99':EnemyEntry (
         "Flip Spiny",
         0x131,
         "Template 99",
@@ -1299,7 +1297,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '100':EnemyEntry (
         "Mister I",
         0x188,
         "Template 100",
@@ -1313,7 +1311,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '101':EnemyEntry (
         "(Unused) Flip Spike Top",
         0x12B,
         "Template 101",
@@ -1327,7 +1325,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '102':EnemyEntry (
         "Nothing?",
         None,
         "Template 102",
@@ -1336,7 +1334,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '103':EnemyEntry (
         "Projectile?",
         None,
         "Template 103",
@@ -1345,7 +1343,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '104':EnemyEntry (
         "Gnip / Howl",
         0x186,
         "Template 104",
@@ -1354,7 +1352,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '105':EnemyEntry (
         "Gnaw / Growl",
         0x187,
         "Template 105",
@@ -1363,7 +1361,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '106':EnemyEntry (
         "Bullet Bill",
         0x173,
         "Template 106",
@@ -1372,7 +1370,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '107':EnemyEntry (
         "Bill Blaster",
         0x174,
         "Template 107",
@@ -1381,7 +1379,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '108':EnemyEntry (
         "(Unused) Giant Bombshell Bill",
         None,
         "Template 108",
@@ -1390,7 +1388,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '109':EnemyEntry (
         "(Unused) Giant Bombshell Bill Blaster",
         None,
         "Template 109",
@@ -1399,7 +1397,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '110':EnemyEntry (
         "Boo",
         0x162,
         "Template 110",
@@ -1414,7 +1412,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '111':EnemyEntry (
         "Dark Boo",
         0x163,
         "Template 111",
@@ -1429,7 +1427,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '112':EnemyEntry (
         "Atomic Boo",
         0x20D,
         "Template 112",
@@ -1439,7 +1437,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '113':EnemyEntry (
         "(Unused) Dark Atomic Boo",
         None,
         "Template 113",
@@ -1449,7 +1447,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '114':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 114",
@@ -1463,7 +1461,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '115':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 115",
@@ -1477,7 +1475,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '116':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 116",
@@ -1491,7 +1489,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '117':EnemyEntry (
         "Fuzzy",
         0x14B,
         "Template 117",
@@ -1505,7 +1503,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '118':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 118",
@@ -1519,7 +1517,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '119':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 119",
@@ -1533,7 +1531,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '120':EnemyEntry (
         "Pink Fuzzy",
         0x14C,
         "Template 120",
@@ -1547,7 +1545,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '121':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 121",
@@ -1561,7 +1559,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '122':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 122",
@@ -1575,7 +1573,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '123':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 123",
@@ -1589,7 +1587,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '124':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 124",
@@ -1603,7 +1601,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '125':EnemyEntry (
         "Weak Ruff Puff",
         0x155,
         "Template 125",
@@ -1612,7 +1610,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '126':EnemyEntry (
         "Pokey",
         0x14E,
         "Template 126",
@@ -1625,7 +1623,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 40),
         )
     ),
-    EnemyEntry (
+    '127':EnemyEntry (
         "Poison Pokey",
         0x14F,
         "Template 127",
@@ -1639,7 +1637,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '128':EnemyEntry (
         "Koopa Striker",
         0x13F,
         "Template 128",
@@ -1650,7 +1648,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '129':EnemyEntry (
         "Koopa Striker's Shell",
         None,
         "Template 129",
@@ -1659,7 +1657,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '130':EnemyEntry (
         "Mimi",
         0x1C7,
         "Template 130",
@@ -1668,7 +1666,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '131':EnemyEntry (
         "Chasing Mimi",
         0x1C7,
         "Template 131",
@@ -1677,7 +1675,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '132':EnemyEntry (
         "Bowser",
         0x1CA,
         "Template 132",
@@ -1686,7 +1684,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '133':EnemyEntry (
         "Bittacuda",
         0x154,
         "Template 133",
@@ -1700,7 +1698,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '134':EnemyEntry (
         "Nothing?",
         None,
         "Template 134",
@@ -1709,7 +1707,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '135':EnemyEntry (
         "MeowBomb (Francis)",
         0x193,
         "Template 135",
@@ -1718,7 +1716,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '136':EnemyEntry (
         "Big Blooper",
         0x1CF,
         "Template 136",
@@ -1727,7 +1725,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '137':EnemyEntry (
         "Mr. L",
         0x1D2,
         "Template 137",
@@ -1736,7 +1734,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '138':EnemyEntry (
         "Brobot",
         0x1D3,
         "Template 138",
@@ -1745,7 +1743,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '139':EnemyEntry (
         "Brobot Missile",
         None,
         "Template 139",
@@ -1754,7 +1752,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '140':EnemyEntry (
         "Brobot Mustache",
         None,
         "Template 140",
@@ -1763,7 +1761,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '141':EnemyEntry (
         "Jawbus",
         0x182,
         "Template 141",
@@ -1775,7 +1773,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '142':EnemyEntry (
         "Dimentio",
         0x1C6,
         "Template 142",
@@ -1784,7 +1782,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '143':EnemyEntry (
         "Dimentio Magic",
         None,
         "Template 143",
@@ -1793,7 +1791,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '144':EnemyEntry (
         "Sproing-Oing",
         0x17A,
         "Template 144",
@@ -1807,7 +1805,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '145':EnemyEntry (
         "Mini Sproing-Oing",
         0x17A,
         "Template 145",
@@ -1817,7 +1815,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '146':EnemyEntry (
         "Rubee",
         None,
         "Template 146",
@@ -1826,7 +1824,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '147':EnemyEntry (
         "Shlurp",
         0x16D,
         "Template 147",
@@ -1841,7 +1839,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '148':EnemyEntry (
         "Squig",
         0x176,
         "Template 148",
@@ -1855,7 +1853,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '149':EnemyEntry (
         "Nothing?",
         None,
         "Template 149",
@@ -1864,7 +1862,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '150':EnemyEntry (
         "King Croacus",
         0x1D1,
         "Template 150",
@@ -1873,7 +1871,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '151':EnemyEntry (
         "Slow Cursya",
         0x159,
         "Template 151",
@@ -1883,7 +1881,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '152':EnemyEntry (
         "Megabite",
         0x1BB,
         "Template 152",
@@ -1895,7 +1893,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '153':EnemyEntry (
         "Boomboxer",
         0x17E,
         "Template 153",
@@ -1909,7 +1907,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '154':EnemyEntry (
         "Choppa",
         0x1A7,
         "Template 154",
@@ -1923,7 +1921,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '155':EnemyEntry (
         "Croacus Petal",
         None,
         "Template 155",
@@ -1932,7 +1930,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '156':EnemyEntry (
         "Croacus Petal",
         None,
         "Template 156",
@@ -1941,7 +1939,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '157':EnemyEntry (
         "Croacus Petal",
         None,
         "Template 157",
@@ -1950,7 +1948,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '158':EnemyEntry (
         "Boomboxer Attack",
         None,
         "Template 158",
@@ -1959,7 +1957,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '159':EnemyEntry (
         "Ruff Puff",
         0x155,
         "Template 159",
@@ -1973,7 +1971,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '160':EnemyEntry (
         "Tileoid G",
         0x18E,
         "Template 160",
@@ -1988,7 +1986,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '161':EnemyEntry (
         "Tileoid B",
         0x18F,
         "Template 161",
@@ -2003,7 +2001,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '162':EnemyEntry (
         "Tileoid R",
         0x190,
         "Template 162",
@@ -2018,7 +2016,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '163':EnemyEntry (
         "Tileoid Y",
         0x191,
         "Template 163",
@@ -2033,7 +2031,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '164':EnemyEntry (
         "Growmeba",
         0x18A,
         "Template 164",
@@ -2042,7 +2040,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '165':EnemyEntry (
         "Growmeba Part",
         None,
         "Template 165",
@@ -2051,7 +2049,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '166':EnemyEntry (
         "Boomerang",
         None,
         "Template 166",
@@ -2060,7 +2058,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '167':EnemyEntry (
         "Fire Bro Fireball",
         None,
         "Template 167",
@@ -2069,7 +2067,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '168':EnemyEntry (
         "BigMeow",
         0x197,
         "Template 168",
@@ -2078,7 +2076,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '169':EnemyEntry (
         "Eeligon",
         0x19B,
         "Template 169",
@@ -2092,7 +2090,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '170':EnemyEntry (
         "Jellien",
         0x198,
         "Template 170",
@@ -2107,7 +2105,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '171':EnemyEntry (
         "Foton",
         0x199,
         "Template 171",
@@ -2121,7 +2119,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '172':EnemyEntry (
         "Warpid",
         0x19A,
         "Template 172",
@@ -2135,7 +2133,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '173':EnemyEntry (
         "Muth",
         0x1AA,
         "Template 173",
@@ -2145,7 +2143,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '174':EnemyEntry (
         "Veggiefied O'Chunks",
         0x1C5,
         "Template 174",
@@ -2154,7 +2152,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '175':EnemyEntry (
         "Floro Cragnon (Round)",
         0x1AE,
         "Template 175",
@@ -2165,7 +2163,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '176':EnemyEntry (
         "Floro Cragnon (Triangular)",
         0x1AE,
         "Template 176",
@@ -2176,7 +2174,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '177':EnemyEntry (
         "Trap Gold Bar x3",
         None,
         "Template 177",
@@ -2185,7 +2183,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '178':EnemyEntry (
         "Ninjoe",
         0x1AF,
         "Template 178",
@@ -2198,7 +2196,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '179':EnemyEntry (
         "Player Pinwheel",
         None,
         "Template 179",
@@ -2207,7 +2205,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '180':EnemyEntry (
         "Projectile?",
         None,
         "Template 180",
@@ -2216,7 +2214,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '181':EnemyEntry (
         "O'Chunks",
         0x1C5,
         "Template 181",
@@ -2225,7 +2223,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '182':EnemyEntry (
         "O'Chunks",
         0x1C5,
         "Template 182",
@@ -2234,7 +2232,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '183':EnemyEntry (
         "Giant O'Chunks",
         0x1C5,
         "Template 183",
@@ -2243,7 +2241,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '184':EnemyEntry (
         "Small Dimentio Dimension Cube",
         None,
         "Template 184",
@@ -2252,7 +2250,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '185':EnemyEntry (
         "Medium Dimentio Dimension Cube",
         None,
         "Template 185",
@@ -2261,7 +2259,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '186':EnemyEntry (
         "Big Dimentio Dimension Cube",
         None,
         "Template 186",
@@ -2270,7 +2268,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '187':EnemyEntry (
         "World 6 Mimi",
         0x1C7,
         "Template 187",
@@ -2279,7 +2277,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '188':EnemyEntry (
         "Brobot L Type",
         0x1D4,
         "Template 188",
@@ -2288,7 +2286,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '189':EnemyEntry (
         "Bonechill",
         0x1D5,
         "Template 189",
@@ -2297,7 +2295,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '190':EnemyEntry (
         "Bonechill Projectile",
         None,
         "Template 190",
@@ -2306,7 +2304,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '191':EnemyEntry (
         "Bonechill Icicle",
         None,
         "Template 191",
@@ -2315,7 +2313,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '192':EnemyEntry (
         "Ninjoe Attack",
         None,
         "Template 192",
@@ -2324,7 +2322,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '193':EnemyEntry (
         "FRY_BAKUDAN (Nothing?)",
         None,
         "Template 193",
@@ -2333,7 +2331,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '194':EnemyEntry (
         "Skellobit",
         0x1B4,
         "Template 194",
@@ -2348,7 +2346,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '195':EnemyEntry (
         "Spiky Skellobit",
         0x1B5,
         "Template 195",
@@ -2363,7 +2361,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '196':EnemyEntry (
         "Count Bleck",
         0x1D6,
         "Template 196",
@@ -2372,7 +2370,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '197':EnemyEntry (
         "Void",
         None,
         "Template 197",
@@ -2381,7 +2379,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '198':EnemyEntry (
         "Big Void",
         None,
         "Template 198",
@@ -2390,7 +2388,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '199':EnemyEntry (
         "Particle",
         None,
         "Template 199",
@@ -2399,7 +2397,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '200':EnemyEntry (
         "Nastasia?",
         None,
         "Template 200",
@@ -2408,7 +2406,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '201':EnemyEntry (
         "Disappearing Count Bleck",
         None,
         "Template 201",
@@ -2417,7 +2415,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '202':EnemyEntry (
         "Boomerang",
         None,
         "Template 202",
@@ -2426,7 +2424,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '203':EnemyEntry (
         "Fire Bro Fire",
         None,
         "Template 203",
@@ -2435,7 +2433,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '204':EnemyEntry (
         "Pokey Part",
         None,
         "Template 204",
@@ -2444,7 +2442,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '205':EnemyEntry (
         "Poison Pokey Part",
         None,
         "Template 205",
@@ -2453,7 +2451,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '206':EnemyEntry (
         "Back Cursya",
         0x15A,
         "Template 206",
@@ -2463,7 +2461,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '207':EnemyEntry (
         "Tech Cursya",
         0x15B,
         "Template 207",
@@ -2473,7 +2471,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '208':EnemyEntry (
         "Heavy Cursya",
         0x15C,
         "Template 208",
@@ -2483,7 +2481,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '209':EnemyEntry (
         "Reversya Cursya",
         0x15D,
         "Template 209",
@@ -2493,7 +2491,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '210':EnemyEntry (
         "Hooligon",
         0x19C,
         "Template 210",
@@ -2507,7 +2505,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '211':EnemyEntry (
         "Eeligon Part",
         None,
         "Template 211",
@@ -2516,7 +2514,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '212':EnemyEntry (
         "Hooligon Part",
         None,
         "Template 212",
@@ -2525,7 +2523,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '213':EnemyEntry (
         "Overworld Underchomp (3)",
         None,
         "Template 213",
@@ -2534,7 +2532,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '214':EnemyEntry (
         "Overworld Blue Underchomp",
         None,
         "Template 214",
@@ -2543,7 +2541,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '215':EnemyEntry (
         "Overworld Yellow Underchomp",
         None,
         "Template 215",
@@ -2552,7 +2550,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '216':EnemyEntry (
         "Overworld Red Underchomp",
         0x168,
         "Template 216",
@@ -2564,7 +2562,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '217':EnemyEntry (
         "Crazee Dayzee",
         0x148,
         "Template 217",
@@ -2574,7 +2572,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '218':EnemyEntry (
         "Dayzee Attack",
         None,
         "Template 218",
@@ -2583,7 +2581,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '219':EnemyEntry (
         "Stench",
         None,
         "Template 219",
@@ -2592,7 +2590,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '220':EnemyEntry (
         "Freeze",
         None,
         "Template 220",
@@ -2601,7 +2599,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '221':EnemyEntry (
         "Skellobomber w/Skellobait",
         0x1B8,
         "Template 221",
@@ -2616,7 +2614,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '222':EnemyEntry (
         "Skellobomber",
         0x1B8,
         "Template 222",
@@ -2631,7 +2629,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '223':EnemyEntry (
         "Skellobait",
         0x1B9,
         "Template 223",
@@ -2646,7 +2644,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '224':EnemyEntry (
         "Spiky Skellobait",
         0x1BA,
         "Template 224",
@@ -2661,7 +2659,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '225':EnemyEntry (
         "Dimentio",
         0x1C6,
         "Template 225",
@@ -2670,7 +2668,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '226':EnemyEntry (
         "Dimentio",
         0x1C6,
         "Template 226",
@@ -2679,7 +2677,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '227':EnemyEntry (
         "Skellobomber Head",
         None,
         "Template 227",
@@ -2688,7 +2686,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '228':EnemyEntry (
         "Nothing?",
         None,
         "Template 228",
@@ -2697,7 +2695,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '229':EnemyEntry (
         "Red Magiblot",
         0x1BE,
         "Template 229",
@@ -2708,7 +2706,7 @@ EnemyList = {
             Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
         )
     ),
-    EnemyEntry (
+    '230':EnemyEntry (
         "Blue Magiblot",
         0x1BF,
         "Template 230",
@@ -2719,7 +2717,7 @@ EnemyList = {
             Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
         )
     ),
-    EnemyEntry (
+    '231':EnemyEntry (
         "Yellow Magiblot",
         0x1C0,
         "Template 231",
@@ -2730,7 +2728,7 @@ EnemyList = {
             Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
         )
     ),
-    EnemyEntry (
+    '232':EnemyEntry (
         "Nothing?",
         None,
         "Template 232",
@@ -2739,7 +2737,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '233':EnemyEntry (
         "Nothing?",
         None,
         "Template 233",
@@ -2748,7 +2746,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '234':EnemyEntry (
         "Nothing?",
         None,
         "Template 234",
@@ -2757,7 +2755,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '235':EnemyEntry (
         "Gloomba",
         0x11F,
         "Template 235",
@@ -2771,7 +2769,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '236':EnemyEntry (
         "Bone",
         None,
         "Template 236",
@@ -2780,7 +2778,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '237':EnemyEntry (
         "Glasses-less Koopa",
         0x123,
         "Template 237",
@@ -2790,7 +2788,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '238':EnemyEntry (
         "Glasses-less Paratroopa",
         0x128,
         "Template 238",
@@ -2800,7 +2798,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '239':EnemyEntry (
         "Floro Sapien",
         0x1AD,
         "Template 239",
@@ -2810,7 +2808,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '240':EnemyEntry (
         "Floro Sapien Head",
         None,
         "Template 240",
@@ -2819,7 +2817,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '241':EnemyEntry (
         "8-Bit Shell",
         None,
         "Template 241",
@@ -2828,7 +2826,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '242':EnemyEntry (
         "Small 8-Bit Shell",
         None,
         "Template 242",
@@ -2837,7 +2835,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '243':EnemyEntry (
         "Purple Floro Sapien",
         0x1AD,
         "Template 243",
@@ -2847,7 +2845,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '244':EnemyEntry (
         "Purple Floro Sapien Head",
         None,
         "Template 244",
@@ -2856,7 +2854,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '245':EnemyEntry (
         "Red Floro Sapien",
         0x1AD,
         "Template 245",
@@ -2866,7 +2864,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '246':EnemyEntry (
         "Red Floro Sapien Head",
         None,
         "Template 246",
@@ -2875,7 +2873,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '247':EnemyEntry (
         "Free Underhand",
         0x1B3,
         "Template 247",
@@ -2884,7 +2882,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '248':EnemyEntry (
         "Bound Underhand",
         0x1B3,
         "Template 248",
@@ -2893,7 +2891,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '249':EnemyEntry (
         "Disappearing Bound Underhand",
         0x1B3,
         "Template 249",
@@ -2902,7 +2900,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '250':EnemyEntry (
         "Squiglet",
         0x175,
         "Template 250",
@@ -2916,7 +2914,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '251':EnemyEntry (
         "Squog",
         0x177,
         "Template 251",
@@ -2930,7 +2928,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '252':EnemyEntry (
         "Nothing?",
         None,
         "Template 252",
@@ -2939,7 +2937,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '253':EnemyEntry (
         "Spike Top",
         0x12B,
         "Template 253",
@@ -2953,7 +2951,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '254':EnemyEntry (
         "Broken Flip Koopa Troopa",
         0x123,
         "Template 254",
@@ -2963,7 +2961,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '255':EnemyEntry (
         "Super Dimentio",
         0x1D8,
         "Template 255",
@@ -2972,7 +2970,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '256':EnemyEntry (
         "Pal Pill Luigi",
         None,
         "Template 256",
@@ -2981,7 +2979,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '257':EnemyEntry (
         "Gold Bar",
         0x047,
         "Template 257",
@@ -2990,7 +2988,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '258':EnemyEntry (
         "Gold Bar x3",
         0x048,
         "Template 258",
@@ -2999,7 +2997,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '259':EnemyEntry (
         "Ninjohn",
         0x1B0,
         "Template 259",
@@ -3012,7 +3010,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '260':EnemyEntry (
         "Ninjohn Projectile",
         None,
         "Template 260",
@@ -3021,7 +3019,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '261':EnemyEntry (
         "Nothing?",
         None,
         "Template 261",
@@ -3030,7 +3028,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '262':EnemyEntry (
         "Ninjerry",
         0x1B1,
         "Template 262",
@@ -3043,7 +3041,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '263':EnemyEntry (
         "Ninjerry Projectile",
         None,
         "Template 263",
@@ -3052,7 +3050,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '264':EnemyEntry (
         "Nothing?",
         None,
         "Template 264",
@@ -3061,7 +3059,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '265':EnemyEntry (
         "Gigabite",
         0x1BC,
         "Template 265",
@@ -3073,7 +3071,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '266':EnemyEntry (
         "Blomeba",
         0x18B,
         "Template 266",
@@ -3082,7 +3080,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '267':EnemyEntry (
         "Chromeba",
         0x18C,
         "Template 267",
@@ -3091,7 +3089,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '268':EnemyEntry (
         "Flip Koopa Stiker",
         0x13F,
         "Template 268",
@@ -3102,7 +3100,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '269':EnemyEntry (
         "Flip Toopa Striker",
         0x140,
         "Template 269",
@@ -3111,7 +3109,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '270':EnemyEntry (
         "Soopa Striker",
         0x141,
         "Template 270",
@@ -3122,7 +3120,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '271':EnemyEntry (
         "Soopa Striker's Shell",
         None,
         "Template 271",
@@ -3131,7 +3129,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '272':EnemyEntry (
         "Ghoul Shroom",
         0x1C4,
         "Template 272",
@@ -3143,7 +3141,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '273':EnemyEntry (
         "Longadile",
         0x19F,
         "Template 273",
@@ -3157,7 +3155,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '274':EnemyEntry (
         "Beepboxer",
         0x17F,
         "Template 274",
@@ -3171,7 +3169,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '275':EnemyEntry (
         "Nothing?",
         None,
         "Template 275",
@@ -3180,7 +3178,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '276':EnemyEntry (
         "(Unused) Boomboxer Recolor",
         None,
         "Template 276",
@@ -3189,7 +3187,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '277':EnemyEntry (
         "Nothing?",
         None,
         "Template 277",
@@ -3198,7 +3196,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '278':EnemyEntry (
         "Copta",
         0x1A8,
         "Template 278",
@@ -3212,7 +3210,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '279':EnemyEntry (
         "(Unused) Muth Recolor",
         None,
         "Template 279",
@@ -3221,7 +3219,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '280':EnemyEntry (
         "Red I",
         0x189,
         "Template 280",
@@ -3235,7 +3233,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '281':EnemyEntry (
         "Nothing?",
         None,
         "Template 281",
@@ -3244,7 +3242,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '282':EnemyEntry (
         "Nothing?",
         None,
         "Template 282",
@@ -3253,7 +3251,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '283':EnemyEntry (
         "Squoinker",
         0x179,
         "Template 283",
@@ -3267,7 +3265,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '284':EnemyEntry (
         "Nothing?",
         None,
         "Template 284",
@@ -3276,7 +3274,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '285':EnemyEntry (
         "Dark Bowser",
         0x1CB,
         "Template 285",
@@ -3285,7 +3283,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '286':EnemyEntry (
         "Dark Luigi",
         0x1CC,
         "Template 286",
@@ -3294,7 +3292,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '287':EnemyEntry (
         "Dark Mario",
         0x1CD,
         "Template 287",
@@ -3303,7 +3301,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '288':EnemyEntry (
         "Dark Peach",
         0x1CE,
         "Template 288",
@@ -3312,7 +3310,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '289':EnemyEntry (
         "Boing-Oing",
         0x17B,
         "Template 289",
@@ -3326,7 +3324,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '290':EnemyEntry (
         "Mini Boing-Oing",
         0x17B,
         "Template 290",
@@ -3336,7 +3334,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '291':EnemyEntry (
         "Zoing-Oing",
         0x17C,
         "Template 291",
@@ -3350,7 +3348,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '292':EnemyEntry (
         "Mini Zoing-Oing",
         0x17C,
         "Template 292",
@@ -3360,7 +3358,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '293':EnemyEntry (
         "Mega Muth",
         0x1AC,
         "Template 293",
@@ -3370,7 +3368,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '294':EnemyEntry (
         "Blastboxer",
         0x181,
         "Template 294",
@@ -3384,7 +3382,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '295':EnemyEntry (
         "Nothing?",
         None,
         "Template 295",
@@ -3393,7 +3391,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '296':EnemyEntry (
         "Rawbus",
         0x183,
         "Template 296",
@@ -3405,7 +3403,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '297':EnemyEntry (
         "Gawbus",
         0x185,
         "Template 297",
@@ -3417,7 +3415,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '298':EnemyEntry (
         "Sobarribad",
         0x1A2,
         "Template 298",
@@ -3430,7 +3428,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '299':EnemyEntry (
         "Sobarribad Projectile",
         None,
         "Template 299",
@@ -3439,7 +3437,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '300':EnemyEntry (
         "Hogarithm",
         0x1A5,
         "Template 300",
@@ -3454,7 +3452,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '301':EnemyEntry (
         "Shlorp",
         0x16E,
         "Template 301",
@@ -3469,7 +3467,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '302':EnemyEntry (
         "Amazee Dayzee",
         0x149,
         "Template 302",
@@ -3480,7 +3478,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '303':EnemyEntry (
         "Nothing?",
         None,
         "Template 303",
@@ -3489,7 +3487,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '304':EnemyEntry (
         "Flip Gloomba",
         0x11F,
         "Template 304",
@@ -3503,7 +3501,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '305':EnemyEntry (
         "Invincible Underchomp",
         None,
         "Template 305",
@@ -3512,7 +3510,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '306':EnemyEntry (
         "Invincible Blue Underchomp",
         None,
         "Template 306",
@@ -3521,7 +3519,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '307':EnemyEntry (
         "Invincible Yellow Underchomp",
         None,
         "Template 307",
@@ -3530,7 +3528,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '308':EnemyEntry (
         "Invincible Red Underchomp",
         None,
         "Template 308",
@@ -3539,7 +3537,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '309':EnemyEntry (
         "Nothing?",
         None,
         "Template 309",
@@ -3548,7 +3546,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '310':EnemyEntry (
         "Flip Boomerang Bro",
         0x138,
         "Template 310",
@@ -3562,7 +3560,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '311':EnemyEntry (
         "Flip Fire Bro",
         0x139,
         "Template 311",
@@ -3576,7 +3574,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '312':EnemyEntry (
         "Flip Skellobit",
         0x1B4,
         "Template 312",
@@ -3591,7 +3589,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '313':EnemyEntry (
         "Flip Spiky Skellobit",
         0x1B5,
         "Template 313",
@@ -3606,7 +3604,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '314':EnemyEntry (
         "Flip Skellobomber w/Skellobait",
         0x1B8,
         "Template 314",
@@ -3621,7 +3619,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '315':EnemyEntry (
         "Flip Skellobomber",
         0x1B8,
         "Template 315",
@@ -3636,7 +3634,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '316':EnemyEntry (
         "(Unused) Green Magikoopa",
         None,
         "Template 316",
@@ -3645,7 +3643,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '317':EnemyEntry (
         "(Unused) Broom Green Magikoopa",
         None,
         "Template 317",
@@ -3654,7 +3652,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '318':EnemyEntry (
         "Nothing?",
         None,
         "Template 318",
@@ -3663,7 +3661,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '319':EnemyEntry (
         "(Unused) White Magikoopa",
         None,
         "Template 319",
@@ -3672,7 +3670,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '320':EnemyEntry (
         "(Unused) Broom White Magikoopa",
         None,
         "Template 320",
@@ -3681,7 +3679,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '321':EnemyEntry (
         "Nothing?",
         None,
         "Template 321",
@@ -3690,7 +3688,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '322':EnemyEntry (
         "(Unused) Red Magikoopa",
         None,
         "Template 322",
@@ -3699,7 +3697,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '323':EnemyEntry (
         "(Unused) Broom Red Magikoopa",
         None,
         "Template 323",
@@ -3708,7 +3706,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '324':EnemyEntry (
         "Nothing?",
         None,
         "Template 324",
@@ -3717,7 +3715,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '325':EnemyEntry (
         "Nothing?",
         None,
         "Template 325",
@@ -3726,7 +3724,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '326':EnemyEntry (
         "Nothing?",
         None,
         "Template 326",
@@ -3735,7 +3733,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '327':EnemyEntry (
         "Dark Spiked Goomba",
         0x11C,
         "Template 327",
@@ -3749,7 +3747,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '328':EnemyEntry (
         "Dark Paragoomba",
         0x11E,
         "Template 328",
@@ -3763,7 +3761,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '329':EnemyEntry (
         "Dark Goomba",
         0x122,
         "Template 329",
@@ -3777,7 +3775,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '330':EnemyEntry (
         "Dark Headbonk Goomba",
         0x121,
         "Template 330",
@@ -3791,7 +3789,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '331':EnemyEntry (
         "Dark Koopatrol",
         0x125,
         "Template 331",
@@ -3802,7 +3800,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '332':EnemyEntry (
         "Dark Shady Koopa",
         None,
         "Template 332",
@@ -3811,7 +3809,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '333':EnemyEntry (
         "Dark Paratroopa",
         0x129,
         "Template 333",
@@ -3821,7 +3819,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '334':EnemyEntry (
         "Dark Spike Top",
         0x12C,
         "Template 334",
@@ -3835,7 +3833,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '335':EnemyEntry (
         "Dark Stone Buzzy",
         0x130,
         "Template 335",
@@ -3849,7 +3847,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '336':EnemyEntry (
         "Dark Spiny",
         0x132,
         "Template 336",
@@ -3863,7 +3861,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '337':EnemyEntry (
         "Dark Dull Bones",
         0x135,
         "Template 337",
@@ -3877,7 +3875,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '338':EnemyEntry (
         "Dark Bone",
         None,
         "Template 338",
@@ -3886,7 +3884,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '339':EnemyEntry (
         "Dark Hammer Bro",
         0x13A,
         "Template 339",
@@ -3900,7 +3898,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '340':EnemyEntry (
         "Dark Boomerang Bro",
         0x13B,
         "Template 340",
@@ -3914,7 +3912,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '341':EnemyEntry (
         "Dark Fire Bro",
         0x13C,
         "Template 341",
@@ -3928,7 +3926,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '342':EnemyEntry (
         "Dark Hammer",
         None,
         "Template 342",
@@ -3937,7 +3935,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '343':EnemyEntry (
         "Dark Boomerang",
         None,
         "Template 343",
@@ -3946,7 +3944,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '344':EnemyEntry (
         "Dark Fire Bro Fireball",
         None,
         "Template 344",
@@ -3955,7 +3953,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '345':EnemyEntry (
         "Dark Magikoopa",
         0x13E,
         "Template 345",
@@ -3968,7 +3966,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 100),
         )
     ),
-    EnemyEntry (
+    '346':EnemyEntry (
         "Broom Dark Magikoopa",
         0x13E,
         "Template 346",
@@ -3981,7 +3979,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 100),
         )
     ),
-    EnemyEntry (
+    '347':EnemyEntry (
         "Nothing?",
         None,
         "Template 347",
@@ -3990,7 +3988,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '348':EnemyEntry (
         "Dark Striker",
         0x142,
         "Template 348",
@@ -4001,7 +3999,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '349':EnemyEntry (
         "Dark Striker's Shell",
         None,
         "Template 349",
@@ -4010,7 +4008,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '350':EnemyEntry (
         "Dark Clubba",
         0x144,
         "Template 350",
@@ -4024,7 +4022,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '351':EnemyEntry (
         "Dark Dayzee",
         0x14A,
         "Template 351",
@@ -4035,7 +4033,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '352':EnemyEntry (
         "Nothing?",
         None,
         "Template 352",
@@ -4044,7 +4042,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '353':EnemyEntry (
         "Goomba",
         0x11A,
         "Template 353",
@@ -4058,7 +4056,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '354':EnemyEntry (
         "Dark Fuzzy",
         0x14D,
         "Template 354",
@@ -4072,7 +4070,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '355':EnemyEntry (
         "Dark Pokey",
         0x150,
         "Template 355",
@@ -4086,7 +4084,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '356':EnemyEntry (
         "Dark Pokey Part",
         None,
         "Template 356",
@@ -4095,7 +4093,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '357':EnemyEntry (
         "Dark Ruff Puff",
         0x156,
         "Template 357",
@@ -4109,7 +4107,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '358':EnemyEntry (
         "Nothing?",
         None,
         "Template 358",
@@ -4118,7 +4116,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '359':EnemyEntry (
         "Dark Spania",
         0x158,
         "Template 359",
@@ -4127,7 +4125,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '360':EnemyEntry (
         "Dark Cursya",
         0x15E,
         "Template 360",
@@ -4137,7 +4135,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '361':EnemyEntry (
         "(Unused) Dark Back Cursya",
         None,
         "Template 361",
@@ -4147,7 +4145,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '362':EnemyEntry (
         "Dark Tech Cursya",
         0x15F,
         "Template 362",
@@ -4157,7 +4155,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '363':EnemyEntry (
         "Dark Heavy Cursya",
         0x160,
         "Template 363",
@@ -4167,7 +4165,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '364':EnemyEntry (
         "Dark Reversya Cursya",
         0x161,
         "Template 364",
@@ -4177,7 +4175,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '365':EnemyEntry (
         "Dark Chomp",
         0x167,
         "Template 365",
@@ -4189,7 +4187,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '366':EnemyEntry (
         "Dark Dark Boo",
         0x164,
         "Template 366",
@@ -4204,7 +4202,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '367':EnemyEntry (
         "Dark Cleft",
         0x16C,
         "Template 367",
@@ -4218,7 +4216,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '368':EnemyEntry (
         "Dark Shlurp",
         0x16F,
         "Template 368",
@@ -4233,7 +4231,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '369':EnemyEntry (
         "Dark Squiglet",
         0x178,
         "Template 369",
@@ -4247,7 +4245,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '370':EnemyEntry (
         "Nothing?",
         None,
         "Template 370",
@@ -4256,7 +4254,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '371':EnemyEntry (
         "Dark Sproing-Oing",
         0x17D,
         "Template 371",
@@ -4270,7 +4268,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '372':EnemyEntry (
         "Mini Dark Sproing-Oing",
         0x17D,
         "Template 372",
@@ -4280,7 +4278,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '373':EnemyEntry (
         "Dark Boomboxer",
         0x180,
         "Template 373",
@@ -4294,7 +4292,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '374':EnemyEntry (
         "Nothing?",
         None,
         "Template 374",
@@ -4303,7 +4301,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '375':EnemyEntry (
         "Dark Jawbus",
         0x184,
         "Template 375",
@@ -4315,7 +4313,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '376':EnemyEntry (
         "(Unused) Dark I",
         None,
         "Template 376",
@@ -4329,7 +4327,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '377':EnemyEntry (
         "Nothing?",
         None,
         "Template 377",
@@ -4338,7 +4336,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '378':EnemyEntry (
         "Dark Growmeba",
         0x18D,
         "Template 378",
@@ -4347,7 +4345,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '379':EnemyEntry (
         "Dark Tileoid",
         0x192,
         "Template 379",
@@ -4362,7 +4360,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '380':EnemyEntry (
         "Dark Eeligon",
         0x19D,
         "Template 380",
@@ -4376,7 +4374,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '381':EnemyEntry (
         "Dark Eeligon Part",
         None,
         "Template 381",
@@ -4385,7 +4383,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '382':EnemyEntry (
         "Dark Longator",
         0x1A0,
         "Template 382",
@@ -4399,7 +4397,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '383':EnemyEntry (
         "Dark Barribad",
         0x1A3,
         "Template 383",
@@ -4412,7 +4410,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '384':EnemyEntry (
         "Dark Barribad Projectile",
         None,
         "Template 384",
@@ -4421,7 +4419,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '385':EnemyEntry (
         "Dark Pigarithm",
         0x1A6,
         "Template 385",
@@ -4436,7 +4434,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '386':EnemyEntry (
         "Dark Choppa",
         0x1A9,
         "Template 386",
@@ -4450,7 +4448,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '387':EnemyEntry (
         "Dark Muth",
         0x1AB,
         "Template 387",
@@ -4460,7 +4458,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
         )
     ),
-    EnemyEntry (
+    '388':EnemyEntry (
         "Dark Ninjoe",
         0x1AF,
         "Template 388",
@@ -4473,7 +4471,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '389':EnemyEntry (
         "Dark Ninjoe Projectile",
         None,
         "Template 389",
@@ -4482,7 +4480,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '390':EnemyEntry (
         "Nothing?",
         None,
         "Template 390",
@@ -4491,7 +4489,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '391':EnemyEntry (
         "Dark Skellobit",
         0x1B6,
         "Template 391",
@@ -4506,7 +4504,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '392':EnemyEntry (
         "Dark Spiky Skellobit",
         0x1B7,
         "Template 392",
@@ -4521,7 +4519,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
         )
     ),
-    EnemyEntry (
+    '393':EnemyEntry (
         "Dark Megabite",
         0x1BD,
         "Template 393",
@@ -4533,7 +4531,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
         )
     ),
-    EnemyEntry (
+    '394':EnemyEntry (
         "Dark Magiblot",
         0x1C1,
         "Template 394",
@@ -4544,7 +4542,7 @@ EnemyList = {
             Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
         )
     ),
-    EnemyEntry (
+    '395':EnemyEntry (
         "Nothing?",
         None,
         "Template 395",
@@ -4553,7 +4551,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '396':EnemyEntry (
         "Brobot Fist",
         None,
         "Template 396",
@@ -4562,7 +4560,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '397':EnemyEntry (
         "Mimi 2",
         0x1C7,
         "Template 397",
@@ -4571,7 +4569,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '398':EnemyEntry (
         "Bowser 2",
         0x1CA,
         "Template 398",
@@ -4580,7 +4578,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '399':EnemyEntry (
         "Dark Dimentio Cube",
         None,
         "Template 399",
@@ -4589,7 +4587,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '400':EnemyEntry (
         "Big Dark Dimentio Cube",
         None,
         "Template 400",
@@ -4598,7 +4596,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '401':EnemyEntry (
         "Giant Dark Dimentio Cube",
         None,
         "Template 401",
@@ -4607,7 +4605,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '402':EnemyEntry (
         "Rubee",
         None,
         "Template 402",
@@ -4616,7 +4614,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '403':EnemyEntry (
         "Nothing?",
         None,
         "Template 403",
@@ -4625,7 +4623,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '404':EnemyEntry (
         "Dimentio Attack",
         None,
         "Template 404",
@@ -4634,7 +4632,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '405':EnemyEntry (
         "Dimentio",
         0x1C6,
         "Template 405",
@@ -4643,7 +4641,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '406':EnemyEntry (
         "Dimentio",
         0x1C6,
         "Template 406",
@@ -4652,7 +4650,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '407':EnemyEntry (
         "Dimentio",
         0x1C6,
         "Template 407",
@@ -4661,7 +4659,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '408':EnemyEntry (
         "Stench",
         None,
         "Template 408",
@@ -4670,7 +4668,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '409':EnemyEntry (
         "Cherbil",
         0x210,
         "Template 409",
@@ -4682,7 +4680,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '410':EnemyEntry (
         "Cherbil's Projectile",
         None,
         "Template 410",
@@ -4691,7 +4689,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '411':EnemyEntry (
         "Poison Cherbil",
         0x212,
         "Template 411",
@@ -4703,7 +4701,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '412':EnemyEntry (
         "Poison Cherbil's Projectile",
         None,
         "Template 412",
@@ -4712,7 +4710,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '413':EnemyEntry (
         "Ice Cherbil",
         0x211,
         "Template 413",
@@ -4724,7 +4722,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '414':EnemyEntry (
         "Ice Cherbil's Projectile",
         None,
         "Template 414",
@@ -4733,7 +4731,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '415':EnemyEntry (
         "Dark Cherbil",
         0x217,
         "Template 415",
@@ -4745,7 +4743,7 @@ EnemyList = {
             Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
         )
     ),
-    EnemyEntry (
+    '416':EnemyEntry (
         "Dark Cherbil's Projectile",
         None,
         "Template 416",
@@ -4754,7 +4752,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '417':EnemyEntry (
         "Ice Dark Cherbil's Projectile",
         None,
         "Template 417",
@@ -4763,7 +4761,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '418':EnemyEntry (
         "Poison Dark Cherbil's Projectile",
         None,
         "Template 418",
@@ -4772,7 +4770,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '419':EnemyEntry (
         "Frackle",
         0x213,
         "Template 419",
@@ -4781,7 +4779,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '420':EnemyEntry (
         "Wrackle",
         0x214,
         "Template 420",
@@ -4790,7 +4788,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '421':EnemyEntry (
         "Nothing?",
         None,
         "Template 421",
@@ -4799,7 +4797,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '422':EnemyEntry (
         "Enemy Mario",
         None,
         "Template 422",
@@ -4808,7 +4806,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '423':EnemyEntry (
         "Glitchy Enemy Mario",
         None,
         "Template 423",
@@ -4817,7 +4815,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '424':EnemyEntry (
         "Enemy Luigi?",
         None,
         "Template 424",
@@ -4826,7 +4824,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '425':EnemyEntry (
         "Enemy Luigi?",
         None,
         "Template 425",
@@ -4835,7 +4833,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '426':EnemyEntry (
         "Sammer Guy",
         None,
         "Template 426",
@@ -4844,7 +4842,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '427':EnemyEntry (
         "Stationary Enemy Mario",
         None,
         "Template 427",
@@ -4853,7 +4851,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '428':EnemyEntry (
         "Stationary Enemy Luigi",
         None,
         "Template 428",
@@ -4862,7 +4860,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '429':EnemyEntry (
         "Stationary Enemy Peach",
         None,
         "Template 429",
@@ -4871,7 +4869,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '430':EnemyEntry (
         "Stationary Enemy Bowser",
         None,
         "Template 430",
@@ -4880,7 +4878,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '431':EnemyEntry (
         "Two Koopa Strikers at once",
         None,
         "Template 431",
@@ -4889,7 +4887,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '432':EnemyEntry (
         "Giant Shell",
         None,
         "Template 432",
@@ -4898,7 +4896,7 @@ EnemyList = {
             None
         )
     ),
-    EnemyEntry (
+    '433':EnemyEntry (
         "(No name)",
         None,
         "Template 433",
