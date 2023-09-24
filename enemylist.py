@@ -1,5 +1,5 @@
 import dolphin_memory_engine as dme
-from bighexlist import BigList
+from bighexlist import HexList
 from watches import game_region, game_revision
 
 class EnemyEntry():
@@ -54,7 +54,7 @@ def get_itemPercent(name: str) -> int:
     return int(dropies, drop["datatype"])
 
 ItemHexValues = {}
-for item in BigList:
+for item in HexList:
     ItemHexValues[item.name] = item.hex
 
 def get_hex_value(item_name):

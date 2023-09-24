@@ -1,7 +1,7 @@
 from enum import Enum
 
 from bighexlist import ListType, ItemType
-from enemylist import EnemyList, EnemyEntry
+from enemylist import EnemyList
 
 class Map():
     def __init__(self, MapName, MapArea, MapType, MapEnemies, MapItems, ShopItems, MapEntrance):
