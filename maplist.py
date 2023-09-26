@@ -239,7 +239,7 @@ MapList = [
             Enemy ("Poison Cherbil", EnemyList["441"], EnemyLocation (EnemyState.IN2D, 125, 275, 125))
         ),
         MapItems (
-            Item ("Super Shroom Shake", 0x51, ListType.ITEM, ItemType.CONSUMABLE, ItemPos (ItemState.GROUND, 1225, 150, 0))
+            Item ("Super Shroom Shake", 0x51, ListType.ITEM, ItemType.VANILLA, ItemPos (ItemState.GROUND, 1225, 150, 0))
         ),
         None,
         MapEntrance (
