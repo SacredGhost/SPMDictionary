@@ -34,20 +34,19 @@ class EntranceDest():
         self.curMap = curMap
         self.destinations = destinations
 
-    def add_destination(self, destMap, destEntrance):
-        self.destinations.append((destMap, destEntrance))
+    def add_destination(self, destMap, destEntrance, MinSequence):
+        self.destinations.append((destMap, destEntrance, MinSequence))
 
-    def remove_destination(self, destMap, destEntrance):
-        self.destinations.remove((destMap, destEntrance))
+    def remove_destination(self, destMap, destEntrance, MinSequence):
+        self.destinations.remove((destMap, destEntrance, MinSequence))
         
 class Entrance():
-    def __init__(self, EntranceName, EntranceType, EntranceLocation, EntranceDest, EntranceValid, MinSeqence):
+    def __init__(self, EntranceName, EntranceType, EntranceLocation, EntranceDest, EntranceValid):
         self.EntranceName = EntranceName
         self.EntranceType = EntranceType
         self.EntranceLocation = EntranceLocation
         self.EntranceDest = EntranceDest
         self.EntranceValid = EntranceValid
-        self.MinSeqence = MinSeqence
 
 
 class Location():
@@ -213,9 +212,9 @@ MapList = [
         None,
         None,
         MapEntrance (
-            Entrance ("default", EntranceType.DEFAULT, Location (-590, 0, 0), None, False, 0),
-            Entrance ("doa1_l", EntranceType.DOOR, Location (625, 0, 0), EntranceDest ("an1_01" [("an1_02", "doa1_l")]), True, 0),
-            Entrance ("doa7_l", EntranceType.DOOR, Location (-570, 0, 0), None, False, 0)
+            Entrance ("default", EntranceType.DEFAULT, Location (-590, 0, 0), None, False),
+            Entrance ("doa1_l", EntranceType.DOOR, Location (625, 0, 0), EntranceDest ("an1_01" [("an1_02", "doa1_l", 0)]), True),
+            Entrance ("doa7_l", EntranceType.DOOR, Location (-570, 0, 0), None, False)
         )
     ),
     Map (
@@ -243,16 +242,16 @@ MapList = [
         ),
         None,
         MapEntrance (
-            Entrance ("default", EntranceType.DEFAULT, Location (-1069, 0, 0), None, False, 0),
-            Entrance ("dokan_01", EntranceType.PIPE, Location (-1225, 225, 4), EntranceDest ("an1_02", [("an1_10", "dokan_01")]), True, 0),
-            Entrance ("dokan_10", EntranceType.PIPE, Location (750, 450, 4), EntranceDest ("an1_02", [("an1_02", "h_dokan_4")]), True, 0),
-            Entrance ("h_dokan_1", EntranceType.BACKPIPE, Location (343, 64, -160), EntranceDest ("an1_02", [("an1_02", "h_dokan_3")]), True, 0),
-            Entrance ("h_dokan_2", EntranceType.BACKPIPE, Location (563, 80, -160),  EntranceDest ("an1_02", [("an1_11", "dokan_01")]), True, 0),
-            Entrance ("h_dokan_3", EntranceType.BACKPIPE, Location (323, 352, -160), EntranceDest ("an1_02)", [("an1_02", "h_dokan_1")]), True, 0),
-            Entrance ("h_dokan_4", EntranceType.BACKPIPE, Location (664, 347, -160), EntranceDest ("an1_02", [("an1_02", "dokan_10")]), True, 0),
-            Entrance ("doa1_l", EntranceType.DOOR, Location (-1050, 0, 0), EntranceDest ("an1_02", [("an1_01",  "doa1_l")]), True, 0),
-            Entrance ("doa2_l", EntranceType.DOOR, Location (1100, 0, 0), EntranceDest ("an1_02", [("an1_03", "doa1_l")]), True, 0),
-            Entrance ("doa3_l", EntranceType.DOOR, Location (1100, 275, 0), EntranceDest  ("an1_02" [("an1_08", "doa1_l")]), True, 0)
+            Entrance ("default", EntranceType.DEFAULT, Location (-1069, 0, 0), None, False),
+            Entrance ("dokan_01", EntranceType.PIPE, Location (-1225, 225, 4), EntranceDest ("an1_02", [("an1_10", "dokan_01", 0)]), True),
+            Entrance ("dokan_10", EntranceType.PIPE, Location (750, 450, 4), EntranceDest ("an1_02", [("an1_02", "h_dokan_4", 0)]), True),
+            Entrance ("h_dokan_1", EntranceType.BACKPIPE, Location (343, 64, -160), EntranceDest ("an1_02", [("an1_02", "h_dokan_3", 0)]), True),
+            Entrance ("h_dokan_2", EntranceType.BACKPIPE, Location (563, 80, -160),  EntranceDest ("an1_02", [("an1_11", "dokan_01", 0)]), True),
+            Entrance ("h_dokan_3", EntranceType.BACKPIPE, Location (323, 352, -160), EntranceDest ("an1_02)", [("an1_02", "h_dokan_1", 0)]), True),
+            Entrance ("h_dokan_4", EntranceType.BACKPIPE, Location (664, 347, -160), EntranceDest ("an1_02", [("an1_02", "dokan_10", 0)]), True),
+            Entrance ("doa1_l", EntranceType.DOOR, Location (-1050, 0, 0), EntranceDest ("an1_02", [("an1_01",  "doa1_l", 0)]), True),
+            Entrance ("doa2_l", EntranceType.DOOR, Location (1100, 0, 0), EntranceDest ("an1_02", [("an1_03", "doa1_l", 0)]), True),
+            Entrance ("doa3_l", EntranceType.DOOR, Location (1100, 275, 0), EntranceDest  ("an1_02" [("an1_08", "doa1_l", 0)]), True)
         )
     ),
     Map (
@@ -263,7 +262,7 @@ MapList = [
         None,
         None,
         MapEntrance (
-            Entrance ("default", EntranceType.DEFAULT, Location (-1168, 2000, -150), None, False, 0),
+            Entrance ("default", EntranceType.DEFAULT, Location (-1168, 2000, -150), None, False),
         )
     ),
     Map (
@@ -274,22 +273,22 @@ MapList = [
         None,
         None,
         MapEntrance (
-            Entrance ("default", EntranceType.DEFAULT, Location (0, 1500, 0), None, False, 0),
-            Entrance ("dokan_1", EntranceType.PIPE, Location (835, 125, 250), EntranceDest ("mac_02", [("mac_01", "dokan_1")]), EntranceValid.BOOMER, 64),
-            Entrance ("dokan_2", EntranceType.PIPE, Location (750, 30, 1550), EntranceDest ("mac_02", [("mac_06", "dokan_1")]), True, 64),
-            Entrance ("dokan_3", EntranceType.RETURNPIPE, Location (600, 1500, -150), None, False, 0),
-            Entrance ("aodokan_1", EntranceType.PIPE, Location (-1100, 30, -100), EntranceDest ("mac_02", [("mac_05", "aodokan_1")]), EntranceValid.WELDERBERG, 65),
-            Entrance ("aodokan_2", EntranceType.PIPE, Location (1100, 30, -100), EntranceDest ("mac_02", [("mac_12", "aodokan_1")]), EntranceValid.WELDERBERG, 176),
-            Entrance ("doa6_l", EntranceType.CHAPTERDOOR, Location (-450, 1500, -200), EntranceDest ("mac_02", [("he1_01", "doa1_l"), ("he2_01", "default"), ("he3_01", "default"), ("he4_01", "default")]), True, 9),
-            Entrance ("doa8_l", EntranceType.CHAPTERDOOR, Location (-300, 1500, -200), EntranceDest ("mac_02", [("mi1_01", "doa2_l"), ("mi2_01", "default"), ("mi3_01", "default"), ("mi4_01", "default")]), True, 65),
-            Entrance ("doa9_l", EntranceType.CHAPTERDOOR, Location (-150, 1500, -200), EntranceDest ("mac_02", [("ta1_01", "doa3_l"), ("ta2_01", "default"), ("ta3_01", "default"), ("ta4_01", "default")]), True, 100),
-            Entrance ("doa10_l", EntranceType.CHAPTERDOOR, Location (0, 1500, -200), EntranceDest ("mac_02", [("sp1_01", "doa4_l"), ("sp2_01", "default"), ("sp3_01", "default"), ("sp4_01", "default")]), True, 134),
-            Entrance ("doa11_l", EntranceType.CHAPTERDOOR, Location (150, 1500, -200), EntranceDest ("mac_02", [("gn1_01", "doa5_l"), ("gn2_01", "default"), ("gn3_01", "default"), ("gn4_01", "default")]), True, 177),
-            Entrance ("doa12_l", EntranceType.CHAPTERDOOR, Location (300, 1500, -200), EntranceDest ("mac_02", [("wa1_01", "doa5_l"), ("wa1_27", "doa5_l")]), True, 222), # doa5_l is not a typo
-            Entrance ("doa11_l", EntranceType.CHAPTERDOOR, Location (150, 1500, -200), EntranceDest ("mac_02", [("an1_01", "doa7_l"), ("an2_01", "default"), ("an3_01", "default"), ("an4_01", "default")]), True, 303),
-            Entrance ("elv1", EntranceType.ELEVATOR, Location (-700, 0, -250), EntranceDest ("mac_02", [("mac_09", "elv1")]), True, 53),
-            Entrance ("elv2", EntranceType.ELEVATOR, Location (700, 0, -250), EntranceDest ("mac_02", [("mac_01", "elv1")]), True, 0),
-            Entrance ("dearu_ie", EntranceType.DEFAULT, Location (0, 0, 0), None, False, 0)
+            Entrance ("default", EntranceType.DEFAULT, Location (0, 1500, 0), None, False),
+            Entrance ("dokan_1", EntranceType.PIPE, Location (835, 125, 250), EntranceDest ("mac_02", [("mac_01", "dokan_1", 64)]), EntranceValid.BOOMER),
+            Entrance ("dokan_2", EntranceType.PIPE, Location (750, 30, 1550), EntranceDest ("mac_02", [("mac_06", "dokan_1", 64)]), True),
+            Entrance ("dokan_3", EntranceType.RETURNPIPE, Location (600, 1500, -150), None, False),
+            Entrance ("aodokan_1", EntranceType.PIPE, Location (-1100, 30, -100), EntranceDest ("mac_02", [("mac_05", "aodokan_1", 65)]), EntranceValid.WELDERBERG),
+            Entrance ("aodokan_2", EntranceType.PIPE, Location (1100, 30, -100), EntranceDest ("mac_02", [("mac_12", "aodokan_1", 176)]), EntranceValid.WELDERBERG),
+            Entrance ("doa6_l", EntranceType.CHAPTERDOOR, Location (-450, 1500, -200), EntranceDest ("mac_02", [("he1_01", "doa1_l", 9), ("he2_01", "default", 58), ("he3_01", "default", 58), ("he4_01", "default", 58)]), True),
+            Entrance ("doa8_l", EntranceType.CHAPTERDOOR, Location (-300, 1500, -200), EntranceDest ("mac_02", [("mi1_01", "doa2_l", 65), ("mi2_01", "default", 99), ("mi3_01", "default", 99), ("mi4_01", "default", 99)]), True),
+            Entrance ("doa9_l", EntranceType.CHAPTERDOOR, Location (-150, 1500, -200), EntranceDest ("mac_02", [("ta1_01", "doa3_l", 100), ("ta2_01", "default", 127), ("ta3_01", "default", 127), ("ta4_01", "default", 127)]), True),
+            Entrance ("doa10_l", EntranceType.CHAPTERDOOR, Location (0, 1500, -200), EntranceDest ("mac_02", [("sp1_01", "doa4_l", 134), ("sp2_01", "default", 175), ("sp3_01", "default", 175), ("sp4_01", "default", 175)]), True),
+            Entrance ("doa11_l", EntranceType.CHAPTERDOOR, Location (150, 1500, -200), EntranceDest ("mac_02", [("gn1_01", "doa5_l", 177), ("gn2_01", "default", 222), ("gn3_01", "default", 222), ("gn4_01", "default", 222)]), True),
+            Entrance ("doa12_l", EntranceType.CHAPTERDOOR, Location (300, 1500, -200), EntranceDest ("mac_02", [("wa1_01", "doa5_l", 222), ("wa1_27", "doa5_l", 281)]), True), # doa5_l is not a typo, also sequence is 224, but 222 is for people that do MCS
+            Entrance ("doa11_l", EntranceType.CHAPTERDOOR, Location (150, 1500, -200), EntranceDest ("mac_02", [("an1_01", "doa7_l", 303), ("an2_01", "default", 355), ("an3_01", "default", 355), ("an4_01", "default", 355)]), True),
+            Entrance ("elv1", EntranceType.ELEVATOR, Location (-700, 0, -250), EntranceDest ("mac_02", [("mac_09", "elv1", 53)]), True),
+            Entrance ("elv2", EntranceType.ELEVATOR, Location (700, 0, -250), EntranceDest ("mac_02", [("mac_01", "elv1", 0)]), True),
+            Entrance ("dearu_ie", EntranceType.DEFAULT, Location (0, 0, 0), None, False)
         )
     ),
 ]
