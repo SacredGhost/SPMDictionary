@@ -235,7 +235,7 @@ MapList = [
             Enemy ("Dry Bones", EnemyList["36"], EnemyLocation (EnemyState.IN3D, 950, 275, 0)),
             Enemy ("Lava Bubble", EnemyList["28"], EnemyLocation (EnemyState.IN2D, -500, -100, 0)),
             Enemy ("Frost Piranha", EnemyList["51"], EnemyLocation (EnemyState.IN2D, -250, 450, 0)),
-            Enemy ("Poison Cherbil", EnemyList["441"], EnemyLocation (EnemyState.IN2D, 125, 275, 125))
+            Enemy ("Poison Cherbil", EnemyList["411"], EnemyLocation (EnemyState.IN2D, 125, 275, 125))
         ),
         MapItems (
             Item ("Super Shroom Shake", 0x51, ListType.ITEM, ItemType.VANILLA, ItemPos (ItemState.GROUND, 1225, 150, 0))
