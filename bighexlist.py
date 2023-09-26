@@ -50,7 +50,7 @@ class ItemEntry:
         self.SellPrices = SellPrices
 
 class BuyPrice:
-    def __init__(self, flip_buy, flop_buy, yold_buy, crag_buy, space_buy, flip_itty, flop_itty, dot_itty, crag_itty, over_itty, card_shop, map_shop):
+    def __init__(self, flip_buy, flop_buy, yold_buy, crag_buy, space_buy, flip_itty, flop_itty, dot_itty, crag_itty, over_itty, cardbag_shop, card_shop, map_shop):
         self.flip_buy = flip_buy
         self.flop_buy = flop_buy
         self.yold_buy = yold_buy
@@ -61,6 +61,7 @@ class BuyPrice:
         self.dot_itty = dot_itty
         self.crag_itty = crag_itty
         self.over_itty = over_itty
+        self.cardbag_shop = cardbag_shop
         self.card_shop = card_shop
         self.map_shop = map_shop
 
@@ -81,7 +82,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -93,7 +94,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -105,7 +106,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -117,7 +118,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -129,7 +130,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -141,7 +142,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -153,7 +154,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -165,7 +166,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -177,7 +178,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -189,7 +190,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -201,7 +202,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -213,7 +214,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -225,7 +226,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -237,7 +238,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -249,7 +250,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -261,7 +262,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -273,7 +274,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -285,7 +286,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -297,7 +298,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -309,7 +310,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -321,7 +322,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -333,7 +334,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -345,7 +346,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -357,7 +358,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -369,7 +370,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -381,7 +382,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -393,7 +394,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -405,7 +406,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -417,7 +418,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -429,7 +430,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -441,7 +442,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -453,7 +454,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -465,7 +466,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -477,7 +478,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -489,7 +490,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -501,7 +502,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -513,7 +514,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -525,7 +526,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -537,7 +538,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -549,7 +550,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -561,7 +562,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -573,7 +574,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -585,7 +586,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -597,7 +598,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -609,7 +610,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -621,7 +622,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -633,7 +634,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -645,7 +646,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -657,7 +658,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -669,7 +670,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -681,7 +682,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -693,7 +694,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -705,7 +706,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -717,7 +718,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -729,7 +730,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -741,7 +742,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -753,7 +754,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -765,7 +766,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -777,7 +778,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -789,7 +790,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -801,7 +802,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -813,7 +814,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -825,7 +826,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -837,7 +838,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -849,7 +850,7 @@ HexList = [
       RecipeType.NONE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
   ItemEntry (
@@ -861,7 +862,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(20, None, 7, 15, None, None, None, None, None, None, None, None),
+      BuyPrice(20, None, 7, 15, None, None, None, None, None, None, None, None, None),
       SellPrice(10, 4, 8, None)
   ),
   ItemEntry (
@@ -873,7 +874,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(40, None, None, 25, None, None, None, None, None, None, None, None),
+      BuyPrice(40, None, None, 25, None, None, None, None, None, None, None, None, None),
       SellPrice(20, 30, 13, None)
   ),
   ItemEntry (
@@ -885,7 +886,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, 80, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, 80, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(40, 100, 40, None)
   ),
   ItemEntry (
@@ -897,7 +898,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(80, 150, 80, None)
   ),
   ItemEntry (
@@ -921,7 +922,7 @@ HexList = [
       RecipeType.USELESS,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(20, None, 8, None, None, None, None, None, None, None, None, None),
+      BuyPrice(20, None, 8, None, None, None, None, None, None, None, None, None, None),
       SellPrice(10, 4, 10, None)
   ),
   ItemEntry (
@@ -933,7 +934,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(100, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(100, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(90, 120, 115, None)
   ),
   ItemEntry (
@@ -945,7 +946,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, 300, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, 300, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(300, 375, 350, None)
   ),
   ItemEntry (
@@ -957,7 +958,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, 50, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, 50, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
   ItemEntry (
@@ -969,7 +970,7 @@ HexList = [
       RecipeType.USELESS,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(10, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(10, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(5, 13, 4, None)
   ),
   ItemEntry (
@@ -981,7 +982,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, 70, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, 70, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(35, 25, 35, None)
   ),
   ItemEntry (
@@ -993,7 +994,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, 30, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, 30, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 10, 15, None)
   ),
   ItemEntry (
@@ -1005,7 +1006,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, 88, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, 88, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(44, 44, 44, None)
   ),
   ItemEntry (
@@ -1017,7 +1018,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(10, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(10, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(5, 13, 15, None)
   ),
   ItemEntry (
@@ -1029,7 +1030,7 @@ HexList = [
       RecipeType.USELESS,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, 50, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, 50, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
   ItemEntry (
@@ -1041,7 +1042,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(30, None, 11, 25, None, None, None, None, None, None, None, None),
+      BuyPrice(30, None, 11, 25, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 11, 13, None)
   ),
   ItemEntry (
@@ -1053,7 +1054,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, 80, None, 100, None, None, None, None, None, None, None, None),
+      BuyPrice(None, 80, None, 100, None, None, None, None, None, None, None, None, None),
       SellPrice(40, 40, 50, None)
   ),
   ItemEntry (
@@ -1065,7 +1066,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, 300, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, 300, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(150, 150, 150, None)
   ),
   ItemEntry (
@@ -1077,7 +1078,7 @@ HexList = [
       RecipeType.USELESS,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(1, 1, 1, None)
   ),
   ItemEntry (
@@ -1089,7 +1090,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(100, None, 50, 75, None, None, None, None, None, None, None, None),
+      BuyPrice(100, None, 50, 75, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 25, 38, None)
   ),
   ItemEntry (
@@ -1101,7 +1102,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(30, None, 15, None, None, None, None, None, None, None, None, None),
+      BuyPrice(30, None, 15, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 8, 15, None)
   ),
   ItemEntry (
@@ -1113,7 +1114,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, 3, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, 3, None, None, None, None, None, None, None, None, None),
       SellPrice(5, 5, 2, None)
   ),
   ItemEntry (
@@ -1125,7 +1126,7 @@ HexList = [
       RecipeType.USELESS,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, 10, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, 20, None, None),
       SellPrice(10, 10, 10, None)
   ),
   ItemEntry (
@@ -1137,7 +1138,7 @@ HexList = [
       RecipeType.USELESS,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, 100, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, 100, None, None),
       SellPrice(50, 50, 50, None)
   ),
   ItemEntry (
@@ -1149,7 +1150,7 @@ HexList = [
       RecipeType.USELESS,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(400, 400, 400, None)
   ),
   ItemEntry (
@@ -1161,7 +1162,7 @@ HexList = [
       RecipeType.USELESS,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(400, 400, 400, None)
   ),
   ItemEntry (
@@ -1173,7 +1174,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 15, 15, None)
   ),
   ItemEntry (
@@ -1185,7 +1186,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 15, 15, None)
   ),
   ItemEntry (
@@ -1197,7 +1198,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 15, 15, None)
   ),
   ItemEntry (
@@ -1209,7 +1210,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 15, 15, None)
   ),
   ItemEntry (
@@ -1221,7 +1222,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(1, 1, 1, None)
   ),
   ItemEntry (
@@ -1233,7 +1234,7 @@ HexList = [
       RecipeType.USELESS,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(50, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(50, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
   ItemEntry (
@@ -1245,7 +1246,7 @@ HexList = [
       RecipeType.USELESS,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, 500, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, 500, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(250, 250, 250, None)
   ),
   ItemEntry (
@@ -1257,7 +1258,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(2, 2, 2, None)
   ),
   ItemEntry (
@@ -1269,7 +1270,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(40, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(40, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(20, 20, 20, None)
   ),
   ItemEntry (
@@ -1281,7 +1282,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, 25, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, 25, None, None, None, None, None),
       SellPrice(13, 13, 13, None)
   ),
   ItemEntry (
@@ -1293,7 +1294,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, 20, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, 20, None, None, None, None),
       SellPrice(10, 10, 10, None)
   ),
   ItemEntry (
@@ -1305,7 +1306,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, 22, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, 22, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 11, None)
   ),
   ItemEntry (
@@ -1317,7 +1318,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(45, 45, 45, None)
   ),
   ItemEntry (
@@ -1329,7 +1330,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(5, 5, 5, None)
   ),
   ItemEntry (
@@ -1341,7 +1342,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, 25, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, 25, None, None, None, None, None, None, None),
       SellPrice(13, 13, 13, None)
   ),
   ItemEntry (
@@ -1353,7 +1354,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(150, 150, 150, None)
   ),
   ItemEntry (
@@ -1365,7 +1366,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, 18, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, 18, None, None, None, None, None),
       SellPrice(9, 9, 9, None)
   ),
   ItemEntry (
@@ -1377,7 +1378,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, 30, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, 30, None, None, None, None, None, None),
       SellPrice(15, 15, 15, None)
   ),
   ItemEntry (
@@ -1389,7 +1390,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, 20, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, 20, None, None, None),
       SellPrice(10, 10, 10, None)
   ),
   ItemEntry (
@@ -1401,7 +1402,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 15, 15, None)
   ),
   ItemEntry (
@@ -1413,7 +1414,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
   ItemEntry (
@@ -1425,7 +1426,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(8, 8, 8, None)
   ),
   ItemEntry (
@@ -1437,7 +1438,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(30, 30, 30, None)
   ),
   ItemEntry (
@@ -1449,7 +1450,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, 20, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, 20, None, None, None, None, None),
       SellPrice(10, 10, 10, None)
   ),
   ItemEntry (
@@ -1461,7 +1462,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, 15, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, 15, None, None, None, None, None, None),
       SellPrice(8, 8, 8, None)
   ),
   ItemEntry (
@@ -1473,7 +1474,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, 20, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, 20, None, None, None, None, None, None, None),
       SellPrice(10, 10, 10, None)
   ),
   ItemEntry (
@@ -1485,7 +1486,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, 25, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, 25, None, None, None, None, None, None, None),
       SellPrice(18, 18, 18, None)
   ),
   ItemEntry (
@@ -1497,7 +1498,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, 35, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, 35, None, None, None, None, None, None),
       SellPrice(13, 13, 13, None)
   ),
   ItemEntry (
@@ -1509,7 +1510,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, 20, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, 20, None, None, None, None),
       SellPrice(10, 10, 10, None)
   ),
   ItemEntry (
@@ -1521,7 +1522,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, 10, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, 10, None, None, None, None, None, None, None, None),
       SellPrice(5, 5, 5, None)
   ),
   ItemEntry (
@@ -1533,7 +1534,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, 50, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, 50, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
   ItemEntry (
@@ -1545,7 +1546,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, 100, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, 100, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
   ItemEntry (
@@ -1557,7 +1558,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
   ItemEntry (
@@ -1569,7 +1570,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(35, 35, 35, None)
   ),
   ItemEntry (
@@ -1581,7 +1582,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(30, 30, 30, None)
   ),
   ItemEntry (
@@ -1593,7 +1594,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(35, 35, 35, None)
   ),
   ItemEntry (
@@ -1605,7 +1606,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(96, 96, 96, None)
   ),
   ItemEntry (
@@ -1617,7 +1618,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(180, 180, 180, None)
   ),
   ItemEntry (
@@ -1629,7 +1630,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(58, 58, 58, None)
   ),
   ItemEntry (
@@ -1641,7 +1642,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(118, 118, 118, None)
   ),
   ItemEntry (
@@ -1653,7 +1654,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(118, 118, 118, None)
   ),
   ItemEntry (
@@ -1665,7 +1666,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(65, 65, 65, None)
   ),
   ItemEntry (
@@ -1677,7 +1678,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(125, 125, 125, None)
   ),
   ItemEntry (
@@ -1689,7 +1690,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(55, 55, 55, None)
   ),
   ItemEntry (
@@ -1701,7 +1702,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(75, 75, 75, None)
   ),
   ItemEntry (
@@ -1713,7 +1714,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
   ItemEntry (
@@ -1725,7 +1726,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
   ItemEntry (
@@ -1737,7 +1738,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
   ItemEntry (
@@ -1749,7 +1750,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(30, 30, 30, None)
   ),
   ItemEntry (
@@ -1761,7 +1762,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(40, 40, 40, None)
   ),
   ItemEntry (
@@ -1773,7 +1774,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(55, 55, 55, None)
   ),
   ItemEntry (
@@ -1785,7 +1786,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(27, 27, 27, None)
   ),
   ItemEntry (
@@ -1797,7 +1798,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(55, 55, 55, None)
   ),
   ItemEntry (
@@ -1809,7 +1810,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(75, 75, 75, None)
   ),
   ItemEntry (
@@ -1821,7 +1822,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(150, 150, 150, None)
   ),
   ItemEntry (
@@ -1833,7 +1834,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(70, 70, 70, None)
   ),
   ItemEntry (
@@ -1845,7 +1846,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(43, 43, 43, None)
   ),
   ItemEntry (
@@ -1857,7 +1858,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(5, 5, 5, None)
   ),
   ItemEntry (
@@ -1869,7 +1870,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(5, 5, 5, None)
   ),
   ItemEntry (
@@ -1881,7 +1882,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(24, 24, 24, None)
   ),
   ItemEntry (
@@ -1893,7 +1894,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(82, 82, 82, None)
   ),
   ItemEntry (
@@ -1905,7 +1906,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(18, 18, 18, None)
   ),
   ItemEntry (
@@ -1917,7 +1918,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(9, 9, 9, None)
   ),
   ItemEntry (
@@ -1929,7 +1930,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(35, 35, 35, None)
   ),
   ItemEntry (
@@ -1941,7 +1942,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
   ItemEntry (
@@ -1953,7 +1954,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(63, 63, 63, None)
   ),
   ItemEntry (
@@ -1965,7 +1966,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(63, 63, 63, None)
   ),
   ItemEntry (
@@ -1977,7 +1978,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(80, 80, 80, None)
   ),
   ItemEntry (
@@ -1989,7 +1990,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(30, 30, 30, None)
   ),
   ItemEntry (
@@ -2001,7 +2002,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
   ItemEntry (
@@ -2013,7 +2014,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(66, 66, 66, None)
   ),
   ItemEntry (
@@ -2025,7 +2026,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
   ItemEntry (
@@ -2037,7 +2038,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(205, 205, 205, None)
   ),
   ItemEntry (
@@ -2049,7 +2050,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
   ItemEntry (
@@ -2061,7 +2062,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(23, 23, 23, None)
   ),
   ItemEntry (
@@ -2073,7 +2074,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, 120, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, 120, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
   ItemEntry (
@@ -2085,7 +2086,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(28, 28, 28, None)
   ),
   ItemEntry (
@@ -2097,7 +2098,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(100, 100, 100, None)
   ),
   ItemEntry (
@@ -2109,7 +2110,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(160, 160, 160, None)
   ),
   ItemEntry (
@@ -2121,7 +2122,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(225, 225, 225, None)
   ),
   ItemEntry (
@@ -2133,7 +2134,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
   ItemEntry (
@@ -2145,7 +2146,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(40, 40, 40, None)
   ),
   ItemEntry (
@@ -2157,7 +2158,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(3, 3, 3, None)
   ),
   ItemEntry (
@@ -2169,7 +2170,7 @@ HexList = [
       RecipeType.GROUND,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(2, 2, 2, None)
   ),
   ItemEntry (
@@ -2181,7 +2182,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(1, 1, 1, None)
   ),
   ItemEntry (
@@ -2193,7 +2194,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(1, 1, 1, None)
   ),
   ItemEntry (
@@ -2205,7 +2206,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
   ItemEntry (
@@ -2217,7 +2218,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(33, 33, 33, None)
   ),
   ItemEntry (
@@ -2229,7 +2230,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(20, 20, 20, None)
   ),
   ItemEntry (
@@ -2241,7 +2242,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(130, 130, 130, None)
   ),
   ItemEntry (
@@ -2253,7 +2254,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
   ItemEntry (
@@ -2265,7 +2266,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(45, 45, 45, None)
   ),
   ItemEntry (
@@ -2277,7 +2278,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(40, 40, 40, None)
   ),
   ItemEntry (
@@ -2289,7 +2290,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(65, 65, 65, None)
   ),
   ItemEntry (
@@ -2301,7 +2302,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(10, 10, 10, None)
   ),
   ItemEntry (
@@ -2313,7 +2314,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
   ItemEntry (
@@ -2325,7 +2326,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(75, 75, 75, None)
   ),
   ItemEntry (
@@ -2337,7 +2338,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
   ItemEntry (
@@ -2349,7 +2350,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
   ItemEntry (
@@ -2361,7 +2362,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(200, 200, 200, None)
   ),
   ItemEntry (
@@ -2373,7 +2374,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
   ItemEntry (
@@ -2385,7 +2386,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(75, 75, 75, None)
   ),
   ItemEntry (
@@ -2397,7 +2398,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(20, 20, 20, None)
   ),
   ItemEntry (
@@ -2409,7 +2410,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
   ItemEntry (
@@ -2421,7 +2422,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
   ItemEntry (
@@ -2433,7 +2434,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(55, 55, 55, None)
   ),
   ItemEntry (
@@ -2445,7 +2446,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
   ItemEntry (
@@ -2457,7 +2458,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(20, 20, 20, None)
   ),
   ItemEntry (
@@ -2469,7 +2470,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(40, 40, 40, None)
   ),
   ItemEntry (
@@ -2481,7 +2482,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(28, 28, 28, None)
   ),
   ItemEntry (
@@ -2493,7 +2494,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(4, 4, 4, None)
   ),
   ItemEntry (
@@ -2505,7 +2506,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(90, 90, 90, None)
   ),
   ItemEntry (
@@ -2517,7 +2518,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(65, 65, 65, None)
   ),
   ItemEntry (
@@ -2529,7 +2530,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(55, 55, 55, None)
   ),
   ItemEntry (
@@ -2541,7 +2542,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
   ItemEntry (
@@ -2553,7 +2554,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
   ItemEntry (
@@ -2565,7 +2566,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
   ItemEntry (
@@ -2577,7 +2578,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(45, 45, 45, None)
   ),
   ItemEntry (
@@ -2589,7 +2590,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(55, 55, 55, None)
   ),
   ItemEntry (
@@ -2601,7 +2602,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(23, 23, 23, None)
   ),
   ItemEntry (
@@ -2613,7 +2614,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(75, 75, 75, None)
   ),
   ItemEntry (
@@ -2625,7 +2626,7 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
   ItemEntry (
@@ -2637,7 +2638,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.YES,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
   ItemEntry (
@@ -2649,7 +2650,7 @@ HexList = [
       RecipeType.SINGLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(83, 83, 83, None)
   ),
   ItemEntry (
@@ -2661,8 +2662,800 @@ HexList = [
       RecipeType.DOUBLE,
       MysteryBox.NO,
       TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None),
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(83, 83, 83, None)
+  ),
+  ItemEntry (
+      "Mario",
+      0xD8,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Peach",
+      0xD9,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Bowser",
+      0xDA,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Luigi",
+      0xDB,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Tippi",
+      0xDC,
+      ListType.DEBUG,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Thoreau",
+      0xDD,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Boomer",
+      0xDE,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Slim",
+      0xDF,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Thudley",
+      0xE0,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Carrie",
+      0xE1,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Fleep",
+      0xE2,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Cudge",
+      0xE3,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Dottie",
+      0xE4,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Piccolo",
+      0xE5,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Barry",
+      0xE6,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Dashell",
+      0xE7,
+      ListType.PARTY,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "undefined 0xE8",
+      0xE8,
+      ListType.DEBUG,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Card Bag",
+      0xE9,
+      ListType.DEBUG,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, 10, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 1",
+      0xEA,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 20),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 2",
+      0xEB,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 60),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 3",
+      0xEC,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 30),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 4",
+      0xED,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 110),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 5",
+      0xEE,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 80),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 6",
+      0xEF,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 20),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 7",
+      0xF0,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 50),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 8",
+      0xF1,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 70),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 9",
+      0xF2,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 40),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 10",
+      0xF3,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 40),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 11",
+      0xF4,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 70),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 12",
+      0xF5,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 20),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 13",
+      0xF6,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 50),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 14",
+      0xF7,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 50),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 15",
+      0xF8,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 100),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 16",
+      0xF9,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 30),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 17",
+      0xFA,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 50),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 18",
+      0xFB,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 10),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 19",
+      0xFC,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 90),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 20",
+      0xFD,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 80),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 21",
+      0xFE,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 180),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 22",
+      0xFF,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 130),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 23",
+      0x100,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 230),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 24",
+      0x101,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 40),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 25",
+      0x102,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 30),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 26",
+      0x103,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 70),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 27",
+      0x104,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 80),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 28",
+      0x105,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 90),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 29",
+      0x106,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 80),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 30",
+      0x107,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 120),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 31",
+      0x108,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 10),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 32",
+      0x109,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 20),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 33",
+      0x10A,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 110),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 34",
+      0x10B,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 70),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 35",
+      0x10C,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 60),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 36",
+      0x10D,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 140),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 37",
+      0x10E,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 60),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 38",
+      0x10F,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 70),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 39",
+      0x110,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 80),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 40",
+      0x111,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 80),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 41",
+      0x112,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 70),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 42",
+      0x113,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.ITEM,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 150),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 43",
+      0x114,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 90),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 44",
+      0x115,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 100),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 45",
+      0x116,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 190),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 46",
+      0x117,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 160),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 47",
+      0x118,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 200),
+      SellPrice(None, None, None, None)
+  ),
+  ItemEntry (
+      "Map 48",
+      0x119,
+      ListType.MAP,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.CARD,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 90),
+      SellPrice(None, None, None, None)
   ),
 ]
 
