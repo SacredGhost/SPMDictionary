@@ -1,6 +1,6 @@
 from enum import Enum
 
-from bighexlist import ListType, ItemType
+from bighexlist import HexList, ListType, ItemType
 from enemylist import EnemyList
 
 class Map():
@@ -68,6 +68,11 @@ class ItemState(Enum):
     CHEST = 2
     ENEMY = 3
     MAP = 4
+
+class MapMatch():
+    def __init__(self, MapName, MapHexID):
+        self.MapName = MapName
+        self.MapHexID = MapHexID
 
 class MapType(Enum):
     INVALID = 0
@@ -209,7 +214,9 @@ MapList = [
         "an1",
         MapType.MAIN,
         None,
-        None,
+        MapItems(
+            Item("Jaydes Card", 0x206, ListType.CARD, ItemType.CARD, ItemPos (ItemState.MAP, 0, 100, 0))
+        ),
         None,
         MapEntrance (
             Entrance ("default", EntranceType.DEFAULT, Location (-590, 0, 0), None, False),

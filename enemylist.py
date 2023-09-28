@@ -1,4 +1,3 @@
-import dolphin_memory_engine as dme
 from bighexlist import HexList
 from watches import game_region, game_revision
 
