@@ -408,7 +408,7 @@ MapList = {
         None,
         None,
         MapEntrance (
-            Entrance ("default", EntranceType.DEFAULT, Location (0, 1500, 0), None, False),
+            Entrance ("default", EntranceType.DEFAULT, Location (0, 1500, 0), None, EntranceKey (False, False, None)),
             Entrance ("dokan_1", EntranceType.PIPE, Location (835, 125, 250), EntranceDest ("mac_02", [("mac_01", "dokan_1", 64)]), EntranceKey (True, True, HexList["Boomer"])),
             Entrance ("dokan_2", EntranceType.PIPE, Location (750, 30, 1550), EntranceDest ("mac_02", [("mac_06", "dokan_1", 64)]), EntranceKey (True, False, None)),
             Entrance ("dokan_3", EntranceType.RETURNPIPE, Location (600, 1500, -150), None, EntranceKey (False, False, None)),
