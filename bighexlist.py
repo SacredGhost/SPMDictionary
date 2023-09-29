@@ -283,7 +283,29 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  'Fort Key':ItemEntry (
+  'Fort Key 0x13':ItemEntry (
+      0x13,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Fort Key 0x14':ItemEntry (
+      0x14,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Fort Key 0x15':ItemEntry (
       0x15,
       ListType.ITEM,
       ItemType.KEY,
@@ -294,7 +316,18 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  'Goldfish Bowl':ItemEntry (
+  'Goldfish Bowl 0x16':ItemEntry (
+      0x16,
+      ListType.DEBUG,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Goldfish Bowl 0x17':ItemEntry ( # Unused in game
       0x17,
       ListType.DEBUG,
       ItemType.IMPORTANT,
@@ -327,7 +360,40 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  'Dimension Key':ItemEntry (
+  'Door Key 0x1A':ItemEntry (
+      0x1A,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Dimension Key 0x1B':ItemEntry (
+      0x1B,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Dimension Key 0x1C':ItemEntry (
+      0x1C,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Dimension Key 0x1D':ItemEntry (
       0x1D,
       ListType.ITEM,
       ItemType.KEY,
@@ -371,7 +437,18 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  'Cave Key':ItemEntry (
+  'Cave Key 0x21':ItemEntry (
+      0x21,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Cave Key 0x22':ItemEntry (
       0x22,
       ListType.ITEM,
       ItemType.KEY,
@@ -404,10 +481,43 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
+  'Door Key 0x25':ItemEntry (
+      0x25,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Door Key 0x26':ItemEntry (
+      0x26,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
   'Diet Book':ItemEntry (
       0x27,
       ListType.ITEM,
       ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Door Key 0x28':ItemEntry (
+      0x28,
+      ListType.ITEM,
+      ItemType.KEY,
       CardType.NONE,
       RecipeType.NONE,
       MysteryBox.NO,
@@ -448,8 +558,8 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  'Pit Key':ItemEntry (
-      0x30,
+  'Pit Key 0x2C':ItemEntry (
+      0x2C,
       ListType.ITEM,
       ItemType.KEY,
       CardType.NONE,
@@ -483,6 +593,28 @@ HexList = {
   ),
   'Old Key':ItemEntry (
       0x2F,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Pit Key 0x30':ItemEntry (
+      0x30,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Door Key 0x31':ItemEntry (
+      0x31,
       ListType.ITEM,
       ItemType.KEY,
       CardType.NONE,
