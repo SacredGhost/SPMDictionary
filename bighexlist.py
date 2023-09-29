@@ -75,15 +75,15 @@ class SellPrice:
 
 HexList = {
   'NULL':ItemEntry (
-    0x0,
-    ListType.DEBUG,
-    ItemType.NONE,
-    CardType.NONE,
-    RecipeType.NONE,
-    MysteryBox.NO,
-    TMapType.NONE,
-    BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-    SellPrice(None, None, None, None)
+      0x0,
+      ListType.DEBUG,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
   ),
   'undefined 0x1':ItemEntry (
       0x1,

@@ -4,9 +4,7 @@ from bighexlist import HexList
 from enemylist import EnemyList
 
 class Map():
-    def __init__(self, MapName, MapArea, MapType, MapEnemies, MapItems, ShopItems, MapEntrance):
-        self.MapName = MapName
-        self.MapArea = MapArea
+    def __init__(self, MapType, MapEnemies, MapItems, ShopItems, MapEntrance):
         self.MapType = MapType
         self.MapEnemies = MapEnemies
         self.MapItems = MapItems
@@ -151,64 +149,50 @@ class MapShop():
         self.ShopID = ShopID
         self.ShopLocation = ShopLocation
 
-MapList = [
-    Map (
-        "aa1_01",
-        "aa1",
+MapList = {
+    'aa1_01':Map (
         MapType.INVALID,
         None,
         None,
         None,
         None
     ),
-    Map (
-        "aa1_02",
-        "aa1",
+    'aa1_02':Map (
         MapType.INVALID,
         None,
         None,
         None,
         None
     ),
-    Map (
-        "aa2_01",
-        "aa2",
+    'aa2_01':Map (
         MapType.INVALID,
         None,
         None,
         None,
         None
     ),
-    Map (
-        "aa2_02",
-        "aa2",
+    'aa2_02':Map (
         MapType.INVALID,
         None,
         None,
         None,
         None
     ),
-    Map (
-        "aa3_01",
-        "aa3",
+    'aa3_01':Map (
         MapType.INVALID,
         None,
         None,
         None,
         None
     ),
-    Map (
-        "aa4_01",
-        "aa4",
+    'aa4_01':Map (
         MapType.INVALID,
         None,
         None,
         None,
         None
     ),
-    Map (
-        "an1_01",
-        "an1",
+    'an1_01':Map (
         MapType.MAIN,
         None,
         MapItems(
@@ -221,9 +205,7 @@ MapList = [
             Entrance ("doa7_l", EntranceType.DOOR, Location (-570, 0, 0), None, False)
         )
     ),
-    Map (
-        "an1_02",
-        "an1",
+    'an1_02':Map (
         MapType.MAIN,
         MapEnemies (
             Enemy ("Dry Bones", EnemyList["36"], EnemyLocation (EnemyState.IN2D, -362, 0, 137)),
@@ -258,9 +240,7 @@ MapList = [
             Entrance ("doa3_l", EntranceType.DOOR, Location (1100, 275, 0), EntranceDest  ("an1_02" [("an1_08", "doa1_l", 0)]), True)
         )
     ),
-    Map (
-        "an1_03",
-        "an1",
+    'an1_03':Map (
         MapType.MAIN,
         None,
         None,
@@ -269,9 +249,7 @@ MapList = [
             Entrance ("default", EntranceType.DEFAULT, Location (-1168, 2000, -150), None, False),
         )
     ),
-    Map (
-        "mac_02",
-        "mac",
+    'mac_02':Map (
         MapType.MAIN,
         None,
         None,
@@ -295,4 +273,4 @@ MapList = [
             Entrance ("dearu_ie", EntranceType.DEFAULT, Location (0, 0, 0), None, False)
         )
     ),
-]
+}

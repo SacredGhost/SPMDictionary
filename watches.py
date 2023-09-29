@@ -114,19 +114,19 @@ class BitFieldMemoryWatch(MemoryWatch):
 
 dme.hook()
 
-game_region = chr(dme.read_byte(0x80000003))
-game_revision = dme.read_byte(0x80000007)
+# game_region = chr(dme.read_byte(0x80000003))
+# game_revision = dme.read_byte(0x80000007)
 
 if not dme.is_hooked():
     print(f'{"[" + "Console" + "]":>15} Not hooked to an instance of SPM, defaulting to us0.')
-    game_region = chr('E')
+    game_region = 'E'
     game_revision = 0
-    while not dme.is_hooked():
-        time.sleep(5)
-        dme.hook()
-    print(f'{"[" + "Console" + "]":>15} Hooked... Changing Regional Differences')
-    game_region = chr(dme.read_byte(0x80000003))
-    game_revision = dme.read_byte(0x80000007)
+    # while not dme.is_hooked():
+    #     time.sleep(5)
+    #     dme.hook()
+    # print(f'{"[" + "Console" + "]":>15} Hooked... Changing Regional Differences')
+    # game_region = chr(dme.read_byte(0x80000003))
+    # game_revision = dme.read_byte(0x80000007)
 else: 
     print(f'{"[" + "Console" + "]":>15} Hooked... Changing Regional Differences')
     game_region = chr(dme.read_byte(0x80000003))
