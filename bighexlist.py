@@ -195,6 +195,17 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
+  'undefined 0xB':ItemEntry (
+      0xB,
+      ListType.DEBUG,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
   'undefined 0xC':ItemEntry (
       0xC,
       ListType.DEBUG,
