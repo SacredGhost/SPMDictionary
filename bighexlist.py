@@ -330,7 +330,7 @@ HexList = {
   'Goldfish Bowl 0x17':ItemEntry ( # Unused in game
       0x17,
       ListType.ITEM,
-      ItemType.IMPORTANT,
+      ItemType.DEBUG,
       CardType.NONE,
       RecipeType.NONE,
       MysteryBox.NO,
