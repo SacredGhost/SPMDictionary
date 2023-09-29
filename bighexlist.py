@@ -318,7 +318,7 @@ HexList = {
   ),
   'Goldfish Bowl 0x16':ItemEntry (
       0x16,
-      ListType.DEBUG,
+      ListType.ITEM,
       ItemType.IMPORTANT,
       CardType.NONE,
       RecipeType.NONE,
@@ -329,8 +329,8 @@ HexList = {
   ),
   'Goldfish Bowl 0x17':ItemEntry ( # Unused in game
       0x17,
-      ListType.ITEM,
-      ItemType.DEBUG,
+      ListType.DEBUG,
+      ItemType.IMPORTANT,
       CardType.NONE,
       RecipeType.NONE,
       MysteryBox.NO,
