@@ -109,8 +109,7 @@ class MapItems():
             return None
 
 class Item():
-    def __init__(self, ItemName, ItemEntry, ItemLocation):
-        self.ItemName = ItemName
+    def __init__(self, ItemEntry, ItemLocation):
         self.ItemEntry = ItemEntry
         self.ItemLocation = ItemLocation
 
@@ -213,7 +212,7 @@ MapList = [
         MapType.MAIN,
         None,
         MapItems(
-            Item("Jaydes Card", HexList["518"], ItemPos (ItemState.MAP, 0, 100, 0))
+            Item(HexList["Jaydes Card"], ItemPos (ItemState.MAP, 0, 100, 0))
         ),
         None,
         MapEntrance (
@@ -243,7 +242,7 @@ MapList = [
             Enemy ("Poison Cherbil", EnemyList["411"], EnemyLocation (EnemyState.IN2D, 125, 275, 125))
         ),
         MapItems (
-            Item ("Super Shroom Shake", HexList["81"], ItemPos (ItemState.GROUND, 1225, 150, 0))
+            Item (HexList["Super Shroom Shake"], ItemPos (ItemState.GROUND, 1225, 150, 0))
         ),
         None,
         MapEntrance (

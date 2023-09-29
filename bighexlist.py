@@ -39,8 +39,7 @@ class TMapType(Enum):
     CARD = 2
 
 class ItemEntry:
-    def __init__(self, name, hex, ListType, ItemType, CardType, RecipeType, MysteryBox, TMapType, BuyPrices, SellPrices):
-        self.name = name
+    def __init__(self, hex, ListType, ItemType, CardType, RecipeType, MysteryBox, TMapType, BuyPrices, SellPrices):
         self.hex = hex
         self.ListType = ListType
         self.ItemType = ItemType
@@ -75,20 +74,18 @@ class SellPrice:
         self.card_sell = card_sell
 
 HexList = {
-  '0':ItemEntry (
-      "NULL",
-      0x0,
-      ListType.DEBUG,
-      ItemType.NONE,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
+  'NULL':ItemEntry (
+    0x0,
+    ListType.DEBUG,
+    ItemType.NONE,
+    CardType.NONE,
+    RecipeType.NONE,
+    MysteryBox.NO,
+    TMapType.NONE,
+    BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+    SellPrice(None, None, None, None)
   ),
-  '1':ItemEntry (
-      "undefined 0x1",
+  'undefined 0x1':ItemEntry (
       0x1,
       ListType.DEBUG,
       ItemType.NONE,
@@ -99,8 +96,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '2':ItemEntry (
-      "undefined 0x2",
+  'undefined 0x2':ItemEntry (
       0x2,
       ListType.DEBUG,
       ItemType.NONE,
@@ -111,8 +107,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '3':ItemEntry (
-      "undefined 0x3",
+  'undefined 0x3':ItemEntry (
       0x3,
       ListType.DEBUG,
       ItemType.NONE,
@@ -123,8 +118,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '4':ItemEntry (
-      "undefined 0x4",
+  'undefined 0x4':ItemEntry (
       0x4,
       ListType.DEBUG,
       ItemType.NONE,
@@ -135,8 +129,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '5':ItemEntry (
-      "undefined 0x5",
+  'undefined 0x5':ItemEntry (
       0x5,
       ListType.DEBUG,
       ItemType.NONE,
@@ -147,8 +140,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '6':ItemEntry (
-      "undefined 0x6",
+  'undefined 0x6':ItemEntry (
       0x6,
       ListType.DEBUG,
       ItemType.NONE,
@@ -159,8 +151,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '7':ItemEntry (
-      "undefined 0x7",
+  'undefined 0x7':ItemEntry (
       0x7,
       ListType.DEBUG,
       ItemType.NONE,
@@ -171,8 +162,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '8':ItemEntry (
-      "undefined 0x8",
+  'undefined 0x8':ItemEntry (
       0x8,
       ListType.DEBUG,
       ItemType.NONE,
@@ -183,8 +173,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '9':ItemEntry (
-      "undefined 0x9",
+  'undefined 0x9':ItemEntry (
       0x9,
       ListType.DEBUG,
       ItemType.NONE,
@@ -195,8 +184,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '10':ItemEntry (
-      "undefined 0xA",
+  'undefined 0xA':ItemEntry (
       0xA,
       ListType.DEBUG,
       ItemType.NONE,
@@ -207,20 +195,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '11':ItemEntry (
-      "undefined 0xC",
-      0xB,
-      ListType.DEBUG,
-      ItemType.NONE,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '12':ItemEntry (
-      "undefined 0xC",
+  'undefined 0xC':ItemEntry (
       0xC,
       ListType.DEBUG,
       ItemType.NONE,
@@ -231,8 +206,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '13':ItemEntry (
-      "undefined 0xD",
+  'undefined 0xD':ItemEntry (
       0xD,
       ListType.DEBUG,
       ItemType.NONE,
@@ -243,8 +217,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '14':ItemEntry (
-      "undefined 0xE",
+  'undefined 0xE':ItemEntry (
       0xE,
       ListType.DEBUG,
       ItemType.NONE,
@@ -255,8 +228,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '15':ItemEntry (
-      "undefined 0xF",
+  'undefined 0xF':ItemEntry (
       0xF,
       ListType.DEBUG,
       ItemType.NONE,
@@ -267,8 +239,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '16':ItemEntry (
-      "Ruins Key",
+  'Ruins Key':ItemEntry (
       0x10,
       ListType.ITEM,
       ItemType.KEY,
@@ -279,392 +250,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '17':ItemEntry (
-      "Door Key",
-      0x11,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '18':ItemEntry (
-      "House Key",
-      0x12,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '19':ItemEntry (
-      "Fort Key",
-      0x13,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '20':ItemEntry (
-      "Fort Key",
-      0x14,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '21':ItemEntry (
-      "Fort Key",
-      0x15,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '22':ItemEntry (
-      "Goldfish Bowl",
-      0x16,
-      ListType.ITEM,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '23':ItemEntry (
-      "Goldfish Bowl", # Unused in game
-      0x17,
-      ListType.DEBUG,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '24':ItemEntry (
-      "Helmet",
-      0x18,
-      ListType.ITEM,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '25':ItemEntry (
-      "Ancient Clue",
-      0x19,
-      ListType.ITEM,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '26':ItemEntry (
-      "Door Key",
-      0x1A,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '27':ItemEntry (
-      "Dimension Key",
-      0x1B,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '28':ItemEntry (
-      "Dimension Key",
-      0x1C,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '29':ItemEntry (
-      "Dimension Key",
-      0x1D,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '30':ItemEntry (
-      "Water Tablet",
-      0x1E,
-      ListType.ITEM,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '31':ItemEntry (
-      "Stone Tablet",
-      0x1F,
-      ListType.ITEM,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '32':ItemEntry (
-      "Fire Tablet",
-      0x20,
-      ListType.ITEM,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '33':ItemEntry (
-      "Cave Key",
-      0x21,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '34':ItemEntry (
-      "Cave Key",
-      0x22,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '35':ItemEntry (
-      "Card Key",
-      0x23,
-      ListType.ITEM,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '36':ItemEntry (
-      "Floro Sprout",
-      0x24,
-      ListType.ITEM,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '37':ItemEntry (
-      "Door Key",
-      0x25,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '38':ItemEntry (
-      "Door Key",
-      0x26,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '39':ItemEntry (
-      "Diet Book",
-      0x27,
-      ListType.ITEM,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '40':ItemEntry (
-      "Door Key",
-      0x28,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '41':ItemEntry (
-      "Blue Orb",
-      0x29,
-      ListType.ITEM,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '42':ItemEntry (
-      "Yellow Orb",
-      0x2A,
-      ListType.ITEM,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '43':ItemEntry (
-      "Red Orb",
-      0x2B,
-      ListType.ITEM,
-      ItemType.IMPORTANT,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '44':ItemEntry (
-      "Pit Key",
-      0x2C,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '45':ItemEntry (
-      "undefined 0x2D",
-      0x2D,
-      ListType.DEBUG,
-      ItemType.NONE,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '46':ItemEntry (
-      "Castle Bleck Key",
-      0x2E,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '47':ItemEntry (
-      "Old Key",
-      0x2F,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '48':ItemEntry (
-      "Pit Key",
-      0x30,
-      ListType.ITEM,
-      ItemType.KEY,
-      CardType.NONE,
-      RecipeType.NONE,
-      MysteryBox.NO,
-      TMapType.NONE,
-      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
-      SellPrice(None, None, None, None)
-  ),
-  '49':ItemEntry (
-      "Door Key",
+  'Door Key':ItemEntry (
       0x31,
       ListType.ITEM,
       ItemType.KEY,
@@ -675,8 +261,227 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '50':ItemEntry (
-      "Return Pipe",
+  'House Key':ItemEntry (
+      0x12,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Fort Key':ItemEntry (
+      0x15,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Goldfish Bowl':ItemEntry (
+      0x17,
+      ListType.DEBUG,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Helmet':ItemEntry (
+      0x18,
+      ListType.ITEM,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Ancient Clue':ItemEntry (
+      0x19,
+      ListType.ITEM,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Dimension Key':ItemEntry (
+      0x1D,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Water Tablet':ItemEntry (
+      0x1E,
+      ListType.ITEM,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Stone Tablet':ItemEntry (
+      0x1F,
+      ListType.ITEM,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Fire Tablet':ItemEntry (
+      0x20,
+      ListType.ITEM,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Cave Key':ItemEntry (
+      0x22,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Card Key':ItemEntry (
+      0x23,
+      ListType.ITEM,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Floro Sprout':ItemEntry (
+      0x24,
+      ListType.ITEM,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Diet Book':ItemEntry (
+      0x27,
+      ListType.ITEM,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Blue Orb':ItemEntry (
+      0x29,
+      ListType.ITEM,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Yellow Orb':ItemEntry (
+      0x2A,
+      ListType.ITEM,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Red Orb':ItemEntry (
+      0x2B,
+      ListType.ITEM,
+      ItemType.IMPORTANT,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Pit Key':ItemEntry (
+      0x30,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'undefined 0x2D':ItemEntry (
+      0x2D,
+      ListType.DEBUG,
+      ItemType.NONE,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Castle Bleck Key':ItemEntry (
+      0x2E,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Old Key':ItemEntry (
+      0x2F,
+      ListType.ITEM,
+      ItemType.KEY,
+      CardType.NONE,
+      RecipeType.NONE,
+      MysteryBox.NO,
+      TMapType.NONE,
+      BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
+      SellPrice(None, None, None, None)
+  ),
+  'Return Pipe':ItemEntry (
       0x32,
       ListType.ITEM,
       ItemType.IMPORTANT,
@@ -687,8 +492,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '51':ItemEntry (
-      "Crystal Ball",
+  'Crystal Ball':ItemEntry (
       0x33,
       ListType.ITEM,
       ItemType.IMPORTANT,
@@ -699,8 +503,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '52':ItemEntry (
-      "Training Machine",
+  'Training Machine':ItemEntry (
       0x34,
       ListType.ITEM,
       ItemType.IMPORTANT,
@@ -711,8 +514,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '53':ItemEntry (
-      "You-Know-What",
+  'You-Know-What':ItemEntry (
       0x35,
       ListType.ITEM,
       ItemType.IMPORTANT,
@@ -723,8 +525,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '54':ItemEntry (
-      "Paper",
+  'Paper':ItemEntry (
       0x36,
       ListType.ITEM,
       ItemType.IMPORTANT,
@@ -735,8 +536,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '55':ItemEntry (
-      "Autograph",
+  'Autograph':ItemEntry (
       0x37,
       ListType.ITEM,
       ItemType.IMPORTANT,
@@ -747,8 +547,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '56':ItemEntry (
-      "Random House Key",
+  'Random House Key':ItemEntry (
       0x38,
       ListType.ITEM,
       ItemType.KEY,
@@ -759,8 +558,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '57':ItemEntry (
-      "Cooking Disk R",
+  'Cooking Disk R':ItemEntry (
       0x39,
       ListType.ITEM,
       ItemType.COOKINGDISK,
@@ -771,8 +569,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '58':ItemEntry (
-      "Cooking Disk W",
+  'Cooking Disk W':ItemEntry (
       0x3A,
       ListType.ITEM,
       ItemType.COOKINGDISK,
@@ -783,8 +580,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '59':ItemEntry (
-      "Cooking Disk Y",
+  'Cooking Disk Y':ItemEntry (
       0x3B,
       ListType.ITEM,
       ItemType.COOKINGDISK,
@@ -795,8 +591,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '60':ItemEntry (
-      "Cooking Disk B",
+  'Cooking Disk B':ItemEntry (
       0x3C,
       ListType.ITEM,
       ItemType.COOKINGDISK,
@@ -807,8 +602,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '61':ItemEntry (
-      "Cooking Disk G",
+  'Cooking Disk G':ItemEntry (
       0x3D,
       ListType.ITEM,
       ItemType.COOKINGDISK,
@@ -819,8 +613,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '62':ItemEntry (
-      "Cooking Disk PU",
+  'Cooking Disk PU':ItemEntry (
       0x3E,
       ListType.ITEM,
       ItemType.COOKINGDISK,
@@ -831,8 +624,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '63':ItemEntry (
-      "Cooking Disk PI", # Unused in game
+  'Cooking Disk PI':ItemEntry (
       0x3F,
       ListType.DEBUG,
       ItemType.COOKINGDISK,
@@ -843,8 +635,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '64':ItemEntry (
-      "Golden Card",
+  'Golden Card':ItemEntry (
       0x40,
       ListType.ITEM,
       ItemType.IMPORTANT,
@@ -855,8 +646,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '65':ItemEntry (
-      "Fire Burst",
+  'Fire Burst':ItemEntry (
       0x41,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -867,8 +657,7 @@ HexList = {
       BuyPrice(20, None, 7, 15, None, None, None, None, None, None, None, None, None),
       SellPrice(10, 4, 8, None)
   ),
-  '66':ItemEntry (
-      "Ice Storm",
+  'Ice Storm':ItemEntry (
       0x42,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -879,8 +668,7 @@ HexList = {
       BuyPrice(40, None, None, 25, None, None, None, None, None, None, None, None, None),
       SellPrice(20, 30, 13, None)
   ),
-  '67':ItemEntry (
-      "Thunder Rage",
+  'Thunder Rage':ItemEntry (
       0x43,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -891,8 +679,7 @@ HexList = {
       BuyPrice(None, 80, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(40, 100, 40, None)
   ),
-  '68':ItemEntry (
-      "Shooting Star",
+  'Shooting Star':ItemEntry (
       0x44,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -903,8 +690,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(80, 150, 80, None)
   ),
-  '69':ItemEntry (
-      "POW Block",
+  'POW Block':ItemEntry (
       0x45,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -915,8 +701,7 @@ HexList = {
       BuyPrice(None, None, 60, 80, None, None, None, None, None, None, None, None, None),
       SellPrice(80, 150, 80, None)
   ),
-  '70':ItemEntry (
-      "Shell Shock",
+  'Shell Shock':ItemEntry (
       0x46,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -927,8 +712,7 @@ HexList = {
       BuyPrice(20, None, 8, None, None, None, None, None, None, None, None, None, None),
       SellPrice(10, 4, 10, None)
   ),
-  '71':ItemEntry (
-      "Gold Bar",
+  'Gold Bar':ItemEntry (
       0x47,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -939,8 +723,7 @@ HexList = {
       BuyPrice(100, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(90, 120, 115, None)
   ),
-  '72':ItemEntry (
-      "Gold Bar x3",
+  'Gold Bar x3':ItemEntry (
       0x48,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -951,8 +734,7 @@ HexList = {
       BuyPrice(None, 300, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(300, 375, 350, None)
   ),
-  '73':ItemEntry (
-      "Block Block",
+  'Block Block':ItemEntry (
       0x49,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -963,8 +745,7 @@ HexList = {
       BuyPrice(None, 50, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
-  '74':ItemEntry (
-      "Courage Shell",
+  'Courage Shell':ItemEntry (
       0x4A,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -975,8 +756,7 @@ HexList = {
       BuyPrice(10, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(5, 13, 4, None)
   ),
-  '75':ItemEntry (
-      "Mighty Tonic",
+  'Mighty Tonic':ItemEntry (
       0x4B,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -987,8 +767,7 @@ HexList = {
       BuyPrice(None, 70, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(35, 25, 35, None)
   ),
-  '76':ItemEntry (
-      "Volt Shroom",
+  'Volt Shroom':ItemEntry (
       0x4C,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -999,8 +778,7 @@ HexList = {
       BuyPrice(None, 30, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 10, 15, None)
   ),
-  '77':ItemEntry (
-      "Ghost Shroom",
+  'Ghost Shroom':ItemEntry (
       0x4D,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1011,8 +789,7 @@ HexList = {
       BuyPrice(None, 88, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(44, 44, 44, None)
   ),
-  '78':ItemEntry (
-      "Sleepy Sheep",
+  'Sleepy Sheep':ItemEntry (
       0x4E,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1023,8 +800,7 @@ HexList = {
       BuyPrice(10, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(5, 13, 15, None)
   ),
-  '79':ItemEntry (
-      "Stop Watch",
+  'Stop Watch':ItemEntry (
       0x4F,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1035,8 +811,7 @@ HexList = {
       BuyPrice(None, 50, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
-  '80':ItemEntry (
-      "Shroom Shake",
+  'Shroom Shake':ItemEntry (
       0x50,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1047,8 +822,7 @@ HexList = {
       BuyPrice(30, None, 11, 25, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 11, 13, None)
   ),
-  '81':ItemEntry (
-      "Super Shroom Shake",
+  'Super Shroom Shake':ItemEntry (
       0x51,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1059,8 +833,7 @@ HexList = {
       BuyPrice(None, 80, None, 100, None, None, None, None, None, None, None, None, None),
       SellPrice(40, 40, 50, None)
   ),
-  '82':ItemEntry (
-      "Ultra Shroom Shake",
+  'Ultra Shroom Shake':ItemEntry (
       0x52,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1071,8 +844,7 @@ HexList = {
       BuyPrice(None, 300, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(150, 150, 150, None)
   ),
-  '83':ItemEntry (
-      "Dried Shroom",
+  'Dried Shroom':ItemEntry (
       0x53,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1083,8 +855,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(1, 1, 1, None)
   ),
-  '84':ItemEntry (
-      "Life Shroom",
+  'Life Shroom':ItemEntry (
       0x54,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1095,8 +866,7 @@ HexList = {
       BuyPrice(100, None, 50, 75, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 25, 38, None)
   ),
-  '85':ItemEntry (
-      "Long-Last Shake",
+  'Long-Last Shake':ItemEntry (
       0x55,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1107,8 +877,7 @@ HexList = {
       BuyPrice(30, None, 15, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 8, 15, None)
   ),
-  '86':ItemEntry (
-      "Mystery Box",
+  'Mystery Box':ItemEntry (
       0x56,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1119,8 +888,7 @@ HexList = {
       BuyPrice(None, None, None, 3, None, None, None, None, None, None, None, None, None),
       SellPrice(5, 5, 2, None)
   ),
-  '87':ItemEntry (
-      "Catch Card",
+  'Catch Card':ItemEntry (
       0x57,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1131,8 +899,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, 20, None, None),
       SellPrice(10, 10, 10, None)
   ),
-  '88':ItemEntry (
-      "Catch Card SP",
+  'Catch Card SP':ItemEntry (
       0x58,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1143,8 +910,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, 100, None, None),
       SellPrice(50, 50, 50, None)
   ),
-  '89':ItemEntry (
-      "HP Plus",
+  'HP Plus':ItemEntry (
       0x59,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1155,8 +921,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(400, 400, 400, None)
   ),
-  '90':ItemEntry (
-      "Power Plus",
+  'Power Plus':ItemEntry (
       0x5A,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1167,8 +932,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(400, 400, 400, None)
   ),
-  '91':ItemEntry (
-      "Blue Apple",
+  'Blue Apple':ItemEntry (
       0x5B,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1179,8 +943,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 15, 15, None)
   ),
-  '92':ItemEntry (
-      "Yellow Apple / Orange Apple",
+  'Yellow Apple / Orange Apple':ItemEntry (
       0x5C,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1191,8 +954,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 15, 15, None)
   ),
-  '93':ItemEntry (
-      "Red Apple",
+  'Red Apple':ItemEntry (
       0x5D,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1203,8 +965,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 15, 15, None)
   ),
-  '94':ItemEntry (
-      "Pink Apple",
+  'Pink Apple':ItemEntry (
       0x5E,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1215,8 +976,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 15, 15, None)
   ),
-  '95':ItemEntry (
-      "Black Apple",
+  'Black Apple':ItemEntry (
       0x5F,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1227,8 +987,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(1, 1, 1, None)
   ),
-  '96':ItemEntry (
-      "Star Medal",
+  'Star Medal':ItemEntry (
       0x60,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1239,8 +998,7 @@ HexList = {
       BuyPrice(50, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
-  '97':ItemEntry (
-      "Gold Medal",
+  'Gold Medal':ItemEntry (
       0x61,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1251,8 +1009,7 @@ HexList = {
       BuyPrice(None, 500, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(250, 250, 250, None)
   ),
-  '98':ItemEntry (
-      "Poison Shroom",
+  'Poison Shroom':ItemEntry (
       0x62,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1263,8 +1020,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(2, 2, 2, None)
   ),
-  '99':ItemEntry (
-      "Slimy Shroom",
+  'Slimy Shroom':ItemEntry (
       0x63,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1275,8 +1031,7 @@ HexList = {
       BuyPrice(40, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(20, 20, 20, None)
   ),
-  '100':ItemEntry (
-      "Peachy Peach",
+  'Peachy Peach':ItemEntry (
       0x64,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1287,8 +1042,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, 25, None, None, None, None, None),
       SellPrice(13, 13, 13, None)
   ),
-  '101':ItemEntry (
-      "Keel Mango",
+  'Keel Mango':ItemEntry (
       0x65,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1299,8 +1053,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, 20, None, None, None, None),
       SellPrice(10, 10, 10, None)
   ),
-  '102':ItemEntry (
-      "Primordial Fruit",
+  'Primordial Fruit':ItemEntry (
       0x66,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1311,8 +1064,7 @@ HexList = {
       BuyPrice(None, None, None, 22, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 11, None)
   ),
-  '103':ItemEntry (
-      "Golden Leaf",
+  'Golden Leaf':ItemEntry (
       0x67,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1323,8 +1075,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(45, 45, 45, None)
   ),
-  '104':ItemEntry (
-      "Turtley Leaf",
+  'Turtley Leaf':ItemEntry (
       0x68,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1335,8 +1086,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(5, 5, 5, None)
   ),
-  '105':ItemEntry (
-      "Cake Mix",
+  'Cake Mix':ItemEntry (
       0x69,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1347,8 +1097,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, 25, None, None, None, None, None, None, None),
       SellPrice(13, 13, 13, None)
   ),
-  '106':ItemEntry (
-      "Whacka Bump",
+  'Whacka Bump':ItemEntry (
       0x6A,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1359,8 +1108,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(150, 150, 150, None)
   ),
-  '107':ItemEntry (
-      "Horsetail",
+  'Horsetail':ItemEntry (
       0x6B,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1371,8 +1119,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, 18, None, None, None, None, None),
       SellPrice(9, 9, 9, None)
   ),
-  '108':ItemEntry (
-      "Fresh Pasta Bunch",
+  'Fresh Pasta Bunch':ItemEntry (
       0x6C,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1383,8 +1130,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, 30, None, None, None, None, None, None),
       SellPrice(15, 15, 15, None)
   ),
-  '109':ItemEntry (
-      "Hot Sauce",
+  'Hot Sauce':ItemEntry (
       0x6D,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1395,8 +1141,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, 20, None, None, None),
       SellPrice(10, 10, 10, None)
   ),
-  '110':ItemEntry (
-      "Inky Sauce",
+  'Inky Sauce':ItemEntry (
       0x6E,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1407,8 +1152,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(15, 15, 15, None)
   ),
-  '111':ItemEntry (
-      "Dayzee Tear",
+  'Dayzee Tear':ItemEntry (
       0x6F,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1419,8 +1163,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
-  '112':ItemEntry (
-      "Sap Soup",
+  'Sap Soup':ItemEntry (
       0x70,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1431,8 +1174,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(8, 8, 8, None)
   ),
-  '113':ItemEntry (
-      "Bone-In Cut",
+  'Bone-In Cut':ItemEntry (
       0x71,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1443,8 +1185,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(30, 30, 30, None)
   ),
-  '114':ItemEntry (
-      "Fresh Veggie",
+  'Fresh Veggie':ItemEntry (
       0x72,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1455,8 +1196,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, 20, None, None, None, None, None),
       SellPrice(10, 10, 10, None)
   ),
-  '115':ItemEntry (
-      "Smelly Herb",
+  'Smelly Herb':ItemEntry (
       0x73,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1467,8 +1207,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, 15, None, None, None, None, None, None),
       SellPrice(8, 8, 8, None)
   ),
-  '116':ItemEntry (
-      "Honey Jar",
+  'Honey Jar':ItemEntry (
       0x74,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1479,8 +1218,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, 20, None, None, None, None, None, None, None),
       SellPrice(10, 10, 10, None)
   ),
-  '117':ItemEntry (
-      "Power Steak",
+  'Power Steak':ItemEntry (
       0x75,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1491,8 +1229,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, 25, None, None, None, None, None, None, None),
       SellPrice(18, 18, 18, None)
   ),
-  '118':ItemEntry (
-      "Big Egg",
+  'Big Egg':ItemEntry (
       0x76,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1503,8 +1240,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, 35, None, None, None, None, None, None),
       SellPrice(13, 13, 13, None)
   ),
-  '119':ItemEntry (
-      "Mild Cocoa Bean",
+  'Mild Cocoa Bean':ItemEntry (
       0x77,
       ListType.ITEM,
       ItemType.VANILLA,
@@ -1515,8 +1251,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, 20, None, None, None, None),
       SellPrice(10, 10, 10, None)
   ),
-  '120':ItemEntry (
-      "Sweet Choco-bar",
+  'Sweet Choco-bar':ItemEntry (
       0x78,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1527,8 +1262,7 @@ HexList = {
       BuyPrice(None, None, None, None, 10, None, None, None, None, None, None, None, None),
       SellPrice(5, 5, 5, None)
   ),
-  '121':ItemEntry (
-      "Shroom Choco-bar",
+  'Shroom Choco-bar':ItemEntry (
       0x79,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1539,8 +1273,7 @@ HexList = {
       BuyPrice(None, None, None, None, 50, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
-  '122':ItemEntry (
-      "Golden Choco-bar",
+  'Golden Choco-bar':ItemEntry (
       0x7A,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1551,8 +1284,7 @@ HexList = {
       BuyPrice(None, None, None, None, 100, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
-  '123':ItemEntry (
-      "Gradual Syrup",
+  'Gradual Syrup':ItemEntry (
       0x7B,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1563,8 +1295,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
-  '124':ItemEntry (
-      "Dayzee Syrup",
+  'Dayzee Syrup':ItemEntry (
       0x7C,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1575,8 +1306,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(35, 35, 35, None)
   ),
-  '125':ItemEntry (
-      "Slimy Extract",
+  'Slimy Extract':ItemEntry (
       0x7D,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1587,8 +1317,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(30, 30, 30, None)
   ),
-  '126':ItemEntry (
-      "Fried Shroom Plate",
+  'Fried Shroom Plate':ItemEntry (
       0x7E,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1599,8 +1328,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(35, 35, 35, None)
   ),
-  '127':ItemEntry (
-      "Roast Shroom Dish",
+  'Roast Shroom Dish':ItemEntry (
       0x7F,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1611,8 +1339,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(96, 96, 96, None)
   ),
-  '128':ItemEntry (
-      "Shroom Steak",
+  'Shroom Steak':ItemEntry (
       0x80,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1623,8 +1350,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(180, 180, 180, None)
   ),
-  '129':ItemEntry (
-      "Honey Shroom",
+  'Honey Shroom':ItemEntry (
       0x81,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1635,8 +1361,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(58, 58, 58, None)
   ),
-  '130':ItemEntry (
-      "Honey Super",
+  'Honey Super':ItemEntry (
       0x82,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1647,8 +1372,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(118, 118, 118, None)
   ),
-  '131':ItemEntry (
-      "Shroom Broth",
+  'Shroom Broth':ItemEntry (
       0x83,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1659,8 +1383,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(118, 118, 118, None)
   ),
-  '132':ItemEntry (
-      "Mushroom Crepe",
+  'Mushroom Crepe':ItemEntry (
       0x84,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1671,8 +1394,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(65, 65, 65, None)
   ),
-  '133':ItemEntry (
-      "Shroom Cake",
+  'Shroom Cake':ItemEntry (
       0x85,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1683,8 +1405,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(125, 125, 125, None)
   ),
-  '134':ItemEntry (
-      "Chocolate Cake",
+  'Chocolate Cake':ItemEntry (
       0x86,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1695,8 +1416,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(55, 55, 55, None)
   ),
-  '135':ItemEntry (
-      "Heartful Cake",
+  'Heartful Cake':ItemEntry (
       0x87,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1707,8 +1427,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(75, 75, 75, None)
   ),
-  '136':ItemEntry (
-      "Mousse",
+  'Mousse':ItemEntry (
       0x88,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1719,8 +1438,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
-  '137':ItemEntry (
-      "Peach Tart",
+  'Peach Tart':ItemEntry (
       0x89,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1731,8 +1449,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
-  '138':ItemEntry (
-      "Horsetail Tart",
+  'Horsetail Tart':ItemEntry (
       0x8A,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1743,8 +1460,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
-  '139':ItemEntry (
-      "Sweet Cookie Snack",
+  'Sweet Cookie Snack':ItemEntry (
       0x8B,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1755,8 +1471,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(30, 30, 30, None)
   ),
-  '140':ItemEntry (
-      "Koopa Dumpling",
+  'Koopa Dumpling':ItemEntry (
       0x8C,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1767,8 +1482,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(40, 40, 40, None)
   ),
-  '141':ItemEntry (
-      "Sap Muffin",
+  'Sap Muffin':ItemEntry (
       0x8D,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1779,8 +1493,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(55, 55, 55, None)
   ),
-  '142':ItemEntry (
-      "Town Special",
+  'Town Special':ItemEntry (
       0x8E,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1791,8 +1504,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(27, 27, 27, None)
   ),
-  '143':ItemEntry (
-      "Mango Pudding",
+  'Mango Pudding':ItemEntry (
       0x8F,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1803,8 +1515,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(55, 55, 55, None)
   ),
-  '144':ItemEntry (
-      "Love Pudding",
+  'Love Pudding':ItemEntry (
       0x90,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1815,8 +1526,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(75, 75, 75, None)
   ),
-  '145':ItemEntry (
-      "Couple's Cake",
+  'Couple\'s Cake':ItemEntry (
       0x91,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1827,8 +1537,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(150, 150, 150, None)
   ),
-  '146':ItemEntry (
-      "Fruit Parfait",
+  'Fruit Parfait':ItemEntry (
       0x92,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1839,8 +1548,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(70, 70, 70, None)
   ),
-  '147':ItemEntry (
-      "Snow Cone",
+  'Snow Cone':ItemEntry (
       0x93,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1851,8 +1559,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(43, 43, 43, None)
   ),
-  '148':ItemEntry (
-      "Snow Bunny",
+  'Snow Bunny':ItemEntry (
       0x94,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1863,8 +1570,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(5, 5, 5, None)
   ),
-  '149':ItemEntry (
-      "Berry Snow Bunny",
+  'Berry Snow Bunny':ItemEntry (
       0x95,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1875,8 +1581,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(5, 5, 5, None)
   ),
-  '150':ItemEntry (
-      "Honey Candy",
+  'Honey Candy':ItemEntry (
       0x96,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1887,8 +1592,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(24, 24, 24, None)
   ),
-  '151':ItemEntry (
-      "Electro Pop",
+  'Electro Pop':ItemEntry (
       0x97,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1899,8 +1603,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(82, 82, 82, None)
   ),
-  '152':ItemEntry (
-      "Herb Tea",
+  'Herb Tea':ItemEntry (
       0x98,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1911,8 +1614,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(18, 18, 18, None)
   ),
-  '153':ItemEntry (
-      "Koopa Tea",
+  'Koopa Tea':ItemEntry (
       0x99,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1923,8 +1625,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(9, 9, 9, None)
   ),
-  '154':ItemEntry (
-      "Spaghetti Plate",
+  'Spaghetti Plate':ItemEntry (
       0x9A,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1935,8 +1636,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(35, 35, 35, None)
   ),
-  '155':ItemEntry (
-      "Spicy Pasta Dish",
+  'Spicy Pasta Dish':ItemEntry (
       0x9B,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1947,8 +1647,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
-  '156':ItemEntry (
-      "Ink Pasta Dish",
+  'Ink Pasta Dish':ItemEntry (
       0x9C,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1959,8 +1658,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(63, 63, 63, None)
   ),
-  '157':ItemEntry (
-      "Koopasta Dish",
+  'Koopasta Dish':ItemEntry (
       0x9D,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1971,8 +1669,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(63, 63, 63, None)
   ),
-  '158':ItemEntry (
-      "Love Noodle Dish",
+  'Love Noodle Dish':ItemEntry (
       0x9E,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1983,8 +1680,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(80, 80, 80, None)
   ),
-  '159':ItemEntry (
-      "Fried Egg",
+  'Fried Egg':ItemEntry (
       0x9F,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -1995,8 +1691,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(30, 30, 30, None)
   ),
-  '160':ItemEntry (
-      "Egg Bomb",
+  'Egg Bomb':ItemEntry (
       0xA0,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2007,8 +1702,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
-  '161':ItemEntry (
-      "Dyllis Dynamite",
+  'Dyllis Dynamite':ItemEntry (
       0xA1,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2019,8 +1713,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(66, 66, 66, None)
   ),
-  '162':ItemEntry (
-      "Spit Roast / Roast Meat",
+  'Spit Roast / Roast Meat':ItemEntry (
       0xA2,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2031,8 +1724,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
-  '163':ItemEntry (
-      "Meteor Meal",
+  'Meteor Meal':ItemEntry (
       0xA3,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2043,8 +1735,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(205, 205, 205, None)
   ),
-  '164':ItemEntry (
-      "Omelette Plate",
+  'Omelette Plate':ItemEntry (
       0xA4,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2055,8 +1746,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
-  '165':ItemEntry (
-      "Spicy Soup",
+  'Spicy Soup':ItemEntry (
       0xA5,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2067,8 +1757,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(23, 23, 23, None)
   ),
-  '166':ItemEntry (
-      "Hot Dog",
+  'Hot Dog':ItemEntry (
       0xA6,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2079,8 +1768,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, 120, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
-  '167':ItemEntry (
-      "Healthy Salad",
+  'Healthy Salad':ItemEntry (
       0xA7,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2091,8 +1779,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(28, 28, 28, None)
   ),
-  '168':ItemEntry (
-      "Dyllis Dinner",
+  'Dyllis Dinner':ItemEntry (
       0xA8,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2103,8 +1790,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(100, 100, 100, None)
   ),
-  '169':ItemEntry (
-      "Dyllis Special",
+  'Dyllis Special':ItemEntry (
       0xA9,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2115,8 +1801,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(160, 160, 160, None)
   ),
-  '170':ItemEntry (
-      "Dyllis Deluxe",
+  'Dyllis Deluxe':ItemEntry (
       0xAA,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2127,8 +1812,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(225, 225, 225, None)
   ),
-  '171':ItemEntry (
-      "Space Food",
+  'Space Food':ItemEntry (
       0xAB,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2139,8 +1823,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
-  '172':ItemEntry (
-      "Emergency Ration",
+  'Emergency Ration':ItemEntry (
       0xAC,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2151,8 +1834,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(40, 40, 40, None)
   ),
-  '173':ItemEntry (
-      "Dangerous Delight",
+  'Dangerous Delight':ItemEntry (
       0xAD,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2163,8 +1845,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(3, 3, 3, None)
   ),
-  '174':ItemEntry (
-      "Trial Stew",
+  'Trial Stew':ItemEntry (
       0xAE,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2175,8 +1856,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(2, 2, 2, None)
   ),
-  '175':ItemEntry (
-      "Mistake",
+  'Mistake':ItemEntry (
       0xAF,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2187,8 +1867,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(1, 1, 1, None)
   ),
-  '176':ItemEntry (
-      "Mistake (Sleepy Sheep)",
+  'Mistake (Sleepy Sheep)':ItemEntry (
       0xB0,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2199,8 +1878,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(1, 1, 1, None)
   ),
-  '177':ItemEntry (
-      "Warm Cocoa",
+  'Warm Cocoa':ItemEntry (
       0xB1,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2211,8 +1889,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
-  '178':ItemEntry (
-      "Odd Dinner",
+  'Odd Dinner':ItemEntry (
       0xB2,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2223,8 +1900,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(33, 33, 33, None)
   ),
-  '179':ItemEntry (
-      "Inky Soup",
+  'Inky Soup':ItemEntry (
       0xB3,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2235,8 +1911,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(20, 20, 20, None)
   ),
-  '180':ItemEntry (
-      "Gingerbread House",
+  'Gingerbread House':ItemEntry (
       0xB4,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2247,8 +1922,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(130, 130, 130, None)
   ),
-  '181':ItemEntry (
-      "Volcano Shroom",
+  'Volcano Shroom':ItemEntry (
       0xB5,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2259,8 +1933,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
-  '182':ItemEntry (
-      "Koopa Pilaf",
+  'Koopa Pilaf':ItemEntry (
       0xB6,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2271,8 +1944,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(45, 45, 45, None)
   ),
-  '183':ItemEntry (
-      "Spicy Dinner",
+  'Spicy Dinner':ItemEntry (
       0xB7,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2283,8 +1955,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(40, 40, 40, None)
   ),
-  '184':ItemEntry (
-      "Shroom Pudding",
+  'Shroom Pudding':ItemEntry (
       0xB8,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2295,8 +1966,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(65, 65, 65, None)
   ),
-  '185':ItemEntry (
-      "Heavy Meal",
+  'Heavy Meal':ItemEntry (
       0xB9,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2307,8 +1977,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(10, 10, 10, None)
   ),
-  '186':ItemEntry (
-      "Primordial Dinner",
+  'Primordial Dinner':ItemEntry (
       0xBA,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2319,8 +1988,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
-  '187':ItemEntry (
-      "Gorgeous Steak",
+  'Gorgeous Steak':ItemEntry (
       0xBB,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2331,8 +1999,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(75, 75, 75, None)
   ),
-  '188':ItemEntry (
-      "Golden Meal",
+  'Golden Meal':ItemEntry (
       0xBC,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2343,8 +2010,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
-  '189':ItemEntry (
-      "Luxurious Set",
+  'Luxurious Set':ItemEntry (
       0xBD,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2355,8 +2021,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
-  '190':ItemEntry (
-      "Roast Whacka Bump",
+  'Roast Whacka Bump':ItemEntry (
       0xBE,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2367,8 +2032,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(200, 200, 200, None)
   ),
-  '191':ItemEntry (
-      "Dyllis Breakfast",
+  'Dyllis Breakfast':ItemEntry (
       0xBF,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2379,8 +2043,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
-  '192':ItemEntry (
-      "Dyllis Lunch",
+  'Dyllis Lunch':ItemEntry (
       0xC0,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2391,8 +2054,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(75, 75, 75, None)
   ),
-  '193':ItemEntry (
-      "Sky Juice",
+  'Sky Juice':ItemEntry (
       0xC1,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2403,8 +2065,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(20, 20, 20, None)
   ),
-  '194':ItemEntry (
-      "Stamina Juice",
+  'Stamina Juice':ItemEntry (
       0xC2,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2415,8 +2076,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
-  '195':ItemEntry (
-      "Choco Pasta Dish",
+  'Choco Pasta Dish':ItemEntry (
       0xC3,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2427,8 +2087,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
-  '196':ItemEntry (
-      "Shroom Delicacy",
+  'Shroom Delicacy':ItemEntry (
       0xC4,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2439,8 +2098,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(55, 55, 55, None)
   ),
-  '197':ItemEntry (
-      "Roast Horsetail",
+  'Roast Horsetail':ItemEntry (
       0xC5,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2451,8 +2109,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
-  '198':ItemEntry (
-      "Sap Syrup",
+  'Sap Syrup':ItemEntry (
       0xC6,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2463,8 +2120,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(20, 20, 20, None)
   ),
-  '199':ItemEntry (
-      "Hamburger",
+  'Hamburger':ItemEntry (
       0xC7,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2475,8 +2131,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(40, 40, 40, None)
   ),
-  '200':ItemEntry (
-      "Peach Juice",
+  'Peach Juice':ItemEntry (
       0xC8,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2487,8 +2142,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(28, 28, 28, None)
   ),
-  '201':ItemEntry (
-      "Standard Chocolate",
+  'Standard Chocolate':ItemEntry (
       0xC9,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2499,8 +2153,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(4, 4, 4, None)
   ),
-  '202':ItemEntry (
-      "Fruity Cake",
+  'Fruity Cake':ItemEntry (
       0xCA,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2511,8 +2164,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(90, 90, 90, None)
   ),
-  '203':ItemEntry (
-      "Fruity Hamburger",
+  'Fruity Hamburger':ItemEntry (
       0xCB,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2523,8 +2175,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(65, 65, 65, None)
   ),
-  '204':ItemEntry (
-      "Fruity Punch",
+  'Fruity Punch':ItemEntry (
       0xCC,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2535,8 +2186,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(55, 55, 55, None)
   ),
-  '205':ItemEntry (
-      "Fruity Shroom",
+  'Fruity Shroom':ItemEntry (
       0xCD,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2547,8 +2197,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
-  '206':ItemEntry (
-      "Block Meal",
+  'Block Meal':ItemEntry (
       0xCE,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2559,8 +2208,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(25, 25, 25, None)
   ),
-  '207':ItemEntry (
-      "Veggie Set",
+  'Veggie Set':ItemEntry (
       0xCF,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2571,8 +2219,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
-  '208':ItemEntry (
-      "Weird Extract",
+  'Weird Extract':ItemEntry (
       0xD0,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2583,8 +2230,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(45, 45, 45, None)
   ),
-  '209':ItemEntry (
-      "Awesome Snack",
+  'Awesome Snack':ItemEntry (
       0xD1,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2595,8 +2241,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(55, 55, 55, None)
   ),
-  '210':ItemEntry (
-      "Mango Juice",
+  'Mango Juice':ItemEntry (
       0xD2,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2607,8 +2252,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(23, 23, 23, None)
   ),
-  '211':ItemEntry (
-      "Meat Pasta Dish",
+  'Meat Pasta Dish':ItemEntry (
       0xD3,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2619,8 +2263,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(75, 75, 75, None)
   ),
-  '212':ItemEntry (
-      "Mixed Shake",
+  'Mixed Shake':ItemEntry (
       0xD4,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2631,8 +2274,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(60, 60, 60, None)
   ),
-  '213':ItemEntry (
-      "Miracle Dinner",
+  'Miracle Dinner':ItemEntry (
       0xD5,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2643,8 +2285,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(50, 50, 50, None)
   ),
-  '214':ItemEntry (
-      "Megaton Dinner",
+  'Megaton Dinner':ItemEntry (
       0xD6,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2655,8 +2296,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(83, 83, 83, None)
   ),
-  '215':ItemEntry (
-      "Lovely Chocolate",
+  'Lovely Chocolate':ItemEntry (
       0xD7,
       ListType.ITEM,
       ItemType.RECIPE,
@@ -2667,8 +2307,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(83, 83, 83, None)
   ),
-  '216':ItemEntry (
-      "Mario",
+  'Mario':ItemEntry (
       0xD8,
       ListType.PARTY,
       ItemType.NONE,
@@ -2679,8 +2318,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '217':ItemEntry (
-      "Peach",
+  'Peach':ItemEntry (
       0xD9,
       ListType.PARTY,
       ItemType.NONE,
@@ -2691,8 +2329,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '218':ItemEntry (
-      "Bowser",
+  'Bowser':ItemEntry (
       0xDA,
       ListType.PARTY,
       ItemType.NONE,
@@ -2703,8 +2340,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '219':ItemEntry (
-      "Luigi",
+  'Luigi':ItemEntry (
       0xDB,
       ListType.PARTY,
       ItemType.NONE,
@@ -2715,8 +2351,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '220':ItemEntry (
-      "Tippi",
+  'Tippi':ItemEntry (
       0xDC,
       ListType.DEBUG,
       ItemType.NONE,
@@ -2727,8 +2362,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '221':ItemEntry (
-      "Thoreau",
+  'Thoreau':ItemEntry (
       0xDD,
       ListType.PARTY,
       ItemType.NONE,
@@ -2739,8 +2373,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '222':ItemEntry (
-      "Boomer",
+  'Boomer':ItemEntry (
       0xDE,
       ListType.PARTY,
       ItemType.NONE,
@@ -2751,8 +2384,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '223':ItemEntry (
-      "Slim",
+  'Slim':ItemEntry (
       0xDF,
       ListType.PARTY,
       ItemType.NONE,
@@ -2763,8 +2395,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '224':ItemEntry (
-      "Thudley",
+  'Thudley':ItemEntry (
       0xE0,
       ListType.PARTY,
       ItemType.NONE,
@@ -2775,8 +2406,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '225':ItemEntry (
-      "Carrie",
+  'Carrie':ItemEntry (
       0xE1,
       ListType.PARTY,
       ItemType.NONE,
@@ -2787,8 +2417,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '226':ItemEntry (
-      "Fleep",
+  'Fleep':ItemEntry (
       0xE2,
       ListType.PARTY,
       ItemType.NONE,
@@ -2799,8 +2428,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '227':ItemEntry (
-      "Cudge",
+  'Cudge':ItemEntry (
       0xE3,
       ListType.PARTY,
       ItemType.NONE,
@@ -2811,8 +2439,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '228':ItemEntry (
-      "Dottie",
+  'Dottie':ItemEntry (
       0xE4,
       ListType.PARTY,
       ItemType.NONE,
@@ -2823,8 +2450,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '229':ItemEntry (
-      "Piccolo",
+  'Piccolo':ItemEntry (
       0xE5,
       ListType.PARTY,
       ItemType.NONE,
@@ -2835,8 +2461,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '230':ItemEntry (
-      "Barry",
+  'Barry':ItemEntry (
       0xE6,
       ListType.PARTY,
       ItemType.NONE,
@@ -2847,8 +2472,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '231':ItemEntry (
-      "Dashell",
+  'Dashell':ItemEntry (
       0xE7,
       ListType.PARTY,
       ItemType.NONE,
@@ -2859,8 +2483,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '232':ItemEntry (
-      "undefined 0xE8",
+  'undefined 0xE8':ItemEntry (
       0xE8,
       ListType.DEBUG,
       ItemType.NONE,
@@ -2871,8 +2494,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '233':ItemEntry (
-      "Card Bag",
+  'Card Bag':ItemEntry (
       0xE9,
       ListType.DEBUG,
       ItemType.NONE,
@@ -2883,8 +2505,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, 10, None, None),
       SellPrice(None, None, None, None)
   ),
-  '234':ItemEntry (
-      "Map 1",
+  'Map 1':ItemEntry (
       0xEA,
       ListType.MAP,
       ItemType.NONE,
@@ -2895,8 +2516,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 20),
       SellPrice(None, None, None, None)
   ),
-  '235':ItemEntry (
-      "Map 2",
+  'Map 2':ItemEntry (
       0xEB,
       ListType.MAP,
       ItemType.NONE,
@@ -2907,8 +2527,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 60),
       SellPrice(None, None, None, None)
   ),
-  '236':ItemEntry (
-      "Map 3",
+  'Map 3':ItemEntry (
       0xEC,
       ListType.MAP,
       ItemType.NONE,
@@ -2919,8 +2538,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 30),
       SellPrice(None, None, None, None)
   ),
-  '237':ItemEntry (
-      "Map 4",
+  'Map 4':ItemEntry (
       0xED,
       ListType.MAP,
       ItemType.NONE,
@@ -2931,8 +2549,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 110),
       SellPrice(None, None, None, None)
   ),
-  '238':ItemEntry (
-      "Map 5",
+  'Map 5':ItemEntry (
       0xEE,
       ListType.MAP,
       ItemType.NONE,
@@ -2943,8 +2560,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 80),
       SellPrice(None, None, None, None)
   ),
-  '239':ItemEntry (
-      "Map 6",
+  'Map 6':ItemEntry (
       0xEF,
       ListType.MAP,
       ItemType.NONE,
@@ -2955,8 +2571,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 20),
       SellPrice(None, None, None, None)
   ),
-  '240':ItemEntry (
-      "Map 7",
+  'Map 7':ItemEntry (
       0xF0,
       ListType.MAP,
       ItemType.NONE,
@@ -2967,8 +2582,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 50),
       SellPrice(None, None, None, None)
   ),
-  '241':ItemEntry (
-      "Map 8",
+  'Map 8':ItemEntry (
       0xF1,
       ListType.MAP,
       ItemType.NONE,
@@ -2979,8 +2593,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 70),
       SellPrice(None, None, None, None)
   ),
-  '242':ItemEntry (
-      "Map 9",
+  'Map 9':ItemEntry (
       0xF2,
       ListType.MAP,
       ItemType.NONE,
@@ -2991,8 +2604,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 40),
       SellPrice(None, None, None, None)
   ),
-  '243':ItemEntry (
-      "Map 10",
+  'Map 10':ItemEntry (
       0xF3,
       ListType.MAP,
       ItemType.NONE,
@@ -3003,8 +2615,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 40),
       SellPrice(None, None, None, None)
   ),
-  '244':ItemEntry (
-      "Map 11",
+  'Map 11':ItemEntry (
       0xF4,
       ListType.MAP,
       ItemType.NONE,
@@ -3015,8 +2626,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 70),
       SellPrice(None, None, None, None)
   ),
-  '245':ItemEntry (
-      "Map 12",
+  'Map 12':ItemEntry (
       0xF5,
       ListType.MAP,
       ItemType.NONE,
@@ -3027,8 +2637,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 20),
       SellPrice(None, None, None, None)
   ),
-  '246':ItemEntry (
-      "Map 13",
+  'Map 13':ItemEntry (
       0xF6,
       ListType.MAP,
       ItemType.NONE,
@@ -3039,8 +2648,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 50),
       SellPrice(None, None, None, None)
   ),
-  '247':ItemEntry (
-      "Map 14",
+  'Map 14':ItemEntry (
       0xF7,
       ListType.MAP,
       ItemType.NONE,
@@ -3051,8 +2659,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 50),
       SellPrice(None, None, None, None)
   ),
-  '248':ItemEntry (
-      "Map 15",
+  'Map 15':ItemEntry (
       0xF8,
       ListType.MAP,
       ItemType.NONE,
@@ -3063,8 +2670,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 100),
       SellPrice(None, None, None, None)
   ),
-  '249':ItemEntry (
-      "Map 16",
+  'Map 16':ItemEntry (
       0xF9,
       ListType.MAP,
       ItemType.NONE,
@@ -3075,8 +2681,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 30),
       SellPrice(None, None, None, None)
   ),
-  '250':ItemEntry (
-      "Map 17",
+  'Map 17':ItemEntry (
       0xFA,
       ListType.MAP,
       ItemType.NONE,
@@ -3087,8 +2692,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 50),
       SellPrice(None, None, None, None)
   ),
-  '251':ItemEntry (
-      "Map 18",
+  'Map 18':ItemEntry (
       0xFB,
       ListType.MAP,
       ItemType.NONE,
@@ -3099,8 +2703,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 10),
       SellPrice(None, None, None, None)
   ),
-  '252':ItemEntry (
-      "Map 19",
+  'Map 19':ItemEntry (
       0xFC,
       ListType.MAP,
       ItemType.NONE,
@@ -3111,8 +2714,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 90),
       SellPrice(None, None, None, None)
   ),
-  '253':ItemEntry (
-      "Map 20",
+  'Map 20':ItemEntry (
       0xFD,
       ListType.MAP,
       ItemType.NONE,
@@ -3123,8 +2725,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 80),
       SellPrice(None, None, None, None)
   ),
-  '254':ItemEntry (
-      "Map 21",
+  'Map 21':ItemEntry (
       0xFE,
       ListType.MAP,
       ItemType.NONE,
@@ -3135,8 +2736,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 180),
       SellPrice(None, None, None, None)
   ),
-  '255':ItemEntry (
-      "Map 22",
+  'Map 22':ItemEntry (
       0xFF,
       ListType.MAP,
       ItemType.NONE,
@@ -3147,8 +2747,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 130),
       SellPrice(None, None, None, None)
   ),
-  '256':ItemEntry (
-      "Map 23",
+  'Map 23':ItemEntry (
       0x100,
       ListType.MAP,
       ItemType.NONE,
@@ -3159,8 +2758,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 230),
       SellPrice(None, None, None, None)
   ),
-  '257':ItemEntry (
-      "Map 24",
+  'Map 24':ItemEntry (
       0x101,
       ListType.MAP,
       ItemType.NONE,
@@ -3171,8 +2769,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 40),
       SellPrice(None, None, None, None)
   ),
-  '258':ItemEntry (
-      "Map 25",
+  'Map 25':ItemEntry (
       0x102,
       ListType.MAP,
       ItemType.NONE,
@@ -3183,8 +2780,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 30),
       SellPrice(None, None, None, None)
   ),
-  '259':ItemEntry (
-      "Map 26",
+  'Map 26':ItemEntry (
       0x103,
       ListType.MAP,
       ItemType.NONE,
@@ -3195,8 +2791,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 70),
       SellPrice(None, None, None, None)
   ),
-  '260':ItemEntry (
-      "Map 27",
+  'Map 27':ItemEntry (
       0x104,
       ListType.MAP,
       ItemType.NONE,
@@ -3207,8 +2802,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 80),
       SellPrice(None, None, None, None)
   ),
-  '261':ItemEntry (
-      "Map 28",
+  'Map 28':ItemEntry (
       0x105,
       ListType.MAP,
       ItemType.NONE,
@@ -3219,8 +2813,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 90),
       SellPrice(None, None, None, None)
   ),
-  '262':ItemEntry (
-      "Map 29",
+  'Map 29':ItemEntry (
       0x106,
       ListType.MAP,
       ItemType.NONE,
@@ -3231,8 +2824,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 80),
       SellPrice(None, None, None, None)
   ),
-  '263':ItemEntry (
-      "Map 30",
+  'Map 30':ItemEntry (
       0x107,
       ListType.MAP,
       ItemType.NONE,
@@ -3243,8 +2835,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 120),
       SellPrice(None, None, None, None)
   ),
-  '264':ItemEntry (
-      "Map 31",
+  'Map 31':ItemEntry (
       0x108,
       ListType.MAP,
       ItemType.NONE,
@@ -3255,8 +2846,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 10),
       SellPrice(None, None, None, None)
   ),
-  '265':ItemEntry (
-      "Map 32",
+  'Map 32':ItemEntry (
       0x109,
       ListType.MAP,
       ItemType.NONE,
@@ -3267,8 +2857,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 20),
       SellPrice(None, None, None, None)
   ),
-  '266':ItemEntry (
-      "Map 33",
+  'Map 33':ItemEntry (
       0x10A,
       ListType.MAP,
       ItemType.NONE,
@@ -3279,8 +2868,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 110),
       SellPrice(None, None, None, None)
   ),
-  '267':ItemEntry (
-      "Map 34",
+  'Map 34':ItemEntry (
       0x10B,
       ListType.MAP,
       ItemType.NONE,
@@ -3291,8 +2879,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 70),
       SellPrice(None, None, None, None)
   ),
-  '268':ItemEntry (
-      "Map 35",
+  'Map 35':ItemEntry (
       0x10C,
       ListType.MAP,
       ItemType.NONE,
@@ -3303,8 +2890,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 60),
       SellPrice(None, None, None, None)
   ),
-  '269':ItemEntry (
-      "Map 36",
+  'Map 36':ItemEntry (
       0x10D,
       ListType.MAP,
       ItemType.NONE,
@@ -3315,8 +2901,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 140),
       SellPrice(None, None, None, None)
   ),
-  '270':ItemEntry (
-      "Map 37",
+  'Map 37':ItemEntry (
       0x10E,
       ListType.MAP,
       ItemType.NONE,
@@ -3327,8 +2912,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 60),
       SellPrice(None, None, None, None)
   ),
-  '271':ItemEntry (
-      "Map 38",
+  'Map 38':ItemEntry (
       0x10F,
       ListType.MAP,
       ItemType.NONE,
@@ -3339,8 +2923,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 70),
       SellPrice(None, None, None, None)
   ),
-  '272':ItemEntry (
-      "Map 39",
+  'Map 39':ItemEntry (
       0x110,
       ListType.MAP,
       ItemType.NONE,
@@ -3351,8 +2934,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 80),
       SellPrice(None, None, None, None)
   ),
-  '273':ItemEntry (
-      "Map 40",
+  'Map 40':ItemEntry (
       0x111,
       ListType.MAP,
       ItemType.NONE,
@@ -3363,8 +2945,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 80),
       SellPrice(None, None, None, None)
   ),
-  '274':ItemEntry (
-      "Map 41",
+  'Map 41':ItemEntry (
       0x112,
       ListType.MAP,
       ItemType.NONE,
@@ -3375,8 +2956,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 70),
       SellPrice(None, None, None, None)
   ),
-  '275':ItemEntry (
-      "Map 42",
+  'Map 42':ItemEntry (
       0x113,
       ListType.MAP,
       ItemType.NONE,
@@ -3387,8 +2967,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 150),
       SellPrice(None, None, None, None)
   ),
-  '276':ItemEntry (
-      "Map 43",
+  'Map 43':ItemEntry (
       0x114,
       ListType.MAP,
       ItemType.NONE,
@@ -3399,8 +2978,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 90),
       SellPrice(None, None, None, None)
   ),
-  '277':ItemEntry (
-      "Map 44",
+  'Map 44':ItemEntry (
       0x115,
       ListType.MAP,
       ItemType.NONE,
@@ -3411,8 +2989,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 100),
       SellPrice(None, None, None, None)
   ),
-  '278':ItemEntry (
-      "Map 45",
+  'Map 45':ItemEntry (
       0x116,
       ListType.MAP,
       ItemType.NONE,
@@ -3423,8 +3000,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 190),
       SellPrice(None, None, None, None)
   ),
-  '279':ItemEntry (
-      "Map 46",
+  'Map 46':ItemEntry (
       0x117,
       ListType.MAP,
       ItemType.NONE,
@@ -3435,8 +3011,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 160),
       SellPrice(None, None, None, None)
   ),
-  '280':ItemEntry (
-      "Map 47",
+  'Map 47':ItemEntry (
       0x118,
       ListType.MAP,
       ItemType.NONE,
@@ -3447,8 +3022,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 200),
       SellPrice(None, None, None, None)
   ),
-  '281':ItemEntry (
-      "Map 48",
+  'Map 48':ItemEntry (
       0x119,
       ListType.MAP,
       ItemType.NONE,
@@ -3459,8 +3033,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, 90),
       SellPrice(None, None, None, None)
   ),
-  '282':ItemEntry (
-      "Goomba Card",
+  'Goomba Card':ItemEntry (
       0x11A,
       ListType.CARD,
       ItemType.CARD,
@@ -3471,8 +3044,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 10, None),
       SellPrice(None, None, None, 1)
   ),
-  '283':ItemEntry (
-      "Spiked Goomba Card",
+  'Spiked Goomba Card':ItemEntry (
       0x11B,
       ListType.CARD,
       ItemType.CARD,
@@ -3483,8 +3055,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '284':ItemEntry (
-      "Dark Spiked Goomba Card",
+  'Dark Spiked Goomba Card':ItemEntry (
       0x11C,
       ListType.CARD,
       ItemType.CARD,
@@ -3495,8 +3066,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '285':ItemEntry (
-      "Paragoomba Card",
+  'Paragoomba Card':ItemEntry (
       0x11D,
       ListType.CARD,
       ItemType.CARD,
@@ -3507,8 +3077,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '286':ItemEntry (
-      "Dark Paragoomba Card",
+  'Dark Paragoomba Card':ItemEntry (
       0x11E,
       ListType.CARD,
       ItemType.CARD,
@@ -3519,8 +3088,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '287':ItemEntry (
-      "Gloomba Card",
+  'Gloomba Card':ItemEntry (
       0x11F,
       ListType.CARD,
       ItemType.CARD,
@@ -3531,8 +3099,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '288':ItemEntry (
-      "Headbonk Goomba Card",
+  'Headbonk Goomba Card':ItemEntry (
       0x120,
       ListType.CARD,
       ItemType.CARD,
@@ -3543,8 +3110,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '289':ItemEntry (
-      "Dark Headbonk Goomba Card",
+  'Dark Headbonk Goomba Card':ItemEntry (
       0x121,
       ListType.CARD,
       ItemType.CARD,
@@ -3555,8 +3121,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '290':ItemEntry (
-      "Dark Goomba Card",
+  'Dark Goomba Card':ItemEntry (
       0x122,
       ListType.CARD,
       ItemType.CARD,
@@ -3567,8 +3132,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '291':ItemEntry (
-      "Koopa Troopa Card",
+  'Koopa Troopa Card':ItemEntry (
       0x123,
       ListType.CARD,
       ItemType.CARD,
@@ -3579,8 +3143,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '292':ItemEntry (
-      "Koopatrol Card",
+  'Koopatrol Card':ItemEntry (
       0x124,
       ListType.CARD,
       ItemType.CARD,
@@ -3591,8 +3154,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '293':ItemEntry (
-      "Dark Koopatrol Card",
+  'Dark Koopatrol Card':ItemEntry (
       0x125,
       ListType.CARD,
       ItemType.CARD,
@@ -3603,8 +3165,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 50, None),
       SellPrice(None, None, None, 15)
   ),
-  '294':ItemEntry (
-      "Dark Koopa Card",
+  'Dark Koopa Card':ItemEntry (
       0x126,
       ListType.CARD,
       ItemType.CARD,
@@ -3615,8 +3176,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '295':ItemEntry (
-      "Mega Koopa Card",
+  'Mega Koopa Card':ItemEntry (
       0x127,
       ListType.CARD,
       ItemType.CARD,
@@ -3627,8 +3187,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 200, None),
       SellPrice(None, None, None, 100)
   ),
-  '296':ItemEntry (
-      "Paratroopa Card",
+  'Paratroopa Card':ItemEntry (
       0x128,
       ListType.CARD,
       ItemType.CARD,
@@ -3639,8 +3198,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '297':ItemEntry (
-      "Dark Paratroopa Card",
+  'Dark Paratroopa Card':ItemEntry (
       0x129,
       ListType.CARD,
       ItemType.CARD,
@@ -3651,8 +3209,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '298':ItemEntry (
-      "Buzzy Beetle Card",
+  'Buzzy Beetle Card':ItemEntry (
       0x12A,
       ListType.CARD,
       ItemType.CARD,
@@ -3663,8 +3220,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 10, None),
       SellPrice(None, None, None, 1)
   ),
-  '299':ItemEntry (
-      "Spike Top Card",
+  'Spike Top Card':ItemEntry (
       0x12B,
       ListType.CARD,
       ItemType.CARD,
@@ -3675,8 +3231,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '300':ItemEntry (
-      "Dark Spike Top Card",
+  'Dark Spike Top Card':ItemEntry (
       0x12C,
       ListType.CARD,
       ItemType.CARD,
@@ -3687,8 +3242,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '301':ItemEntry (
-      "Parabuzzy Card",
+  'Parabuzzy Card':ItemEntry (
       0x12D,
       ListType.CARD,
       ItemType.CARD,
@@ -3699,8 +3253,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '302':ItemEntry (
-      "Spiky Parabuzzy Card",
+  'Spiky Parabuzzy Card':ItemEntry (
       0x12E,
       ListType.CARD,
       ItemType.CARD,
@@ -3711,8 +3264,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '303':ItemEntry (
-      "Stone Buzzy Card",
+  'Stone Buzzy Card':ItemEntry (
       0x12F,
       ListType.CARD,
       ItemType.CARD,
@@ -3723,8 +3275,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '304':ItemEntry (
-      "Dark Stone Buzzy Card",
+  'Dark Stone Buzzy Card':ItemEntry (
       0x130,
       ListType.CARD,
       ItemType.CARD,
@@ -3735,8 +3286,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '305':ItemEntry (
-      "Spiny Card",
+  'Spiny Card':ItemEntry (
       0x131,
       ListType.CARD,
       ItemType.CARD,
@@ -3747,8 +3297,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '306':ItemEntry (
-      "Dark Spiny Card",
+  'Dark Spiny Card':ItemEntry (
       0x132,
       ListType.CARD,
       ItemType.CARD,
@@ -3759,8 +3308,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '307':ItemEntry (
-      "Lakitu Card",
+  'Lakitu Card':ItemEntry (
       0x133,
       ListType.CARD,
       ItemType.CARD,
@@ -3771,8 +3319,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 35, None),
       SellPrice(None, None, None, 7)
   ),
-  '308':ItemEntry (
-      "Dull Bones Card",
+  'Dull Bones Card':ItemEntry (
       0x134,
       ListType.CARD,
       ItemType.CARD,
@@ -3783,8 +3330,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '309':ItemEntry (
-      "Dark Dull Bones Card",
+  'Dark Dull Bones Card':ItemEntry (
       0x135,
       ListType.CARD,
       ItemType.CARD,
@@ -3795,8 +3341,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '310':ItemEntry (
-      "Dry Bones Card",
+  'Dry Bones Card':ItemEntry (
       0x136,
       ListType.CARD,
       ItemType.CARD,
@@ -3807,8 +3352,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '311':ItemEntry (
-      "Hammer Bro Card",
+  'Hammer Bro Card':ItemEntry (
       0x137,
       ListType.CARD,
       ItemType.CARD,
@@ -3819,8 +3363,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 60, None),
       SellPrice(None, None, None, 24)
   ),
-  '312':ItemEntry (
-      "Boomerang Bro Card",
+  'Boomerang Bro Card':ItemEntry (
       0x138,
       ListType.CARD,
       ItemType.CARD,
@@ -3831,8 +3374,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 70, None),
       SellPrice(None, None, None, 28)
   ),
-  '313':ItemEntry (
-      "Fire Bro Card",
+  'Fire Bro Card':ItemEntry (
       0x139,
       ListType.CARD,
       ItemType.CARD,
@@ -3843,8 +3385,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 70, None),
       SellPrice(None, None, None, 28)
   ),
-  '314':ItemEntry (
-      "Dark Hammer Bro Card",
+  'Dark Hammer Bro Card':ItemEntry (
       0x13A,
       ListType.CARD,
       ItemType.CARD,
@@ -3855,8 +3396,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '315':ItemEntry (
-      "Dark Boomerang Bro Card",
+  'Dark Boomerang Bro Card':ItemEntry (
       0x13B,
       ListType.CARD,
       ItemType.CARD,
@@ -3867,8 +3407,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '316':ItemEntry (
-      "Dark Fire Bro Card",
+  'Dark Fire Bro Card':ItemEntry (
       0x13C,
       ListType.CARD,
       ItemType.CARD,
@@ -3879,8 +3418,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '317':ItemEntry (
-      "Magikoopa Card",
+  'Magikoopa Card':ItemEntry (
       0x13D,
       ListType.CARD,
       ItemType.CARD,
@@ -3891,8 +3429,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 60, None),
       SellPrice(None, None, None, 24)
   ),
-  '318':ItemEntry (
-      "Dark Magikoopa Card",
+  'Dark Magikoopa Card':ItemEntry (
       0x13E,
       ListType.CARD,
       ItemType.CARD,
@@ -3903,8 +3440,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '319':ItemEntry (
-      "Koopa Striker Card",
+  'Koopa Striker Card':ItemEntry (
       0x13F,
       ListType.CARD,
       ItemType.CARD,
@@ -3915,8 +3451,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '320':ItemEntry (
-      "Toopa Striker Card",
+  'Toopa Striker Card':ItemEntry (
       0x140,
       ListType.CARD,
       ItemType.CARD,
@@ -3927,8 +3462,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 80, None),
       SellPrice(None, None, None, 32)
   ),
-  '321':ItemEntry (
-      "Soopa Striker Card",
+  'Soopa Striker Card':ItemEntry (
       0x141,
       ListType.CARD,
       ItemType.CARD,
@@ -3939,8 +3473,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '322':ItemEntry (
-      "Dark Striker Card",
+  'Dark Striker Card':ItemEntry (
       0x142,
       ListType.CARD,
       ItemType.CARD,
@@ -3951,8 +3484,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '323':ItemEntry (
-      "Clubba Card",
+  'Clubba Card':ItemEntry (
       0x143,
       ListType.CARD,
       ItemType.CARD,
@@ -3963,8 +3495,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '324':ItemEntry (
-      "Dark Clubba Card",
+  'Dark Clubba Card':ItemEntry (
       0x144,
       ListType.CARD,
       ItemType.CARD,
@@ -3975,8 +3506,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '325':ItemEntry (
-      "Piranha Plant Card",
+  'Piranha Plant Card':ItemEntry (
       0x145,
       ListType.CARD,
       ItemType.CARD,
@@ -3987,8 +3517,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '326':ItemEntry (
-      "Putrid Piranha Card",
+  'Putrid Piranha Card':ItemEntry (
       0x146,
       ListType.CARD,
       ItemType.CARD,
@@ -3999,8 +3528,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '327':ItemEntry (
-      "Frost Piranha Card",
+  'Frost Piranha Card':ItemEntry (
       0x147,
       ListType.CARD,
       ItemType.CARD,
@@ -4011,8 +3539,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '328':ItemEntry (
-      "Crazee Dayzee Card",
+  'Crazee Dayzee Card':ItemEntry (
       0x148,
       ListType.CARD,
       ItemType.CARD,
@@ -4023,8 +3550,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '329':ItemEntry (
-      "Amazy Dayzee Card",
+  'Amazy Dayzee Card':ItemEntry (
       0x149,
       ListType.CARD,
       ItemType.CARD,
@@ -4035,8 +3561,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 500, None),
       SellPrice(None, None, None, 300)
   ),
-  '330':ItemEntry (
-      "Dark Dayzee Card",
+  'Dark Dayzee Card':ItemEntry (
       0x14A,
       ListType.CARD,
       ItemType.CARD,
@@ -4047,8 +3572,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 150, None),
       SellPrice(None, None, None, 60)
   ),
-  '331':ItemEntry (
-      "Fuzzy Card",
+  'Fuzzy Card':ItemEntry (
       0x14B,
       ListType.CARD,
       ItemType.CARD,
@@ -4059,8 +3583,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '332':ItemEntry (
-      "Pink Fuzzy Card",
+  'Pink Fuzzy Card':ItemEntry (
       0x14C,
       ListType.CARD,
       ItemType.CARD,
@@ -4071,8 +3594,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '333':ItemEntry (
-      "Dark Fuzzy Card",
+  'Dark Fuzzy Card':ItemEntry (
       0x14D,
       ListType.CARD,
       ItemType.CARD,
@@ -4083,8 +3605,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '334':ItemEntry (
-      "Pokey Card",
+  'Pokey Card':ItemEntry (
       0x14E,
       ListType.CARD,
       ItemType.CARD,
@@ -4095,8 +3616,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '335':ItemEntry (
-      "Poison Pokey Card",
+  'Poison Pokey Card':ItemEntry (
       0x14F,
       ListType.CARD,
       ItemType.CARD,
@@ -4107,8 +3627,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '336':ItemEntry (
-      "Dark Pokey Card",
+  'Dark Pokey Card':ItemEntry (
       0x150,
       ListType.CARD,
       ItemType.CARD,
@@ -4119,8 +3638,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '337':ItemEntry (
-      "Swooper Card",
+  'Swooper Card':ItemEntry (
       0x151,
       ListType.CARD,
       ItemType.CARD,
@@ -4131,8 +3649,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '338':ItemEntry (
-      "Cheep Cheep Card",
+  'Cheep Cheep Card':ItemEntry (
       0x152,
       ListType.CARD,
       ItemType.CARD,
@@ -4143,8 +3660,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '339':ItemEntry (
-      "Blooper Card",
+  'Blooper Card':ItemEntry (
       0x153,
       ListType.CARD,
       ItemType.CARD,
@@ -4155,8 +3671,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '340':ItemEntry (
-      "Bittacuda Card",
+  'Bittacuda Card':ItemEntry (
       0x154,
       ListType.CARD,
       ItemType.CARD,
@@ -4167,8 +3682,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '341':ItemEntry (
-      "Ruff Puff Card",
+  'Ruff Puff Card':ItemEntry (
       0x155,
       ListType.CARD,
       ItemType.CARD,
@@ -4179,8 +3693,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '342':ItemEntry (
-      "Dark Ruff Puff Card",
+  'Dark Ruff Puff Card':ItemEntry (
       0x156,
       ListType.CARD,
       ItemType.CARD,
@@ -4191,8 +3704,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '343':ItemEntry (
-      "Spania Card",
+  'Spania Card':ItemEntry (
       0x157,
       ListType.CARD,
       ItemType.CARD,
@@ -4203,8 +3715,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 35, None),
       SellPrice(None, None, None, 7)
   ),
-  '344':ItemEntry (
-      "Dark Spania Card",
+  'Dark Spania Card':ItemEntry (
       0x158,
       ListType.CARD,
       ItemType.CARD,
@@ -4215,8 +3726,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '345':ItemEntry (
-      "Cursya Card",
+  'Cursya Card':ItemEntry (
       0x159,
       ListType.CARD,
       ItemType.CARD,
@@ -4227,8 +3737,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '346':ItemEntry (
-      "Back Cursya Card",
+  'Back Cursya Card':ItemEntry (
       0x15A,
       ListType.CARD,
       ItemType.CARD,
@@ -4239,8 +3748,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '347':ItemEntry (
-      "Tech Cursya Card",
+  'Tech Cursya Card':ItemEntry (
       0x15B,
       ListType.CARD,
       ItemType.CARD,
@@ -4251,8 +3759,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '348':ItemEntry (
-      "Heavy Cursya Card",
+  'Heavy Cursya Card':ItemEntry (
       0x15C,
       ListType.CARD,
       ItemType.CARD,
@@ -4263,8 +3770,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '349':ItemEntry (
-      "Reversya Cursya Card",
+  'Reversya Cursya Card':ItemEntry (
       0x15D,
       ListType.CARD,
       ItemType.CARD,
@@ -4275,8 +3781,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '350':ItemEntry (
-      "Dark Cursya Card",
+  'Dark Cursya Card':ItemEntry (
       0x15E,
       ListType.CARD,
       ItemType.CARD,
@@ -4287,8 +3792,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '351':ItemEntry (
-      "Dark Tech Cursya Card",
+  'Dark Tech Cursya Card':ItemEntry (
       0x15F,
       ListType.CARD,
       ItemType.CARD,
@@ -4299,8 +3803,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '352':ItemEntry (
-      "Dark Heavy Cursya Card",
+  'Dark Heavy Cursya Card':ItemEntry (
       0x160,
       ListType.CARD,
       ItemType.CARD,
@@ -4311,8 +3814,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '353':ItemEntry (
-      "Dark Reversya Cursya Card",
+  'Dark Reversya Cursya Card':ItemEntry (
       0x161,
       ListType.CARD,
       ItemType.CARD,
@@ -4323,8 +3825,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '354':ItemEntry (
-      "Boo Card",
+  'Boo Card':ItemEntry (
       0x162,
       ListType.CARD,
       ItemType.CARD,
@@ -4335,8 +3836,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '355':ItemEntry (
-      "Dark Boo Card",
+  'Dark Boo Card':ItemEntry (
       0x163,
       ListType.CARD,
       ItemType.CARD,
@@ -4347,8 +3847,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '356':ItemEntry (
-      "Dark Dark Boo Card",
+  'Dark Dark Boo Card':ItemEntry (
       0x164,
       ListType.CARD,
       ItemType.CARD,
@@ -4359,8 +3858,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '357':ItemEntry (
-      "Lava Bubble Card",
+  'Lava Bubble Card':ItemEntry (
       0x165,
       ListType.CARD,
       ItemType.CARD,
@@ -4371,8 +3869,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '358':ItemEntry (
-      "Chain Chomp Card",
+  'Chain Chomp Card':ItemEntry (
       0x166,
       ListType.CARD,
       ItemType.CARD,
@@ -4383,8 +3880,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '359':ItemEntry (
-      "Dark Chomp Card",
+  'Dark Chomp Card':ItemEntry (
       0x167,
       ListType.CARD,
       ItemType.CARD,
@@ -4395,8 +3891,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 35, None),
       SellPrice(None, None, None, 7)
   ),
-  '360':ItemEntry (
-      "Red Chomp Card",
+  'Red Chomp Card':ItemEntry (
       0x168,
       ListType.CARD,
       ItemType.CARD,
@@ -4407,8 +3902,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 110, None),
       SellPrice(None, None, None, 44)
   ),
-  '361':ItemEntry (
-      "The Underchomp Card",
+  'The Underchomp Card':ItemEntry (
       0x169,
       ListType.CARD,
       ItemType.CARD,
@@ -4419,8 +3913,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 160, None),
       SellPrice(None, None, None, 64)
   ),
-  '362':ItemEntry (
-      "Bald Cleft Card",
+  'Bald Cleft Card':ItemEntry (
       0x16A,
       ListType.CARD,
       ItemType.CARD,
@@ -4431,8 +3924,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '363':ItemEntry (
-      "Moon Cleft Card",
+  'Moon Cleft Card':ItemEntry (
       0x16B,
       ListType.CARD,
       ItemType.CARD,
@@ -4443,8 +3935,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '364':ItemEntry (
-      "Dark Cleft Card",
+  'Dark Cleft Card':ItemEntry (
       0x16C,
       ListType.CARD,
       ItemType.CARD,
@@ -4455,8 +3946,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '365':ItemEntry (
-      "Shlurp Card",
+  'Shlurp Card':ItemEntry (
       0x16D,
       ListType.CARD,
       ItemType.CARD,
@@ -4467,8 +3957,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 35, None),
       SellPrice(None, None, None, 7)
   ),
-  '366':ItemEntry (
-      "Shlorp Card",
+  'Shlorp Card':ItemEntry (
       0x16E,
       ListType.CARD,
       ItemType.CARD,
@@ -4479,8 +3968,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '367':ItemEntry (
-      "Dark Shlurp Card",
+  'Dark Shlurp Card':ItemEntry (
       0x16F,
       ListType.CARD,
       ItemType.CARD,
@@ -4491,8 +3979,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '368':ItemEntry (
-      "Thwomp Card",
+  'Thwomp Card':ItemEntry (
       0x170,
       ListType.CARD,
       ItemType.CARD,
@@ -4503,8 +3990,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 90, None),
       SellPrice(None, None, None, 36)
   ),
-  '369':ItemEntry (
-      "Spiny Tromp Card",
+  'Spiny Tromp Card':ItemEntry (
       0x171,
       ListType.CARD,
       ItemType.CARD,
@@ -4515,8 +4001,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 100, None),
       SellPrice(None, None, None, 40)
   ),
-  '370':ItemEntry (
-      "Spiky Tromp Card",
+  'Spiky Tromp Card':ItemEntry (
       0x172,
       ListType.CARD,
       ItemType.CARD,
@@ -4527,8 +4012,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 80, None),
       SellPrice(None, None, None, 32)
   ),
-  '371':ItemEntry (
-      "Bullet Bill Card",
+  'Bullet Bill Card':ItemEntry (
       0x173,
       ListType.CARD,
       ItemType.CARD,
@@ -4539,8 +4023,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '372':ItemEntry (
-      "Bill Blaster Card",
+  'Bill Blaster Card':ItemEntry (
       0x174,
       ListType.CARD,
       ItemType.CARD,
@@ -4551,8 +4034,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '373':ItemEntry (
-      "Squiglet Card",
+  'Squiglet Card':ItemEntry (
       0x175,
       ListType.CARD,
       ItemType.CARD,
@@ -4563,8 +4045,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 10, None),
       SellPrice(None, None, None, 1)
   ),
-  '374':ItemEntry (
-      "Squig Card",
+  'Squig Card':ItemEntry (
       0x176,
       ListType.CARD,
       ItemType.CARD,
@@ -4575,8 +4056,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 35, None),
       SellPrice(None, None, None, 7)
   ),
-  '375':ItemEntry (
-      "Squog Card",
+  'Squog Card':ItemEntry (
       0x177,
       ListType.CARD,
       ItemType.CARD,
@@ -4587,8 +4067,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '376':ItemEntry (
-      "Dark Squiglet Card",
+  'Dark Squiglet Card':ItemEntry (
       0x178,
       ListType.CARD,
       ItemType.CARD,
@@ -4599,8 +4078,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '377':ItemEntry (
-      "Squoinker Card",
+  'Squoinker Card':ItemEntry (
       0x179,
       ListType.CARD,
       ItemType.CARD,
@@ -4611,8 +4089,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '378':ItemEntry (
-      "Sproing-Oing Card",
+  'Sproing-Oing Card':ItemEntry (
       0x17A,
       ListType.CARD,
       ItemType.CARD,
@@ -4623,8 +4100,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '379':ItemEntry (
-      "Boing-Oing Card",
+  'Boing-Oing Card':ItemEntry (
       0x17B,
       ListType.CARD,
       ItemType.CARD,
@@ -4635,8 +4111,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '380':ItemEntry (
-      "Zoing-Oing Card",
+  'Zoing-Oing Card':ItemEntry (
       0x17C,
       ListType.CARD,
       ItemType.CARD,
@@ -4647,8 +4122,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '381':ItemEntry (
-      "Dark Sproing-Oing Card",
+  'Dark Sproing-Oing Card':ItemEntry (
       0x17D,
       ListType.CARD,
       ItemType.CARD,
@@ -4659,8 +4133,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '382':ItemEntry (
-      "Boomboxer Card",
+  'Boomboxer Card':ItemEntry (
       0x17E,
       ListType.CARD,
       ItemType.CARD,
@@ -4671,8 +4144,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '383':ItemEntry (
-      "Beepboxer Card",
+  'Beepboxer Card':ItemEntry (
       0x17F,
       ListType.CARD,
       ItemType.CARD,
@@ -4683,8 +4155,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '384':ItemEntry (
-      "Dark Boomboxer Card",
+  'Dark Boomboxer Card':ItemEntry (
       0x180,
       ListType.CARD,
       ItemType.CARD,
@@ -4695,8 +4166,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '385':ItemEntry (
-      "Blastboxer Card",
+  'Blastboxer Card':ItemEntry (
       0x181,
       ListType.CARD,
       ItemType.CARD,
@@ -4707,8 +4177,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '386':ItemEntry (
-      "Jawbus Card",
+  'Jawbus Card':ItemEntry (
       0x182,
       ListType.CARD,
       ItemType.CARD,
@@ -4719,8 +4188,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '387':ItemEntry (
-      "Rawbus Card",
+  'Rawbus Card':ItemEntry (
       0x183,
       ListType.CARD,
       ItemType.CARD,
@@ -4731,8 +4199,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 120, None),
       SellPrice(None, None, None, 48)
   ),
-  '388':ItemEntry (
-      "Dark Jawbus Card",
+  'Dark Jawbus Card':ItemEntry (
       0x184,
       ListType.CARD,
       ItemType.CARD,
@@ -4743,8 +4210,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 60, None),
       SellPrice(None, None, None, 18)
   ),
-  '389':ItemEntry (
-      "Gawbus Card",
+  'Gawbus Card':ItemEntry (
       0x185,
       ListType.CARD,
       ItemType.CARD,
@@ -4755,8 +4221,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 60, None),
       SellPrice(None, None, None, 18)
   ),
-  '390':ItemEntry (
-      "Gnip / Howl Card",
+  'Gnip / Howl Card':ItemEntry (
       0x186,
       ListType.CARD,
       ItemType.CARD,
@@ -4767,8 +4232,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '391':ItemEntry (
-      "Gnaw / Growl Card",
+  'Gnaw / Growl Card':ItemEntry (
       0x187,
       ListType.CARD,
       ItemType.CARD,
@@ -4779,8 +4243,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 150, None),
       SellPrice(None, None, None, 60)
   ),
-  '392':ItemEntry (
-      "Mister I Card",
+  'Mister I Card':ItemEntry (
       0x188,
       ListType.CARD,
       ItemType.CARD,
@@ -4791,8 +4254,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '393':ItemEntry (
-      "Red I Card",
+  'Red I Card':ItemEntry (
       0x189,
       ListType.CARD,
       ItemType.CARD,
@@ -4803,8 +4265,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 35, None),
       SellPrice(None, None, None, 7)
   ),
-  '394':ItemEntry (
-      "Growmeba Card",
+  'Growmeba Card':ItemEntry (
       0x18A,
       ListType.CARD,
       ItemType.CARD,
@@ -4815,8 +4276,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '395':ItemEntry (
-      "Blomeba Card",
+  'Blomeba Card':ItemEntry (
       0x18B,
       ListType.CARD,
       ItemType.CARD,
@@ -4827,8 +4287,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '396':ItemEntry (
-      "Chromeba Card",
+  'Chromeba Card':ItemEntry (
       0x18C,
       ListType.CARD,
       ItemType.CARD,
@@ -4839,8 +4298,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '397':ItemEntry (
-      "Dark Growmeba Card",
+  'Dark Growmeba Card':ItemEntry (
       0x18D,
       ListType.CARD,
       ItemType.CARD,
@@ -4851,8 +4309,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '398':ItemEntry (
-      "Tileoid G Card",
+  'Tileoid G Card':ItemEntry (
       0x18E,
       ListType.CARD,
       ItemType.CARD,
@@ -4863,8 +4320,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '399':ItemEntry (
-      "Tileoid B Card",
+  'Tileoid B Card':ItemEntry (
       0x18F,
       ListType.CARD,
       ItemType.CARD,
@@ -4875,8 +4331,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '400':ItemEntry (
-      "Tileoid R Card",
+  'Tileoid R Card':ItemEntry (
       0x190,
       ListType.CARD,
       ItemType.CARD,
@@ -4887,8 +4342,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '401':ItemEntry (
-      "Tileoid Y Card",
+  'Tileoid Y Card':ItemEntry (
       0x191,
       ListType.CARD,
       ItemType.CARD,
@@ -4899,8 +4353,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '402':ItemEntry (
-      "Dark Tileoid Card",
+  'Dark Tileoid Card':ItemEntry (
       0x192,
       ListType.CARD,
       ItemType.CARD,
@@ -4911,8 +4364,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '403':ItemEntry (
-      "Meowbomb Card",
+  'Meowbomb Card':ItemEntry (
       0x193,
       ListType.CARD,
       ItemType.CARD,
@@ -4923,8 +4375,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 50, None),
       SellPrice(None, None, None, 15)
   ),
-  '404':ItemEntry (
-      "PatrolMeow Card",
+  'PatrolMeow Card':ItemEntry (
       0x194,
       ListType.CARD,
       ItemType.CARD,
@@ -4935,8 +4386,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 50, None),
       SellPrice(None, None, None, 15)
   ),
-  '405':ItemEntry (
-      "AirMeow Card",
+  'AirMeow Card':ItemEntry (
       0x195,
       ListType.CARD,
       ItemType.CARD,
@@ -4947,8 +4397,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 50, None),
       SellPrice(None, None, None, 15)
   ),
-  '406':ItemEntry (
-      "SurpriseMeow Card",
+  'SurpriseMeow Card':ItemEntry (
       0x196,
       ListType.CARD,
       ItemType.CARD,
@@ -4959,8 +4408,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 50, None),
       SellPrice(None, None, None, 15)
   ),
-  '407':ItemEntry (
-      "BigMeow Card",
+  'BigMeow Card':ItemEntry (
       0x197,
       ListType.CARD,
       ItemType.CARD,
@@ -4971,8 +4419,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 150, None),
       SellPrice(None, None, None, 60)
   ),
-  '408':ItemEntry (
-      "Jellien Card",
+  'Jellien Card':ItemEntry (
       0x198,
       ListType.CARD,
       ItemType.CARD,
@@ -4983,8 +4430,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '409':ItemEntry (
-      "Foton Card",
+  'Foton Card':ItemEntry (
       0x199,
       ListType.CARD,
       ItemType.CARD,
@@ -4995,8 +4441,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '410':ItemEntry (
-      "Warpid Card",
+  'Warpid Card':ItemEntry (
       0x19A,
       ListType.CARD,
       ItemType.CARD,
@@ -5007,8 +4452,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '411':ItemEntry (
-      "Eeligon Card",
+  'Eeligon Card':ItemEntry (
       0x19B,
       ListType.CARD,
       ItemType.CARD,
@@ -5019,8 +4463,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '412':ItemEntry (
-      "Hooligon Card",
+  'Hooligon Card':ItemEntry (
       0x19C,
       ListType.CARD,
       ItemType.CARD,
@@ -5031,8 +4474,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '413':ItemEntry (
-      "Dark Eeligon Card",
+  'Dark Eeligon Card':ItemEntry (
       0x19D,
       ListType.CARD,
       ItemType.CARD,
@@ -5043,8 +4485,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '414':ItemEntry (
-      "Longator Card",
+  'Longator Card':ItemEntry (
       0x19E,
       ListType.CARD,
       ItemType.CARD,
@@ -5055,8 +4496,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 10, None),
       SellPrice(None, None, None, 1)
   ),
-  '415':ItemEntry (
-      "Longadile Card",
+  'Longadile Card':ItemEntry (
       0x19F,
       ListType.CARD,
       ItemType.CARD,
@@ -5067,8 +4507,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 10, None),
       SellPrice(None, None, None, 1)
   ),
-  '416':ItemEntry (
-      "Dark Longator Card",
+  'Dark Longator Card':ItemEntry (
       0x1A0,
       ListType.CARD,
       ItemType.CARD,
@@ -5079,8 +4518,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 10, None),
       SellPrice(None, None, None, 1)
   ),
-  '417':ItemEntry (
-      "Barribad Card",
+  'Barribad Card':ItemEntry (
       0x1A1,
       ListType.CARD,
       ItemType.CARD,
@@ -5091,8 +4529,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '418':ItemEntry (
-      "Sobarribad Card",
+  'Sobarribad Card':ItemEntry (
       0x1A2,
       ListType.CARD,
       ItemType.CARD,
@@ -5103,8 +4540,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '419':ItemEntry (
-      "Dark Barribad Card",
+  'Dark Barribad Card':ItemEntry (
       0x1A3,
       ListType.CARD,
       ItemType.CARD,
@@ -5115,8 +4551,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '420':ItemEntry (
-      "Pigarithm Card",
+  'Pigarithm Card':ItemEntry (
       0x1A4,
       ListType.CARD,
       ItemType.CARD,
@@ -5127,8 +4562,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 15, None),
       SellPrice(None, None, None, 2)
   ),
-  '421':ItemEntry (
-      "Hogarithm Card",
+  'Hogarithm Card':ItemEntry (
       0x1A5,
       ListType.CARD,
       ItemType.CARD,
@@ -5139,8 +4573,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '422':ItemEntry (
-      "Dark Pigarithm Card",
+  'Dark Pigarithm Card':ItemEntry (
       0x1A6,
       ListType.CARD,
       ItemType.CARD,
@@ -5151,8 +4584,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '423':ItemEntry (
-      "Choppa Card",
+  'Choppa Card':ItemEntry (
       0x1A7,
       ListType.CARD,
       ItemType.CARD,
@@ -5163,8 +4595,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '424':ItemEntry (
-      "Copta Card",
+  'Copta Card':ItemEntry (
       0x1A8,
       ListType.CARD,
       ItemType.CARD,
@@ -5175,8 +4606,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '425':ItemEntry (
-      "Dark Choppa Card",
+  'Dark Choppa Card':ItemEntry (
       0x1A9,
       ListType.CARD,
       ItemType.CARD,
@@ -5187,8 +4617,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '426':ItemEntry (
-      "Muth Card",
+  'Muth Card':ItemEntry (
       0x1AA,
       ListType.CARD,
       ItemType.CARD,
@@ -5199,8 +4628,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 150, None),
       SellPrice(None, None, None, 60)
   ),
-  '427':ItemEntry (
-      "Dark Muth Card",
+  'Dark Muth Card':ItemEntry (
       0x1AB,
       ListType.CARD,
       ItemType.CARD,
@@ -5211,8 +4639,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '428':ItemEntry (
-      "Mega Muth Card",
+  'Mega Muth Card':ItemEntry (
       0x1AC,
       ListType.CARD,
       ItemType.CARD,
@@ -5223,8 +4650,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 100, None),
       SellPrice(None, None, None, 30)
   ),
-  '429':ItemEntry (
-      "Floro Sapien Card",
+  'Floro Sapien Card':ItemEntry (
       0x1AD,
       ListType.CARD,
       ItemType.CARD,
@@ -5235,8 +4661,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '430':ItemEntry (
-      "Floro Cragnien Card",
+  'Floro Cragnien Card':ItemEntry (
       0x1AE,
       ListType.CARD,
       ItemType.CARD,
@@ -5247,8 +4672,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 100, None),
       SellPrice(None, None, None, 40)
   ),
-  '431':ItemEntry (
-      "Ninjoe Card",
+  'Ninjoe Card':ItemEntry (
       0x1AF,
       ListType.CARD,
       ItemType.CARD,
@@ -5259,8 +4683,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '432':ItemEntry (
-      "Ninjohn Card",
+  'Ninjohn Card':ItemEntry (
       0x1B0,
       ListType.CARD,
       ItemType.CARD,
@@ -5271,8 +4694,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 35, None),
       SellPrice(None, None, None, 7)
   ),
-  '433':ItemEntry (
-      "Ninjerry Card",
+  'Ninjerry Card':ItemEntry (
       0x1B1,
       ListType.CARD,
       ItemType.CARD,
@@ -5283,8 +4705,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '434':ItemEntry (
-      "Dark Ninjoe Card",
+  'Dark Ninjoe Card':ItemEntry (
       0x1B2,
       ListType.CARD,
       ItemType.CARD,
@@ -5295,8 +4716,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 45, None),
       SellPrice(None, None, None, 13)
   ),
-  '435':ItemEntry (
-      "Underhand Card",
+  'Underhand Card':ItemEntry (
       0x1B3,
       ListType.CARD,
       ItemType.CARD,
@@ -5307,8 +4727,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 100, None),
       SellPrice(None, None, None, 40)
   ),
-  '436':ItemEntry (
-      "Skellobit Card",
+  'Skellobit Card':ItemEntry (
       0x1B4,
       ListType.CARD,
       ItemType.CARD,
@@ -5319,8 +4738,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 35, None),
       SellPrice(None, None, None, 7)
   ),
-  '437':ItemEntry (
-      "Spiky Skellobit Card",
+  'Spiky Skellobit Card':ItemEntry (
       0x1B5,
       ListType.CARD,
       ItemType.CARD,
@@ -5331,8 +4749,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '438':ItemEntry (
-      "Dark Skellobit Card",
+  'Dark Skellobit Card':ItemEntry (
       0x1B6,
       ListType.CARD,
       ItemType.CARD,
@@ -5343,8 +4760,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 35, None),
       SellPrice(None, None, None, 7)
   ),
-  '439':ItemEntry (
-      "Dark Spiky Skellobit Card",
+  'Dark Spiky Skellobit Card':ItemEntry (
       0x1B7,
       ListType.CARD,
       ItemType.CARD,
@@ -5355,8 +4771,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '440':ItemEntry (
-      "Skellobomber Card",
+  'Skellobomber Card':ItemEntry (
       0x1B8,
       ListType.CARD,
       ItemType.CARD,
@@ -5367,8 +4782,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '441':ItemEntry (
-      "Skellobait Card",
+  'Skellobait Card':ItemEntry (
       0x1B9,
       ListType.CARD,
       ItemType.CARD,
@@ -5379,8 +4793,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '442':ItemEntry (
-      "Spiky Skellobait Card",
+  'Spiky Skellobait Card':ItemEntry (
       0x1BA,
       ListType.CARD,
       ItemType.CARD,
@@ -5391,8 +4804,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '443':ItemEntry (
-      "Megabite Card",
+  'Megabite Card':ItemEntry (
       0x1BB,
       ListType.CARD,
       ItemType.CARD,
@@ -5403,8 +4815,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 140, None),
       SellPrice(None, None, None, 56)
   ),
-  '444':ItemEntry (
-      "Gigabite Card",
+  'Gigabite Card':ItemEntry (
       0x1BC,
       ListType.CARD,
       ItemType.CARD,
@@ -5415,8 +4826,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 150, None),
       SellPrice(None, None, None, 60)
   ),
-  '445':ItemEntry (
-      "Dark Megabite Card",
+  'Dark Megabite Card':ItemEntry (
       0x1BD,
       ListType.CARD,
       ItemType.CARD,
@@ -5427,8 +4837,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 150, None),
       SellPrice(None, None, None, 60)
   ),
-  '446':ItemEntry (
-      "Red Magiblot Card",
+  'Red Magiblot Card':ItemEntry (
       0x1BE,
       ListType.CARD,
       ItemType.CARD,
@@ -5439,8 +4848,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '447':ItemEntry (
-      "Blue Magiblot Card",
+  'Blue Magiblot Card':ItemEntry (
       0x1BF,
       ListType.CARD,
       ItemType.CARD,
@@ -5451,8 +4859,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '448':ItemEntry (
-      "Yellow Magiblot Card",
+  'Yellow Magiblot Card':ItemEntry (
       0x1C0,
       ListType.CARD,
       ItemType.CARD,
@@ -5463,8 +4870,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 35, None),
       SellPrice(None, None, None, 7)
   ),
-  '449':ItemEntry (
-      "Dark Magiblot Card",
+  'Dark Magiblot Card':ItemEntry (
       0x1C1,
       ListType.CARD,
       ItemType.CARD,
@@ -5475,8 +4881,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 50, None),
       SellPrice(None, None, None, 15)
   ),
-  '450':ItemEntry (
-      "Sammer Guy Card",
+  'Sammer Guy Card':ItemEntry (
       0x1C2,
       ListType.CARD,
       ItemType.CARD,
@@ -5487,8 +4892,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 150, None),
       SellPrice(None, None, None, 75)
   ),
-  '451':ItemEntry (
-      "Zombie Shroom Card",
+  'Zombie Shroom Card':ItemEntry (
       0x1C3,
       ListType.CARD,
       ItemType.CARD,
@@ -5499,8 +4903,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 120, None),
       SellPrice(None, None, None, 48)
   ),
-  '452':ItemEntry (
-      "Ghoul Shroom Card",
+  'Ghoul Shroom Card':ItemEntry (
       0x1C4,
       ListType.CARD,
       ItemType.CARD,
@@ -5511,8 +4914,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 90, None),
       SellPrice(None, None, None, 36)
   ),
-  '453':ItemEntry (
-      "O'Chunks Card",
+  'O\'Chunks Card':ItemEntry (
       0x1C5,
       ListType.CARD,
       ItemType.CARD,
@@ -5523,8 +4925,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 130, None),
       SellPrice(None, None, None, 65)
   ),
-  '454':ItemEntry (
-      "Dimentio Card",
+  'Dimentio Card':ItemEntry (
       0x1C6,
       ListType.CARD,
       ItemType.CARD,
@@ -5535,8 +4936,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 120, None),
       SellPrice(None, None, None, 60)
   ),
-  '455':ItemEntry (
-      "Mimi Card",
+  'Mimi Card':ItemEntry (
       0x1C7,
       ListType.CARD,
       ItemType.CARD,
@@ -5547,8 +4947,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 150, None),
       SellPrice(None, None, None, 75)
   ),
-  '456':ItemEntry (
-      "Fracktail Card",
+  'Fracktail Card':ItemEntry (
       0x1C8,
       ListType.CARD,
       ItemType.CARD,
@@ -5559,8 +4958,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 200, None),
       SellPrice(None, None, None, 100)
   ),
-  '457':ItemEntry (
-      "Wracktail Card",
+  'Wracktail Card':ItemEntry (
       0x1C9,
       ListType.CARD,
       ItemType.CARD,
@@ -5571,8 +4969,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 150, None),
       SellPrice(None, None, None, 75)
   ),
-  '458':ItemEntry (
-      "Bowser (1) Card",
+  'Bowser (1) Card':ItemEntry (
       0x1CA,
       ListType.CARD,
       ItemType.CARD,
@@ -5583,8 +4980,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 999, None),
       SellPrice(None, None, None, 999)
   ),
-  '459':ItemEntry (
-      "Dark Bowser Card",
+  'Dark Bowser Card':ItemEntry (
       0x1CB,
       ListType.CARD,
       ItemType.CARD,
@@ -5595,8 +4991,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 500, None),
       SellPrice(None, None, None, 350)
   ),
-  '460':ItemEntry (
-      "Dark Luigi Card",
+  'Dark Luigi Card':ItemEntry (
       0x1CC,
       ListType.CARD,
       ItemType.CARD,
@@ -5607,8 +5002,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 500, None),
       SellPrice(None, None, None, 350)
   ),
-  '461':ItemEntry (
-      "Dark Mario Card",
+  'Dark Mario Card':ItemEntry (
       0x1CD,
       ListType.CARD,
       ItemType.CARD,
@@ -5619,8 +5013,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 500, None),
       SellPrice(None, None, None, 350)
   ),
-  '462':ItemEntry (
-      "Dark Peach Card",
+  'Dark Peach Card':ItemEntry (
       0x1CE,
       ListType.CARD,
       ItemType.CARD,
@@ -5631,8 +5024,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 900, None),
       SellPrice(None, None, None, 630)
   ),
-  '463':ItemEntry (
-      "Big Blooper Card",
+  'Big Blooper Card':ItemEntry (
       0x1CF,
       ListType.CARD,
       ItemType.CARD,
@@ -5643,8 +5035,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 80, None),
       SellPrice(None, None, None, 40)
   ),
-  '464':ItemEntry (
-      "Francis Card",
+  'Francis Card':ItemEntry (
       0x1D0,
       ListType.CARD,
       ItemType.CARD,
@@ -5655,8 +5046,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 120, None),
       SellPrice(None, None, None, 60)
   ),
-  '465':ItemEntry (
-      "King Croacus Card",
+  'King Croacus Card':ItemEntry (
       0x1D1,
       ListType.CARD,
       ItemType.CARD,
@@ -5667,8 +5057,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 100, None),
       SellPrice(None, None, None, 50)
   ),
-  '466':ItemEntry (
-      "Mr. L Card",
+  'Mr. L Card':ItemEntry (
       0x1D2,
       ListType.CARD,
       ItemType.CARD,
@@ -5679,8 +5068,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 10)
   ),
-  '467':ItemEntry (
-      "Brobot Card",
+  'Brobot Card':ItemEntry (
       0x1D3,
       ListType.CARD,
       ItemType.CARD,
@@ -5691,8 +5079,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 120, None),
       SellPrice(None, None, None, 60)
   ),
-  '468':ItemEntry (
-      "Brobot L-type Card",
+  'Brobot L-type Card':ItemEntry (
       0x1D4,
       ListType.CARD,
       ItemType.CARD,
@@ -5703,8 +5090,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 130, None),
       SellPrice(None, None, None, 65)
   ),
-  '469':ItemEntry (
-      "Bonechill Card",
+  'Bonechill Card':ItemEntry (
       0x1D5,
       ListType.CARD,
       ItemType.CARD,
@@ -5715,8 +5101,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 140, None),
       SellPrice(None, None, None, 70)
   ),
-  '470':ItemEntry (
-      "Count Bleck Card",
+  'Count Bleck Card':ItemEntry (
       0x1D6,
       ListType.CARD,
       ItemType.CARD,
@@ -5727,8 +5112,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 400, None),
       SellPrice(None, None, None, 240)
   ),
-  '471':ItemEntry (
-      "Nastasia Card",
+  'Nastasia Card':ItemEntry (
       0x1D7,
       ListType.CARD,
       ItemType.CARD,
@@ -5739,8 +5123,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 300, None),
       SellPrice(None, None, None, 180)
   ),
-  '472':ItemEntry (
-      "Super Dimentio Card",
+  'Super Dimentio Card':ItemEntry (
       0x1D8,
       ListType.CARD,
       ItemType.CARD,
@@ -5751,8 +5134,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 330, None),
       SellPrice(None, None, None, 198)
   ),
-  '473':ItemEntry (
-      "Bowser (2) Card",
+  'Bowser (2) Card':ItemEntry (
       0x1D9,
       ListType.CARD,
       ItemType.CARD,
@@ -5763,8 +5145,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 140, None),
       SellPrice(None, None, None, 70)
   ),
-  '474':ItemEntry (
-      "Peach (2) Card",
+  'Peach (2) Card':ItemEntry (
       0x1DA,
       ListType.CARD,
       ItemType.CARD,
@@ -5775,8 +5156,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 150, None),
       SellPrice(None, None, None, 75)
   ),
-  '475':ItemEntry (
-      "Peach (3) Card",
+  'Peach (3) Card':ItemEntry (
       0x1DB,
       ListType.CARD,
       ItemType.CARD,
@@ -5787,8 +5167,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 200, None),
       SellPrice(None, None, None, 100)
   ),
-  '476':ItemEntry (
-      "Tippi Card",
+  'Tippi Card':ItemEntry (
       0x1DC,
       ListType.CARD,
       ItemType.CARD,
@@ -5799,8 +5178,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 400, None),
       SellPrice(None, None, None, 240)
   ),
-  '477':ItemEntry (
-      "Thoreau Card",
+  'Thoreau Card':ItemEntry (
       0x1DD,
       ListType.CARD,
       ItemType.CARD,
@@ -5811,8 +5189,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 300, None),
       SellPrice(None, None, None, 180)
   ),
-  '478':ItemEntry (
-      "Boomer Card",
+  'Boomer Card':ItemEntry (
       0x1DE,
       ListType.CARD,
       ItemType.CARD,
@@ -5823,8 +5200,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 280, None),
       SellPrice(None, None, None, 168)
   ),
-  '479':ItemEntry (
-      "Slim Card",
+  'Slim Card':ItemEntry (
       0x1DF,
       ListType.CARD,
       ItemType.CARD,
@@ -5835,8 +5211,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 250, None),
       SellPrice(None, None, None, 150)
   ),
-  '480':ItemEntry (
-      "Thudley Card",
+  'Thudley Card':ItemEntry (
       0x1E0,
       ListType.CARD,
       ItemType.CARD,
@@ -5847,8 +5222,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 225, None),
       SellPrice(None, None, None, 135)
   ),
-  '481':ItemEntry (
-      "Carrie Card",
+  'Carrie Card':ItemEntry (
       0x1E1,
       ListType.CARD,
       ItemType.CARD,
@@ -5859,8 +5233,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 240, None),
       SellPrice(None, None, None, 144)
   ),
-  '482':ItemEntry (
-      "Fleep Card",
+  'Fleep Card':ItemEntry (
       0x1E2,
       ListType.CARD,
       ItemType.CARD,
@@ -5871,8 +5244,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 260, None),
       SellPrice(None, None, None, 156)
   ),
-  '483':ItemEntry (
-      "Cudge Card",
+  'Cudge Card':ItemEntry (
       0x1E3,
       ListType.CARD,
       ItemType.CARD,
@@ -5883,8 +5255,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 290, None),
       SellPrice(None, None, None, 174)
   ),
-  '484':ItemEntry (
-      "Dottie Card",
+  'Dottie Card':ItemEntry (
       0x1E4,
       ListType.CARD,
       ItemType.CARD,
@@ -5895,8 +5266,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 300, None),
       SellPrice(None, None, None, 180)
   ),
-  '485':ItemEntry (
-      "Piccolo Card",
+  'Piccolo Card':ItemEntry (
       0x1E5,
       ListType.CARD,
       ItemType.CARD,
@@ -5907,8 +5277,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 200, None),
       SellPrice(None, None, None, 120)
   ),
-  '486':ItemEntry (
-      "Barry Card",
+  'Barry Card':ItemEntry (
       0x1E6,
       ListType.CARD,
       ItemType.CARD,
@@ -5919,8 +5288,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 220, None),
       SellPrice(None, None, None, 132)
   ),
-  '487':ItemEntry (
-      "Dashell Card",
+  'Dashell Card':ItemEntry (
       0x1E7,
       ListType.CARD,
       ItemType.CARD,
@@ -5931,8 +5299,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 210, None),
       SellPrice(None, None, None, 126)
   ),
-  '488':ItemEntry (
-      "Goombario Card",
+  'Goombario Card':ItemEntry (
       0x1E8,
       ListType.CARD,
       ItemType.CARD,
@@ -5943,8 +5310,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 450, None),
       SellPrice(None, None, None, 315)
   ),
-  '489':ItemEntry (
-      "Kooper Card",
+  'Kooper Card':ItemEntry (
       0x1E9,
       ListType.CARD,
       ItemType.CARD,
@@ -5955,8 +5321,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 470, None),
       SellPrice(None, None, None, 329)
   ),
-  '490':ItemEntry (
-      "Bombette Card",
+  'Bombette Card':ItemEntry (
       0x1EA,
       ListType.CARD,
       ItemType.CARD,
@@ -5967,8 +5332,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 500, None),
       SellPrice(None, None, None, 350)
   ),
-  '491':ItemEntry (
-      "Parakarry Card",
+  'Parakarry Card':ItemEntry (
       0x1EB,
       ListType.CARD,
       ItemType.CARD,
@@ -5979,8 +5343,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 490, None),
       SellPrice(None, None, None, 343)
   ),
-  '492':ItemEntry (
-      "Bow Card",
+  'Bow Card':ItemEntry (
       0x1EC,
       ListType.CARD,
       ItemType.CARD,
@@ -5991,8 +5354,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 550, None),
       SellPrice(None, None, None, 385)
   ),
-  '493':ItemEntry (
-      "Watt Card",
+  'Watt Card':ItemEntry (
       0x1ED,
       ListType.CARD,
       ItemType.CARD,
@@ -6003,8 +5365,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 525, None),
       SellPrice(None, None, None, 367)
   ),
-  '494':ItemEntry (
-      "Sushie Card",
+  'Sushie Card':ItemEntry (
       0x1EE,
       ListType.CARD,
       ItemType.CARD,
@@ -6015,8 +5376,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 470, None),
       SellPrice(None, None, None, 329)
   ),
-  '495':ItemEntry (
-      "Lakilester Card",
+  'Lakilester Card':ItemEntry (
       0x1EF,
       ListType.CARD,
       ItemType.CARD,
@@ -6027,8 +5387,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 500, None),
       SellPrice(None, None, None, 350)
   ),
-  '496':ItemEntry (
-      "Goombella Card",
+  'Goombella Card':ItemEntry (
       0x1F0,
       ListType.CARD,
       ItemType.CARD,
@@ -6039,8 +5398,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 510, None),
       SellPrice(None, None, None, 357)
   ),
-  '497':ItemEntry (
-      "Koops Card",
+  'Koops Card':ItemEntry (
       0x1F1,
       ListType.CARD,
       ItemType.CARD,
@@ -6051,8 +5409,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 470, None),
       SellPrice(None, None, None, 329)
   ),
-  '498':ItemEntry (
-      "Madame Flurrie Card",
+  'Madame Flurrie Card':ItemEntry (
       0x1F2,
       ListType.CARD,
       ItemType.CARD,
@@ -6063,8 +5420,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 465, None),
       SellPrice(None, None, None, 325)
   ),
-  '499':ItemEntry (
-      "Yoshi Card",
+  'Yoshi Card':ItemEntry (
       0x1F3,
       ListType.CARD,
       ItemType.CARD,
@@ -6075,8 +5431,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 520, None),
       SellPrice(None, None, None, 364)
   ),
-  '500':ItemEntry (
-      "Vivian Card",
+  'Vivian Card':ItemEntry (
       0x1F4,
       ListType.CARD,
       ItemType.CARD,
@@ -6087,8 +5442,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 540, None),
       SellPrice(None, None, None, 378)
   ),
-  '501':ItemEntry (
-      "Admiral Bobbery Card",
+  'Admiral Bobbery Card':ItemEntry (
       0x1F5,
       ListType.CARD,
       ItemType.CARD,
@@ -6099,8 +5453,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 480, None),
       SellPrice(None, None, None, 336)
   ),
-  '502':ItemEntry (
-      "Ms. Mowz Card",
+  'Ms. Mowz Card':ItemEntry (
       0x1F6,
       ListType.CARD,
       ItemType.CARD,
@@ -6111,8 +5464,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 520, None),
       SellPrice(None, None, None, 364)
   ),
-  '503':ItemEntry (
-      "Meowmaid Card",
+  'Meowmaid Card':ItemEntry (
       0x1F7,
       ListType.CARD,
       ItemType.CARD,
@@ -6123,8 +5475,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 50, None),
       SellPrice(None, None, None, 15)
   ),
-  '504':ItemEntry (
-      "SecuriMeow Card",
+  'SecuriMeow Card':ItemEntry (
       0x1F8,
       ListType.CARD,
       ItemType.CARD,
@@ -6135,8 +5486,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 100, None),
       SellPrice(None, None, None, 50)
   ),
-  '505':ItemEntry (
-      "Merlon Card",
+  'Merlon Card':ItemEntry (
       0x1F9,
       ListType.CARD,
       ItemType.CARD,
@@ -6147,8 +5497,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 70, None),
       SellPrice(None, None, None, 35)
   ),
-  '506':ItemEntry (
-      "Nolrem Card",
+  'Nolrem Card':ItemEntry (
       0x1FA,
       ListType.CARD,
       ItemType.CARD,
@@ -6159,8 +5508,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 90, None),
       SellPrice(None, None, None, 45)
   ),
-  '507':ItemEntry (
-      "Merluvlee Card",
+  'Merluvlee Card':ItemEntry (
       0x1FB,
       ListType.CARD,
       ItemType.CARD,
@@ -6171,8 +5519,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 110, None),
       SellPrice(None, None, None, 55)
   ),
-  '508':ItemEntry (
-      "Merlee Card",
+  'Merlee Card':ItemEntry (
       0x1FC,
       ListType.CARD,
       ItemType.CARD,
@@ -6183,8 +5530,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 110, None),
       SellPrice(None, None, None, 55)
   ),
-  '509':ItemEntry (
-      "Merlumina Card",
+  'Merlumina Card':ItemEntry (
       0x1FD,
       ListType.CARD,
       ItemType.CARD,
@@ -6195,8 +5541,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 90, None),
       SellPrice(None, None, None, 45)
   ),
-  '510':ItemEntry (
-      "Bestovius Card",
+  'Bestovius Card':ItemEntry (
       0x1FE,
       ListType.CARD,
       ItemType.CARD,
@@ -6207,8 +5552,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 80, None),
       SellPrice(None, None, None, 40)
   ),
-  '511':ItemEntry (
-      "Watchitt Card",
+  'Watchitt Card':ItemEntry (
       0x1FF,
       ListType.CARD,
       ItemType.CARD,
@@ -6219,8 +5563,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 90, None),
       SellPrice(None, None, None, 45)
   ),
-  '512':ItemEntry (
-      "Whacka Card",
+  'Whacka Card':ItemEntry (
       0x200,
       ListType.CARD,
       ItemType.CARD,
@@ -6231,8 +5574,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 500, None),
       SellPrice(None, None, None, 300)
   ),
-  '513':ItemEntry (
-      "Squirps Card",
+  'Squirps Card':ItemEntry (
       0x201,
       ListType.CARD,
       ItemType.CARD,
@@ -6243,8 +5585,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 170, None),
       SellPrice(None, None, None, 85)
   ),
-  '514':ItemEntry (
-      "Flint Cragley Card",
+  'Flint Cragley Card':ItemEntry (
       0x202,
       ListType.CARD,
       ItemType.CARD,
@@ -6255,8 +5596,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 160, None),
       SellPrice(None, None, None, 80)
   ),
-  '515':ItemEntry (
-      "Hornfels & Monzo Card",
+  'Hornfels & Monzo Card':ItemEntry (
       0x203,
       ListType.CARD,
       ItemType.CARD,
@@ -6267,8 +5607,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 90, None),
       SellPrice(None, None, None, 45)
   ),
-  '516':ItemEntry (
-      "King Sammer Card",
+  'King Sammer Card':ItemEntry (
       0x204,
       ListType.CARD,
       ItemType.CARD,
@@ -6279,8 +5618,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 130, None),
       SellPrice(None, None, None, 65)
   ),
-  '517':ItemEntry (
-      "Luvbi Card",
+  'Luvbi Card':ItemEntry (
       0x205,
       ListType.CARD,
       ItemType.CARD,
@@ -6291,8 +5629,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 200, None),
       SellPrice(None, None, None, 100)
   ),
-  '518':ItemEntry (
-      "Jaydes Card",
+  'Jaydes Card':ItemEntry (
       0x206,
       ListType.CARD,
       ItemType.CARD,
@@ -6303,8 +5640,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 120, None),
       SellPrice(None, None, None, 60)
   ),
-  '519':ItemEntry (
-      "Grambi Card",
+  'Grambi Card':ItemEntry (
       0x207,
       ListType.CARD,
       ItemType.CARD,
@@ -6315,8 +5651,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 120, None),
       SellPrice(None, None, None, 60)
   ),
-  '520':ItemEntry (
-      "The InterNed Card",
+  'The InterNed Card':ItemEntry (
       0x208,
       ListType.CARD,
       ItemType.CARD,
@@ -6327,8 +5662,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 130, None),
       SellPrice(None, None, None, 65)
   ),
-  '521':ItemEntry (
-      "Luigi Card",
+  'Luigi Card':ItemEntry (
       0x209,
       ListType.CARD,
       ItemType.CARD,
@@ -6339,8 +5673,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 999, None),
       SellPrice(None, None, None, 999)
   ),
-  '522':ItemEntry (
-      "Mario Card",
+  'Mario Card':ItemEntry (
       0x20A,
       ListType.CARD,
       ItemType.CARD,
@@ -6351,8 +5684,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 999, None),
       SellPrice(None, None, None, 999)
   ),
-  '523':ItemEntry (
-      "Peach (1) Card",
+  'Peach (1) Card':ItemEntry (
       0x20B,
       ListType.CARD,
       ItemType.CARD,
@@ -6363,8 +5695,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 999, None),
       SellPrice(None, None, None, 999)
   ),
-  '524':ItemEntry (
-      "Red & Green Card",
+  'Red & Green Card':ItemEntry (
       0x20C,
       ListType.CARD,
       ItemType.CARD,
@@ -6375,8 +5706,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 100, None),
       SellPrice(None, None, None, 50)
   ),
-  '525':ItemEntry (
-      "Atomic Boo Card",
+  'Atomic Boo Card':ItemEntry (
       0x20D,
       ListType.CARD,
       ItemType.CARD,
@@ -6387,8 +5717,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '526':ItemEntry (
-      "Small Sammer Guy Card",
+  'Small Sammer Guy Card':ItemEntry (
       0x20E,
       ListType.CARD,
       ItemType.CARD,
@@ -6399,8 +5728,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '527':ItemEntry (
-      "Big Sammer Guy Card",
+  'Big Sammer Guy Card':ItemEntry (
       0x20F,
       ListType.CARD,
       ItemType.CARD,
@@ -6411,8 +5739,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 40, None),
       SellPrice(None, None, None, 12)
   ),
-  '528':ItemEntry (
-      "Cherbil Card",
+  'Cherbil Card':ItemEntry (
       0x210,
       ListType.CARD,
       ItemType.CARD,
@@ -6423,8 +5750,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 20, None),
       SellPrice(None, None, None, 2)
   ),
-  '529':ItemEntry (
-      "Ice Cherbil Card",
+  'Ice Cherbil Card':ItemEntry (
       0x211,
       ListType.CARD,
       ItemType.CARD,
@@ -6435,8 +5761,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 25, None),
       SellPrice(None, None, None, 3)
   ),
-  '530':ItemEntry (
-      "Poison Cherbil Card",
+  'Poison Cherbil Card':ItemEntry (
       0x212,
       ListType.CARD,
       ItemType.CARD,
@@ -6447,8 +5772,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '531':ItemEntry (
-      "Frackle Card",
+  'Frackle Card':ItemEntry (
       0x213,
       ListType.CARD,
       ItemType.CARD,
@@ -6459,8 +5783,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 30, None),
       SellPrice(None, None, None, 6)
   ),
-  '532':ItemEntry (
-      "Wrackle Card",
+  'Wrackle Card':ItemEntry (
       0x214,
       ListType.CARD,
       ItemType.CARD,
@@ -6471,8 +5794,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 100, None),
       SellPrice(None, None, None, 50)
   ),
-  '533':ItemEntry (
-      "Welderberg Card",
+  'Welderberg Card':ItemEntry (
       0x215,
       ListType.CARD,
       ItemType.CARD,
@@ -6483,8 +5805,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 120, None),
       SellPrice(None, None, None, 60)
   ),
-  '534':ItemEntry (
-      "The InterChet Card",
+  'The InterChet Card':ItemEntry (
       0x216,
       ListType.CARD,
       ItemType.CARD,
@@ -6495,8 +5816,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 150, None),
       SellPrice(None, None, None, 75)
   ),
-  '535':ItemEntry (
-      "Dark Cherbil Card",
+  'Dark Cherbil Card':ItemEntry (
       0x217,
       ListType.CARD,
       ItemType.CARD,
@@ -6507,8 +5827,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 50, None),
       SellPrice(None, None, None, 15)
   ),
-  '536':ItemEntry (
-      "Tiptron Card",
+  'Tiptron Card':ItemEntry (
       0x218,
       ListType.CARD,
       ItemType.CARD,
@@ -6519,8 +5838,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 500, None),
       SellPrice(None, None, None, 300)
   ),
-  '537':ItemEntry (
-      "Toad Card",
+  'Toad Card':ItemEntry (
       0x219,
       ListType.CARD,
       ItemType.CARD,
@@ -6531,8 +5849,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, 100, None),
       SellPrice(None, None, None, 50)
   ),
-  '538':ItemEntry (
-      "undefined 0x21A",
+  'undefined 0x21A':ItemEntry (
       0x21A,
       ListType.DEBUG,
       ItemType.NONE,
@@ -6543,8 +5860,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '539':ItemEntry (
-      "undefined 0x21B",
+  'undefined 0x21B':ItemEntry (
       0x21B,
       ListType.DEBUG,
       ItemType.NONE,
@@ -6555,8 +5871,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '540':ItemEntry (
-      "undefined 0x21C",
+  'undefined 0x21C':ItemEntry (
       0x21C,
       ListType.DEBUG,
       ItemType.NONE,
@@ -6567,8 +5882,7 @@ HexList = {
       BuyPrice(None, None, None, None, None, None, None, None, None, None, None, None, None),
       SellPrice(None, None, None, None)
   ),
-  '541':ItemEntry (
-      "undefined 0x21D",
+  'undefined 0x21D':ItemEntry (
       0x21D,
       ListType.DEBUG,
       ItemType.NONE,
