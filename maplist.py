@@ -1,6 +1,6 @@
 from enum import Enum
 
-from bighexlist import HexList, ListType, ItemType
+from bighexlist import HexList
 from enemylist import EnemyList
 
 class Map():
@@ -107,13 +107,11 @@ class MapItems():
             return self.item[index]
         else:
             return None
-        
+
 class Item():
-    def __init__(self, ItemName, ItemHex, ListType, ItemType, ItemLocation):
+    def __init__(self, ItemName, ItemEntry, ItemLocation):
         self.ItemName = ItemName
-        self.ItemHex = ItemHex
-        self.ListType = ListType
-        self.ItemType = ItemType
+        self.ItemEntry = ItemEntry
         self.ItemLocation = ItemLocation
 
 class MapEnemies():
@@ -215,7 +213,7 @@ MapList = [
         MapType.MAIN,
         None,
         MapItems(
-            Item("Jaydes Card", 0x206, ListType.CARD, ItemType.CARD, ItemPos (ItemState.MAP, 0, 100, 0))
+            Item("Jaydes Card", HexList["518"], ItemPos (ItemState.MAP, 0, 100, 0))
         ),
         None,
         MapEntrance (
@@ -245,7 +243,7 @@ MapList = [
             Enemy ("Poison Cherbil", EnemyList["411"], EnemyLocation (EnemyState.IN2D, 125, 275, 125))
         ),
         MapItems (
-            Item ("Super Shroom Shake", 0x51, ListType.ITEM, ItemType.VANILLA, ItemPos (ItemState.GROUND, 1225, 150, 0))
+            Item ("Super Shroom Shake", HexList["81"], ItemPos (ItemState.GROUND, 1225, 150, 0))
         ),
         None,
         MapEntrance (
