@@ -1,7 +1,7 @@
 from enum import Enum
 
-from bighexlist import HexList
-from enemylist import EnemyList
+from .bighexlist import HexList
+from .enemylist import EnemyList
 
 class Map():
     def __init__(self, MapType, MapEnemies, MapItems, ShopItems, MapEntrance):
@@ -339,7 +339,7 @@ MapList = {
         MapItems (
             Item (HexList["Dry Bones Card"], HexPos (ItemState.CHEST, -730, 0, 90), 0),
             Item (HexList["Long-Last Shake"], HexPos (ItemState.GROUND3D, 605, 200, 100)),
-            Item (HexList["Luigi"], HexPos (ItemState.GROUND, 400, 200, 0))
+            Item (HexList["Luigi"], HexPos (ItemState.NPC, 400, 200, 0))
         ),
         None,
         MapEntrance (

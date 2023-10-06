@@ -2,12 +2,30 @@ from bighexlist import HexList
 from watches import game_region, game_revision
 
 class EnemyEntry():
-    def __init__ (self, EnemyName, EnemyID, DropTemplate, DropPercent, EnemyDrops):
+    def __init__ (self, EnemyName, EnemyData, EnemyID, DropTemplate, DropPercent, EnemyDrops):
         self.EnemyName = EnemyName
+        self.EnemyData = EnemyData
         self.EnemyID =  EnemyID
         self.DropTemplate = DropTemplate
         self.DropPercent = DropPercent
         self.EnemyDrops = EnemyDrops
+
+class EnemyData():
+    def __init__ (self, HP, Atk, Def, Tattle, CardData, icon):
+        self.HP = HP
+        self.Atk = Atk
+        self.Def = Def
+        self.Tattle = Tattle
+        self.CardData = CardData
+        self.icon = icon
+
+class CardData():
+    def __init__ (self, CardNum, Name, Description, Location, Rarity):
+        self.CardNum = CardNum
+        self.Name = Name
+        self.Descrption = Description
+        self.Location = Location
+        self.Rarity = Rarity
 
 class ItemDrops():
     def __init__(self, *item):
@@ -53,4855 +71,6921 @@ def get_itemPercent(name: str) -> int:
     return int(dropies, drop["datatype"])
 
 ItemHexValues = {}
-for item in HexList:
-    ItemHexValues[item.name] = item.hex
+for item_name, item_entry in HexList.items():
+    if hasattr(item_entry, 'hex'):
+        ItemHexValues[item_name] = item_entry.hex
+    else:
+        print(f"Skipping item: {item_name}")
 
-def get_hex_value(item_name):
-    return ItemHexValues.get(item_name)
+# for item_entry in HexList:
+#     print(f"Attributes of item_entry: {dir(item_entry)}")
+
+def get_ItemID(ItemName):
+    return ItemHexValues.get(ItemName)
 
 EnemyList = {
     '0':EnemyEntry (
-        "Nothing",
-        None,
-        "Template 0",
-        0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+    'Nothing',
+    EnemyData(0, 0, 0, '', '', ''),
+    None,
+    'Template 0',
+    0,
+    EnemyDrops(),
     ),
     '1':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 1",
+        'Template 1',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '2':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 2",
+        'Template 2',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '3':EnemyEntry (
-        "Spiked Goomba",
+        'Spiked Goomba',
+        EnemyData(
+            1,
+            2,
+            0,
+            '''It's a Spiked Goomba. Look at that spiky hat! Max HP is 1. Attack is 2. That spiky hat makes stomping it or picking it up a very bad idea... I would recommend throwing something at it... Or you could just walk on by...''',
+            CardData(
+                3,
+                'Spiked Goomba',
+                '''Max HP: 1, Attack: 2. A Goomba with a spike strapped to its helmet. Head spikes: The ultimate in antistomping technology.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x11B,
-        "Template 3",
+        'Template 3',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '4':EnemyEntry (
-        "Paragoomba",
+        'Paragoomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''That's a Paragoomba. It is essentially a Goomba...with wings. A flying underling... Max HP is 1 and Attack is 1. Stomp it to turn it back into a Goomba... Then you can stomp it like a normal Goomba, I guess... Ahh...the life of a Goomba...''',
+            CardData(
+                5,
+                'Paragoomba',
+                '''Max HP: 1, Attack: 1. A Goomba that has been through airborne training. One stomp, and it's like it never went to flight school.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x11D,
-        "Template 4",
+        'Template 4',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '5':EnemyEntry (
-        "Flip Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 5",
+        'Template 5',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '6':EnemyEntry (
-        "Spiked Goomba",
+        'Spiked Goomba',
+        EnemyData(
+            1,
+            2,
+            0,
+            '''It's a Spiked Goomba. Look at that spiky hat! Max HP is 1. Attack is 2. That spiky hat makes stomping it or picking it up a very bad idea... I would recommend throwing something at it... Or you could just walk on by...''',
+            CardData(
+                3,
+                'Spiked Goomba',
+                '''Max HP: 1, Attack: 2. A Goomba with a spike strapped to its helmet. Head spikes: The ultimate in antistomping technology.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x11B,
-        "Template 6",
+        'Template 6',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '7':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 7",
+        'Template 7',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '8':EnemyEntry (
-        "Green Koopa Troopa",
+        'Koopa Troopa',
+        EnemyData(
+            1,
+            1,
+            1,
+            '''Normal: This is a Koopa Troopa. It may be slow, but it is well defended inside its shell... Max HP is 1, Attack is 1, and Defense is 1. If you leap on it, it'll pull its head and limbs in. You can then kick the shell. From what I hear, Goombas have a long-held fear of Koopa Troopas...''',
+            CardData(
+                10,
+                'Koopa Troopa',
+                '''Max HP: 1, Attack: 1, Defense: 1. Koopa Troopas have always been causing trouble. When they get attacked, they retreat into their shells. Of course, there's nothing stopping you from kicking it.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in a secret area via a 3D-accessible path near the Star Block.',
+                '★',
+            ),
+            ''
+        ),
         0x123,
-        "Template 8",
+        'Template 8',
         0.09,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '9':EnemyEntry (
-        "Red Koopa Troopa",
+        'Koopa Troopa',
+        EnemyData(
+            1,
+            1,
+            1,
+            '''Normal: This is a Koopa Troopa. It may be slow, but it is well defended inside its shell... Max HP is 1, Attack is 1, and Defense is 1. If you leap on it, it'll pull its head and limbs in. You can then kick the shell. From what I hear, Goombas have a long-held fear of Koopa Troopas...''',
+            CardData(
+                10,
+                'Koopa Troopa',
+                '''Max HP: 1, Attack: 1, Defense: 1. Koopa Troopas have always been causing trouble. When they get attacked, they retreat into their shells. Of course, there's nothing stopping you from kicking it.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in a secret area via a 3D-accessible path near the Star Block.',
+                '★',
+            ),
+            ''
+        ),
         0x123,
-        "Template 9",
+        'Template 9',
         0.09,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '10':EnemyEntry (
-        "(Unused) Shady Koopa",
+        '(Unused) Shady Koopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 10",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 10',
+        0,
+        EnemyDrops(),
     ),
     '11':EnemyEntry (
-        "Koopatrol",
+        'Koopatrol',
+        EnemyData(
+            15,
+            3,
+            4,
+            '''That's a Koopatrol, a merciless minion wrapped in spikes and armor... Max HP is 15, Attack is 3, and Defense is 4. You better not try to stomp on it... Koopatrols tend to rush in and tackle, so watch out... Only the toughest Koopas are selected to join the elite Koopatrol guard... They have to sharpen those spikes every day. That's what it takes to be the best...''',
+            CardData(
+                13,
+                'Koopatrol',
+                '''Max HP: 15, Attack: 3, Defense: 4. The heavy-metal Koopatrol feels no remorse. It'll roll right over its own Koopa granny. But it's not well-suited for aquatic operations.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x124,
-        "Template 11",
+        'Template 11',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 300),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=300), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=20)],
     ),
     '12':EnemyEntry (
-        "Flip Red Koopa Troopa",
+        'Flip Red Koopa Troopa',
+        EnemyData(
+            1,
+            1,
+            1,
+            '''Normal: This is a Koopa Troopa. It may be slow, but it is well defended inside its shell... Max HP is 1, Attack is 1, and Defense is 1. If you leap on it, it'll pull its head and limbs in. You can then kick the shell. From what I hear, Goombas have a long-held fear of Koopa Troopas...''',
+            CardData(
+                10,
+                'Koopa Troopa',
+                '''Max HP: 1, Attack: 1, Defense: 1. Koopa Troopas have always been causing trouble. When they get attacked, they retreat into their shells. Of course, there's nothing stopping you from kicking it.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in a secret area via a 3D-accessible path near the Star Block.',
+                '★',
+            ),
+            ''
+        ),
         0x123,
-        "Template 12",
+        'Template 12',
         0.09,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '13':EnemyEntry (
-        "(Unused) Flip Shady Koopa",
+        '(Unused) Flip Shady Koopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 13",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 13',
+        0,
+        EnemyDrops(),
     ),
     '14':EnemyEntry (
-        "Green Paratroopa",
+        'Green Paratroopa',
+        EnemyData(
+            1,
+            1,
+            1,
+            '''Normal: This is a Paratroopa. It's like a Koopa Troopa, but it can fly... Its movement may vary slightly, depending on the color of its shell... Max HP is 1, Attack is 1, and Defense is 1. Stomp it to remove its wings... A Koopa without wings is a very sad Koopa...''',
+            CardData(
+                15,
+                'Paratroopa',
+                '''Max HP: 1, Attack: 1, Defense: 1. This Koopa Troopa breezed through flight school. A quick stomp to the head will ground it. Forever.''',
+                'Card Shop; Catch Card/SP; Chapter 1-2: Found in a hidden area via a 3D-accessible path behind the first set of mountain platforms in the first area.',
+                '★',
+            ),
+            ''
+        ),
         0x128,
-        "Template 14",
+        'Template 14',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '15':EnemyEntry (
-        "Red Paratroopa",
+        'Red Paratroopa',
+        EnemyData(
+            1,
+            1,
+            1,
+            '''Normal: This is a Paratroopa. It's like a Koopa Troopa, but it can fly... Its movement may vary slightly, depending on the color of its shell... Max HP is 1, Attack is 1, and Defense is 1. Stomp it to remove its wings... A Koopa without wings is a very sad Koopa...''',
+            CardData(
+                15,
+                'Paratroopa',
+                '''Max HP: 1, Attack: 1, Defense: 1. This Koopa Troopa breezed through flight school. A quick stomp to the head will ground it. Forever.''',
+                'Card Shop; Catch Card/SP; Chapter 1-2: Found in a hidden area via a 3D-accessible path behind the first set of mountain platforms in the first area.',
+                '★',
+            ),
+            ''
+        ),
         0x128,
-        "Template 15",
+        'Template 15',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '16':EnemyEntry (
-        "(Unused) Shady Paratroopa",
+        '(Unused) Shady Paratroopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 16",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 16',
+        0,
+        EnemyDrops(),
     ),
     '17':EnemyEntry (
-        "Flip Red Paratroopa",
+        'Flip Red Paratroopa',
+        EnemyData(
+            1,
+            1,
+            1,
+            '''Normal: This is a Paratroopa. It's like a Koopa Troopa, but it can fly... Its movement may vary slightly, depending on the color of its shell... Max HP is 1, Attack is 1, and Defense is 1. Stomp it to remove its wings... A Koopa without wings is a very sad Koopa...''',
+            CardData(
+                15,
+                'Paratroopa',
+                '''Max HP: 1, Attack: 1, Defense: 1. This Koopa Troopa breezed through flight school. A quick stomp to the head will ground it. Forever.''',
+                'Card Shop; Catch Card/SP; Chapter 1-2: Found in a hidden area via a 3D-accessible path behind the first set of mountain platforms in the first area.',
+                '★',
+            ),
+            ''
+        ),
         0x128,
-        "Template 17",
+        'Template 17',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '18':EnemyEntry (
-        "(Unused) Flip Shady Paratroopa",
+        '(Unused) Flip Shady Paratroopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 18",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 18',
+        0,
+        EnemyDrops(),
     ),
     '19':EnemyEntry (
-        "Clubba",
+        'Clubba',
+        EnemyData(
+            20,
+            3,
+            0,
+            '''This chubby brawler is called a Clubba. Interestingly they love to take naps... Max HP is 20 and Attack is 3. They will fall asleep if you lose them, so take them out before they wake up...''',
+            CardData(
+                42,
+                'Clubba',
+                '''Max HP: 20, Attack: 3. This soldier would rather nap than face the front lines. Hauling that club around would make anyone tired.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x143,
-        "Template 19",
+        'Template 19',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '20':EnemyEntry (
-        "PatrolMeow",
+        'PatrolMeow',
+        EnemyData(
+            5,
+            2,
+            0,
+            '''That's a PatrolMeow. These security bots patrol Fort Francis day and night... Max HP is 5. Attack is 2. Defense is 1. Defense against fire is 2. They look cute, but if they spot you, they'll go into battle mode... I think Francis bought these robots on the Internet and customized them himself...''',
+            CardData(
+                126,
+                'PatrolMeow',
+                '''Max HP: 5, Attack: 2, Defense: 1. This patrol puss is the hall monitor of Fort Francis. Ever vigilant...and flea resistant!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x194,
-        "Template 20",
+        'Template 20',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '21':EnemyEntry (
-        "AirMeow",
+        'AirMeow',
+        EnemyData(
+            5,
+            2,
+            0,
+            '''That's an AirMeow. These security bots patrol the skies around Fort Francis... Max HP is 5. Attack is 2. Defense is 1. Defense against fire is 2. They will attack any invader they see... I think Francis bought these robots on the Internet and customized them himself...''',
+            CardData(
+                127,
+                'AirMeow',
+                '''Max HP: 5, Attack: 2, Defense: 1. This AirMeow guards the skies over Fort Francis. It runs on a volatile mixture of catnip and cooking oil.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x195,
-        "Template 21",
+        'Template 21',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '22':EnemyEntry (
-        "SurpriseMeow",
+        'SurpriseMeow',
+        EnemyData(
+            1,
+            2,
+            0,
+            '''This is a SurpriseMeow. Francis created this security bot to patrol the castle. Max HP is 1 and Attack is 2. It is heavily armored, so don't bother attacking it... If you want to beat it, throw something in its open mouth that can damage it...''',
+            CardData(
+                128,
+                'SurpriseMeow',
+                '''Max HP: 1, Attack: 2. It's the latest in feline firepower: a kitty cannon. Check out the visors they're sporting. Classy!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x196,
-        "Template 22",
+        'Template 22',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '23':EnemyEntry (
-        "MeowBomb (SurpriseMeow)",
+        'Meowbomb',
+        EnemyData(
+            1,
+            2,
+            1,
+            '''This Meowbomb is a cat-shaped robot programmed to explode on contact... Max HP is 1, Attack is 2, and Defense is 1. Meowbomb was created with one mission: snuggle and destroy...''',
+            CardData(
+                125,
+                'Meowbomb',
+                '''Max HP: 1, Attack: 2, Defense: 1. These feline robo-bombs get shot out of SurpriseMeows. Strangely, they don't mind getting blown to meowbits.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x193,
-        "Template 23",
+        'Template 23',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '24':EnemyEntry (
-        "Hammer Bro.",
+        'Hammer Bro',
+        EnemyData(
+            4,
+            1,
+            1,
+            '''This is a Hammer Bro... They have an unhealthy hammer obsession... Max HP is 4. Attack is 1. Defense is 1. You could always try catching a hammer and throwing it back... Where does it keep all those hammers, anyway... It's a mystery...''',
+            CardData(
+                30,
+                'Hammer Bro',
+                '''Max HP: 4, Attack: 1, Defense: 1. This elite Koopa has a hankering for hammers. It mostly likes to sit up high and toss down hammers. One day, it'll take the carpentry world by storm.''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x137,
-        "Template 24",
+        'Template 24',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '25':EnemyEntry (
-        "Green Cheep Cheep",
+        'Green Cheep Cheep',
+        EnemyData(
+            2,
+            1,
+            0,
+            '''That's a Cheep Cheep. Like most fish, it lives entirely underwater... Max HP is 2. Attack is 1. It swims along lazily minding its own fishy business... No important characteristics of note... It's a fish...''',
+            CardData(
+                69,
+                'Cheep Cheep',
+                '''Max HP: 2, Attack: 1. These odd fish hurl themselves out of the water. For a fish, it's not the safest hobby.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x152,
-        "Template 25",
+        'Template 25',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '26':EnemyEntry (
-        "Blooper",
+        'Blooper',
+        EnemyData(
+            1,
+            2,
+            0,
+            '''That's a Blooper. This squiddy foe happily bobs up and down in the ocean... Max HP is 1 and Attack is 2. It will try to eat you if it sees you... But I hear that it won't try to attack you if you stand on the bottom of the ocean.''',
+            CardData(
+                70,
+                'Blooper',
+                '''Max HP: 1, Attack: 2. Bloopers love to laugh at other Bloopers' bloopers. Nobody wants to end up on the Blooper reel.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x153,
-        "Template 26",
+        'Template 26',
         0.15,
-        EnemyDrops (
-            Drop (item_name = "Inky Sauce", hex_value = get_hex_value("Inky Sauce"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Inky Sauce', ItemID=0x6E, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '27':EnemyEntry (
-        "Thwomp",
+        'Thwomp',
+        EnemyData(
+            0,
+            1,
+            0,
+            '''That's a Thwomp, a huge stone monster that lives to squish... You can't beat it... You can only avoid it... It may look impossible to avoid, but I'm sure Mario could find a way...''',
+            CardData(
+                112,
+                'Thwomp',
+                '''This block-headed rocker really loves making pancakes. All that macho pounding must be a sign of insecurity.''',
+                'Card Shop; Flimm; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x170,
-        "Template 27",
+        'Template 27',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '28':EnemyEntry (
-        "Lava Bubble",
+        'Lava Bubble',
+        EnemyData(
+            1,
+            4,
+            0,
+            '''It's a Lava Bubble. This fiery magma boy loves the heat... Max HP is 1 and Attack is 4. Obviously, it's quite immune to fire... It pops out from below when people approach, so take care when jumping over lava...''',
+            CardData(
+                119,
+                'Lava Bubble',
+                '''Max HP: 1, Attack: 4. Lava Bubbles always have a bounce to their step. But watch out: they've got fiery tempers.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x165,
-        "Template 28",
+        'Template 28',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '29':EnemyEntry (
-        "Spiny Tromp",
+        'Spiny Tromp',
+        EnemyData(
+            0,
+            1,
+            0,
+            '''This Spiny Tromp loves to roll down hills and over unlucky pedestrians... You can't beat it... You can only avoid it... It rolls down the hill fast, but I know Mario can find a way to avoid it...''',
+            CardData(
+                113,
+                'Spiny Tromp',
+                '''It's a massive, rolling pinwheel of doom. If it keeps rolling, maybe it'll aerate someone's lawn.''',
+                'Card Shop; Flimm; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x171,
-        "Template 29",
+        'Template 29',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '30':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 30",
+        'Template 30',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '31':EnemyEntry (
-        "Piranha Plant",
+        'Piranha Plant',
+        EnemyData(
+            2,
+            1,
+            0,
+            '''This is a notorious Piranha Plant. It is a monstrous flower that lives in pipes... Max HP is 2 and Attack is 1. This strange weed will stay low if you cozy up to the side of its pipe...''',
+            CardData(
+                57,
+                'Piranha Plant',
+                '''Max HP: 2, Attack: 1. This violent vine, lurks in pipes, waiting for a snack. You'd be surly too if you lived in a pipe.''',
+                'Card Shop; Catch Card/SP; Chapter 3-1: Found on a platform after jumping along the coloured columns.',
+                '★',
+            ),
+            ''
+        ),
         0x145,
-        "Template 31",
+        'Template 31',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 40),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=40)],
     ),
     '32':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 32",
+        'Template 32',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '33':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 33",
+        'Template 33',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '34':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 34",
+        'Template 34',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '35':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 35",
+        'Template 35',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '36':EnemyEntry (
-        "Dry Bones",
+        'Dry Bones',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''That's a Dry Bones. At one time, it was a Koopa, but now... Max HP is 10. Attack is 2. It will keep getting up no matter how many times you stomp it... Because it's already dead, you may have to use fire to stop it for good...''',
+            CardData(
+                29,
+                'Dry Bones',
+                '''Max HP: 10, Attack: 2. This resilient revenant won't rest in peace. Maybe it's its undying loyalty to Bowser. Or was it the pie it never got a chance to eat?''',
+                'Card Shop; Catch Card/SP; Chapter 7-1: Found in a small alcove in 3D to the left of the moving fountains near when Mario found Luigi.',
+                '★',
+            ),
+            ''
+        ),
         0x136,
-        "Template 36",
+        'Template 36',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '37':EnemyEntry (
-        "Rubee",
+        'Rubee',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 37",
+        'Template 37',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '38':EnemyEntry (
-        "Dull Bones",
+        'Dull Bones',
+        EnemyData(
+            15,
+            4,
+            0,
+            '''This is a Dull Bones. It's a lifeless Koopa that enjoys throwing bones... Max HP is 15 and Attack is 4. No matter how many times you stomp it, it will keep getting back up... I have heard that they are not too fond of fire, though...''',
+            CardData(
+                27,
+                'Dull Bones',
+                '''Max HP: 15, Attack: 4. This undead Koopa wanders around with a blank stare. It's not too psyched about being dead. It mostly throws bones out of sheer spite.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x134,
-        "Template 38",
+        'Template 38',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '39':EnemyEntry (
-        "Boomerang Bro",
+        'Boomerang Bro',
+        EnemyData(
+            20,
+            3,
+            1,
+            '''This is a Boomerang Bro. These Koopas love to throw their boomerangs... Max HP is 10. Attack is 3. Defense is 1. A tough foe indeed... The boomerangs fly back, so watch the back of your head...''',
+            CardData(
+                32,
+                'Boomerang Bro',
+                '''Max HP: 10, Attack: 3, Defense: 1. This elite Koopa goes bananas for boomerangs. Unfortunately, they hurt when you try to eat them.''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x138,
-        "Template 39",
+        'Template 39',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '40':EnemyEntry (
-        "Fire Bro",
+        'Fire Bro',
+        EnemyData(
+            10,
+            3,
+            1,
+            '''It's a Fire Bro. These lethal Koopas spit searing balls of flame... Max HP is 10. Attack is 3. Defense is 1. Learning to shoot fire from your mouth must have taken some practice... Those fireballs bounce on the ground, so watch it very carefully...''',
+            CardData(
+                34,
+                'Fire Bro',
+                '''Max HP: 10, Attack: 3, Defense: 1. This elite Koopa has an unhealthy fireball fixation. However, it's a big hit at Koopa cookouts.''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x139,
-        "Template 40",
+        'Template 40',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '41':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 41",
+        'Template 41',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '42':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 42",
+        'Template 42',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '43':EnemyEntry (
-        "Fracktail",
+        'Fracktail',
+        EnemyData(
+            0,
+            1,
+            0,
+            '''That's Fracktail, the robotic guardian of the Pure Heart. It's quite enormous... Max HP is ??, Attack is 1. It can fly and swoop down with its big open mouth... But I think the antenna-like horn atop its head is its weak spot... I think you're going to need to use Thoreau to hit it...''',
+            CardData(
+                180,
+                'Fracktail',
+                '''Max HP: ??, Attack: 1. Fracktail valiantly guarded the Pure Heart inside Yold Ruins. That is, until Dimentio fried his processor.''',
+                'Card Shop; Map 10',
+                '★★',
+            ),
+            ''
+        ),
         0x1C8,
-        "Template 43",
+        'Template 43',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '44':EnemyEntry (
-        "Wracktail",
+        'Wracktail',
+        EnemyData(
+            0,
+            10,
+            0,
+            '''That's Wracktail, the very menacing lord of the Flipside Pit of 100 Trials. Max HP is ??. Attack is 10. It can fly and swoop down with its big open mouth... I think this is a prototype of an improved Fracktail from the Yold Desert... The Ancients must have built it. But like Fracktail, its antenna is its weak spot...''',
+            CardData(
+                181,
+                'Wracktail',
+                '''Max HP: ??, Attack: 10. The baddest baddie in the Flipside Pit of 100 Trials. He may fight like Fracktail, but he's 100 times stronger.''',
+                'Card Shop',
+                '★★',
+            ),
+            ''
+        ),
         0x1C9,
-        "Template 44",
+        'Template 44',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '45':EnemyEntry (
-        "Flip Blooper",
+        'Flip Blooper',
+        EnemyData(
+            1,
+            2,
+            0,
+            '''That's a Blooper. This squiddy foe happily bobs up and down in the ocean... Max HP is 1 and Attack is 2. It will try to eat you if it sees you... But I hear that it won't try to attack you if you stand on the bottom of the ocean.''',
+            CardData(
+                70,
+                'Blooper',
+                '''Max HP: 1, Attack: 2. Bloopers love to laugh at other Bloopers' bloopers. Nobody wants to end up on the Blooper reel.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x153,
-        "Template 45",
+        'Template 45',
         0.15,
-        EnemyDrops (
-            Drop (item_name = "Inky Sauce", hex_value = get_hex_value("Inky Sauce"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Inky Sauce', ItemID=0x6E, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '46':EnemyEntry (
-        "Flip Hammer Bro.",
+        'Flip Hammer Bro',
+        EnemyData(
+            4,
+            1,
+            1,
+            '''This is a Hammer Bro... They have an unhealthy hammer obsession... Max HP is 4. Attack is 1. Defense is 1. You could always try catching a hammer and throwing it back... Where does it keep all those hammers, anyway... It's a mystery...''',
+            CardData(
+                30,
+                'Hammer Bro',
+                '''Max HP: 4, Attack: 1, Defense: 1. This elite Koopa has a hankering for hammers. It mostly likes to sit up high and toss down hammers. One day, it'll take the carpentry world by storm.''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x137,
-        "Template 46",
+        'Template 46',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '47':EnemyEntry (
-        "Small Spiky Tromp",
+        'Spiky Tromp',
+        EnemyData(
+            0,
+            1,
+            0,
+            '''It's a Spiky Tromp. For some reason, it enjoys rolling left and right all day...You can't beat it... You can only avoid it... It will move until it hits a wall, then it will come right back at you...''',
+            CardData(
+                114,
+                'Spiky Tromp',
+                '''This bowling boulder rolls around in search of prey. Don't get caught under the spikes, or you'll be tenderized.''',
+                'Card Shop; Flimm; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x172,
-        "Template 47",
+        'Template 47',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '48':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 48",
-        0.1,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 40),
-        )
+        'Template 48',
+        0,
+        EnemyDrops(),
     ),
     '49':EnemyEntry (
-        "Putrid Piranha",
+        'Putrid Piranha',
+        EnemyData(
+            5,
+            2,
+            0,
+            '''This disgusting weed is a Putrid Piranha. It will spew poisonous sludge at you... Max HP is 5 and Attack is 2. if you are poisoned, you will lose HP quickly... Thankfully, most items that restore HP also cure poison. Some say that pollution turned them into poisonous weeds...''',
+            CardData(
+                58,
+                'Putrid Piranha',
+                '''Max HP: 5, Attack: 2. It's a poisonous Piranha Plant. As they say, every rose has its venomous bite.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x146,
-        "Template 49",
+        'Template 49',
         1,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 200),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 600),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 40),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=200), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=600), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=40)],
     ),
     '50':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 50",
-        0.1,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 200),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 600),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 40),
-        )
+        'Template 50',
+        0,
+        EnemyDrops(),
     ),
     '51':EnemyEntry (
-        "Frost Piranha",
+        'Frost Piranha',
+        EnemyData(
+            7,
+            3,
+            0,
+            '''This frigid Frost Piranha has subzero breath... Max HP is 7 and Attack is 3. If you get breathed on, you'll be frozen for a bit... Originally hailing from a cold climate, this plant struck out in search of new prey... This plant loves ice cream, but hates hot-fudge sundaes.''',
+            CardData(
+                59,
+                'Frost Piranha',
+                '''Max HP: 7, Attack: 3. Someone left this flower out in the winter cold. On the plus side, it can cool beverages in a hurry.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x147,
-        "Template 51",
+        'Template 51',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '52':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 52",
-        0.1,
-        EnemyDrops (
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        'Template 52',
+        0,
+        EnemyDrops(),
     ),
     '53':EnemyEntry (
-        "Buzzy Beetle",
+        'Buzzy Beetle',
+        EnemyData(
+            1,
+            1,
+            3,
+            '''This is a Buzzy Beetle... It's much tougher than it looks... Max HP is 1, Attack is 1, and Defense is 3. Even flames won't scorch its hard shell... Sometimes, they cling to the ceiling and drop down on your head when you walk by... Not very friendly, Buzzy... Shame on you...''',
+            CardData(
+                17,
+                'Buzzy Beetle',
+                '''Max HP: 1, Attack: 1, Defense: 3. This little guy is built to withstand anything. Even a Muth stampede wouldn't flatten it. ...Probably.''',
+                'Card Shop; Catch Card/SP; Chapter 1-4: Found in a secret area via a 3D-accessible path near the door to the Spiky Tromp trap area.',
+                '★',
+            ),
+            ''
+        ),
         0x12A,
-        "Template 53",
+        'Template 53',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Courage Shell', ItemID=0x4A, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '54':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 54",
-        0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        'Template 54',
+        0,
+        EnemyDrops(),
     ),
     '55':EnemyEntry (
-        "Flip Buzzy Beetle",
+        'Flip Buzzy Beetle',
+        EnemyData(
+            1,
+            1,
+            3,
+            '''This is a Buzzy Beetle... It's much tougher than it looks... Max HP is 1, Attack is 1, and Defense is 3. Even flames won't scorch its hard shell... Sometimes, they cling to the ceiling and drop down on your head when you walk by... Not very friendly, Buzzy... Shame on you...''',
+            CardData(
+                17,
+                'Buzzy Beetle',
+                '''Max HP: 1, Attack: 1, Defense: 3. This little guy is built to withstand anything. Even a Muth stampede wouldn't flatten it. ...Probably.''',
+                'Card Shop; Catch Card/SP; Chapter 1-4: Found in a secret area via a 3D-accessible path near the door to the Spiky Tromp trap area.',
+                '★',
+            ),
+            ''
+        ),
         0x12A,
-        "Template 55",
+        'Template 55',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Courage Shell', ItemID=0x4A, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '56':EnemyEntry (
-        "Spike Top",
+        'Spike Top',
+        EnemyData(
+            1,
+            2,
+            3,
+            '''This is a Spike Top. It's a Buzzy Beetle with...well, a spike on top of its shell... Max HP is 1, Attack is 2, and Defense is 3. Even flames won't scorch its hard shell... On top of that, it has a spike. What can we do about this prickly foe...? Throw something at it or use an item... That spike can cause a painful poke... I suggest you just leave it be...''',
+            CardData(
+                18,
+                'Spike Top',
+                '''Max HP: 1, Attack: 2, Defense: 3. A Buzzy Beetle that's all spiked out and ready to go. Try to control your urge to stomp on it.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x12B,
-        "Template 56",
+        'Template 56',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Courage Shell', ItemID=0x4A, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '57':EnemyEntry (
-        "Parabuzzy",
+        'Parabuzzy',
+        EnemyData(
+            1,
+            1,
+            3,
+            '''This is a Parabuzzy. It’s a Buzzy Beetle with wings… Max HP is 1, Attack is 1, and Defense is 3. Even flames won’t scorch its hard shell… If you stomp on it, you’ll remove those wings… But still, those little limbs that hang down from its shell… They’re… …a little cute.''',
+            CardData(
+                20,
+                'Parabuzzy',
+                '''Max HP: 1, Attack: 1, Defense: 3. Just look at this cute little Buzzy Beetle with wings. It'll lose its wings if you stomp on it. Of course, that would be totally heartless.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x12D,
-        "Template 57",
+        'Template 57',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Courage Shell', ItemID=0x4A, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '58':EnemyEntry (
-        "Spiky Parabuzzy",
+        'Spiky Parabuzzy',
+        EnemyData(
+            1,
+            2,
+            3,
+            '''That's a Spiky Parabuzzy. As you can see, this Buzzy has wings and a spike... Max HP is 1, Attack is 2, and Defense is 3. Even flames won't scorch its hard shell... With the spike and wings and hard shell, I just don't know how to get rid of it... It's a pain to deal with, but still quite adorable...''',
+            CardData(
+                21,
+                'Spiky Parabuzzy',
+                '''Max HP: 1, Attack, 2, Defense: 3. Not so cute anymore, is it? Wings! Spikes! Come on! You can't stomp it, AND it's hard to hammer. Brutal.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x12E,
-        "Template 58",
+        'Template 58',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Courage Shell', ItemID=0x4A, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '59':EnemyEntry (
-        "Spiny",
+        'Spiny',
+        EnemyData(
+            4,
+            2,
+            3,
+            '''Normal: That's a Spiny... As its name suggests, it is covered with unpleasant, pointy ends... Max HP is 4, Attack is 2, and Defense is 3. Don't bother trying to stomp it... Whatever you do, don't get surrounded by these beasts... Before they hit the ground, they roll into balls. They must train for midair deployment...''',
+            CardData(
+                24,
+                'Spiny',
+                '''Max HP: 4, Attack: 2, Defense: 3. You DO NOT want to step on this razor-sharp baddie. They're born covered in spiny spines. This makes hugging a Spiny a little...awkward.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x131,
-        "Template 59",
+        'Template 59',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Mighty Tonic", hex_value = get_hex_value("Mighty Tonic"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Mighty Tonic', ItemID=0x4B, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '60':EnemyEntry (
-        "(UNUSED?) Weird Spiny",
-        0x131,
-        "Template 60",
-        0.04,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Mighty Tonic", hex_value = get_hex_value("Mighty Tonic"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        '(UNUSED?) Weird Spiny',
+        EnemyData(0, 0, 0, '', '', ''),
+        305,
+        'Template 60',
+        0,
+        EnemyDrops(),
     ),
     '61':EnemyEntry (
-        "Lakitu",
+        'Lakitu',
+        EnemyData(
+            4,
+            1,
+            0,
+            '''Normal: That's a Lakitu. They're odd creatures that drive around in clouds... Max HP is 4 and Attack is 1. It'll throw Spinys at you, so keep moving... It doesn't change altitude, so if you sneak up on it while dodging Spinys... You can stomp it, hop in the cloud and find out where it keeps all those Spinys...''',
+            CardData(
+                26,
+                'Lakitu',
+                '''Max HP: 4, Attack: 1. Lakitu chucks Spinys like coins at a Pianta Parlor. What's its problem? Someone made fun of its glasses.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x133,
-        "Template 61",
+        'Template 61',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 100),
-            Drop (item_name = "Mystery Box", hex_value = get_hex_value("Mystery Box"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=100), Drop(ItemName='Mystery Box', ItemID=0x56, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '62':EnemyEntry (
-        "Flip Lakitu",
-        None,
-        "Template 62",
+        'Flip Lakitu',
+        EnemyData(
+            4,
+            1,
+            0,
+            '''Normal: That's a Lakitu. They're odd creatures that drive around in clouds... Max HP is 4 and Attack is 1. It'll throw Spinys at you, so keep moving... It doesn't change altitude, so if you sneak up on it while dodging Spinys... You can stomp it, hop in the cloud and find out where it keeps all those Spinys...''',
+            CardData(
+                26,
+                'Lakitu',
+                '''Max HP: 4, Attack: 1. Lakitu chucks Spinys like coins at a Pianta Parlor. What's its problem? Someone made fun of its glasses.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x133,
-        EnemyDrops (
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 100),
-            Drop (item_name = "Mystery Box", hex_value = get_hex_value("Mystery Box"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        'Template 62',
+        0.1,
+        [Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=100), Drop(ItemName='Mystery Box', ItemID=0x56, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '63':EnemyEntry (
-        "Mega Koopa",
+        'Mega Koopa',
+        EnemyData(
+            1,
+            2,
+            0,
+            '''That's a Mega Koopa... Enemies don't get any bigger or more pixelated than this... Max HP is 1, Attack is 2, and Defense is 1. It's probably best if you avoid it, unless you can match its size... How did a Koopa Troopa grow to be so big...?''',
+            CardData(
+                11,
+                'Mega Koopa',
+                '''Max HP: 1, Attack: 2, Defense: 1. This Koopa got a Mega Star. Now it's a mega problem. Don't look at it in 3-D, or it'll blow your mind!''',
+                'Card Shop; Earn 100 shop points',
+                '★',
+            ),
+            ''
+        ),
         0x127,
-        "Template 63",
+        'Template 63',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '64':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 64",
+        'Template 64',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '65':EnemyEntry (
-        "Chain Chomp",
+        'Chain Chomp',
+        EnemyData(
+            4,
+            1,
+            4,
+            '''That snarling, tethered iron ball is a Chain Chomp... Max HP is 4, Attack is 1, Defense is 4. Even flames can't hurt this beast... Its strong Defense protects it from most attacks. Try using items and Pixls...''',
+            CardData(
+                102,
+                'Chain Chomp',
+                '''Max HP: 4, Attack: 1, Defense: 4. Chain Chomps are more bark than bite. But that's not much comfort for the mailman...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x166,
-        "Template 65",
+        'Template 65',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 200),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=200), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '66':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 66",
+        'Template 66',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '67':EnemyEntry (
-        "Red Cheep Cheep",
+        'Cheep Cheep',
+        EnemyData(
+            2,
+            1,
+            0,
+            '''That's a Cheep Cheep. Like most fish, it lives entirely underwater... Max HP is 2. Attack is 1. It swims along lazily minding its own fishy business... No important characteristics of note... It's a fish...''',
+            CardData(
+                69,
+                'Cheep Cheep',
+                '''Max HP: 2, Attack: 1. These odd fish hurl themselves out of the water. For a fish, it's not the safest hobby.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x152,
-        "Template 67",
+        'Template 67',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '68':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 68",
+        'Template 68',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '69':EnemyEntry (
-        "Flip Cheep Cheep",
+        'Cheep Cheep',
+        EnemyData(
+            2,
+            1,
+            0,
+            '''That's a Cheep Cheep. Like most fish, it lives entirely underwater... Max HP is 2. Attack is 1. It swims along lazily minding its own fishy business... No important characteristics of note... It's a fish...''',
+            CardData(
+                69,
+                'Cheep Cheep',
+                '''Max HP: 2, Attack: 1. These odd fish hurl themselves out of the water. For a fish, it's not the safest hobby.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x152,
-        "Template 69",
+        'Template 69',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '70':EnemyEntry (
-        "Swooper",
+        'Swooper',
+        EnemyData(
+            3,
+            1,
+            0,
+            '''That beast is a Swooper. It likes to dangle from the ceiling in dark, dank places... Max HP is 3 and Attack is 1. Watch your head; it will swoop down on you... It will swoop back up after it swoops down, so jump on it when you can...''',
+            CardData(
+                87,
+                'Swooper',
+                '''Max HP: 3, Attack: 1. Swoopers aren't so bad, they're just lonely. Strangely, they greet visitors by snacking on their heads. ...This could explain why they have no friends.''',
+                'Card Shop; Catch Card/SP; Chapter 2-1: Found in an underground area under the Star Block via a 3D-accessible hole.',
+                '★',
+            ),
+            ''
+        ),
         0x151,
-        "Template 70",
+        'Template 70',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Sleepy Sleep", hex_value = get_hex_value("Sleepy Sleep"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Sleepy Sleep', ItemID=None, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '71':EnemyEntry (
-        "Glitchy Dark Koopa",
+        'Glitchy Dark Koopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 71",
-        0.05,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        'Template 71',
+        0,
+        EnemyDrops(),
     ),
     '72':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 72",
+        'Template 72',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '73':EnemyEntry (
-        "Glitchy Koopa",
+        'Glitchy Koopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 73",
-        0.09,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        'Template 73',
+        0,
+        EnemyDrops(),
     ),
     '74':EnemyEntry (
-        "(Unused) Spinia",
+        '(Unused) Spinia',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 74",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 74',
+        0,
+        EnemyDrops(),
     ),
     '75':EnemyEntry (
-        "Spania",
+        'Spania',
+        EnemyData(
+            6,
+            1,
+            0,
+            '''That odd, horned creature is called a Spania. Its Max HP is 6 and Attack is 1. Those horns will ruin your day if you try to stomp it... If it sees you, it'll come at you, even if you have flipped to another dimension... It might be better to avoid this unpleasant beast altogether...''',
+            CardData(
+                76,
+                'Spania',
+                '''Max HP: 6, Attack: 1. This horned beast will charge right at you. Stay light on your feet or you'll be skewered!''',
+                'Card Shop; Catch Card/SP; Chapter 5-3: Found in a small 3D-accessible area under the blocks leading to Monzo.',
+                '★',
+            ),
+            ''
+        ),
         0x157,
-        "Template 75",
+        'Template 75',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Mystery Box", hex_value = get_hex_value("Mystery Box"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Mystery Box', ItemID=0x56, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '76':EnemyEntry (
-        "(Unused) Spunia",
+        '(Unused) Spunia',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 76",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 76',
+        0,
+        EnemyDrops(),
     ),
     '77':EnemyEntry (
-        "Bald Cleft",
+        'Bald Cleft',
+        EnemyData(
+            2,
+            1,
+            2,
+            '''That's a Bald Cleft. You might confuse this rock-hard foe with a rock... Max HP is 2, Attack is 1, Defense is 2. Flames won't scorch this foe... Set off an explosion near it to flip it over. Then it'll be vulnerable to attack...''',
+            CardData(
+                106,
+                'Bald Cleft',
+                '''Max HP: 2, Attack: 1, Defense: 2. This hardheaded minion is easily mistaken for a rock. It'll turn around if it bumps into a wall. If hit with an explosion, its Defense drops to 0.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x16A,
-        "Template 77",
+        'Template 77',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Courage Shell', ItemID=0x4A, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '78':EnemyEntry (
-        "Moon Cleft",
+        'Moon Cleft',
+        EnemyData(
+            5,
+            2,
+            4,
+            '''That's a Moon Cleft, a rock-hard monster that's covered in spikes... Max HP is 5, Attack is 2, Defense is 2[sic]. Flames won't scorch this foe... It might look like a stone at first, but it will move when you get up close... Set off an explosion near it to flip it over. Then it'll be vulnerable to attack...''',
+            CardData(
+                107,
+                'Moon Cleft',
+                '''Max HP: 5, Attack: 2, Defense: 4. It's an evil mineral that looks just like a rock. That is, until it's too late!''',
+                'Card Shop; Catch Card/SP; Chapter 5-1: Found in a small 3D-accessible alcove below the canyon to the right of the first block puzzle.',
+                '★',
+            ),
+            ''
+        ),
         0x16B,
-        "Template 78",
+        'Template 78',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Courage Shell', ItemID=0x4A, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '79':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 79",
+        'Template 79',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '80':EnemyEntry (
-        "Magikoopa",
+        'Magikoopa',
+        EnemyData(
+            6,
+            3,
+            0,
+            '''This Magikoopa serves on Bowser's wizarding task force... Max HP is 6 and Attack is 3. Magikoopas ride on brooms and fling dangerous spells... They study for years to learn magic. Sadly, they take no classes on defense...''',
+            CardData(
+                36,
+                'Magikoopa',
+                '''Max HP: 6, Attack: 3. This elite Koopa is an expert hexologist. It also has questionable taste in eyewear.''',
+                'Card Shop; Catch Card/SP; Chapter 3-1: Found in 3D in the secret area via the furthest pipe on the right of the "Warp Zone" pipe trio in the underground area.',
+                '★★',
+            ),
+            ''
+        ),
         0x13D,
-        "Template 80",
+        'Template 80',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 100),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 100),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=100), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=100)],
     ),
     '81':EnemyEntry (
-        "Broom Magikoopa",
-        0x13D,
-        "Template 81",
-        0.05,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 100),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 100),
-        )
+        'Broom Magikoopa',
+        EnemyData(0, 0, 0, '', '', ''),
+        317,
+        'Template 81',
+        0,
+        EnemyDrops(),
     ),
     '82':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 82",
+        'Template 82',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '83':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 83",
+        'Template 83',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '84':EnemyEntry (
-        "Headbonk Goomba",
+        'Headbonk Goomba',
+        EnemyData(
+            1,
+            2,
+            0,
+            '''It's a Headbonk Goomba. These guys really know how to use their heads... Max HP is 1 and Attack is 2. They're outcasts among Goombas... The other Goombas look on these Goombas as brainless, uncultured thugs... But I've never wanted to get close enough to have a conversation with one...''',
+            CardData(
+                8,
+                'Headbonk Goomba',
+                '''Max HP: 1, Attack: 2. A tenacious Goomba that'll headbonk anything in sight. Caution: headbonking is a leading cause of headaches.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x120,
-        "Template 84",
+        'Template 84',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '85':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 85",
+        'Template 85',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '86':EnemyEntry (
-        "Barribad",
+        'Barribad',
+        EnemyData(
+            4,
+            2,
+            0,
+            '''That's a Barribad. It can shield itself with a strong barrier...Max HP is 4 and Attack is 2. It also shoots rings of energy from its mouth...You can't break its barrier, but you can flip to get places it might not want you to...''',
+            CardData(
+                141,
+                'Barribad',
+                '''Max HP: 4, Attack: 2. A round enemy that wraps itself in a force field. Round face, square shield... Triangle brain?''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1A1,
-        "Template 86",
+        'Template 86',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 1200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=1200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '87':EnemyEntry (
-        "Barribad Projectile?",
+        'Barribad Projectile?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 87",
+        'Template 87',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '88':EnemyEntry (
-        "Pigarithm",
+        'Pigarithm',
+        EnemyData(
+            0,
+            2,
+            0,
+            '''This bizarre beast is called a Pigarithm. Everything about it is just...odd... Max HP is ??. Attack is 2. It takes three stomps to finish off this piggy... But each stomp makes it smaller and faster... It's very hard to stomp the last one... Pigarithms often drop many coins, so you may want to hunt them if you're broke...''',
+            CardData(
+                144,
+                'Pigarithm',
+                '''Max HP: ??, Attack: 2. Takes three stomps to beat. Stomp the piggy back to get the golden goodness inside! Each time you stomp, the pig will get a little smaller.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1A4,
-        "Template 88",
+        'Template 88',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 200),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 200),
-            Drop (item_name = "Shell Shock", hex_value = get_hex_value("Shell Shock"), weight = 200),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 200),
-            Drop (item_name = "Sleepy Sleep", hex_value = get_hex_value("Sleepy Sleep"), weight = 200),
-            Drop (item_name = "Mystery Box", hex_value = get_hex_value("Mystery Box"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=200), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=200), Drop(ItemName='Shell Shock', ItemID=0x46, ItemWeight=200), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=200), Drop(ItemName='Sleepy Sleep', ItemID=None, ItemWeight=200), Drop(ItemName='Mystery Box', ItemID=0x56, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '89':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 89",
+        'Template 89',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '90':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 90",
+        'Template 90',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '91':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 91",
+        'Template 91',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '92':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 92",
+        'Template 92',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '93':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 93",
+        'Template 93',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '94':EnemyEntry (
-        "Zombie Shroom",
+        'Zombie Shroom',
+        EnemyData(
+            1,
+            2,
+            0,
+            '''That's a Zombie Shroom. It is an evil shroom monster that comes out of ? Blocks... Max HP is 1. Attack is 2. It can move very fast in a limited area... But it has low HP, so you can take it out...''',
+            CardData(
+                178,
+                'Zombie Shroom',
+                '''Max HP: 1, Attack: 2. It's a Zombie Shroom. They pop out of ? Blocks. It may look like a snack, but it'll snack on you!''',
+                'Card Shop; Catch Card/SP; Chapter 7-3: Found at the far right of the Star Block by using Luigi to high jump to the roof and go to the other side.',
+                '★★',
+            ),
+            ''
+        ),
         0x1C3,
-        "Template 94",
+        'Template 94',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Poison Shroom", hex_value = get_hex_value("Poison Shroom"), weight = 200),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Poison Shroom', ItemID=0x62, ItemWeight=200), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '95':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 95",
+        'Template 95',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '96':EnemyEntry (
-        "Stone Buzzy",
+        'Stone Buzzy',
+        EnemyData(
+            3,
+            2,
+            0,
+            '''This is definitely a Stone Buzzy. That rock-hard shell must be heavy... Max HP is 3, Attack is 2, and Defense is ??. Flames won't burn its hard shell... I hear that you can crack its shell if you hit it enough... But I'm a little afraid to see what they look like without their shell...''',
+            CardData(
+                22,
+                'Stone Buzzy',
+                '''Max HP: 3, Attack: 2. It's a Buzzy Beetle with a rock-hard shell. You'll have to stomp on it a few times to crack it. You may feel a little guilty, but push through it.''',
+                'Card Shop; Catch Card/SP; Chapter 5-2: Found after gliding over the canyon with the Star Block as Peach and using Mario to flip into 3D.',
+                '★',
+            ),
+            ''
+        ),
         0x12F,
-        "Template 96",
+        'Template 96',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Courage Shell', ItemID=0x4A, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '97':EnemyEntry (
-        "Longator",
+        'Longator',
+        EnemyData(
+            12,
+            1,
+            0,
+            '''That thing is a Longator. It can stretch beyond the limits of imagination... Max HP is 12 and Attack is 1. It likes to stretch its neck at enemies... Watch where you land near them. They look relaxed, but they can get aggressive...''',
+            CardData(
+                138,
+                'Longator',
+                '''Max HP: 12, Attack: 1. Longators get in your face. They have no respect for your personal space-bubble.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x19E,
-        "Template 97",
+        'Template 97',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '98':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 98",
+        'Template 98',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '99':EnemyEntry (
-        "Flip Spiny",
+        'Spiny',
+        EnemyData(
+            4,
+            2,
+            3,
+            '''Normal: That's a Spiny... As its name suggests, it is covered with unpleasant, pointy ends... Max HP is 4, Attack is 2, and Defense is 3. Don't bother trying to stomp it... Whatever you do, don't get surrounded by these beasts... Before they hit the ground, they roll into balls. They must train for midair deployment...''',
+            CardData(
+                24,
+                'Spiny',
+                '''Max HP: 4, Attack: 2, Defense: 3. You DO NOT want to step on this razor-sharp baddie. They're born covered in spiny spines. This makes hugging a Spiny a little...awkward.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x131,
-        "Template 99",
+        'Template 99',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Mighty Tonic", hex_value = get_hex_value("Mighty Tonic"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Mighty Tonic', ItemID=0x4B, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '100':EnemyEntry (
-        "Mister I",
+        'Mister I',
+        EnemyData(
+            0,
+            2,
+            0,
+            '''It's a Mister I. These bizarre foes can't help but give you the evil eye... Max HP is ??. Attack is 2. It will shoot sharp glances at any enemy it spots... None of your attacks will work... Try flipping and spinning around and around it...''',
+            CardData(
+                100,
+                'Mister I',
+                '''Max HP: ??, Attack: 2. It's an eye. A big, juicy, unblinking, ever-watching eye. ...Gross.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x188,
-        "Template 100",
+        'Template 100',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Sleepy Sleep", hex_value = get_hex_value("Sleepy Sleep"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Sleepy Sleep', ItemID=None, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '101':EnemyEntry (
-        "(Unused) Flip Spike Top",
-        0x12B,
-        "Template 101",
-        0.04,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        '(Unused) Flip Spike Top',
+        EnemyData(0, 0, 0, '', '', ''),
+        299,
+        'Template 101',
+        0,
+        EnemyDrops(),
     ),
     '102':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 102",
+        'Template 102',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '103':EnemyEntry (
-        "Projectile?",
+        'Projectile?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 103",
+        'Template 103',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '104':EnemyEntry (
-        "Gnip / Howl",
+        'Gnip / Howl',
+        EnemyData(0, 0, 0, '', '', ''),
         0x186,
-        "Template 104",
+        'Template 104',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '105':EnemyEntry (
-        "Gnaw / Growl",
+        'Gnaw / Growl',
+        EnemyData(0, 0, 0, '', '', ''),
         0x187,
-        "Template 105",
+        'Template 105',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '106':EnemyEntry (
-        "Bullet Bill",
+        'Bullet Bill',
+        EnemyData(
+            1,
+            2,
+            0,
+            '''That's a Bullet Bill. They get shot out of Bill Blasters... Max HP is 1 and Attack is 2. They just fly straight... You can defeat them, but the Blaster will just keep shooting them at you...''',
+            CardData(
+                115,
+                'Bullet Bill',
+                '''Max HP: 1, Attack: 2. In our hearts, this monster is number one with a bullet. It does have a short fuse, though...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x173,
-        "Template 106",
+        'Template 106',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '107':EnemyEntry (
-        "Bill Blaster",
+        'Bill Blaster',
+        EnemyData(
+            5,
+            2,
+            3,
+            '''This cannon is called a Bill Blaster. They shoot Bullet Bills at you... Max HP is 5, Attack is 2, Defense is 3. They are also immune to flames... Don't approach them straight on, or you'll get shot. Attack from above...''',
+            CardData(
+                116,
+                'Bill Blaster',
+                '''Max HP: 5, Attack: 2, Defense: 3. It's a big, burly cannon. Where do all those bullets come from?''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x174,
-        "Template 107",
+        'Template 107',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '108':EnemyEntry (
-        "(Unused) Giant Bombshell Bill",
+        '(Unused) Giant Bombshell Bill',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 108",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 108',
+        0,
+        EnemyDrops(),
     ),
     '109':EnemyEntry (
-        "(Unused) Giant Bombshell Bill Blaster",
+        '(Unused) Giant Bombshell Bill Blaster',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 109",
+        'Template 109',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '110':EnemyEntry (
-        "Boo",
+        'Boo',
+        EnemyData(
+            4,
+            1,
+            0,
+            '''That bashful specter is a Boo. It's very fond of dark places... Max HP is 4 and Attack is 1. It will disappear if you stare at it too long... But it will reappear and chase after you the moment you turn your back on it... To outfox it, let it approach with your back turned, then attack or use an item...''',
+            CardData(
+                92,
+                'Boo',
+                '''Max HP: 4, Attack: 1. These spooks only approach when your back is turned. They'd be awesome at "Red light, green light"! ...Except they bite you if they win.''',
+                '''Card Shop; Catch Card/SP; Chapter 2-3: Found in a small 3D-accessible area above the door to Mimi's office.''',
+                '★',
+            ),
+            ''
+        ),
         0x162,
-        "Template 110",
+        'Template 110',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Sleepy Sleep", hex_value = get_hex_value("Sleepy Sleep"), weight = 400),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Sleepy Sleep', ItemID=None, ItemWeight=400), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '111':EnemyEntry (
-        "Dark Boo",
+        'Dark Boo',
+        EnemyData(
+            13,
+            2,
+            0,
+            '''That's a Dark Boo. It likes the dark even more than other Boos... Max HP 13 and Attack is 2. When it sees someone, it gets in their face... I wonder...do you think it looks forward all day to startling people?''',
+            CardData(
+                93,
+                'Dark Boo',
+                '''Max HP: 13, Attack: 2. This ghastly ghost hates being stared at. Unlike other Boos, it will turn around in front of you.''',
+                'Card Shop; Catch Card/SP; Chapter 7-2: Found on a top-right platform of the second area with the Dark Boos and Underhands.',
+                '★',
+            ),
+            ''
+        ),
         0x163,
-        "Template 111",
+        'Template 111',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Sleepy Sleep", hex_value = get_hex_value("Sleepy Sleep"), weight = 400),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Sleepy Sleep', ItemID=None, ItemWeight=400), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '112':EnemyEntry (
-        "Atomic Boo",
+        'Atomic Boo',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''That's an Atomic Boo. That is one enormous Boo... Max HP is 10. Attack is 2. It will follow you until you turn around, then it just disappears... It has a lot of HP, so you may want to use an item when your back is turned... Some say this Boo is a huge, massive ball of many smaller Boos...''',
+            CardData(
+                95,
+                'Atomic Boo',
+                '''Max HP: 10, Attack: 2. This gigantic Boo still hides when you look at it. Some say it's a gathering of many smaller Boos...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x20D,
-        "Template 112",
+        'Template 112',
         0.2,
-        EnemyDrops (
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '113':EnemyEntry (
-        "(Unused) Dark Atomic Boo",
+        '(Unused) Dark Atomic Boo',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 113",
-        0.1,
-        EnemyDrops (
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        'Template 113',
+        0,
+        EnemyDrops(),
     ),
     '114':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 114",
+        'Template 114',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '115':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 115",
+        'Template 115',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '116':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 116",
+        'Template 116',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '117':EnemyEntry (
-        "Fuzzy",
+        'Fuzzy',
+        EnemyData(
+            5,
+            1,
+            0,
+            '''That curious, bouncing ball of fur is a Fuzzy... Nobody knows why they bounce... Max HP is 5 and Attack is 1. No remarkable abilities aside from the bouncing... I suggest you keep your distance until you can predict its erratic movements...''',
+            CardData(
+                63,
+                'Fuzzy',
+                '''Max HP: 5, Attack: 1. What dark and evil thoughts dwell in this beast's brain? And what's so fuzzy about it anyway? It doesn't look too cuddly.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x14B,
-        "Template 117",
+        'Template 117',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Life Shroom", hex_value = get_hex_value("Life Shroom"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Life Shroom', ItemID=0x54, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '118':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 118",
+        'Template 118',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '119':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 119",
+        'Template 119',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '120':EnemyEntry (
-        "Pink Fuzzy",
+        'Pink Fuzzy',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''This bouncing ball of fur is called a Pink Fuzzy. It lives to endlessly bounce around... Max HP is 10 and Attack is 2. I wonder if it thinks about the color pink all day... You better keep your distance and use ranged attacks to defeat it...''',
+            CardData(
+                64,
+                'Pink Fuzzy',
+                '''Max HP: 10, Attack: 2. If you had to be a Fuzzy, pink wouldn't be a bad color. Still, no one's winning any cuteness contests here.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x14C,
-        "Template 120",
+        'Template 120',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Life Shroom", hex_value = get_hex_value("Life Shroom"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Life Shroom', ItemID=0x54, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '121':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 121",
+        'Template 121',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '122':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 122",
+        'Template 122',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '123':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 123",
+        'Template 123',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '124':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 124",
+        'Template 124',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '125':EnemyEntry (
-        "Weak Ruff Puff",
+        'Weak Ruff Puff',
+        EnemyData(0, 0, 0, '', '', ''),
         0x155,
-        "Template 125",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 125',
+        0,
+        EnemyDrops(),
     ),
     '126':EnemyEntry (
-        "Pokey",
+        'Pokey',
+        EnemyData(
+            6,
+            2,
+            0,
+            '''That precarious cactus is a Pokey. It has a Max HP of 6. Attack is 2... Unlike other cacti, this one can move. Is it a plant or an animal? Nobody knows... This prickly beast will throw pieces of itself at you... It's very unpleasant... It's covered in spines, so you better not touch it or pick it up...''',
+            CardData(
+                66,
+                'Pokey',
+                '''Max HP: 6, Attack: 2. This cactus column wanders in the desert wasteland. When it attacks, it hurls parts of itself at you. Literally. Which is kind of sad, really.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x14E,
-        "Template 126",
+        'Template 126',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 40),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=40)],
     ),
     '127':EnemyEntry (
-        "Poison Pokey",
+        'Poison Pokey',
+        EnemyData(
+            12,
+            2,
+            0,
+            '''That's a Poison Pokey. It's much like a regular Pokey, but it has poisonous spines... Max HP is 12 and Attack is 2. Watch your step... Being poisoned isn't pleasant... If you do get poisoned, most items that restore HP also cure poison...''',
+            CardData(
+                67,
+                'Poison Pokey',
+                '''Max HP: 12, Attack: 2. With prickles and poison, this baddie is double trouble. All it needs is a big hug. Any volunteers?''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x14F,
-        "Template 127",
+        'Template 127',
         1,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '128':EnemyEntry (
-        "Koopa Striker",
+        'Koopa Striker',
+        EnemyData(
+            8,
+            2,
+            1,
+            '''It's a Koopa Striker. It takes good shell control to make the Koopa Striker team... Max HP is 8. Attack is 2. Defense is 1. It can kick shells all day... It's very proud of its strong and accurate kicks...and its shiny shell! "An eye for an eye, a shell for a shell!" Try to trap its shell and send it back...''',
+            CardData(
+                38,
+                'Koopa Striker',
+                '''Max HP: 8, Attack: 2, Defense: 1. This Koopa Striker kicks for the love of the game. Its luxurious eyebrows are... Wait a sec... GOOOAAAALLLL!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x13F,
-        "Template 128",
+        'Template 128',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        [Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=20)],
     ),
     '129':EnemyEntry (
-        "Koopa Striker's Shell",
+        '''Koopa Striker's Shell''',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 129",
+        'Template 129',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '130':EnemyEntry (
-        "Mimi",
+        'Mimi (1)',
+        EnemyData(
+            0,
+            1,
+            0,
+            '''That's Mimi. She's a slightly childish shape-shifter that works for Count Bleck... Max HP is ?? and Attack is 1. Just go for the head when you attack... She will briefly stop when she gets hit... That is when you should go on the attack... She might also hang from the ceiling and throw Rubees at you...''',
+            CardData(
+                191,
+                'Mimi',
+                '''It's Mimi, the adorable, yet slightly unstable shape-shifter! Word is, she has a crush on Count Bleck.''',
+                'Card Shop; Map 15',
+                '★★',
+            ),
+            ''
+        ),
         0x1C7,
-        "Template 130",
+        'Template 130',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '131':EnemyEntry (
-        "Chasing Mimi",
+        'Chasing Mimi',
+        EnemyData(0, 0, 0, '', '', ''),
         0x1C7,
-        "Template 131",
+        'Template 131',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '132':EnemyEntry (
-        "Bowser",
+        'Bowser (1)',
+        EnemyData(
+            20,
+            2,
+            1,
+            '''N/A''',
+            CardData(
+                226,
+                'Bowser (1)',
+                '''Mario's mean-spirited rival needs no introduction. He's not too happy about having to help out Mario.''',
+                'Earned after defeating Shadoo in the Flopside Pit of 100 Trials.',
+                '★★★',
+            ),
+            ''
+        ),
         0x1CA,
-        "Template 132",
+        'Template 132',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '133':EnemyEntry (
-        "Bittacuda",
+        'Bittacuda',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''That fish is a Bittacuda. It's a carnivorous beast with vicelike jaws... Max HP is 10 and Attack is 2. It will try to eat anything that swims by... If you insist on fighting this fish, I would suggest flipping dimensions... I do hear these voracious sea beasts are quite tasty...''',
+            CardData(
+                71,
+                'Bittacuda',
+                '''Max HP: 10, Attack: 2. This big fish could feed an army! ...Or eat an army.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x154,
-        "Template 133",
+        'Template 133',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '134':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 134",
+        'Template 134',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '135':EnemyEntry (
-        "MeowBomb (Francis)",
+        'MeowBomb',
+        EnemyData(0, 0, 0, '', '', ''),
         0x193,
-        "Template 135",
+        'Template 135',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '136':EnemyEntry (
-        "Big Blooper",
+        'Big Blooper',
+        EnemyData(
+            0,
+            2,
+            0,
+            '''That's Big Blooper, a titanic squid that lurks under the waves of the Tile Pool... Max HP is ??. Attack is 2. This many-tentacled sea beast clobbers its prey... But that red tentacle is its weak spot... Try attacking it...''',
+            CardData(
+                184,
+                'Big Blooper',
+                '''Max HP: ??, Attack: 2. It's a giant, ten-tentacled squid! That's right...ten. How'd it get so big? Must be something in the water.''',
+                'Card Shop; Map 20',
+                '★★',
+            ),
+            ''
+        ),
         0x1CF,
-        "Template 136",
+        'Template 136',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '137':EnemyEntry (
-        "Mr. L",
+        'Mr. L',
+        EnemyData(
+            40,
+            3,
+            0,
+            '''That's Mr. L. This new hire of Count Bleck's a real mystery man... Max HP is 40. Attack is 3. He uses his high jump as a weapon... And that powered-up super jump is quite...super... He has no other outstanding features of note. And why does he remind me so much of Mario...?''',
+            CardData(
+                192,
+                'Mr. L',
+                '''Max HP: 40, Attack: 3. So...who's this mysterious Mr. L character? Is this what the Prognosticus foretold?''',
+                'Card Shop; Map 27',
+                '★★',
+            ),
+            ''
+        ),
         0x1D2,
-        "Template 137",
+        'Template 137',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '138':EnemyEntry (
-        "Brobot",
+        'Brobot',
+        EnemyData(
+            255,
+            4,
+            0,
+            '''That's the Brobot. This super robot is one of Mr. L's creations... Max HP is 255. Attack is 4. Defense is 3. Defense against fire is 6. It is loaded with different weapons that allow it to attack from any angle... Just try to avoid its attacks and use Squirps's beam when you get a chance... And try to grab a few Choco-Bars that float by...''',
+            CardData(
+                193,
+                'Brobot',
+                '''Max HP: 255, Attack: 4, Defense: 3. This is Mr. L's hovering, head-shaped robot. He must have tricked it out with all kinds of weapons. I guess that means Mr. L is a pretty awesome inventor, huh?''',
+                'Card Shop; Map 28',
+                '★★',
+            ),
+            ''
+        ),
         0x1D3,
-        "Template 138",
+        'Template 138',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '139':EnemyEntry (
-        "Brobot Missile",
+        'Brobot Missile',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 139",
+        'Template 139',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '140':EnemyEntry (
-        "Brobot Mustache",
+        'Brobot Mustache',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 140",
+        'Template 140',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '141':EnemyEntry (
-        "Jawbus",
+        'Jawbus',
+        EnemyData(
+            5,
+            1,
+            0,
+            '''This dragonlike monster is a Jawbus. They tend to bite anything near them... Max HP is 5 and Attack is 1. Its only weakness is the glowing spot on its back... It won't look behind, so try flipping 3-D and sneaking behind it...''',
+            CardData(
+                72,
+                'Jawbus',
+                '''Max HP: 5, Attack: 1. Count on a Jawbus to stick its neck out for you. Or at you.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x182,
-        "Template 141",
+        'Template 141',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 300),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 200),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=300), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=200), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '142':EnemyEntry (
-        "Dimentio",
+        'Dimentio (1)',
+        EnemyData(
+            30,
+            2,
+            0,
+            '''That's Dimentio. He's a weird dimensional magician who works for Count Bleck... Max HP is 30 and Attack is 2. Dimentio can flip between dimensions... He can also clone himself. Attacking his double won't do anything to him... Hit the real one, and the double will disappear. Then, he can't clone again for a while...''',
+            CardData(
+                195,
+                'Dimentio',
+                '''Dimentio is Count Bleck's dimension-bending mercenary. The question is, do psycho jesters get good benefits?''',
+                'Card Shop; Map 22',
+                '★★',
+            ),
+            ''
+        ),
         0x1C6,
-        "Template 142",
+        'Template 142',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '143':EnemyEntry (
-        "Dimentio Magic",
+        'Dimentio Magic',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 143",
+        'Template 143',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '144':EnemyEntry (
-        "Sproing-Oing",
+        'Sproing-Oing',
+        EnemyData(
+            4,
+            1,
+            0,
+            '''It's a Sproing-Oing... For some reason, this creature lives to hop endlessly... Max HP is 4 and Attack is 1. If you hurt it, it will split into many Mini-Sproings... I wonder if breaking up is hard to do, even for these creatures... But if you can do enough damage in one hit, you can beat them before they split...''',
+            CardData(
+                49,
+                'Sproing-Oing',
+                '''Max HP: 4, Attack: 1. Sproing-Oings split into three when they get stomped. These little critters can throw off your timing, so watch it!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x17A,
-        "Template 144",
+        'Template 144',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '145':EnemyEntry (
-        "Mini Sproing-Oing",
+        'Mini Sproing-Oing',
+        EnemyData(0, 0, 0, '', '', ''),
         0x17A,
-        "Template 145",
-        0.02,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        'Template 145',
+        0,
+        EnemyDrops(),
     ),
     '146':EnemyEntry (
-        "Rubee",
+        'Rubee',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 146",
+        'Template 146',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '147':EnemyEntry (
-        "Shlurp",
+        'Shlurp',
+        EnemyData(
+            0,
+            1,
+            0,
+            '''That bizarre creature is a Shlurp. It has tough skin and an appetite for everything... Max HP is ??, attack is 2, and Defense is ??. No attack will work... But Shlurps are just as fragile inside as they are tough on the outside... Maybe you should try feeding it something that would give it indigestion...''',
+            CardData(
+                109,
+                'Shlurp',
+                '''Max HP: ??, Attack: 2. This hungry beast really sucks...stuff up! Bombs give it a bad case of heartburn.''',
+                'Card Shop; Catch Card/SP; Chapter 2-1: Found in an underground area under the Star Block via a 3D-accessible hole.',
+                '★',
+            ),
+            ''
+        ),
         0x16D,
-        "Template 147",
+        'Template 147',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 400),
-            Drop (item_name = "POW Block", hex_value = get_hex_value("POW Block"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=400), Drop(ItemName='POW Block', ItemID=0x45, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '148':EnemyEntry (
-        "Squig",
+        'Squig',
+        EnemyData(
+            4,
+            1,
+            0,
+            '''It's a Squig... Think of these creatures as tougher Squiglets... Max HP is 4 and Attack is 1. They have a nasty habit of spitting rocks... Thankfully, the rocks are slow and easy to avoid...''',
+            CardData(
+                45,
+                'Squig',
+                '''Max HP: 4, Attack: 1. This nasty little guy needs to learn some manners. It spits rocks at people! Honestly, who does that?''',
+                'Card Shop; Catch Card/SP; Chapter 1-3: Found after flipping to 3D behind a rock near the red palm tree.',
+                '★',
+            ),
+            ''
+        ),
         0x176,
-        "Template 148",
+        'Template 148',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '149':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 149",
+        'Template 149',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '150':EnemyEntry (
-        "King Croacus",
+        'King Croacus',
+        EnemyData(
+            50,
+            2,
+            0,
+            '''That's King Croacus. He leads the Floro Sapiens, and loves beautiful things... Max HP is 50. Attack is 2. He attacks with his head, like other Floro Sapiens... I don't think you can damage him when his face is closed off like that... Using Thoreau to grab stuff, then jumping into him works pretty well, though...''',
+            CardData(
+                186,
+                'King Croacus',
+                '''Max HP: 50, Attack: 2. King Croacus cares about making the world beautiful. Too bad drinking polluted water has made him insane.''',
+                'Card Shop; Map 37',
+                '★★',
+            ),
+            ''
+        ),
         0x1D1,
-        "Template 150",
+        'Template 150',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '151':EnemyEntry (
-        "Slow Cursya",
+        'Cursya',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''That's... a Cursya! This spiteful, evil monster curses everything it touches... Max HP is 1 and Attack is 1. This Cursya's curse slows you down temporarily... You should throw something at it or use an item... Jumping on it would be a bad idea...''',
+            CardData(
+                78,
+                'Cursya',
+                '''Max HP: 1, Attack: 1. This nasty critter will slow you down. It's just so easy to get lost in those dreamy eyes.''',
+                '''Card Shop; Catch Card/SP; Chapter 2-2: Found on the balcony above the front door of Merlee's Mansion.''',
+                '★',
+            ),
+            ''
+        ),
         0x159,
-        "Template 151",
+        'Template 151',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Poison Shroom", hex_value = get_hex_value("Poison Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Poison Shroom', ItemID=0x62, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '152':EnemyEntry (
-        "Megabite",
+        'Megabite',
+        EnemyData(
+            4,
+            1,
+            0,
+            '''That's a Megabite. It's an evil skull that soars through the skies... Max HP is 4 and Attack is 1. It will only take 1 damage per attack... It will eventually fly off, so don’t worry about defeating it every time... No one knows where they come from or where they go...''',
+            CardData(
+                171,
+                'Megabite',
+                '''Max HP: 4, Attack: 1. Only takes 1 point of damage. This disembodied head really knows how to ruin a picnic. Lay low until it finds someone else to terrorize.''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x1BB,
-        "Template 152",
+        'Template 152',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Shooting Star", hex_value = get_hex_value("Shooting Star"), weight = 100),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 200),
-            Drop (item_name = "Catch Card SP", hex_value = get_hex_value("Catch Card SP"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Shooting Star', ItemID=0x44, ItemWeight=100), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=200), Drop(ItemName='Catch Card SP', ItemID=0x58, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '153':EnemyEntry (
-        "Boomboxer",
+        'Boomboxer',
+        EnemyData(
+            4,
+            2,
+            0,
+            '''This Boomboxer blasts cones of pure sound at anyone it doesn't like... Max HP is 4 and Attack is 2. It gets startled by its own loud noises... What would drive a music lover to listen to anything that loud...''',
+            CardData(
+                53,
+                'Boomboxer',
+                '''Max HP: 4, Attack: 2. This music maven will assault you with bowel-busting bass! What's with the face it makes when it rocks out?''',
+                '''Card Shop; Catch Card/SP; Chapter 1-2: Found on top of Watchitt's house.''',
+                '★',
+            ),
+            ''
+        ),
         0x17E,
-        "Template 153",
+        'Template 153',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '154':EnemyEntry (
-        "Choppa",
+        'Choppa',
+        EnemyData(
+            5,
+            1,
+            0,
+            '''That Choppa is a strange organism that flies through the air...and dimensions... Max HP is 5 and Attack is 1. It's hard to track, as it occasionally flips... However, it occasionally stops to rest. That's your chance...''',
+            CardData(
+                147,
+                'Choppa',
+                '''Max HP: 5, Attack: 1. Check out this aerial alien's sweet midair tricks. It can appear and disappear in a flash. Not even fair.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1A7,
-        "Template 154",
+        'Template 154',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '155':EnemyEntry (
-        "Croacus Petal",
+        'Croacus Petal',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 155",
+        'Template 155',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '156':EnemyEntry (
-        "Croacus Petal",
+        'Croacus Petal',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 156",
+        'Template 156',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '157':EnemyEntry (
-        "Croacus Petal",
+        'Croacus Petal',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 157",
+        'Template 157',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '158':EnemyEntry (
-        "Boomboxer Attack",
+        'Boomboxer Attack',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 158",
+        'Template 158',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '159':EnemyEntry (
-        "Ruff Puff",
+        'Ruff Puff',
+        EnemyData(
+            15,
+            4,
+            0,
+            '''That's a Ruff Puff. It floats in the sky, like a little grumpy thundercloud... Max HP is 15 and Attack is 4. It will shock you if you get too close... You'd better keep your distance until you see an opening to attack... Do you think it's related to the cloud Lakitu rides around on?''',
+            CardData(
+                117,
+                'Ruff Puff',
+                '''Max HP: 15, Attack: 4. This little thundercloud is darkening a sky near you! Looks a little like cotton candy, but don't bite!''',
+                'Card Shop; Catch Card/SP; Chapter 7-3: Found on the left of cloud 34.',
+                '★',
+            ),
+            ''
+        ),
         0x155,
-        "Template 159",
+        'Template 159',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '160':EnemyEntry (
-        "Tileoid G",
+        'Tileoid G',
+        EnemyData(
+            5,
+            1,
+            0,
+            '''That's a Tileoid G. It is a mysterious creature that's made of many small parts... Max HP is 5 and Attack is 1. It can also crawl along walls and ceilings... Tileoids vary in color and ability. This green Tileoid is known for its speed...''',
+            CardData(
+                120,
+                'Tileoid G',
+                '''Max HP: 5, Attack: 1. These sticky creatures crawl along walls. They're like living, antigravity tumbleweeds!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x18E,
-        "Template 160",
+        'Template 160',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 400),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=400), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '161':EnemyEntry (
-        "Tileoid B",
+        'Tileoid B',
+        EnemyData(
+            10,
+            1,
+            0,
+            '''That's a Tileoid B. It is a mysterious creature that's made of many small parts... Max HP is 10 and Attack is 1. It can also crawl along walls and ceilings... Tileoids vary in color and ability. This blue Tileoid is known for its curses...''',
+            CardData(
+                121,
+                'Tileoid B',
+                '''Max HP: 10, Attack: 1. This sticky beast clings to any surface. Caution: it is not blue cotton candy.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x18F,
-        "Template 161",
+        'Template 161',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 400),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=400), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '162':EnemyEntry (
-        "Tileoid R",
+        'Tileoid R',
+        EnemyData(
+            15,
+            2,
+            0,
+            '''That's a Tileoid R. It is a mysterious creature that's made of many small parts... Max HP is 15 and Attack is 2. It can also crawl along walls and ceilings... Tileoids vary in color and ability. This red Tileoid is known for its high HP...''',
+            CardData(
+                122,
+                'Tileoid R',
+                '''Max HP: 15, Attack: 2. This gluey, gloppy animal will stick to any surface. Gluey and gloppy...not the best traits.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x190,
-        "Template 162",
+        'Template 162',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 400),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=400), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '163':EnemyEntry (
-        "Tileoid Y",
+        'Tileoid Y',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''That's a Tileoid Y. It is a mysterious creature that's made of many small parts... Max HP is 10 and Attack is 2. It can also crawl along walls and ceilings... Tileoids vary in color and ability. This yellow Tileoid is known for its great speed...''',
+            CardData(
+                123,
+                'Tileoid Y',
+                '''Max HP: 10, Attack: 2. This tenaciously sticky beast slides along walls and ceilings. And it even doubles as an industrial adhesive!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x191,
-        "Template 163",
+        'Template 163',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 400),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=400), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '164':EnemyEntry (
-        "Growmeba",
+        'Growmeba',
+        EnemyData(
+            2,
+            1,
+            0,
+            '''That troublesome creature is a Growmeba. It can clone itself over and over again... Max HP is 2 and Attack is 1. If you defeat the main one, the clones will die... The primary one has slightly different moves and looks, so watch closely... If you don't want to bother, you could defeat them all with an item...''',
+            CardData(
+                96,
+                'Growmeba',
+                '''Max HP: 2, Attack: 1. Growmebas copy themselves over and over and over. Just stomp the real one to make them all disappear.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x18A,
-        "Template 164",
+        'Template 164',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '165':EnemyEntry (
-        "Growmeba Part",
+        'Growmeba Part',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 165",
+        'Template 165',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '166':EnemyEntry (
-        "Boomerang",
+        'Boomerang',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 166",
+        'Template 166',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '167':EnemyEntry (
-        "Fire Bro Fireball",
+        'Fire Bro Fireball',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 167",
+        'Template 167',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '168':EnemyEntry (
-        "BigMeow",
+        'BigMeow',
+        EnemyData(
+            0,
+            2,
+            0,
+            '''That's a BigMeow. It's a robot made to attend to certain sensitive rooms... They were designed for centuries of service, so they do not take any damage... But they can hit you, so do be careful...''',
+            CardData(
+                129,
+                'BigMeow',
+                '''These robotic cat servants are loyal to their master. They're not designed for battle. But they aren't going to complain about it!''',
+                'Card Shop; Catch Card/SP; Flimm',
+                '★★',
+            ),
+            ''
+        ),
         0x197,
-        "Template 168",
+        'Template 168',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '169':EnemyEntry (
-        "Eeligon",
+        'Eeligon',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''That's an Eeligon. They are space creatures that are made up of many parts... Max HP is 10 and Attack is 2. It loses pieces of itself as it takes damage... The head is the weak spot... Its movements are hard to predict, so be careful...''',
+            CardData(
+                135,
+                'Eeligon',
+                '''Max HP: 10, Attack: 2. Eeligons slither through the murky bits of the cosmos. Hit them and they'll shrink faster than their egos.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x19B,
-        "Template 169",
+        'Template 169',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 100),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=100), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '170':EnemyEntry (
-        "Jellien",
+        'Jellien',
+        EnemyData(
+            4,
+            2,
+            0,
+            '''That's a Jellien. It is a strange, gelatinous creature that floats about in space... Max HP is 4 and Attack is 2. It drifts lazily towards potential morsels... It moves slowly, so watch it carefully and you should be able to avoid it...''',
+            CardData(
+                132,
+                'Jellien',
+                '''Max HP: 4, Attack: 2. Jelliens drift around the lonely ocean of space. Maybe they've discovered the best way to get around? Intergalactic jiggling: the newest form of space travel.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x198,
-        "Template 170",
+        'Template 170',
         0.02,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 400),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=400), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '171':EnemyEntry (
-        "Foton",
+        'Foton',
+        EnemyData(
+            8,
+            2,
+            0,
+            '''That Foton is a space organism that is orbited by small blue particles... Max HP is 8 and Attack is 2. When it senses danger, it... Well, it shouldn't be much of a problem unless you're surrounded by them...''',
+            CardData(
+                133,
+                'Foton',
+                '''Max HP: 8, Attack: 2. Fotons fire super-fast, superheated particles. Of course, they're big crowd-pleasers at parties.''',
+                'Card Shop; Catch Card/SP; Chapter 4-1: Found in 3D behind an asteroid near the Jelliens.',
+                '★',
+            ),
+            ''
+        ),
         0x199,
-        "Template 171",
+        'Template 171',
         0.02,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Shooting Star", hex_value = get_hex_value("Shooting Star"), weight = 50),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Shooting Star', ItemID=0x44, ItemWeight=50), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '172':EnemyEntry (
-        "Warpid",
+        'Warpid',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''That's a Warpid, a being of pure energy that can warp through space... Max HP is 10 and Attack is 2. It will pursue any new discovery... Don't allow yourself to be mesmerized by its slowly undulating lines...''',
+            CardData(
+                134,
+                'Warpid',
+                '''Max HP: 10, Attack: 2. This space case warps around here and there. It won't bother you. Just let it do its thing.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x19A,
-        "Template 172",
+        'Template 172',
         0.02,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Shooting Star", hex_value = get_hex_value("Shooting Star"), weight = 50),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Shooting Star', ItemID=0x44, ItemWeight=50), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '173':EnemyEntry (
-        "Muth",
+        'Muth',
+        EnemyData(
+            100,
+            5,
+            0,
+            '''That massive beast is a Muth. They roam the grassy plains of Crag... Max HP is 100 and Attack is 5. They can trample nearly anything... They also have a lot of HP, so they aren't easy to take down... Many Cragnons have risked fighting Muths just to prove their bravery...''',
+            CardData(
+                150,
+                'Muth',
+                '''Max HP: 100, Attack: 5. Fear the woolly foot of the mighty Muth! It'll trample you just for looking at it wrong.''',
+                'Card Shop; Catch Card/SP; Map 30',
+                '★★',
+            ),
+            ''
+        ),
         0x1AA,
-        "Template 173",
+        'Template 173',
         0.2,
-        EnemyDrops (
-            Drop (item_name = "Bone-In Cut", hex_value = get_hex_value("Bone-In Cut"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Bone-In Cut', ItemID=0x71, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '174':EnemyEntry (
-        "Veggiefied O'Chunks",
+        '''O'Chunks (3)''',
+        EnemyData(
+            60,
+            3,
+            0,
+            '''That’s O’Chunks. Dimentio has veggified him. He has no will of his own... Max HP is 60 and Attack is 3. He seems faster and stronger than before... But he will get dizzy after being thrown. That’s your only chance... Don’t let his quick movements confuse you. Just keep a steady head...''',
+            CardData(
+                190,
+                '''O'Chunks''',
+                '''It's O'Chunks, the count's hulking, wild-eyed henchman! Word is, the count saved his life. Now he owes him big.''',
+                'Card Shop; Map 5',
+                '★★',
+            ),
+            ''
+        ),
         0x1C5,
-        "Template 174",
+        'Template 174',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '175':EnemyEntry (
-        "Floro Cragnon (Round)",
+        'Floro Cragnon (Round)',
+        EnemyData(0, 0, 0, '', '', ''),
         0x1AE,
-        "Template 175",
-        0.07,
-        EnemyDrops (
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Primordial Fruit", hex_value = get_hex_value("Primordial Fruit"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        'Template 175',
+        0,
+        EnemyDrops(),
     ),
     '176':EnemyEntry (
-        "Floro Cragnon (Triangular)",
+        'Floro Cragnon (Triangular)',
+        EnemyData(0, 0, 0, '', '', ''),
         0x1AE,
-        "Template 176",
-        0.07,
-        EnemyDrops (
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Primordial Fruit", hex_value = get_hex_value("Primordial Fruit"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        'Template 176',
+        0,
+        EnemyDrops(),
     ),
     '177':EnemyEntry (
-        "Trap Gold Bar x3",
+        'Trap Gold Bar x3',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 177",
+        'Template 177',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '178':EnemyEntry (
-        "Ninjoe",
+        'Ninjoe',
+        EnemyData(
+            6,
+            2,
+            0,
+            '''That's a Ninjoe. These devious ninjas support Sammer Guys from the shadows... Max HP is 6 and Attack is 2. They hop around and throw ninja stars at you (the ninja stars can be destroyed by using Boomer or Cudge, or they will eventually disappear after sticking to a surface for some time). They are said to sell their ninja skills to the highest bidder... And they have long been in the service of King Sammer.''',
+            CardData(
+                155,
+                'Ninjoe',
+                '''Max HP: 6, Attack: 2. Only the wind whispers the name of Ninjoe. Give him enough money, and he'll be your ninja minion.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1AF,
-        "Template 178",
+        'Template 178',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 100),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 100),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 200),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=100), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=100), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=200), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '179':EnemyEntry (
-        "Player Pinwheel",
+        'Player Pinwheel',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 179",
+        'Template 179',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '180':EnemyEntry (
-        "Projectile?",
+        'Projectile?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 180",
+        'Template 180',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '181':EnemyEntry (
-        "O'Chunks",
+        '''O'Chunks (1)''',
+        EnemyData(
+            20,
+            1,
+            0,
+            '''That's O'Chunks. He's a big, bearded warrior of a man... Max HP is 20 and Attack is 1. He can grab you by the feet and hurl you... If you're in reach, he'll toss you, so keep your distance... But you can turn the tables on him and use Thoreau to send him flying...''',
+            CardData(
+                190,
+                '''O'Chunks''',
+                '''It's O'Chunks, the count's hulking, wild-eyed henchman! Word is, the count saved his life. Now he owes him big.''',
+                'Card Shop; Map 5',
+                '★★',
+            ),
+            ''
+        ),
         0x1C5,
-        "Template 181",
+        'Template 181',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '182':EnemyEntry (
-        "O'Chunks",
+        '''O'Chunks (2)''',
+        EnemyData(
+            40,
+            2,
+            0,
+            '''That’s O’Chunks. He’s Count Bleck’s main muscle... Max HP is 40 and Attack is 2. He can grab you by the feet and hurl you… If you’re in reach, he’ll toss you, so keep your distance… But you can turn the tables on him and use Thoreau to send him flying...''',
+            CardData(
+                190,
+                '''O'Chunks''',
+                '''It's O'Chunks, the count's hulking, wild-eyed henchman! Word is, the count saved his life. Now he owes him big.''',
+                'Card Shop; Map 5',
+                '★★',
+            ),
+            ''
+        ),
         0x1C5,
-        "Template 182",
+        'Template 182',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '183':EnemyEntry (
-        "Giant O'Chunks",
+        '''O'Chunks (4)''',
+        EnemyData(
+            100,
+            4,
+            0,
+            '''That’s O’Chunks. He’s even bigger and stronger now... How is that even possible? Max HP is 100 and Attack is 4. He can now perform aerial attacks... When you see him in the air, take evasive action... Just keep moving to avoid him. Well, Bowser, now is your chance to settle it with O’Chunks...''',
+            CardData(
+                190,
+                '''O'Chunks''',
+                '''It's O'Chunks, the count's hulking, wild-eyed henchman! Word is, the count saved his life. Now he owes him big.''',
+                'Card Shop; Map 5',
+                '★★',
+            ),
+            ''
+        ),
         0x1C5,
-        "Template 183",
+        'Template 183',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '184':EnemyEntry (
-        "Small Dimentio Dimension Cube",
+        'Small Dimentio Dimension Cube',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 184",
+        'Template 184',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '185':EnemyEntry (
-        "Medium Dimentio Dimension Cube",
+        'Medium Dimentio Dimension Cube',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 185",
+        'Template 185',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '186':EnemyEntry (
-        "Big Dimentio Dimension Cube",
+        'Big Dimentio Dimension Cube',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 186",
+        'Template 186',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '187':EnemyEntry (
-        "World 6 Mimi",
+        'Mimi (2)',
+        EnemyData(
+            25,
+            2,
+            0,
+            '''That’s Mimi, Count Bleck’s shape-shifting minion... Max HP is 25 and Attack is 2. She has many creative Rubee attacks... But it’s easy to guard against them with Peach’s parasol... Then wait for an opening! Remember, you can use Thoreau to toss her precious Rubees back at her... If you hit her enough, she’ll flip, so flip after her...''',
+            CardData(
+                191,
+                'Mimi',
+                '''It's Mimi, the adorable, yet slightly unstable shape-shifter! Word is, she has a crush on Count Bleck.''',
+                'Card Shop; Map 15',
+                '★★',
+            ),
+            ''
+        ),
         0x1C7,
-        "Template 187",
+        'Template 187',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '188':EnemyEntry (
-        "Brobot L Type",
+        'Brobot L Type',
+        EnemyData(0, 0, 0, '', '', ''),
         0x1D4,
-        "Template 188",
+        'Template 188',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '189':EnemyEntry (
-        "Bonechill",
+        'Bonechill',
+        EnemyData(
+            80,
+            4,
+            0,
+            '''That's Bonechill. This frigid boss escaped from his prison in The Underwhere...Max HP is 80. Attack is 4. Bonechill will only be hurt by attacks to his head...To hit his head you'll need Luigi's super jump, or Thoreau to toss icicles...Bonechill's icy breath can freeze you into a soild herocicle...I don't know why, but I get the feeling he's related to Grambi and the Nimbis...I wonder if he was once a...''',
+            CardData(
+                187,
+                'Bonechill',
+                '''Max HP: 80, Attack: 4. Tremble before the frosty lord of The Underwhere! Bonechill's minty-fresh breath will freeze you solid!''',
+                'Card Shop; Map 45',
+                '★★',
+            ),
+            ''
+        ),
         0x1D5,
-        "Template 189",
+        'Template 189',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '190':EnemyEntry (
-        "Bonechill Projectile",
+        'Bonechill Projectile',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 190",
+        'Template 190',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '191':EnemyEntry (
-        "Bonechill Icicle",
+        'Bonechill Icicle',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 191",
+        'Template 191',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '192':EnemyEntry (
-        "Ninjoe Attack",
+        'Ninjoe Attack',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 192",
+        'Template 192',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '193':EnemyEntry (
-        "FRY_BAKUDAN (Nothing?)",
+        'FRY_BAKUDAN (Nothing?)',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 193",
+        'Template 193',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '194':EnemyEntry (
-        "Skellobit",
+        'Skellobit',
+        EnemyData(
+            10,
+            2,
+            2,
+            '''That's a Skellobit. It's a foul monster that's made of bones... Max HP is 10, Attack is 2, Defense is 2. They poke at people with sharp spears... Don't land on the spear when it's pointed up... They were evil in life, so now they must dwell in dark depths of The Underwhere...''',
+            CardData(
+                160,
+                'Skellobit',
+                '''Max HP: 10, Attack: 2, Defense: 2. Skellobits roam the dark pits of The Underwhere. Their spears make them pretty much unstompable.''',
+                'Card Shop; Catch Card/SP; Chapter 7-4: Found in an area via a pipe under the first cloud in Overthere Sector 5.',
+                '★',
+            ),
+            ''
+        ),
         0x1B4,
-        "Template 194",
+        'Template 194',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 300),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=300), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '195':EnemyEntry (
-        "Spiky Skellobit",
+        'Spiky Skellobit',
+        EnemyData(
+            10,
+            2,
+            2,
+            '''That's a Spiky Skellobit. It's made entirely of bones. They are Skellobit leaders... Max HP is 10, Attack is 2, Defense is 2. It has spikes, so don't jump on it... It's said that only the foulest Skellobits are promoted to Spiky Skellobit...''',
+            CardData(
+                161,
+                'Spiky Skellobit',
+                '''Max HP: 10, Attack: 2, Defense: 2. This fiend infests the dark depths of The Underwhere. Smack it from the side because you can't stomp it!''',
+                'Card Shop; Catch Card/SP; Chapter 7-4: Found in 3D behind the stairs leading to Grambi.',
+                '★',
+            ),
+            ''
+        ),
         0x1B5,
-        "Template 195",
+        'Template 195',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "POW Block", hex_value = get_hex_value("POW Block"), weight = 300),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='POW Block', ItemID=0x45, ItemWeight=300), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '196':EnemyEntry (
-        "Count Bleck",
+        'Count Bleck',
+        EnemyData(
+            150,
+            8,
+            0,
+            '''That's Count Bleck... This dark figure wants to destroy the universe. He was once Blumiere, a man that I loved... Max HP is 150, Attack is 8. He will use all the powers the Chaos Heart grants him. But you can beat him if you give it your all... And beat him you must... For the sake of all worlds... And to save the Blumiere I loved...''',
+            CardData(
+                188,
+                'Count Bleck',
+                '''Max HP: 150, Attack: 8. This top-hatted villain is bent on ending the world! Fun fact: he was once known as Count Blumiere.''',
+                'Card Shop; Map 48',
+                '★★★',
+            ),
+            ''
+        ),
         0x1D6,
-        "Template 196",
+        'Template 196',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '197':EnemyEntry (
-        "Void",
+        'Void',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 197",
+        'Template 197',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '198':EnemyEntry (
-        "Big Void",
+        'Big Void',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 198",
+        'Template 198',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '199':EnemyEntry (
-        "Particle",
+        'Particle',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 199",
+        'Template 199',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '200':EnemyEntry (
-        "Nastasia?",
+        'Nastasia?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 200",
+        'Template 200',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '201':EnemyEntry (
-        "Disappearing Count Bleck",
+        'Disappearing Count Bleck',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 201",
+        'Template 201',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '202':EnemyEntry (
-        "Boomerang",
+        'Boomerang',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 202",
+        'Template 202',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '203':EnemyEntry (
-        "Fire Bro Fire",
+        'Fire Bro Fire',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 203",
+        'Template 203',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '204':EnemyEntry (
-        "Pokey Part",
+        'Pokey Part',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 204",
+        'Template 204',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '205':EnemyEntry (
-        "Poison Pokey Part",
+        'Poison Pokey Part',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 205",
+        'Template 205',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '206':EnemyEntry (
-        "Back Cursya",
+        'Back Cursya',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''That's a Back Cursya. It is a vile monster that curses everything it touches... Max HP is 1 and Attack is 1. It will send you back to where you came from... In our case, one touch, and we would be sent straight back to Flipside...''',
+            CardData(
+                79,
+                'Back Cursya',
+                '''Max HP: 1, Attack: 1. This pest will send you straight back to Flipside. Then again, it's one way to cut down on your commute.''',
+                'Card Shop; Catch Card/SP; Map 18',
+                '★',
+            ),
+            ''
+        ),
         0x15A,
-        "Template 206",
+        'Template 206',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Poison Shroom", hex_value = get_hex_value("Poison Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Poison Shroom', ItemID=0x62, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '207':EnemyEntry (
-        "Tech Cursya",
+        'Tech Cursya',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''That's a Tech Cursya. It is a spiteful monster that curses everything it touches. Max HP is 1 and Attack is 1. It can prevent you from using skills for a while... But it can't curse you if you don't touch it, so approach with caution...''',
+            CardData(
+                80,
+                'Tech Cursya',
+                '''Max HP: 1, Attack: 1. This evil baddie can whip up a helping of instant amnesia. Just like that, and you can't flip between dimensions! You never know what you had until it's gone, right?''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x15B,
-        "Template 207",
+        'Template 207',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Poison Shroom", hex_value = get_hex_value("Poison Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Poison Shroom', ItemID=0x62, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '208':EnemyEntry (
-        "Heavy Cursya",
+        'Heavy Cursya',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''That's a Heavy Cursya. It is a spiteful monster that curses everything it touches. Max HP is 1 and Attack is 1. It makes you heavy and hinders your jumping... A life without jumping... It's too terrible to contemplate... Unless you're a butterfly...''',
+            CardData(
+                81,
+                'Heavy Cursya',
+                '''Max HP: 1, Attack: 1. This thing will hit you like a ton of bricks. You'll barely be able to hop a few inches off the ground. Take it out from a distance.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x15C,
-        "Template 208",
+        'Template 208',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Poison Shroom", hex_value = get_hex_value("Poison Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Poison Shroom', ItemID=0x62, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '209':EnemyEntry (
-        "Reversya Cursya",
+        'Reversya Cursya',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Reversya Cursya. It is a spiteful monster that curses everything it touches. Max HP is 1 and Attack is 1. It can make you move entirely in opposites... If you get cursed, it's best to relax. You will learn to adjust until the effect wears off...''',
+            CardData(
+                82,
+                'Reversya Cursya',
+                '''Max HP: 1, Attack: 1. Hit this thing and you'll lose all sense of direction. Don't be alarmed: everything will be backwards. But if you relax a little, you'll figure it out.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x15D,
-        "Template 209",
+        'Template 209',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Poison Shroom", hex_value = get_hex_value("Poison Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Poison Shroom', ItemID=0x62, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '210':EnemyEntry (
-        "Hooligon",
+        'Hooligon',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''That's a Hooligon. They are space creatures that are made up of many parts... Max HP is 10 and Attack is 2. It loses pieces of itself as it takes damage... The head is the weak spot... You have to hit it there to defeat it...''',
+            CardData(
+                136,
+                'Hooligon',
+                '''Max HP: 10, Attack: 2. Hooligons love to wreak havoc in the depths of space. They blend into their habitat, waiting to attack.''',
+                'Card Shop; Catch Card/SP; Map 26',
+                '★',
+            ),
+            ''
+        ),
         0x19C,
-        "Template 210",
+        'Template 210',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 100),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=100), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '211':EnemyEntry (
-        "Eeligon Part",
+        'Eeligon Part',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 211",
+        'Template 211',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '212':EnemyEntry (
-        "Hooligon Part",
+        'Hooligon Part',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 212",
+        'Template 212',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '213':EnemyEntry (
-        "Overworld Underchomp (3)",
+        'Overworld Underchomp (3)',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 213",
+        'Template 213',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '214':EnemyEntry (
-        "Overworld Blue Underchomp",
+        'Overworld Blue Underchomp',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 214",
+        'Template 214',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '215':EnemyEntry (
-        "Overworld Yellow Underchomp",
+        'Overworld Yellow Underchomp',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 215",
+        'Template 215',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '216':EnemyEntry (
-        "Overworld Red Underchomp",
+        'Red Chomp',
+        EnemyData(
+            8, 
+            3, 
+            8, 
+            '''That's a Red Chomp. This angry Chomp is filled with uncontrollable rage... Max HP is 8, Attack is 3, Defense is 8. Even flames won't hurt this beast... Some say this Chomp's red color comes from its urge to devour pizza sauce... Maybe someone let it loose in a sauce warehouse...''',
+            CardData(
+                103,
+                'Red Chomp',
+                '''Max HP: 8, Attack: 3, Defense: 8. This bright red breed isn't very well behaved. That probably rules out winning best of show.''',
+                'Card Shop; Catch Card/SP',
+                '★★'
+            ), 
+            ''
+        ),
         0x168,
-        "Template 216",
+        'Template 216',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "POW Block", hex_value = get_hex_value("POW Block"), weight = 200),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='POW Block', ItemID=0x45, ItemWeight=200), Drop(Itemname='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '217':EnemyEntry (
-        "Crazee Dayzee",
+        'Crazee Dayzee',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''This is a Crazee Dayzee. It's a curious little flower that won't stop humming... Max HP is 10 and Attack is 2. Watch out, that little song it hums can put you right to sleep...''',
+            CardData(
+                60,
+                'Crazee Dayzee',
+                '''Max HP: 10, Attack: 2. Crazee Dayzees are cute, but they'll put you to sleep. But sleeping really isn't all that Crazee...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x148,
-        "Template 217",
+        'Template 217',
         0.15,
-        EnemyDrops (
-            Drop (item_name = "Dayzee Tear", hex_value = get_hex_value("Dayzee Tear"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Dayzee Tear', ItemID=0x6F, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '218':EnemyEntry (
-        "Dayzee Attack",
+        'Dayzee Attack',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 218",
+        'Template 218',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '219':EnemyEntry (
-        "Stench",
+        'Stench',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 219",
+        'Template 219',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '220':EnemyEntry (
-        "Freeze",
+        'Freeze',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 220",
+        'Template 220',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '221':EnemyEntry (
-        "Skellobomber w/Skellobait",
+        'Skellobomber w/Skellobait',
+        EnemyData(
+            10,
+            2,
+            2,
+            '''That's a Skellobomber. It's much like a Skellobit, but it has wings... Max HP is 10, Attack is 2, Defense is 2. It might throw its head at you... It also carries Skellobait... Some say Skellobombers were bad Nimbis sent to The Underwhere...''',
+            CardData(
+                164,
+                'Skellobomber',
+                '''Max HP: 10, Attack: 2, Defense: 2. This airborne ghoul rules the foul skies of The Underwhere. It'll mostly try to impale you with Skellobaits. It'll also throw its own head at you. That's hard core.''',
+                'Card Shop; Catch Card/SP; Chapter 7-4: Found in an area via a pipe under the first cloud in Overthere Sector 5.',
+                '★',
+            ),
+            ''
+        ),
         0x1B8,
-        "Template 221",
+        'Template 221',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 300),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=300), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '222':EnemyEntry (
-        "Skellobomber",
+        'Skellobomber',
+        EnemyData(
+            10,
+            2,
+            2,
+            '''That's a Skellobomber. It's much like a Skellobit, but it has wings... Max HP is 10, Attack is 2, Defense is 2. It might throw its head at you... It also carries Skellobait... Some say Skellobombers were bad Nimbis sent to The Underwhere...''',
+            CardData(
+                164,
+                'Skellobomber',
+                '''Max HP: 10, Attack: 2, Defense: 2. This airborne ghoul rules the foul skies of The Underwhere. It'll mostly try to impale you with Skellobaits. It'll also throw its own head at you. That's hard core.''',
+                'Card Shop; Catch Card/SP; Chapter 7-4: Found in an area via a pipe under the first cloud in Overthere Sector 5.',
+                '★',
+            ),
+            ''
+        ),
         0x1B8,
-        "Template 222",
+        'Template 222',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 300),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=300), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '223':EnemyEntry (
-        "Skellobait",
+        'Skellobait',
+        EnemyData(
+            5,
+            2,
+            1,
+            '''That's a Skellobait. These little creatures depend on Skellobombers... Max HP is 5, Attack is 2, Defense is 1. It has very chilly breath... One whiff, and you'll be frozen solid... They use the ancient magic of The Underwhere and The Overthere for evil...''',
+            CardData(
+                165,
+                'Skellobait',
+                '''Max HP: 5, Attack: 2, Defense: 1. Skellobombers use these as ammo. Their icy breath can cause freezebite.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1B9,
-        "Template 223",
+        'Template 223',
         0.02,
-        EnemyDrops (
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 300),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=300), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '224':EnemyEntry (
-        "Spiky Skellobait",
+        'Spiky Skellobait',
+        EnemyData(
+            5,
+            2,
+            1,
+            '''That's a Spiky Skellobait. These little creatures depend on Skellobombers... Max HP is 5, Attack is 2, Defense is 1. They also have spikes. If you get hit by their chilly breath, you'll be frozen solid... They use the ancient magic of The Underwhere and The Overthere for evil...''',
+            CardData(
+                166,
+                'Spiky Skellobait',
+                '''Max HP: 5, Attack: 2, Defense: 1. It's a Spiky Skellobait. Like a Skellobait, but spikier. You can't stomp on it or throw it, so don't even try. Just use a Skellobomber's head, why don't you?''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1BA,
-        "Template 224",
+        'Template 224',
         0.02,
-        EnemyDrops (
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 300),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=300), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '225':EnemyEntry (
-        "Dimentio",
+        'Dimentio (unused)',
+        EnemyData(
+            50,
+            2,
+            0,
+            '''That's Dimentio. He's a weird dimensional magician who works for Count Bleck... Max HP is 50 and Attack is 2. Dimentio can flip between dimensions... He can also clone himself. Attacking his double won't do anything to him... Hit the real one, and the double will disappear. Then, he can't clone again for a while...''',
+            CardData(
+                195,
+                'Dimentio',
+                '''Dimentio is Count Bleck's dimension-bending mercenary. The question is, do psycho jesters get good benefits?''',
+                'Card Shop; Map 22',
+                '★★',
+            ),
+            ''
+        ),
         0x1C6,
-        "Template 225",
+        'Template 225',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '226':EnemyEntry (
-        "Dimentio",
+        'Dimentio (2)',
+        EnemyData(
+            80,
+            4,
+            0,
+            '''That's Dimentio. He's a weird dimensional magician who works for Count Bleck... Max HP is 80 and Attack is 4. Dimentio can flip between dimensions... He can also clone himself. Attacking his double won't do anything to him... Hit the real one, and the double will disappear. Then, he can't clone again for a while...''',
+            CardData(
+                195,
+                'Dimentio',
+                '''Dimentio is Count Bleck's dimension-bending mercenary. The question is, do psycho jesters get good benefits?''',
+                'Card Shop; Map 22',
+                '★★',
+            ),
+            ''
+        ),
         0x1C6,
-        "Template 226",
+        'Template 226',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '227':EnemyEntry (
-        "Skellobomber Head",
+        'Skellobomber Head',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 227",
+        'Template 227',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '228':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 228",
+        'Template 228',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '229':EnemyEntry (
-        "Red Magiblot",
+        'Red Magiblot',
+        EnemyData(
+            15,
+            6,
+            0,
+            '''That's a Red Magiblot. These mad mages live in the space between dimensions... Max HP is 15 and Attack is 6. They only appear long enough to hurl spells at you... They use magic, so I assume they are quite intelligent, but nobody knows for sure... Red Magiblots are known for their powerful attack spells...''',
+            CardData(
+                167,
+                'Red Magiblot',
+                '''Max HP: 15, Attack: 6. This spellslinging stain can warp wherever it wants. It's red, but what's it so embarrassed about?''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1BE,
-        "Template 229",
+        'Template 229',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 300),
-            Drop (item_name = "Catch Card SP", hex_value = get_hex_value("Catch Card SP"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-        )
+        [Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=300), Drop(ItemName='Catch Card SP', ItemID=0x58, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100)],
     ),
     '230':EnemyEntry (
-        "Blue Magiblot",
+        'Blue Magiblot',
+        EnemyData(
+            25,
+            4,
+            0,
+            '''That's a Blue Magiblot. These mad mages live in the space between dimensions... Max HP is 25 and Attack is 4. They only appear long enough to hurl spells at you... They use magic, so I assume they are quite intelligent, but nobody knows for sure... Blue Magiblots are known for their high HP...''',
+            CardData(
+                168,
+                'Blue Magiblot',
+                '''Max HP: 25, Attack: 4. This spellslinging stain curses like a...Magiblot. It's blue. Maybe it's not easy being a Magiblot.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1BF,
-        "Template 230",
+        'Template 230',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 200),
-            Drop (item_name = "Catch Card SP", hex_value = get_hex_value("Catch Card SP"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-        )
+        [Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=200), Drop(ItemName='Catch Card SP', ItemID=0x58, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100)],
     ),
     '231':EnemyEntry (
-        "Yellow Magiblot",
+        'Yellow Magiblot',
+        EnemyData(
+            20,
+            5,
+            0,
+            '''That's a Yellow Magiblot. They are mad mages that live between dimensions... Max HP is 20 and Attack is 5. They only appear long enough to hurl spells at you... They use magic, so I assume they are quite intelligent, but nobody knows for sure... Yellow Magiblots are known for their average HP and Attack...''',
+            CardData(
+                169,
+                'Yellow Magiblot',
+                '''Max HP: 20, Attack: 5. This spellslinging stain is the enemy of fun. It's yellow. But it doesn't seem to be afraid of you!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1C0,
-        "Template 231",
+        'Template 231',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 100),
-            Drop (item_name = "Catch Card SP", hex_value = get_hex_value("Catch Card SP"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-        )
+        [Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=100), Drop(ItemName='Catch Card SP', ItemID=0x58, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100)],
     ),
     '232':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 232",
+        'Template 232',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '233':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 233",
+        'Template 233',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '234':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 234",
+        'Template 234',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '235':EnemyEntry (
-        "Gloomba",
+        'Gloomba',
+        EnemyData(
+            2,
+            2,
+            0,
+            '''This is a Gloomba, a Goomba that lives its entire life underground... Max HP is 2 and Attack is 2. It doesn't see a lot of sun, so it's a little pale... But it is stronger than your average Goomba...and has a very dark personality... It must be hard to be a pale, friendless Goomba that lives underground...''',
+            CardData(
+                7,
+                'Gloomba',
+                '''Max HP: 2, Attack: 2. A Goomba that thrives in dank, depressing holes. A strict all-mushroom diet makes this guy extra fungal.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x11F,
-        "Template 235",
+        'Template 235',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '236':EnemyEntry (
-        "Bone",
+        'Bone',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 236",
+        'Template 236',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '237':EnemyEntry (
-        "Glasses-less Koopa",
+        'No Sunglasses Koopa Troopa',
+        EnemyData(
+            1,
+            1,
+            1,
+            '''Normal: This is a Koopa Troopa. It may be slow, but it is well defended inside its shell... Max HP is 1, Attack is 1, and Defense is 1. If you leap on it, it'll pull its head and limbs in. You can then kick the shell. From what I hear, Goombas have a long-held fear of Koopa Troopas...''',
+            CardData(
+                10,
+                'Koopa Troopa',
+                '''Max HP: 1, Attack: 1, Defense: 1. Koopa Troopas have always been causing trouble. When they get attacked, they retreat into their shells. Of course, there's nothing stopping you from kicking it.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in a secret area via a 3D-accessible path near the Star Block.',
+                '★',
+            ),
+            ''
+        ),
         0x123,
-        "Template 237",
+        'Template 237',
         0.09,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '238':EnemyEntry (
-        "Glasses-less Paratroopa",
+        'No Sunglasses Paratroopa',
+        EnemyData(
+            1,
+            1,
+            1,
+            '''Normal: This is a Paratroopa. It's like a Koopa Troopa, but it can fly... Its movement may vary slightly, depending on the color of its shell... Max HP is 1, Attack is 1, and Defense is 1. Stomp it to remove its wings... A Koopa without wings is a very sad Koopa...''',
+            CardData(
+                15,
+                'Paratroopa',
+                '''Max HP: 1, Attack: 1, Defense: 1. This Koopa Troopa breezed through flight school. A quick stomp to the head will ground it. Forever.''',
+                'Card Shop; Catch Card/SP; Chapter 1-2: Found in a hidden area via a 3D-accessible path behind the first set of mountain platforms in the first area.',
+                '★',
+            ),
+            ''
+        ),
         0x128,
-        "Template 238",
+        'Template 238',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '239':EnemyEntry (
-        "Floro Sapien",
+        'Floro Sapien',
+        EnemyData(
+            12,
+            3,
+            0,
+            '''That's a Floro Sapien. These flowery followers of King Croacus live underground... Max HP is 12 and Attack is 3. They can throw their head at enemies. Their stems will keep moving without a head, so watch out for that... No one knows if they think with their heads or bodies... A very mysterious species...''',
+            CardData(
+                153,
+                'Floro Sapien',
+                '''Max HP: 12, Attack: 3. Floro Sapiens serve their floral lord, King Croacus. Watch your head because they'll throw theirs at you!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1AD,
-        "Template 239",
+        'Template 239',
         0.08,
-        EnemyDrops (
-            Drop (item_name = "Sap Soup", hex_value = get_hex_value("Sap Soup"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Sap Soup', ItemID=0x70, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '240':EnemyEntry (
-        "Floro Sapien Head",
+        'Floro Sapien Head',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 240",
+        'Template 240',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '241':EnemyEntry (
-        "8-Bit Shell",
+        '8-Bit Shell',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 241",
+        'Template 241',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '242':EnemyEntry (
-        "Small 8-Bit Shell",
+        'Small 8-Bit Shell',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 242",
+        'Template 242',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '243':EnemyEntry (
-        "Purple Floro Sapien",
+        'Purple Floro Sapien',
+        EnemyData(
+            12,
+            3,
+            0,
+            '''That's a Floro Sapien. These flowery followers of King Croacus live underground... Max HP is 12 and Attack is 3. They can throw their head at enemies. Their stems will keep moving without a head, so watch out for that... No one knows if they think with their heads or bodies... A very mysterious species...''',
+            CardData(
+                153,
+                'Floro Sapien',
+                '''Max HP: 12, Attack: 3. Floro Sapiens serve their floral lord, King Croacus. Watch your head because they'll throw theirs at you!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1AD,
-        "Template 243",
+        'Template 243',
         0.08,
-        EnemyDrops (
-            Drop (item_name = "Sap Soup", hex_value = get_hex_value("Sap Soup"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Sap Soup', ItemID=0x70, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '244':EnemyEntry (
-        "Purple Floro Sapien Head",
+        'Purple Floro Sapien Head',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 244",
+        'Template 244',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '245':EnemyEntry (
-        "Red Floro Sapien",
+        'Red Floro Sapien',
+        EnemyData(
+            12,
+            3,
+            0,
+            '''That's a Floro Sapien. These flowery followers of King Croacus live underground... Max HP is 12 and Attack is 3. They can throw their head at enemies. Their stems will keep moving without a head, so watch out for that... No one knows if they think with their heads or bodies... A very mysterious species...''',
+            CardData(
+                153,
+                'Floro Sapien',
+                '''Max HP: 12, Attack: 3. Floro Sapiens serve their floral lord, King Croacus. Watch your head because they'll throw theirs at you!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1AD,
-        "Template 245",
+        'Template 245',
         0.08,
-        EnemyDrops (
-            Drop (item_name = "Sap Soup", hex_value = get_hex_value("Sap Soup"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Sap Soup', ItemID=0x70, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '246':EnemyEntry (
-        "Red Floro Sapien Head",
+        'Red Floro Sapien Head',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 246",
+        'Template 246',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '247':EnemyEntry (
-        "Free Underhand",
+        'Free Underhand',
+        EnemyData(
+            0,
+            1,
+            0,
+            '''That’s an Underhand. These creepy hands try to drag the dead deeper into oblivion... If they met a living person, they would certainly try to drag him or her down too... You can’t defeat them, so it’s best to run...''',
+            CardData(
+                159,
+                'Underhand',
+                '''This white-gloved weirdo will reach out and grab you. You can't beat it and it's creepy, so just steer clear. Just be glad it isn't inspecting your room.''',
+                'Card Shop; Catch Card/SP; Map 39',
+                '★★',
+            ),
+            ''
+        ),
         0x1B3,
-        "Template 247",
+        'Template 247',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '248':EnemyEntry (
-        "Bound Underhand",
+        'Bound Underhand',
+        EnemyData(
+            0,
+            1,
+            0,
+            '''That’s an Underhand. These creepy hands try to drag the dead deeper into oblivion... If they met a living person, they would certainly try to drag him or her down too... You can’t defeat them, so it’s best to run...''',
+            CardData(
+                159,
+                'Underhand',
+                '''This white-gloved weirdo will reach out and grab you. You can't beat it and it's creepy, so just steer clear. Just be glad it isn't inspecting your room.''',
+                'Card Shop; Catch Card/SP; Map 39',
+                '★★',
+            ),
+            ''
+        ),
         0x1B3,
-        "Template 248",
+        'Template 248',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '249':EnemyEntry (
-        "Disappearing Bound Underhand",
+        'Disappearing Bound Underhand',
+        EnemyData(
+            0,
+            1,
+            0,
+            '''That’s an Underhand. These creepy hands try to drag the dead deeper into oblivion... If they met a living person, they would certainly try to drag him or her down too... You can’t defeat them, so it’s best to run...''',
+            CardData(
+                159,
+                'Underhand',
+                '''This white-gloved weirdo will reach out and grab you. You can't beat it and it's creepy, so just steer clear. Just be glad it isn't inspecting your room.''',
+                'Card Shop; Catch Card/SP; Map 39',
+                '★★',
+            ),
+            ''
+        ),
         0x1B3,
-        "Template 249",
+        'Template 249',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '250':EnemyEntry (
-        "Squiglet",
+        'Squiglet',
+        EnemyData(
+            2,
+            1,
+            0,
+            '''This is a Squiglet... It's a small little creature that scurries around on its many legs... Max HP is 2 and Attack is 1. There isn't much else to say about Squiglets... When it spots an enemy, it gets excited and hops up and down...''',
+            CardData(
+                44,
+                'Squiglet',
+                '''Max HP: 2, Attack: 1. Awww... look at that adorable little Squiglet. So adorable under your foot.''',
+                '''Card Shop; Catch Card/SP; Chapter 1-1: Found on top of Bestovius' house.''',
+                '★',
+            ),
+            ''
+        ),
         0x175,
-        "Template 250",
+        'Template 250',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '251':EnemyEntry (
-        "Squog",
+        'Squog',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''It's a Squog. Essentially, these beasts are big, surly Squigs... Max HP is 10 and Attack is 2. Squogs will spit rocks at any enemy they see... The rocks they spit come at you quite fast, but you should be able to beat them easily.''',
+            CardData(
+                46,
+                'Squog',
+                '''Max HP: 10, Attack: 2. For wild, feral animals, Squogs are pretty cute. That is, until you see them eating.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x177,
-        "Template 251",
+        'Template 251',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '252':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 252",
+        'Template 252',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '253':EnemyEntry (
-        "Spike Top",
+        'Spike Top',
+        EnemyData(
+            1,
+            2,
+            3,
+            '''This is a Spike Top. It's a Buzzy Beetle with...well, a spike on top of its shell... Max HP is 1, Attack is 2, and Defense is 3. Even flames won't scorch its hard shell... On top of that, it has a spike. What can we do about this prickly foe...? Throw something at it or use an item... That spike can cause a painful poke... I suggest you just leave it be...''',
+            CardData(
+                18,
+                'Spike Top',
+                '''Max HP: 1, Attack: 2, Defense: 3. A Buzzy Beetle that's all spiked out and ready to go. Try to control your urge to stomp on it.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x12B,
-        "Template 253",
+        'Template 253',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Courage Shell', ItemID=0x4A, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '254':EnemyEntry (
-        "Broken Flip Koopa Troopa",
+        'Broken Flip Koopa Troopa',
+        EnemyData(0, 0, 0, '', '', ''),
         0x123,
-        "Template 254",
-        0.09,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        'Template 254',
+        0,
+        EnemyDrops(),
     ),
     '255':EnemyEntry (
-        "Super Dimentio",
+        'Super Dimentio',
+        EnemyData(
+            200,
+            6,
+            0,
+            '''That’s Super Dimentio, a freakish blend of Dimentio, the Chaos Heart, and Luigi... That monstrous body has immense power... Max HP is 200. Attack is 6. Concentrate attacks to the head. You’ll have to climb those platforms to reach the head to attack. This is truly the final battle... Winning is the only option...''',
+            CardData(
+                196,
+                'Super Dimentio',
+                '''Max HP: 200, Attack: 6. This monstrous clown was created by Dimentio. He used Luigi and the Chaos Heart to create it. In the end, it was no match for the power of love.''',
+                'Card Shop; Map 47',
+                '★★★',
+            ),
+            ''
+        ),
         0x1D8,
-        "Template 255",
+        'Template 255',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '256':EnemyEntry (
-        "Pal Pill Luigi",
+        'Pal Pill Luigi',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 256",
+        'Template 256',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '257':EnemyEntry (
-        "Gold Bar",
-        0x047,
-        "Template 257",
+        'Gold Bar',
+        EnemyData(0, 0, 0, '', '', ''),
+        0x47,
+        'Template 257',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '258':EnemyEntry (
-        "Gold Bar x3",
-        0x048,
-        "Template 258",
+        'Gold Bar x3',
+        EnemyData(0, 0, 0, '', '', ''),
+        0x48,
+        'Template 258',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '259':EnemyEntry (
-        "Ninjohn",
+        'Ninjohn',
+        EnemyData(
+            8,
+            3,
+            0,
+            '''That's a Ninjohn. These devious ninjas support Sammer Guys from the shadows... Max HP is 8 and Attack is 3. They hop around and throw ninja stars at you. They are said to follow any order... Ninjohns are the middle managers of the ninja world...''',
+            CardData(
+                156,
+                'Ninjohn',
+                '''Max HP: 8, Attack: 3. Ninjohn is an assassin from King Sammer's Kingdom. He really knows how to hurl a mean throwing star.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1B0,
-        "Template 259",
+        'Template 259',
         0.08,
-        EnemyDrops (
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 100),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 200),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=100), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=200), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '260':EnemyEntry (
-        "Ninjohn Projectile",
+        'Ninjohn Projectile',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 260",
+        'Template 260',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '261':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 261",
+        'Template 261',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '262':EnemyEntry (
-        "Ninjerry",
+        'Ninjerry',
+        EnemyData(
+            10,
+            4,
+            0,
+            '''That's a Ninjerry. These devious ninjas support Sammer Guys from the shadows... Max HP is 10 and Attack is 4. They hop around and throw ninja stars at you. They also have secret ninja techniques to use against their enemies... They hold the highest positions in the ninja world...''',
+            CardData(
+                157,
+                'Ninjerry',
+                '''Max HP: 10, Attack: 4. Never mess with Ninjerry. He is a true ninja master! Of course, shape-shifting like that isn't exactly fair.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1B1,
-        "Template 262",
+        'Template 262',
         0.09,
-        EnemyDrops (
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 200),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 100),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 100),
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=200), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=100), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=100), Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '263':EnemyEntry (
-        "Ninjerry Projectile",
+        'Ninjerry Projectile',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 263",
+        'Template 263',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '264':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 264",
+        'Template 264',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '265':EnemyEntry (
-        "Gigabite",
+        'Gigabite',
+        EnemyData(
+            6,
+            2,
+            0,
+            '''That's a Gigabite. It's an evil skull that soars through the skies... Max HP is 6 and Attack is 2. It will only take 1 damage per attack... Gigabites are even more annoying than Megabites... No one knows where they come from or where they go...''',
+            CardData(
+                172,
+                'Gigabite',
+                '''Max HP: 6, Attack: 2. Only takes 1 point of damage. The best policy: keep away from angry floating heads. This thing will not leave you alone. Be warned!''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x1BC,
-        "Template 265",
+        'Template 265',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "POW Block", hex_value = get_hex_value("POW Block"), weight = 100),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Catch Card SP", hex_value = get_hex_value("Catch Card SP"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='POW Block', ItemID=0x45, ItemWeight=100), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Catch Card SP', ItemID=0x58, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '266':EnemyEntry (
-        "Blomeba",
+        'Blomeba',
+        EnemyData(
+            5,
+            2,
+            0,
+            '''That's a Blomeba. It clones itself constantly to annoy its enemies... Max HP is 5 and Attack is 2. If you defeat the main one, the clones will die... The primary one has slightly different moves and looks, so watch closely...''',
+            CardData(
+                97,
+                'Blomeba',
+                '''Max HP: 5, Attack: 2. This weird little guy can't stop copying itself. Try using an item to put them all out of their misery.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x18B,
-        "Template 266",
+        'Template 266',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '267':EnemyEntry (
-        "Chromeba",
+        'Chromeba',
+        EnemyData(
+            10,
+            3,
+            0,
+            '''That’s a Chromeba. It clones itself constantly to overwhelm its enemies... Max HP is 10 and Attack is 3. If you defeat the main one, the clones will die... The primary one has slightly different moves and looks, so watch closely... For fun, you can let it clone and then stomp on the main one to destroy them all...''',
+            CardData(
+                98,
+                'Chromeba',
+                '''Max HP: 10, Attack: 3. This devious doppelganger loves to copy itself. Stomp them all before the problem multiplies!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x18C,
-        "Template 267",
+        'Template 267',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '268':EnemyEntry (
-        "Flip Koopa Stiker",
+        'Koopa Striker',
+        EnemyData(
+            8,
+            2,
+            1,
+            '''It's a Koopa Striker. It takes good shell control to make the Koopa Striker team... Max HP is 8. Attack is 2. Defense is 1. It can kick shells all day... It's very proud of its strong and accurate kicks...and its shiny shell! "An eye for an eye, a shell for a shell!" Try to trap its shell and send it back...''',
+            CardData(
+                38,
+                'Koopa Striker',
+                '''Max HP: 8, Attack: 2, Defense: 1. This Koopa Striker kicks for the love of the game. Its luxurious eyebrows are... Wait a sec... GOOOAAAALLLL!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x13F,
-        "Template 268",
+        'Template 268',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        [Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=20)],
     ),
     '269':EnemyEntry (
-        "Flip Toopa Striker",
+        'Toopa Striker',
+        EnemyData(
+            8,
+            2,
+            1,
+            '''This is a Toopa Striker. These Koopas display brilliant teamwork... Max HP is 8, Attack is 2, and Defense is 1. They always go for the assist... They spend all their time together just to build their team chemistry...''',
+            CardData(
+                39,
+                'Toopa Striker',
+                '''Max HP: 8, Attack: 2, Defense: 1. Toopa Strikers are true team players. Watch out for the no-look shell-to-face assists!''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x140,
-        "Template 269",
+        'Template 269',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '270':EnemyEntry (
-        "Soopa Striker",
+        'Soopa Striker',
+        EnemyData(
+            16,
+            5,
+            1,
+            '''This is a Soopa Striker. These superstars of the pitch have cleats of solid gold... Max HP is 16. Attack is 5. Defense is 1. The way this athlete puts the shell right in your neck is truly inspiring... I hear Soopa Strikers never miss their goal...''',
+            CardData(
+                40,
+                'Soopa Striker',
+                '''Max HP: 16, Attack: 5, Defense: 1. It's the star player of the Koopa Kickers. It's even on the cover of Koopa Kleats magazine!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x141,
-        "Template 270",
+        'Template 270',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        [Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=20)],
     ),
     '271':EnemyEntry (
-        "Soopa Striker's Shell",
+        '''Soopa Striker's Shell''',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 271",
+        'Template 271',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '272':EnemyEntry (
-        "Ghoul Shroom",
+        'Ghoul Shroom',
+        EnemyData(
+            10,
+            5,
+            0,
+            '''That's a Ghoul Shroom. It is an evil shroom monster that comes out of ? Blocks... Max HP is 10. Attack is 5. It can move very fast in a limited area... Its HP and Attack are high, so be sure to look before you leap...''',
+            CardData(
+                179,
+                'Ghoul Shroom',
+                '''Max HP: 10, Attack: 5. Ghoul Shrooms sometimes pop out of ? Blocks. What went wrong in that Shroom's life?''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x1C4,
-        "Template 272",
+        'Template 272',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Poison Shroom", hex_value = get_hex_value("Poison Shroom"), weight = 200),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Poison Shroom', ItemID=0x62, ItemWeight=200), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '273':EnemyEntry (
-        "Longadile",
+        'Longadile',
+        EnemyData(
+            20,
+            2,
+            0,
+            '''That thing is a Longadile. It can stretch beyond the limits of imagination... Max HP is 20 and Attack is 2. It likes to stretch its neck at enemies... They aren't fast, but they can attack a wide area. Be careful near narrow ledges...''',
+            CardData(
+                139,
+                'Longadile',
+                '''Max HP: 20, Attack: 2. Super-elastic Longadiles stretch out to slap you. It'd chap its hands on your face...if it had hands.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x19F,
-        "Template 273",
+        'Template 273',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '274':EnemyEntry (
-        "Beepboxer",
+        'Beepboxer',
+        EnemyData(
+            10,
+            4,
+            0,
+            '''This Beepboxer blasts blaring sounds at anyone it doesn't like... Max HP is 10 and Attack is 4. It gets startled by its own loud noises... Maybe it's mad because people keep interrupting its music-listening time...''',
+            CardData(
+                54,
+                'Beepboxer',
+                '''Max HP: 10, Attack: 4. This angry audiophile deafens you with sound. Loves loud music, but hates explosions. Go figure.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x17F,
-        "Template 274",
+        'Template 274',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '275':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 275",
+        'Template 275',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '276':EnemyEntry (
-        "(Unused) Boomboxer Recolor",
+        '(Unused) Boomboxer Recolor',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 276",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 276',
+        0,
+        EnemyDrops(),
     ),
     '277':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 277",
+        'Template 277',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '278':EnemyEntry (
-        "Copta",
+        'Copta',
+        EnemyData(
+            10,
+            3,
+            0,
+            '''That's a Copta, a curious organism that flies through the air...and dimensions... Max HP is 10 and Attack is 3. It's hard to track, as it occasionally flips... Just stay after it, and hit it repeatedly when you can...''',
+            CardData(
+                148,
+                'Copta',
+                '''Max HP: 10, Attack: 3. This aerial alien has even sweeter midair maneuvers. You'll get dizzy just watching this thing.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1A8,
-        "Template 278",
+        'Template 278',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '279':EnemyEntry (
-        "(Unused) Muth Recolor",
+        '(Unused) Muth Recolor',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 279",
-        1,
-        EnemyDrops (
-            None
-        )
+        'Template 279',
+        0,
+        EnemyDrops(),
     ),
     '280':EnemyEntry (
-        "Red I",
+        'Red I',
+        EnemyData(
+            0,
+            4,
+            0,
+            '''This is a Red I. They glare at anyone that walks by... Max HP is ??. Attack is 4. It will shoot sharp glances at any enemy it spots... None of your attacks will work... Try flipping and running around and around it...''',
+            CardData(
+                101,
+                'Red I',
+                '''Max HP: ??, Attack: 4. This big, red eye looks a little irritated. It must not be getting much sleep these days.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x189,
-        "Template 280",
+        'Template 280',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Sleepy Sleep", hex_value = get_hex_value("Sleepy Sleep"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Sleepy Sleep', ItemID=None, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '281':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 281",
+        'Template 281',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '282':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 282",
+        'Template 282',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '283':EnemyEntry (
-        "Squoinker",
+        'Squoinker',
+        EnemyData(
+            15,
+            4,
+            0,
+            '''This is a Squoinker... It’s the strongest and meanest member of the Squig family... Max HP is 15 and Attack is 4. Squoinkers will spit rocks at you... The rocks come at you fast... Don’t just stand there, or you’ll get hit in the face...''',
+            CardData(
+                47,
+                'Squoinker',
+                '''Max HP: 15, Attack: 4. Squoinkers are proud to be pretty in pink. The polka dots are for extra intimidation.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x179,
-        "Template 283",
+        'Template 283',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shooting Star", hex_value = get_hex_value("Shooting Star"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shooting Star', ItemID=0x44, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '284':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 284",
+        'Template 284',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '285':EnemyEntry (
-        "Dark Bowser",
+        'Dark Bowser',
+        EnemyData(
+            100,
+            20,
+            4,
+            '''That's Dark Bowser. This fake Bowser rules the Flopside Pit of 100 Trials... Max HP is 100. Attack is 20. Defense is 4. He has spikes, so you can't stomp on him... He has high defense, so you'll need to use Boomer and Cudge... Watch out for his ferocious fire attack... But after all, he's not the real Bowser... He's just a bad copy...''',
+            CardData(
+                177,
+                'Dark Bowser',
+                '''Max HP: 100, Attack: 20, Defense: 4. It's a dark duplicate of Bowser! One of the last foes in the Flopside Pit of 100 Trials.''',
+                'Earned after defeating Shadoo in the Flopside Pit of 100 Trials.',
+                '★★★',
+            ),
+            ''
+        ),
         0x1CB,
-        "Template 285",
+        'Template 285',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '286':EnemyEntry (
-        "Dark Luigi",
+        'Dark Luigi',
+        EnemyData(
+            100,
+            10,
+            0,
+            '''That's Dark Luigi. He lurks in the Flopside Pit of 100 Trials... Max HP is 100. Attack is 10. He has the same incredible jumping ability as Luigi. Watch out for that super jump of his when you go to stomp him. But his jump could be an interesting opportunity for an attack as well... After all, he's not the real Luigi...He's just a bad copy...''',
+            CardData(
+                175,
+                'Dark Luigi',
+                '''Max HP: 100, Attack: 10. It's a dark duplicate of Luigi! One of the last foes in the Flopside Pit of 100 Trials.''',
+                'Earned after defeating Shadoo in the Flopside Pit of 100 Trials.',
+                '★★★',
+            ),
+            ''
+        ),
         0x1CC,
-        "Template 286",
+        'Template 286',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '287':EnemyEntry (
-        "Dark Mario",
+        'Dark Mario',
+        EnemyData(
+            100,
+            10,
+            0,
+            '''That's Dark Mario. This fake Mario lives in the Flopside Pit of 100 Trials... Max HP is 100. Attack is 10. He has high attack power and jumps and hammers well... If you don't plan your stomp, he might hit you with his hammer. You share weaknesses, so if you can exploit that, you'll win... After all, he's not the real Mario... He's just a bad copy...''',
+            CardData(
+                174,
+                'Dark Mario',
+                '''Max HP: 100, Attack: 10. It's Mario's dark-power doppelganger! One of the last foes in the Flopside Pit of 100 Trials.''',
+                'Earned after defeating Shadoo in the Flopside Pit of 100 Trials.',
+                '★★★',
+            ),
+            ''
+        ),
         0x1CD,
-        "Template 287",
+        'Template 287',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '288':EnemyEntry (
-        "Dark Peach",
+        'Dark Peach',
+        EnemyData(
+            100,
+            10,
+            0,
+            '''That's Dark Peach, a phony Peach that dwells in the Flopside Pit of 100 Trials... Max HP is 100. Attack is 10. This Peach uses her parasol just like the original. And if she uses it in midair, she might mess up the timing of your attack... But that might also give you an opportunity to attack... After all, she's not the real Peach... She's just a bad copy...''',
+            CardData(
+                176,
+                'Dark Peach',
+                '''Max HP: 100, Attack: 10. It's a dark duplicate of Peach! One of the last foes in the Flopside Pit of 100 Trials.''',
+                'Earned after defeating Shadoo in the Flopside Pit of 100 Trials.',
+                '★★★',
+            ),
+            ''
+        ),
         0x1CE,
-        "Template 288",
+        'Template 288',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '289':EnemyEntry (
-        "Boing-Oing",
+        'Boing-Oing',
+        EnemyData(
+            8,
+            2,
+            0,
+            '''This is a Boing-Oing... It's a stronger relative of the Sproing-Oing... Max HP is 8 and Attack is 2. If you hurt it, it will split into multiple Mini-Boings... If you don't time your jump perfectly, you'll get hurt... I wonder how it got so many pretty colors...''',
+            CardData(
+                50,
+                'Boing-Oing',
+                '''Max HP: 8, Attack: 2. This bouncing bully splits in three when you stomp on it. Stomp your heart out before you get swarmed!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x17B,
-        "Template 289",
+        'Template 289',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '290':EnemyEntry (
-        "Mini Boing-Oing",
+        'Mini Boing-Oing',
+        EnemyData(0, 0, 0, '', '', ''),
         0x17B,
-        "Template 290",
-        0.02,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        'Template 290',
+        0,
+        EnemyDrops(),
     ),
     '291':EnemyEntry (
-        "Zoing-Oing",
+        'Zoing-Oing',
+        EnemyData(
+            12,
+            3,
+            0,
+            '''It's a Zoing-Oing... They're very rare creatures only a few adventurers have seen... Max HP is 12 and Attack is 3. If you hurt it, it will split into multiple Mini-Zoings... Zoing-Oings are very similar to other Oings... Except for their lovely pale hides...''',
+            CardData(
+                51,
+                'Zoing-Oing',
+                '''Max HP: 12, Attack: 3. This mad hopper splits in three when you stomp on it. It's looking a little on the pale side. Maybe it's all that late-night trampoline training.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x17C,
-        "Template 291",
+        'Template 291',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '292':EnemyEntry (
-        "Mini Zoing-Oing",
+        'Mini Zoing-Oing',
+        EnemyData(0, 0, 0, '', '', ''),
         0x17C,
-        "Template 292",
-        0.02,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        'Template 292',
+        0,
+        EnemyDrops(),
     ),
     '293':EnemyEntry (
-        "Mega Muth",
+        'Mega Muth',
+        EnemyData(
+            200,
+            8,
+            0,
+            '''That enormous white beast is a legendary Mega Muth... Max HP is 200 and Attack is 8. They can trample nearly anything... It has a huge amount of HP, so it will be very hard to take down... They are gods among Muths...''',
+            CardData(
+                151,
+                'Mega Muth',
+                '''Max HP: 200, Attack: 8. This hairy Muth is even grumpier than its herd mates. Probably not the best choice for a petting zoo.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1AC,
-        "Template 293",
+        'Template 293',
         0.2,
-        EnemyDrops (
-            Drop (item_name = "Bone-In Cut", hex_value = get_hex_value("Bone-In Cut"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Bone-In Cut', ItemID=0x71, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '294':EnemyEntry (
-        "Blastboxer",
+        'Blastboxer',
+        EnemyData(
+            16,
+            6,
+            0,
+            '''This Blastboxer blares sound at anyone it doesn't like... Max HP is 16 and Attack is 6. It gets startled by its own loud noises... I wonder if its neighbors ever complain about the noise...''',
+            CardData(
+                55,
+                'Blastboxer',
+                '''Max HP: 16, Attack: 6. You're going to be blown away by this mighty rocker. This one hates explosions, which is totally not metal.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x181,
-        "Template 294",
+        'Template 294',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '295':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 295",
+        'Template 295',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '296':EnemyEntry (
-        "Rawbus",
+        'Rawbus',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''This lumbering Rawbus will bite anything foolish enough to get in its way... Max HP is 10 and Attack is 2. Its only weakness is the glowing spot on its back... Try flipping to 3-D and sneaking around behind it...''',
+            CardData(
+                73,
+                'Rawbus',
+                '''Max HP: 10, Attack: 2. This nasty dino has always got to give you a jaw full. Flip to 3-D and check out its funny little limbs!''',
+                'Card Shop; Catch Card/SP; Chapter 7-3: Found on the cloud with Rawbuses, which is next to cloud 25.',
+                '★★',
+            ),
+            ''
+        ),
         0x183,
-        "Template 296",
+        'Template 296',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 100),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=100), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '297':EnemyEntry (
-        "Gawbus",
+        'Gawbus',
+        EnemyData(
+            20,
+            4,
+            0,
+            '''This is a Gawbus, a beast that's even meaner than a Rawbus... Max HP is 20 and Attack is 4. Its only weakness is the glowing spot on its back... By now, you should know you can flip to 3-D and get behind it...''',
+            CardData(
+                75,
+                'Gawbus',
+                '''Max HP: 20, Attack: 4. This thing is always sticking its neck in your business. It'll flounder around when it's waiting to be picked up.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x185,
-        "Template 297",
+        'Template 297',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 200),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 300),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=200), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=300), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '298':EnemyEntry (
-        "Sobarribad",
+        'Sobarribad',
+        EnemyData(
+            8,
+            4,
+            0,
+            '''That’s a Sobarribad. It shields itself with a strong barrier... Max HP is 8 and Attack is 4. It also shoots rings of energy from its mouth... You can’t break its barrier, but you can flip to get places it might not want you to...''',
+            CardData(
+                142,
+                'Sobarribad',
+                '''Max HP: 8, Attack: 4. A round enemy that wraps itself in a force field. Flip through dimensions to shred it like paper!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1A2,
-        "Template 298",
+        'Template 298',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 1200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=1200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '299':EnemyEntry (
-        "Sobarribad Projectile",
+        'Sobarribad Projectile',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 299",
+        'Template 299',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '300':EnemyEntry (
-        "Hogarithm",
+        'Hogarithm',
+        EnemyData(
+            0,
+            4,
+            0,
+            '''This bizarre beast is called a Hogarithm. They are strange on so many levels... Max HP is ??. Attack is 4. It takes three stomps to finish off this piggy... But each stomp makes it smaller and faster... It's very hard to stomp the last one... Hogarithms often drop many coins, so you may want to hunt them if you're broke...''',
+            CardData(
+                145,
+                'Hogarithm',
+                '''Max HP: ??, Attack: 4. Takes three stomps to beat. Hop on this hog and ride it all the way to the bank! Soooooooie!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1A5,
-        "Template 300",
+        'Template 300',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 200),
-            Drop (item_name = "Shooting Star", hex_value = get_hex_value("Shooting Star"), weight = 200),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 200),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 200),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 200),
-            Drop (item_name = "Mighty Tonic", hex_value = get_hex_value("Mighty Tonic"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=200), Drop(ItemName='Shooting Star', ItemID=0x44, ItemWeight=200), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=200), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=200), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=200), Drop(ItemName='Mighty Tonic', ItemID=0x4B, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '301':EnemyEntry (
-        "Shlorp",
+        'Shlorp',
+        EnemyData(
+            0,
+            3,
+            0,
+            '''That peculiar creature is a Shlorp. It has a very tough skin and will eat anything... Max HP is ??, Attack is 3, and Defense is ??. No attack will work... It is weaker on the inside than the outside, but it will still take some effort...''',
+            CardData(
+                110,
+                'Shlorp',
+                '''Max HP: ??, Attack: 3. It's a vacuum! It's a worm! It's both! Don't feed it bombs, or you'll ruin its supper. Forever.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x16E,
-        "Template 301",
+        'Template 301',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 400),
-            Drop (item_name = "POW Block", hex_value = get_hex_value("POW Block"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=400), Drop(ItemName='POW Block', ItemID=0x45, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '302':EnemyEntry (
-        "Amazee Dayzee",
+        'Amazy Dayzee',
+        EnemyData(
+            30,
+            10,
+            0,
+            '''That's an Amazy Dayzee. They're very rare and elusive creatures... Max HP is 30 and Attack is 10. They are rarely seen. When they are spotted, they tend to run away quickly... Their songs are also very potent. Many consider them very challenging to hunt...''',
+            CardData(
+                61,
+                'Amazy Dayzee',
+                '''Max HP: 30, Attack: 10. This bashful bloom will run off if you get too close. What makes it so Amazy anyway? It seems like more of a wallflower.''',
+                'Card Shop; Catch Card/SP; Prize in Flipside Arcade for 500 Flipside Tokens',
+                '★★★',
+            ),
+            ''
+        ),
         0x149,
-        "Template 302",
+        'Template 302',
         0.7,
-        EnemyDrops (
-            Drop (item_name = "Golden Leaf", hex_value = get_hex_value("Golden Leaf"), weight = 200),
-            Drop (item_name = "Dayzee Tear", hex_value = get_hex_value("Dayzee Tear"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        [Drop(ItemName='Golden Leaf', ItemID=0x67, ItemWeight=200), Drop(ItemName='Dayzee Tear', ItemID=0x6F, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=20)],
     ),
     '303':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 303",
+        'Template 303',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '304':EnemyEntry (
-        "Flip Gloomba",
+        'Gloomba',
+        EnemyData(
+            2,
+            2,
+            0,
+            '''This is a Gloomba, a Goomba that lives its entire life underground... Max HP is 2 and Attack is 2. It doesn't see a lot of sun, so it's a little pale... But it is stronger than your average Goomba...and has a very dark personality... It must be hard to be a pale, friendless Goomba that lives underground...''',
+            CardData(
+                7,
+                'Gloomba',
+                '''Max HP: 2, Attack: 2. A Goomba that thrives in dank, depressing holes. A strict all-mushroom diet makes this guy extra fungal.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x11F,
-        "Template 304",
+        'Template 304',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '305':EnemyEntry (
-        "Invincible Underchomp",
+        'Invincible Underchomp',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 305",
+        'Template 305',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '306':EnemyEntry (
-        "Invincible Blue Underchomp",
+        'Invincible Blue Underchomp',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 306",
+        'Template 306',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '307':EnemyEntry (
-        "Invincible Yellow Underchomp",
+        'Invincible Yellow Underchomp',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 307",
+        'Template 307',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '308':EnemyEntry (
-        "Invincible Red Underchomp",
+        'Invincible Red Underchomp',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 308",
+        'Template 308',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '309':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 309",
+        'Template 309',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '310':EnemyEntry (
-        "Flip Boomerang Bro",
+        'Boomerang Bro',
+        EnemyData(
+            20,
+            3,
+            1,
+            '''This is a Boomerang Bro. These Koopas love to throw their boomerangs... Max HP is 10. Attack is 3. Defense is 1. A tough foe indeed... The boomerangs fly back, so watch the back of your head...''',
+            CardData(
+                32,
+                'Boomerang Bro',
+                '''Max HP: 10, Attack: 3, Defense: 1. This elite Koopa goes bananas for boomerangs. Unfortunately, they hurt when you try to eat them.''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x138,
-        "Template 310",
+        'Template 310',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '311':EnemyEntry (
-        "Flip Fire Bro",
+        'Fire Bro',
+        EnemyData(
+            10,
+            3,
+            1,
+            '''It's a Fire Bro. These lethal Koopas spit searing balls of flame... Max HP is 10. Attack is 3. Defense is 1. Learning to shoot fire from your mouth must have taken some practice... Those fireballs bounce on the ground, so watch it very carefully...''',
+            CardData(
+                34,
+                'Fire Bro',
+                '''Max HP: 10, Attack: 3, Defense: 1. This elite Koopa has an unhealthy fireball fixation. However, it's a big hit at Koopa cookouts.''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x139,
-        "Template 311",
+        'Template 311',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '312':EnemyEntry (
-        "Flip Skellobit",
+        'Skellobit',
+        EnemyData(
+            10,
+            2,
+            2,
+            '''That's a Skellobit. It's a foul monster that's made of bones... Max HP is 10, Attack is 2, Defense is 2. They poke at people with sharp spears... Don't land on the spear when it's pointed up... They were evil in life, so now they must dwell in dark depths of The Underwhere...''',
+            CardData(
+                160,
+                'Skellobit',
+                '''Max HP: 10, Attack: 2, Defense: 2. Skellobits roam the dark pits of The Underwhere. Their spears make them pretty much unstompable.''',
+                'Card Shop; Catch Card/SP; Chapter 7-4: Found in an area via a pipe under the first cloud in Overthere Sector 5.',
+                '★',
+            ),
+            ''
+        ),
         0x1B4,
-        "Template 312",
+        'Template 312',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 300),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=300), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '313':EnemyEntry (
-        "Flip Spiky Skellobit",
+        'Spiky Skellobit',
+        EnemyData(
+            10,
+            2,
+            2,
+            '''That's a Spiky Skellobit. It's made entirely of bones. They are Skellobit leaders... Max HP is 10, Attack is 2, Defense is 2. It has spikes, so don't jump on it... It's said that only the foulest Skellobits are promoted to Spiky Skellobit...''',
+            CardData(
+                161,
+                'Spiky Skellobit',
+                '''Max HP: 10, Attack: 2, Defense: 2. This fiend infests the dark depths of The Underwhere. Smack it from the side because you can't stomp it!''',
+                'Card Shop; Catch Card/SP; Chapter 7-4: Found in 3D behind the stairs leading to Grambi.',
+                '★',
+            ),
+            ''
+        ),
         0x1B5,
-        "Template 313",
+        'Template 313',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "POW Block", hex_value = get_hex_value("POW Block"), weight = 300),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='POW Block', ItemID=0x45, ItemWeight=300), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '314':EnemyEntry (
-        "Flip Skellobomber w/Skellobait",
+        'Flip Skellobomber w/Skellobait',
+        EnemyData(
+            10,
+            2,
+            2,
+            '''That's a Skellobomber. It's much like a Skellobit, but it has wings... Max HP is 10, Attack is 2, Defense is 2. It might throw its head at you... It also carries Skellobait... Some say Skellobombers were bad Nimbis sent to The Underwhere...''',
+            CardData(
+                164,
+                'Skellobomber',
+                '''Max HP: 10, Attack: 2, Defense: 2. This airborne ghoul rules the foul skies of The Underwhere. It'll mostly try to impale you with Skellobaits. It'll also throw its own head at you. That's hard core.''',
+                'Card Shop; Catch Card/SP; Chapter 7-4: Found in an area via a pipe under the first cloud in Overthere Sector 5.',
+                '★',
+            ),
+            ''
+        ),
         0x1B8,
-        "Template 314",
+        'Template 314',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 300),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=300), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '315':EnemyEntry (
-        "Flip Skellobomber",
+        'Flip Skellobomber',
+        EnemyData(
+            10,
+            2,
+            2,
+            '''That's a Skellobomber. It's much like a Skellobit, but it has wings... Max HP is 10, Attack is 2, Defense is 2. It might throw its head at you... It also carries Skellobait... Some say Skellobombers were bad Nimbis sent to The Underwhere...''',
+            CardData(
+                164,
+                'Skellobomber',
+                '''Max HP: 10, Attack: 2, Defense: 2. This airborne ghoul rules the foul skies of The Underwhere. It'll mostly try to impale you with Skellobaits. It'll also throw its own head at you. That's hard core.''',
+                'Card Shop; Catch Card/SP; Chapter 7-4: Found in an area via a pipe under the first cloud in Overthere Sector 5.',
+                '★',
+            ),
+            ''
+        ),
         0x1B8,
-        "Template 315",
+        'Template 315',
         0.03,
-        EnemyDrops (
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 300),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=300), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '316':EnemyEntry (
-        "(Unused) Green Magikoopa",
+        '(Unused) Green Magikoopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 316",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 316',
+        0,
+        EnemyDrops(),
     ),
     '317':EnemyEntry (
-        "(Unused) Broom Green Magikoopa",
+        '(Unused) Broom Green Magikoopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 317",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 317',
+        0,
+        EnemyDrops(),
     ),
     '318':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 318",
+        'Template 318',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '319':EnemyEntry (
-        "(Unused) White Magikoopa",
+        '(Unused) White Magikoopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 319",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 319',
+        0,
+        EnemyDrops(),
     ),
     '320':EnemyEntry (
-        "(Unused) Broom White Magikoopa",
+        '(Unused) Broom White Magikoopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 320",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 320',
+        0,
+        EnemyDrops(),
     ),
     '321':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 321",
+        'Template 321',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '322':EnemyEntry (
-        "(Unused) Red Magikoopa",
+        '(Unused) Red Magikoopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 322",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 322',
+        0,
+        EnemyDrops(),
     ),
     '323':EnemyEntry (
-        "(Unused) Broom Red Magikoopa",
+        '(Unused) Broom Red Magikoopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 323",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 323',
+        0,
+        EnemyDrops(),
     ),
     '324':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 324",
+        'Template 324',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '325':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 325",
+        'Template 325',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '326':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 326",
+        'Template 326',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '327':EnemyEntry (
-        "Dark Spiked Goomba",
+        'Dark Spiked Goomba',
+        EnemyData(
+            10,
+            4,
+            0,
+            '''That’s a Dark Spiked Goomba. They live in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 4. Don’t stomp it or those black spikes will hurt you... But it’s slow, so you can use Boomer, Cudge, or Bowser’s fire...''',
+            CardData(
+                4,
+                'Dark Spiked Goomba',
+                '''Max HP: 10, Attack: 4. This spiky guy dwells in a certain secret pit. It may be dark, but it's not dim. Or is it...?''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x11C,
-        "Template 327",
+        'Template 327',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '328':EnemyEntry (
-        "Dark Paragoomba",
+        'Dark Paragoomba',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''That’s a Dark Paragoomba. They live in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 2. Stomp it to turn it into a regular Dark Goomba... Then you can smoosh it at your leisure...''',
+            CardData(
+                6,
+                'Dark Paragoomba',
+                '''Max HP: 10, Attack: 2. The Dark Paragoomba lives in a certain secret pit. Give it a friendly stomp to turn it into a Dark Goomba.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x11E,
-        "Template 328",
+        'Template 328',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '329':EnemyEntry (
-        "Dark Goomba",
+        'Dark Goomba',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''That’s a Dark Goomba. They live in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 2. They are very similar to Goombas... Except that they are black and somewhat small. Just watch carefully and strike...''',
+            CardData(
+                2,
+                'Dark Goomba',
+                '''Max HP: 10, Attack: 2. This Dark Goomba dwells in a certain secret pit. It's shadowy, adorable, and oh so stompable.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x122,
-        "Template 329",
+        'Template 329',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '330':EnemyEntry (
-        "Dark Headbonk Goomba",
+        'Dark Headbonk Goomba',
+        EnemyData(
+            10,
+            4,
+            0,
+            '''That’s a Dark Headbonk Goomba. They live in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 4. They will try to hop up and bonk you... They look almost exactly like your garden-variety Dark Goomba, so be careful...''',
+            CardData(
+                9,
+                'Dark Headbonk Goomba',
+                '''Max HP: 10, Attack: 4. Dark Headbonk Goombas live in a certain secret pit. They look like Dark Goombas, but they bonk!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x121,
-        "Template 330",
+        'Template 330',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '331':EnemyEntry (
-        "Dark Koopatrol",
+        'Dark Koopatrol',
+        EnemyData(
+            30,
+            6,
+            8,
+            '''That's a Dark Koopatrol. They live in the Flopside Pit of 100 Trials... Max HP is 30. Attack is 6. Defense is 8. Don't stomp on those spikes... They like to charge and tackle. You can always flip to evade their charge...''',
+            CardData(
+                14,
+                'Dark Koopatrol',
+                '''Max HP: 30, Attack: 6, Defense: 8. Dark Koopatrols dwell in a certain secret pit. Stomp them to turn them into...dark shells. Shocker! (US)''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x125,
-        "Template 331",
+        'Template 331',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 300),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=300), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=20)],
     ),
     '332':EnemyEntry (
-        "Dark Shady Koopa",
+        'Dark Shady Koopa',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 332",
-        0.04,
-        EnemyDrops (
-            None
-        )
+        'Template 332',
+        0,
+        EnemyDrops(),
     ),
     '333':EnemyEntry (
-        "Dark Paratroopa",
+        'Dark Paratroopa',
+        EnemyData(
+            10,
+            2,
+            3,
+            '''That's a Dark Paratroopa. They live in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 2. Defense is 3. Stomp it like a regular Koopa Paratroopa to drop it to the ground... I wonder if it ever gets its wings back after that...''',
+            CardData(
+                16,
+                'Dark Paratroopa',
+                '''Max HP: 10, Attack: 2, Defense: 3. Dark Paratroopas defend a certain secret pit. You think they'll turn into Dark Koopas when stomped? ...You'd be right.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x129,
-        "Template 333",
+        'Template 333',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '334':EnemyEntry (
-        "Dark Spike Top",
+        'Dark Spike Top',
+        EnemyData(
+            10,
+            4,
+            6,
+            '''That’s a Dark Spike Top. They live in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 4. Defense is 6. You can’t hurt it with flames... A hard shell AND a spike... This won’t be easy. I suggest using an item or throwing something at it.''',
+            CardData(
+                19,
+                'Dark Spike Top',
+                '''Max HP: 10, Attack: 4, Defense: 6. It's a Dark Spike Top from a certain secret pit. Still cute, despite looking noticeably more evil.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x12C,
-        "Template 334",
+        'Template 334',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Courage Shell', ItemID=0x4A, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '335':EnemyEntry (
-        "Dark Stone Buzzy",
+        'Dark Stone Buzzy',
+        EnemyData(
+            3,
+            4,
+            0,
+            '''That’s a Dark Stone Buzzy. They live in the Flopside Pit of 100 Trials... Max HP is 3. Attack is 4. Defense is ??. You can’t hurt it with flames. I hear you can break its shell if you hit it enough times... But its bones are dark too, according to rumors...''',
+            CardData(
+                23,
+                'Dark Stone Buzzy',
+                '''Max HP: 3, Attack: 4. It's a Dark Stone Buzzy from a certain secret pit. They look the same, but they're definitely tougher.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x130,
-        "Template 335",
+        'Template 335',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Courage Shell', ItemID=0x4A, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '336':EnemyEntry (
-        "Dark Spiny",
+        'Dark Spiny',
+        EnemyData(
+            10,
+            4,
+            6,
+            '''That's a Dark Spiny. They live in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 4. Defense is 6. You can't stomp it, so don't bother... Try using Boomer, Cudge, or Bowser's flaming breath...''',
+            CardData(
+                25,
+                'Dark Spiny',
+                '''Max HP: 10, Attack: 4, Defense: 6. This Dark Spiny waddles in a certain secret pit. You can't see its beady little eyes, but it's watching...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x132,
-        "Template 336",
+        'Template 336',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Mighty Tonic", hex_value = get_hex_value("Mighty Tonic"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Mighty Tonic', ItemID=0x4B, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '337':EnemyEntry (
-        "Dark Dull Bones",
+        'Dark Dull Bones',
+        EnemyData(
+            20,
+            8,
+            0,
+            '''That’s a Dark Dull Bones... They live in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 8. They are very similar to your average Dull Bones... It will keep getting up no matter how many times you stomp on it... But fire will finish it off for good...''',
+            CardData(
+                28,
+                'Dark Dull Bones',
+                '''Max HP: 20, Attack: 8. The Dark Dull Bones dwells in a certain secret pit. The bones it throws are really...shady.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x135,
-        "Template 337",
+        'Template 337',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '338':EnemyEntry (
-        "Dark Bone",
+        'Dark Bone',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 338",
+        'Template 338',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '339':EnemyEntry (
-        "Dark Hammer Bro",
+        'Dark Hammer Bro',
+        EnemyData(
+            20,
+            4,
+            3,
+            '''That’s a Dark Hammer Bro. They live in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 4. Defense is 3. Those hammers even go through walls... Watch out in tight spots... If you’re below them, it’ll be raining hammers, so try to climb above...''',
+            CardData(
+                31,
+                'Dark Hammer Bro',
+                '''Max HP: 20, Attack: 4, Defense: 3. Dark Hammer Bros. terrorize a certain secret pit. Fear them! Fear them or be struck with flying mallets.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x13A,
-        "Template 339",
+        'Template 339',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '340':EnemyEntry (
-        "Dark Boomerang Bro",
+        'Dark Boomerang Bro',
+        EnemyData(
+            20,
+            6,
+            3,
+            '''That’s a Dark Boomerang Bro. They live in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 6. Defense is 3. He will throw boomerangs at you all day... It’s hard to approach them from below, so be careful with your timing...''',
+            CardData(
+                33,
+                'Dark Boomerang Bro',
+                '''Max HP: 20, Attack: 6, Defense: 3. This Dark Boomerang Bro dwells in a certain secret pit. Is it all that smart to throw boomerangs in the dark?''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x13B,
-        "Template 340",
+        'Template 340',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '341':EnemyEntry (
-        "Dark Fire Bro",
+        'Dark Fire Bro',
+        EnemyData(
+            20,
+            6,
+            3,
+            '''That’s a Dark Fire Bro. They live in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 6. Defense is 3. Their fireballs bounce on the floor... They may bounce down to you if you are below them. Those fireballs must come in handy when they get lost in the dark...''',
+            CardData(
+                35,
+                'Dark Fire Bro',
+                '''Max HP: 20, Attack: 6, Defense: 3. This Dark Fire Bro dwells in a certain secret pit. Are pitch-black fireballs even hot?''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x13C,
-        "Template 341",
+        'Template 341',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '342':EnemyEntry (
-        "Dark Hammer",
+        'Dark Hammer',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 342",
+        'Template 342',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '343':EnemyEntry (
-        "Dark Boomerang",
+        'Dark Boomerang',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 343",
+        'Template 343',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '344':EnemyEntry (
-        "Dark Fire Bro Fireball",
+        'Dark Fire Bro Fireball',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 344",
+        'Template 344',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '345':EnemyEntry (
-        "Dark Magikoopa",
+        'Dark Magikoopa',
+        EnemyData(
+            20,
+            6,
+            0,
+            '''That’s a Dark Magikoopa. They live in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 6. They attack with magic. Their spells travel through walls, so they can be hard to fight in close quarters... They have no Defense, so take them out quickly...''',
+            CardData(
+                37,
+                'Dark Magikoopa',
+                '''Max HP: 20, Attack: 6. Dark Magikoopas dwell in a certain secret pit. Too bad you can't see its face... It's wearing contacts!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x13E,
-        "Template 345",
+        'Template 345',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 100),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 100),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=100), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=100)],
     ),
     '346':EnemyEntry (
-        "Broom Dark Magikoopa",
+        'Broom Dark Magikoopa',
+        EnemyData(
+            20,
+            6,
+            0,
+            '''That’s a Dark Magikoopa. They live in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 6. They attack with magic. Their spells travel through walls, so they can be hard to fight in close quarters... They have no Defense, so take them out quickly...''',
+            CardData(
+                37,
+                'Dark Magikoopa',
+                '''Max HP: 20, Attack: 6. Dark Magikoopas dwell in a certain secret pit. Too bad you can't see its face... It's wearing contacts!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x13E,
-        "Template 346",
+        'Template 346',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 100),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 100),
-        )
+        [Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=100), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=100)],
     ),
     '347':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 347",
+        'Template 347',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '348':EnemyEntry (
-        "Dark Striker",
+        'Dark Striker',
+        EnemyData(
+            20,
+            6,
+            3,
+            '''That's a Dark Striker. They live in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 6. Defense is 3. It will kick shells at you at high speed... Shells kicked from above will slide down to you, so be careful... They must dream of leaving the pit and going pro...''',
+            CardData(
+                41,
+                'Dark Striker',
+                '''Max HP: 20, Attack: 6, Defense: 3. Dark Strikers play in a certain secret pit. One red card too many, and they went to the dark side!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x142,
-        "Template 348",
+        'Template 348',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Turtley Leaf", hex_value = get_hex_value("Turtley Leaf"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        [Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Turtley Leaf', ItemID=0x68, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=20)],
     ),
     '349':EnemyEntry (
-        "Dark Striker's Shell",
+        '''Dark Striker's Shell''',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 349",
+        'Template 349',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '350':EnemyEntry (
-        "Dark Clubba",
+        'Dark Clubba',
+        EnemyData(
+            60,
+            6,
+            0,
+            '''That’s a Dark Clubba. They live in the Flopside Pit of 100 Trials… Max HP is 60. Attack is 6. They are known for their remarkably high HP... They fall asleep when nobody is around, just like other Clubbas... Try to stomp them before they wake up...''',
+            CardData(
+                43,
+                'Dark Clubba',
+                '''Max HP: 60, Attack: 6. This Dark Clubba stumbles around a certain secret pit. Dark Clubbas are still sleepy. Some things never change.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x144,
-        "Template 350",
+        'Template 350',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '351':EnemyEntry (
-        "Dark Dayzee",
+        'Dark Dayzee',
+        EnemyData(
+            99,
+            20,
+            0,
+            '''It’s a Dark Dayzee. They live in the Flopside Pit of 100 Trials... Max HP is 99. Attack is 20. They sing to attack... Most Dayzees look happy, but the dark ones are actually scowling... But you can’t tell because they’re cloaked in shadow... Too bad...''',
+            CardData(
+                62,
+                'Dark Dayzee',
+                '''Max HP: 99, Attack: 20. Dark Dayzees sprout in a certain secret pit. Even in the dark... This flower's got style!''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x14A,
-        "Template 351",
+        'Template 351',
         0.15,
-        EnemyDrops (
-            Drop (item_name = "Golden Leaf", hex_value = get_hex_value("Golden Leaf"), weight = 200),
-            Drop (item_name = "Dayzee Tear", hex_value = get_hex_value("Dayzee Tear"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        [Drop(ItemName='Golden Leaf', ItemID=0x67, ItemWeight=200), Drop(ItemName='Dayzee Tear', ItemID=0x6F, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=20)],
     ),
     '352':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 352",
+        'Template 352',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '353':EnemyEntry (
-        "Goomba",
+        'Goomba',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''It's a Goomba, one of Bowser's minions... Max HP is 1 and Attack is 1. It really puts the "under" back in "underlings"... It has no remarkable traits... They are pretty much the lowest of the low... But I hear Goombas do have their fans, so what can you do...''',
+            CardData(
+                1,
+                'Goomba',
+                '''Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.''',
+                'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
+                '★',
+            ),
+            ''
+        ),
         0x11A,
-        "Template 353",
+        'Template 353',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '354':EnemyEntry (
-        "Dark Fuzzy",
+        'Dark Fuzzy',
+        EnemyData(
+            15,
+            4,
+            0,
+            '''It’s a Dark Fuzzy. They live in the Flopside Pit of 100 Trials... Max HP is 15. Attack is 4. They are like other Fuzzies. They bounce around quite randomly, so watch out when you get close to them...''',
+            CardData(
+                65,
+                'Dark Fuzzy',
+                '''Max HP: 15, Attack: 4. This Dark Fuzzy squirms in a certain secret pit. This one must have come from a load of dark laundry.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x14D,
-        "Template 354",
+        'Template 354',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Life Shroom", hex_value = get_hex_value("Life Shroom"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Life Shroom', ItemID=0x54, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '355':EnemyEntry (
-        "Dark Pokey",
+        'Dark Pokey',
+        EnemyData(
+            20,
+            4,
+            0,
+            '''It’s a Dark Pokey. They live in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 4. Their spikes prevent you from stomping or throwing them... Is it an animal or a plant? Either way, it throws pieces of itself at you… Try using Boomer, Cudge, or Bowser’s breath...''',
+            CardData(
+                68,
+                'Dark Pokey',
+                '''Max HP: 20, Attack: 4. The Dark Pokey teeters in a certain secret pit. It looks so serious when it wears black!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x150,
-        "Template 355",
+        'Template 355',
         0.5,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '356':EnemyEntry (
-        "Dark Pokey Part",
+        'Dark Pokey Part',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 356",
+        'Template 356',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '357':EnemyEntry (
-        "Dark Ruff Puff",
+        'Dark Ruff Puff',
+        EnemyData(
+            30,
+            6,
+            0,
+            '''It’s a Dark Ruff Puff. They live in the Flopside Pit of 100 Trials... Max HP is 30. Attack is 6. It throws dark lightning at anything in its way... That dark lightning could fry nearly anything...''',
+            CardData(
+                118,
+                'Dark Ruff Puff',
+                '''Max HP: 30, Attack: 6. This Dark Ruff Puff floats in a certain secret pit. Dark thunder... Wow... That is so METAL!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x156,
-        "Template 357",
+        'Template 357',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '358':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 358",
+        'Template 358',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '359':EnemyEntry (
-        "Dark Spania",
+        'Dark Spania',
+        EnemyData(
+            20,
+            2,
+            0,
+            '''It’s a Dark Spania. They live in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 2. They spin straight at any enemy they see. It can flip dimensions, so you will have to be at the top of your game...''',
+            CardData(
+                77,
+                'Dark Spania',
+                '''Max HP: 20, Attack: 2. This Dark Spania dwells in a certain secret pit. Think of it, just spinning around in the darkness...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x158,
-        "Template 359",
+        'Template 359',
         0.05,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '360':EnemyEntry (
-        "Dark Cursya",
+        'Dark Cursya',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''It’s a Dark Cursya. They live in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 2. If you touch it, you’ll slow to a crawl... You can’t tell what kind of Cursya these Dark Cursyas are by looking, so ask me...''',
+            CardData(
+                83,
+                'Dark Cursya',
+                '''Max HP: 10, Attack: 2. Dark Cursyas live in a certain secret pit. Play the fun game and see which curse you'll get!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x15E,
-        "Template 360",
+        'Template 360',
         0.15,
-        EnemyDrops (
-            Drop (item_name = "Poison Shroom", hex_value = get_hex_value("Poison Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Poison Shroom', ItemID=0x62, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '361':EnemyEntry (
-        "(Unused) Dark Back Cursya",
+        '(Unused) Dark Back Cursya',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 361",
-        0.1,
-        EnemyDrops (
-            Drop (item_name = "Poison Shroom", hex_value = get_hex_value("Poison Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        'Template 361',
+        0,
+        EnemyDrops(),
     ),
     '362':EnemyEntry (
-        "Dark Tech Cursya",
+        'Dark Tech Cursya',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''That's a Dark Tech Cursya. They live in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 2. Touch it, and you can't use techniques for a while... You can't tell what kind of Cursya these Dark Cursyas are by looking, so ask me...''',
+            CardData(
+                84,
+                'Dark Tech Cursya',
+                '''Max HP: 10, Attack: 2. This Dark Tech Cursya lives in a certain secret pit. This is the last place I want to meet one of these guys...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x15F,
-        "Template 362",
+        'Template 362',
         0.15,
-        EnemyDrops (
-            Drop (item_name = "Poison Shroom", hex_value = get_hex_value("Poison Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Poison Shroom', ItemID=0x62, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '363':EnemyEntry (
-        "Dark Heavy Cursya",
+        'Dark Heavy Cursya',
+        EnemyData(
+            10,
+            2,
+            0,
+            '''It’s a Dark Heavy Cursya. They live in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 2. Touch it, and you will have a hard time jumping... You can’t tell what kind of Cursya these Dark Cursyas are by looking, so ask me...''',
+            CardData(
+                85,
+                'Dark Heavy Cursya',
+                '''Max HP: 10, Attack: 2. This Dark Heavy Cursya lives in a certain secret pit. Isn't it fun to guess which curse you'll get?''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x160,
-        "Template 363",
+        'Template 363',
         0.15,
-        EnemyDrops (
-            Drop (item_name = "Poison Shroom", hex_value = get_hex_value("Poison Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Poison Shroom', ItemID=0x62, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '364':EnemyEntry (
-        "Dark Reversya Cursya",
+        'Dark Reversya Cursya',
+        EnemyData(
+            20,
+            4,
+            0,
+            '''It’s a Dark Reversya Cursya. They live in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 2. Touch it, and your controls will be reversed for a while... You can’t tell what kind of Cursya these Dark Cursyas are by looking, so ask me...''',
+            CardData(
+                86,
+                'Dark Reversya Cursya',
+                '''Max HP: 10, Attack: 2. This Dark Reversya Cursya lives in a certain secret pit. You never know what curse you'll get until you touch it!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x161,
-        "Template 364",
+        'Template 364',
         0.15,
-        EnemyDrops (
-            Drop (item_name = "Poison Shroom", hex_value = get_hex_value("Poison Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Poison Shroom', ItemID=0x62, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '365':EnemyEntry (
-        "Dark Chomp",
+        'Dark Chomp',
+        EnemyData(
+            10,
+            4,
+            10,
+            '''It’s a Dark Chomp. They live in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 4. Defense is 10. Flames won’t hurt it at all... Dark Chomps have very high Defense, so use items or Pixls...''',
+            CardData(
+                105,
+                'Dark Chomp',
+                '''Max HP: 10, Attack: 4, Defense: 10. This Dark Chomp makes its home in a certain secret pit. Who's a good boy?! Who's a dark, evil boy! Yes you are!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x167,
-        "Template 365",
+        'Template 365',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 200),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=200), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '366':EnemyEntry (
-        "Dark Dark Boo",
+        'Dark Dark Boo',
+        EnemyData(
+            20,
+            4,
+            0,
+            '''It’s a Dark Dark Boo. They live in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 4. These things appear out of nowhere... To beat these Boos, wait until they appear and then whale on them with Cudge...''',
+            CardData(
+                94,
+                'Dark Dark Boo',
+                '''Max HP: 20, Attack: 4. This Dark Dark Boo dwells in a certain secret pit. Dark sheets make it extra not-so-scary!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x164,
-        "Template 366",
+        'Template 366',
         0.06,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Sleepy Sleep", hex_value = get_hex_value("Sleepy Sleep"), weight = 400),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Sleepy Sleep', ItemID=None, ItemWeight=400), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '367':EnemyEntry (
-        "Dark Cleft",
+        'Dark Cleft',
+        EnemyData(
+            10,
+            4,
+            10,
+            '''It’s a Dark Cleft. They lurk in the Flopside Pit of 100 Trials... Max HP is 10. Attack is 4. Defense is 10. Flames won’t hurt it at all… They usually sit still, but they will charge at anyone that approaches... Flip them over with a bomb to reduce their Defense to 0...''',
+            CardData(
+                108,
+                'Dark Cleft',
+                '''Max HP: 10, Attack: 4, Defense: 10. This Dark Cleft dwells in a certain secret pit. You'd have to really try to mistake it for a rock...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x16C,
-        "Template 367",
+        'Template 367',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Courage Shell", hex_value = get_hex_value("Courage Shell"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Courage Shell', ItemID=0x4A, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '368':EnemyEntry (
-        "Dark Shlurp",
+        'Dark Shlurp',
+        EnemyData(
+            0,
+            4,
+            0,
+            '''It’s a Dark Shlurp. They live in the Flopside Pit of 100 Trials... Max HP is ??. Attack is 4. They are very similar to other Shlurps... It has tough skin, but you can always feed it a bomb...''',
+            CardData(
+                111,
+                'Dark Shlurp',
+                '''Max HP: ??, Attack: 4. The Dark Shlurp dwells in a certain secret pit. Now with the cleaning power of darkness!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x16F,
-        "Template 368",
+        'Template 368',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 400),
-            Drop (item_name = "POW Block", hex_value = get_hex_value("POW Block"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=400), Drop(ItemName='POW Block', ItemID=0x45, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '369':EnemyEntry (
-        "Dark Squiglet",
+        'Dark Squiglet',
+        EnemyData(
+            20,
+            8,
+            0,
+            '''It's a Dark Squiglet. They live in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 8. It hops when it sees an enemy, then spits rocks... It spits quickly, so jump as soon as you see it hop. Some people think that little hop is quite cute...''',
+            CardData(
+                48,
+                'Dark Squiglet',
+                '''Max HP: 20, Attack: 8. The Dark Squiglet dwells in a certain secret pit. Awwww, it spits oily black rocks! Adorable!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x178,
-        "Template 369",
+        'Template 369',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Smelly Herb", hex_value = get_hex_value("Smelly Herb"), weight = 100),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Smelly Herb', ItemID=0x73, ItemWeight=100), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '370':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 370",
+        'Template 370',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '371':EnemyEntry (
-        "Dark Sproing-Oing",
+        'Dark Sproing-Oing',
+        EnemyData(
+            16,
+            4,
+            0,
+            '''It's a Dark Sproing-Oing. They live in the Flopside Pit of 100 Trials... Max HP is 16. Attack is 4. If you hurt it, it splits into smaller versions of itself... Hit it hard enough, though, and it will disappear...''',
+            CardData(
+                52,
+                'Dark Sproing-Oing',
+                '''Max HP: 16, Attack: 4. The Dark Sproing-Oing dwells in a certain secret pit. This one doesn't split and clone... Haha, actually it does.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x17D,
-        "Template 371",
+        'Template 371',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '372':EnemyEntry (
-        "Mini Dark Sproing-Oing",
+        'Mini Dark Sproing-Oing',
+        EnemyData(0, 0, 0, '', '', ''),
         0x17D,
-        "Template 372",
-        0.03,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        'Template 372',
+        0,
+        EnemyDrops(),
     ),
     '373':EnemyEntry (
-        "Dark Boomboxer",
+        'Dark Boomboxer',
+        EnemyData(
+            32,
+            8,
+            0,
+            '''It's a Dark Boomboxer. They live in the Flopside Pit of 100 Trials... Max HP is 32. Attack is 8. It blasts high-powered sound at you... The sound travels fast and through walls, so flip to avoid it if you need to... But their own loud music makes them slightly loopy...''',
+            CardData(
+                56,
+                'Dark Boomboxer',
+                '''Max HP: 32, Attack: 8. The Dark Boomboxer rocks out in a certain secret pit. It's sad not to see that crazy face it makes.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x180,
-        "Template 373",
+        'Template 373',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Keel Mango", hex_value = get_hex_value("Keel Mango"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Keel Mango', ItemID=0x65, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '374':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 374",
+        'Template 374',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '375':EnemyEntry (
-        "Dark Jawbus",
+        'Dark Jawbus',
+        EnemyData(
+            30,
+            8,
+            0,
+            '''It’s a Dark Jawbus. They live in the Flopside Pit of 100 Trials... Max HP is 30. Attack is 8. You can only hurt them by hitting that round spot... Get behind them if you want to attack that spot easily...''',
+            CardData(
+                74,
+                'Dark Jawbus',
+                '''Max HP: 30, Attack: 8. This Dark Jawbus dwells in a certain secret Pit. It was so nice to see its face. Now it's all shadow...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x184,
-        "Template 375",
+        'Template 375',
         0.15,
-        EnemyDrops (
-            Drop (item_name = "Fire Burst", hex_value = get_hex_value("Fire Burst"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 200),
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 300),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Fire Burst', ItemID=0x41, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=200), Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=300), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '376':EnemyEntry (
-        "(Unused) Dark I",
+        '(Unused) Dark I',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 376",
-        0.1,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Sleepy Sleep", hex_value = get_hex_value("Sleepy Sleep"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        'Template 376',
+        0,
+        EnemyDrops(),
     ),
     '377':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 377",
+        'Template 377',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '378':EnemyEntry (
-        "Dark Growmeba",
+        'Dark Growmeba',
+        EnemyData(
+            20,
+            4,
+            0,
+            '''It’s a Dark Growmeba. They live in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 4. It can clone itself over and over again... Defeat the primary one to make the clones disappear... Or, you could use an item to defeat all of them at once...''',
+            CardData(
+                99,
+                'Dark Growmeba',
+                '''Max HP: 20, Attack: 4. This Dark Growmeba lurks in a certain secret pit. Which one's real?! Gah, it's very hard to tell.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x18D,
-        "Template 378",
+        'Template 378',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '379':EnemyEntry (
-        "Dark Tileoid",
+        'Dark Tileoid',
+        EnemyData(
+            25,
+            4,
+            0,
+            '''That's a Dark Tileoid. They live in the Flopside Pit of 100 Trials... Max HP is 25. Attack is 4. It can cling to walls and ceilings... They can sneak up on you, so watch those walls...''',
+            CardData(
+                124,
+                'Dark Tileoid',
+                '''Max HP: 25, Attack: 4. This Dark Tileoid scuttles around a certain secret pit. Yikes... This shadowy one is really tough!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x192,
-        "Template 379",
+        'Template 379',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 400),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=400), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '380':EnemyEntry (
-        "Dark Eeligon",
+        'Dark Eeligon',
+        EnemyData(
+            30,
+            4,
+            0,
+            '''That’s a Dark Eeligon. They live in the Flopside Pit of 100 Trials... Max HP is 30. Attack is 4. As you attack it, it will lose parts of itself... Its weak spot is its head. Focus your attacks there to defeat it...''',
+            CardData(
+                137,
+                'Dark Eeligon',
+                '''Max HP: 30, Attack: 4. This Dark Eeligon flies around in a certain secret pit. So...this one's dark, but it's pretty much the same.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x19D,
-        "Template 380",
+        'Template 380',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Fresh Pasta Bunch", hex_value = get_hex_value("Fresh Pasta Bunch"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 100),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Fresh Pasta Bunch', ItemID=0x6C, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=100), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '381':EnemyEntry (
-        "Dark Eeligon Part",
+        'Dark Eeligon Part',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 381",
+        'Template 381',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '382':EnemyEntry (
-        "Dark Longator",
+        'Dark Longator',
+        EnemyData(
+            30,
+            4,
+            0,
+            '''It’s a Dark Longator. They live in the Flopside Pit of 100 Trials... Max HP is 30. Attack is 4. It stretches itself out to attack you... They like to attack right after you land a jump and can’t get away...''',
+            CardData(
+                140,
+                'Dark Longator',
+                '''Max HP: 30, Attack: 4. This Dark Longator nests in a certain secret pit. It's just...weird.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1A0,
-        "Template 382",
+        'Template 382',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Fresh Veggie", hex_value = get_hex_value("Fresh Veggie"), weight = 100),
-            Drop (item_name = "Horsetail", hex_value = get_hex_value("Horsetail"), weight = 100),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 800),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Fresh Veggie', ItemID=0x72, ItemWeight=100), Drop(ItemName='Horsetail', ItemID=0x6B, ItemWeight=100), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=800), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '383':EnemyEntry (
-        "Dark Barribad",
+        'Dark Barribad',
+        EnemyData(
+            12,
+            8,
+            0,
+            '''It’s a Dark Barribad. They live in the Flopside Pit of 100 Trials... Max HP is 12. Attack is 8. It creates an impenetrable barrier around itself... You can’t break the barrier, but you can beat them with Bowser’s fire...''',
+            CardData(
+                143,
+                'Dark Barribad',
+                '''Max HP: 12, Attack: 8. The Dark Barribad roams around in a certain secret pit. It looks eerily similar to a flying bowling ball.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1A3,
-        "Template 383",
+        'Template 383',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Hot Sauce", hex_value = get_hex_value("Hot Sauce"), weight = 100),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 1200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Hot Sauce', ItemID=0x6D, ItemWeight=100), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=1200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '384':EnemyEntry (
-        "Dark Barribad Projectile",
+        'Dark Barribad Projectile',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 384",
+        'Template 384',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '385':EnemyEntry (
-        "Dark Pigarithm",
+        'Dark Pigarithm',
+        EnemyData(
+            0,
+            6,
+            0,
+            '''It's a Dark Pigarithm. They live in the Flopside Pit of 100 Trials... Max HP is ??. Attack is 6. Three stomps should do it in. It gets smaller and faster every time you stomp it... It's hard to get a jump on them when the ceilings are so low... It might be better to use Thoreau to toss it...''',
+            CardData(
+                146,
+                'Dark Pigarithm',
+                '''Max HP: ??, Attack: 6. Takes three stomps to beat. This Dark Pigarithm wallows around in a certain secret pit. It may look weird, but it drops coins! Cha-ching!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1A6,
-        "Template 385",
+        'Template 385',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 200),
-            Drop (item_name = "Shooting Star", hex_value = get_hex_value("Shooting Star"), weight = 200),
-            Drop (item_name = "Block Block", hex_value = get_hex_value("Block Block"), weight = 200),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 200),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 200),
-            Drop (item_name = "Mighty Tonic", hex_value = get_hex_value("Mighty Tonic"), weight = 200),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=200), Drop(ItemName='Shooting Star', ItemID=0x44, ItemWeight=200), Drop(ItemName='Block Block', ItemID=0x49, ItemWeight=200), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=200), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=200), Drop(ItemName='Mighty Tonic', ItemID=0x4B, ItemWeight=200), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '386':EnemyEntry (
-        "Dark Choppa",
+        'Dark Choppa',
+        EnemyData(
+            15,
+            5,
+            0,
+            '''It’s a Dark Choppa. They dwell in the Flopside Pit of 100 Trials... Max HP is 15. Attack is 5. They can disappear and reappear somewhere else... Just try to attack it as much as you can when it stops...''',
+            CardData(
+                149,
+                'Dark Choppa',
+                '''Max HP: 15, Attack: 5. This Dark Choppa dwells in a certain secret pit. It's all shadowy now, but still very, very nervous...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1A9,
-        "Template 386",
+        'Template 386',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 100),
-            Drop (item_name = "Cake Mix", hex_value = get_hex_value("Cake Mix"), weight = 100),
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Honey Jar", hex_value = get_hex_value("Honey Jar"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 400),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=100), Drop(ItemName='Cake Mix', ItemID=0x69, ItemWeight=100), Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Honey Jar', ItemID=0x74, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=400), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '387':EnemyEntry (
-        "Dark Muth",
+        'Dark Muth',
+        EnemyData(
+            255,
+            10,
+            0,
+            '''That’s a Dark Muth. They dwell in the Flopside Pit of 100 Trials... Max HP is 255. Attack is 10. It will furiously charge at you when you approach it... But it’s huge and quite predictable, so it shouldn’t be hard to hit...''',
+            CardData(
+                152,
+                'Dark Muth',
+                '''Max HP: 255, Attack: 10. Dark Muths stomp around in a certain secret pit. Even in the dark, they still go with the herd. Fascinating.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1AB,
-        "Template 387",
+        'Template 387',
         0.25,
-        EnemyDrops (
-            Drop (item_name = "Bone-In Cut", hex_value = get_hex_value("Bone-In Cut"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 10),
-        )
+        [Drop(ItemName='Bone-In Cut', ItemID=0x71, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=10)],
     ),
     '388':EnemyEntry (
-        "Dark Ninjoe",
+        'Dark Ninjoe',
+        EnemyData(
+            20,
+            5,
+            0,
+            '''That's a Dark Ninjoe. They dwell in the Flopside Pit of 100 Trials... Max HP is 20. Attack is 5. It hops around wildly and throws ninja stars... They are fast... Very fast... Try attacking them from a distance. Dark Ninjoes are shrouded in secrecy. Regular Ninjoes don't even know about them...''',
+            CardData(
+                158,
+                'Dark Ninjoe',
+                '''Max HP: 20, Attack: 5. This Dark Ninjoe creeps around a certain secret pit. They move at the speed of DEADLY. Roundhouse kick!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1AF,
-        "Template 388",
+        'Template 388',
         0.1,
-        EnemyDrops (
-            Drop (item_name = "Thunder Rage", hex_value = get_hex_value("Thunder Rage"), weight = 200),
-            Drop (item_name = "Volt Shroom", hex_value = get_hex_value("Volt Shroom"), weight = 100),
-            Drop (item_name = "Stop Watch", hex_value = get_hex_value("Stop Watch"), weight = 100),
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='Thunder Rage', ItemID=0x43, ItemWeight=200), Drop(ItemName='Volt Shroom', ItemID=0x4C, ItemWeight=100), Drop(ItemName='Stop Watch', ItemID=0x4F, ItemWeight=100), Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '389':EnemyEntry (
-        "Dark Ninjoe Projectile",
+        'Dark Ninjoe Projectile',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 389",
+        'Template 389',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '390':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 390",
+        'Template 390',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '391':EnemyEntry (
-        "Dark Skellobit",
+        'Dark Skellobit',
+        EnemyData(
+            30,
+            4,
+            4,
+            '''It's a Dark Skellobit. They dwell in the Flopside Pit of 100 Trials... Max HP is 30. Attack is 4. Defense is 4. Don't stomp on that spear... It only attacks with its spear, so use Thoreau to toss it... But the low ceilings may make it hard to throw them very far...''',
+            CardData(
+                162,
+                'Dark Skellobit',
+                '''Max HP: 30, Attack: 4, Defense: 4. Dark Skellobits dwell in a certain secret pit. ...And that's about it.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1B6,
-        "Template 391",
+        'Template 391',
         0.05,
-        EnemyDrops (
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 300),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=300), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '392':EnemyEntry (
-        "Dark Spiky Skellobit",
+        'Dark Spiky Skellobit',
+        EnemyData(
+            30,
+            4,
+            4,
+            '''It's a Dark Spiky Skellobit. They dwell in the Flopside Pit of 100 Trials... Max HP is 30. Attack is 4. Defense is 4. Don't stomp on that spear... They have spikes, so you can't throw or stomp them... Try using Bowser's fire...''',
+            CardData(
+                163,
+                'Dark Spiky Skellobit',
+                '''Max HP: 30, Attack: 4, Defense: 4. Dark Spiky Skellobits dwell in a certain secret pit. It's got spikes... Other than that, not much else going on.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1B7,
-        "Template 392",
+        'Template 392',
         0.07,
-        EnemyDrops (
-            Drop (item_name = "Big Egg", hex_value = get_hex_value("Big Egg"), weight = 100),
-            Drop (item_name = "Power Steak", hex_value = get_hex_value("Power Steak"), weight = 100),
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "POW Block", hex_value = get_hex_value("POW Block"), weight = 300),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Super Shroom Shake", hex_value = get_hex_value("Super Shroom Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 50),
-        )
+        [Drop(ItemName='Big Egg', ItemID=0x76, ItemWeight=100), Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='POW Block', ItemID=0x45, ItemWeight=300), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Super Shroom Shake', ItemID=0x51, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=50)],
     ),
     '393':EnemyEntry (
-        "Dark Megabite",
+        'Dark Megabite',
+        EnemyData(
+            8,
+            4,
+            0,
+            '''That’s a Dark Megabite. They dwell in the Flopside Pit of 100 Trials... Max HP is 8. Attack is 4. They always take just 1 damage. They are tough, so if you want to defeat one, watch your remaining time... Just hope they don’t have the key...''',
+            CardData(
+                173,
+                'Dark Megabite',
+                '''Max HP: 8, Attack: 4. Only ever takes 1 damage. This dark Megabite dwells in a certain secret pit. This thing just wants to end you. That's all.''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x1BD,
-        "Template 393",
+        'Template 393',
         0.15,
-        EnemyDrops (
-            Drop (item_name = "POW Block", hex_value = get_hex_value("POW Block"), weight = 100),
-            Drop (item_name = "Ghost Shroom", hex_value = get_hex_value("Ghost Shroom"), weight = 100),
-            Drop (item_name = "Catch Card SP", hex_value = get_hex_value("Catch Card SP"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 30),
-        )
+        [Drop(ItemName='POW Block', ItemID=0x45, ItemWeight=100), Drop(ItemName='Ghost Shroom', ItemID=0x4D, ItemWeight=100), Drop(ItemName='Catch Card SP', ItemID=0x58, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '394':EnemyEntry (
-        "Dark Magiblot",
+        'Dark Magiblot',
+        EnemyData(
+            40,
+            10,
+            0,
+            '''That's a Dark Magiblot. They dwell in the Flopside Pit of 100 Trials... Max HP is 40. Attack is 10. They phase in and out as they hurl spells. Attack them as soon as they appear. Some say they live between dimensions, but nobody knows for sure...''',
+            CardData(
+                170,
+                'Dark Magiblot',
+                '''Max HP: 40, Attack: 10. This Dark Magiblot dwells in a certain secret pit. Wandering in the dark has made it extra crabby.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x1C1,
-        "Template 394",
+        'Template 394',
         0.06,
-        EnemyDrops (
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 100),
-            Drop (item_name = "Catch Card SP", hex_value = get_hex_value("Catch Card SP"), weight = 100),
-            Drop (item_name = "Shroom Shake", hex_value = get_hex_value("Shroom Shake"), weight = 100),
-        )
+        [Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=100), Drop(ItemName='Catch Card SP', ItemID=0x58, ItemWeight=100), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100)],
     ),
     '395':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 395",
+        'Template 395',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '396':EnemyEntry (
-        "Brobot Fist",
+        'Brobot Fist',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 396",
+        'Template 396',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '397':EnemyEntry (
-        "Mimi 2",
+        'Mimi (3)',
+        EnemyData(
+            0,
+            4,
+            0,
+            '''That’s Mimi, of course. She seems really set on winning this time... Max HP is ?? and Attack is 4. She has the same moves she had last time. She seems to be faster now. She can also rain down Rubees for a nasty attack... Better use your parasol for protection when that happens... Let’s pay her back for all the times she tricked us...''',
+            CardData(
+                191,
+                'Mimi',
+                '''It's Mimi, the adorable, yet slightly unstable shape-shifter! Word is, she has a crush on Count Bleck.''',
+                'Card Shop; Map 15',
+                '★★',
+            ),
+            ''
+        ),
         0x1C7,
-        "Template 397",
+        'Template 397',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '398':EnemyEntry (
-        "Bowser 2",
+        'Bowser (2)',
+        EnemyData(
+            80,
+            8,
+            2,
+            '''That's Bowser, the king of the Koopas and archenemy of Mario... Max HP is 80. Attack is 8. Defense is 2. He has spikes, so you can't stomp him. As you'd imagine, his fiery breath and stomp attack do a lot of damage. You'll need to use Pixls and items to win this battle...''',
+            CardData(
+                226,
+                'Bowser (1)',
+                '''Mario's mean-spirited rival needs no introduction. He's not too happy about having to help out Mario.''',
+                'Earned after defeating Shadoo in the Flopside Pit of 100 Trials.',
+                '★★★',
+            ),
+            ''
+        ),
         0x1CA,
-        "Template 398",
+        'Template 398',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '399':EnemyEntry (
-        "Dark Dimentio Cube",
+        'Dark Dimentio Cube',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 399",
+        'Template 399',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '400':EnemyEntry (
-        "Big Dark Dimentio Cube",
+        'Big Dark Dimentio Cube',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 400",
+        'Template 400',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '401':EnemyEntry (
-        "Giant Dark Dimentio Cube",
+        'Giant Dark Dimentio Cube',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 401",
+        'Template 401',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '402':EnemyEntry (
-        "Rubee",
+        'Rubee',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 402",
+        'Template 402',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '403':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 403",
+        'Template 403',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '404':EnemyEntry (
-        "Dimentio Attack",
+        'Dimentio Attack',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 404",
+        'Template 404',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '405':EnemyEntry (
-        "Dimentio",
+        'Dimentio (1)',
+        EnemyData(
+            30,
+            2,
+            0,
+            '''That's Dimentio. He's a weird dimensional magician who works for Count Bleck... Max HP is 30 and Attack is 2. Dimentio can flip between dimensions... He can also clone himself. Attacking his double won't do anything to him... Hit the real one, and the double will disappear. Then, he can't clone again for a while...''',
+            CardData(
+                195,
+                'Dimentio',
+                '''Dimentio is Count Bleck's dimension-bending mercenary. The question is, do psycho jesters get good benefits?''',
+                'Card Shop; Map 22',
+                '★★',
+            ),
+            ''
+        ),
         0x1C6,
-        "Template 405",
+        'Template 405',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '406':EnemyEntry (
-        "Dimentio",
+        'Dimentio (unused)',
+        EnemyData(
+            50,
+            2,
+            0,
+            '''That's Dimentio. He's a weird dimensional magician who works for Count Bleck... Max HP is 50 and Attack is 2. Dimentio can flip between dimensions... He can also clone himself. Attacking his double won't do anything to him... Hit the real one, and the double will disappear. Then, he can't clone again for a while...''',
+            CardData(
+                195,
+                'Dimentio',
+                '''Dimentio is Count Bleck's dimension-bending mercenary. The question is, do psycho jesters get good benefits?''',
+                'Card Shop; Map 22',
+                '★★',
+            ),
+            ''
+        ),
         0x1C6,
-        "Template 406",
+        'Template 406',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '407':EnemyEntry (
-        "Dimentio",
+        'Dimentio (2)',
+        EnemyData(
+            80,
+            4,
+            0,
+            '''That's Dimentio. He's a weird dimensional magician who works for Count Bleck... Max HP is 80 and Attack is 4. Dimentio can flip between dimensions... He can also clone himself. Attacking his double won't do anything to him... Hit the real one, and the double will disappear. Then, he can't clone again for a while...''',
+            CardData(
+                195,
+                'Dimentio',
+                '''Dimentio is Count Bleck's dimension-bending mercenary. The question is, do psycho jesters get good benefits?''',
+                'Card Shop; Map 22',
+                '★★',
+            ),
+            ''
+        ),
         0x1C6,
-        "Template 407",
+        'Template 407',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '408':EnemyEntry (
-        "Stench",
+        'Stench',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 408",
+        'Template 408',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '409':EnemyEntry (
-        "Cherbil",
+        'Cherbil',
+        EnemyData(
+            5,
+            2,
+            0,
+            '''That's a Cherbil. It's a nasty gasbag that spews a plume of sleepy gas... Max HP is 5. Attack is 2. That gas will put you to sleep, so don't go sniffing it... Some say the gas comes from their mouths. Some say it comes from elsewhere... ...Oh, dear...''',
+            CardData(
+                88,
+                'Cherbil',
+                '''Max HP: 5, Attack: 2. This odd floating beast strikes with sleeping gas. One whiff of that gas and it's sweet dreams...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x210,
-        "Template 409",
+        'Template 409',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Sleepy Sleep", hex_value = get_hex_value("Sleepy Sleep"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Sleepy Sleep', ItemID=None, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=20)],
     ),
     '410':EnemyEntry (
-        "Cherbil's Projectile",
+        '''Cherbil's Projectile''',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 410",
+        'Template 410',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '411':EnemyEntry (
-        "Poison Cherbil",
+        'Poison Cherbil',
+        EnemyData(
+            5,
+            2,
+            0,
+            '''That's a Poison Cherbil. It's a nasty gasbag that spews a plume of poison gas... Max HP is 5. Attack is 2. That gas will poison you, so don't go sniffing it... Some say the gas comes from their mouths. Some say it comes from elsewhere... ...Oh, dear...''',
+            CardData(
+                90,
+                'Poison Cherbil',
+                '''Max HP: 5, Attack: 2. This floating beast attacks with perilous poison gas. I hear it smells awful.''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x212,
-        "Template 411",
+        'Template 411',
         1,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Dried Shroom", hex_value = get_hex_value("Dried Shroom"), weight = 500),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 50),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Dried Shroom', ItemID=0x53, ItemWeight=500), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=50), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=20)],
     ),
     '412':EnemyEntry (
-        "Poison Cherbil's Projectile",
+        '''Poison Cherbil's Projectile''',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 412",
+        'Template 412',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '413':EnemyEntry (
-        "Ice Cherbil",
+        'Ice Cherbil',
+        EnemyData(
+            5,
+            2,
+            0,
+            '''That's an Ice Cherbil. It's a nasty gasbag that spews a plume of freezy gas... Max HP is 5. Attack is 2. That gas will freeze you, so don't go sniffing it... Some say the gas come from their mouths. Some say it comes from elsewhere...... Oh, dear...''',
+            CardData(
+                89,
+                'Ice Cherbil',
+                '''Max HP: 5, Attack: 2. This floating beast attacks with ferocious freezy gas. It loves blue raspberry snow cones...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x211,
-        "Template 413",
+        'Template 413',
         0.04,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Ice Storm", hex_value = get_hex_value("Ice Storm"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Ice Storm', ItemID=0x42, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=20)],
     ),
     '414':EnemyEntry (
-        "Ice Cherbil's Projectile",
+        '''Ice Cherbil's Projectile''',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 414",
+        'Template 414',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '415':EnemyEntry (
-        "Dark Cherbil",
+        'Dark Cherbil',
+        EnemyData(
+            15,
+            4,
+            0,
+            '''That's a Dark Cherbil. This nasty gasbag spews a plume of gas at its enemies... Max HP is 15. Attack is 4. It uses sleepy gas, freezy gas, and poison gas... Some say the gas comes from their mouths. Some say it comes from elsewhere... But it's so dark and shadowy, nobody can tell where it comes from...''',
+            CardData(
+                91,
+                'Dark Cherbil',
+                '''Max HP: 15, Attack: 4. This odd gassy creature puffs itself up and explodes. They have sleepy, freezy, and poison gas, so watch out!''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x217,
-        "Template 415",
+        'Template 415',
         0.5,
-        EnemyDrops (
-            Drop (item_name = "Peachy Peach", hex_value = get_hex_value("Peachy Peach"), weight = 100),
-            Drop (item_name = "Sleepy Sleep", hex_value = get_hex_value("Sleepy Sleep"), weight = 100),
-            Drop (item_name = "Long-Last Shake", hex_value = get_hex_value("Long-Last Shake"), weight = 100),
-            Drop (item_name = "Catch Card", hex_value = get_hex_value("Catch Card"), weight = 20),
-        )
+        [Drop(ItemName='Peachy Peach', ItemID=0x64, ItemWeight=100), Drop(ItemName='Sleepy Sleep', ItemID=None, ItemWeight=100), Drop(ItemName='Long-Last Shake', ItemID=0x55, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=20)],
     ),
     '416':EnemyEntry (
-        "Dark Cherbil's Projectile",
+        '''Dark Cherbil's Projectile''',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 416",
+        'Template 416',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '417':EnemyEntry (
-        "Ice Dark Cherbil's Projectile",
+        '''Ice Dark Cherbil's Projectile''',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 417",
+        'Template 417',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '418':EnemyEntry (
-        "Poison Dark Cherbil's Projectile",
+        '''Poison Dark Cherbil's Projectile''',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 418",
+        'Template 418',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '419':EnemyEntry (
-        "Frackle",
+        'Frackle',
+        EnemyData(
+            1,
+            1,
+            0,
+            '''That's a Frackle. These little defense bots protect Fracktail's body... Max HP is 1. Attack is 1. They will attack any intruder they find on their master. They must have been made by the Ancients, just like Fracktail...''',
+            CardData(
+                182,
+                'Frackle',
+                '''Max HP: 1, Attack: 1. This bot defends Fracktail from foreign invaders. In off-hours, it relaxes on Fracktail's back...''',
+                'Card Shop; Catch Card/SP',
+                '★',
+            ),
+            ''
+        ),
         0x213,
-        "Template 419",
+        'Template 419',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '420':EnemyEntry (
-        "Wrackle",
+        'Wrackle',
+        EnemyData(
+            10,
+            10,
+            0,
+            '''That's a Wrackle. These little defense bots protect Wracktail's body... Max HP is 10. Attack is 10. They will attack any intruder they find on their master... They must've been made by the Ancients, just like Wracktail...''',
+            CardData(
+                183,
+                'Wrackle',
+                '''Max HP: 10, Attack: 10. This bot defends Wracktail from foreign invaders. It was made long ago, so its warranty has expired.''',
+                'Card Shop; Catch Card/SP',
+                '★★',
+            ),
+            ''
+        ),
         0x214,
-        "Template 420",
+        'Template 420',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '421':EnemyEntry (
-        "Nothing?",
+        'Nothing?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 421",
+        'Template 421',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '422':EnemyEntry (
-        "Enemy Mario",
+        'Enemy Mario',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 422",
+        'Template 422',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '423':EnemyEntry (
-        "Glitchy Enemy Mario",
+        'Glitchy Enemy Mario',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 423",
+        'Template 423',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '424':EnemyEntry (
-        "Enemy Luigi?",
+        'Enemy Luigi?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 424",
+        'Template 424',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '425':EnemyEntry (
-        "Enemy Luigi?",
+        'Enemy Luigi?',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 425",
+        'Template 425',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '426':EnemyEntry (
-        "Sammer Guy",
+        'Sammer Guy',
+        EnemyData(
+            0,
+            0,
+            0,
+            '''That is a Sammer Guy. This martial artist serves King Sammer... Max HP is 1-99. Attack is 1-10. Defense is 0-4. Basic attack patterns are similar, but every Sammer Guy is different... There are 100 of them in all. You will have to adapt to fighting each one... They always fight with great honor...''',
+            CardData(
+                214,
+                'Sammer Guy',
+                '''Max HP: 10-80, Attack: 1-8, Defense: 0-3. This is one of King Sammer's legendary 100 Sammer Guys. They're pretty sensitive about their honor.''',
+                'Card Shop',
+                '★★',
+            ),
+            ''
+        ),
         None,
-        "Template 426",
+        'Template 426',
         0,
-        EnemyDrops (
-            None
-        )
+        [Drop(ItemName=None, ItemID=None, ItemWeight=None)],
     ),
     '427':EnemyEntry (
-        "Stationary Enemy Mario",
+        'Stationary Enemy Mario',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 427",
+        'Template 427',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '428':EnemyEntry (
-        "Stationary Enemy Luigi",
+        'Stationary Enemy Luigi',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 428",
+        'Template 428',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '429':EnemyEntry (
-        "Stationary Enemy Peach",
+        'Stationary Enemy Peach',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 429",
+        'Template 429',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '430':EnemyEntry (
-        "Stationary Enemy Bowser",
+        'Stationary Enemy Bowser',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 430",
+        'Template 430',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '431':EnemyEntry (
-        "Two Koopa Strikers at once",
+        'Two Koopa Strikers at once',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 431",
+        'Template 431',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '432':EnemyEntry (
-        "Giant Shell",
+        'Giant Shell',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 432",
+        'Template 432',
         0,
-        EnemyDrops (
-            None
-        )
+        EnemyDrops(),
     ),
     '433':EnemyEntry (
-        "(No name)",
+        '(No name)',
+        EnemyData(0, 0, 0, '', '', ''),
         None,
-        "Template 433",
+        'Template 433',
         0,
-        EnemyDrops (
-            None
-        )
-    )
+        EnemyDrops(),
+    ),
 }
