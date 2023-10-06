@@ -27,7 +27,7 @@ class CardData():
     def __init__ (self, CardNum, Name, Description, Location, Rarity):
         self.CardNum = CardNum
         self.Name = Name
-        self.Descrption = Description
+        self.Description = Description
         self.Location = Location
         self.Rarity = Rarity
 
@@ -110,7 +110,7 @@ EnemyList = {
                 'Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.',
                 '★',
             ),
-            ''
+            'https://cdn.discordapp.com/attachments/885679610191298570/885701365622530089/Goomba.png'
         ),
         0x11A,
         'Template 1',
