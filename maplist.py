@@ -1,7 +1,11 @@
 from enum import Enum
 
-from .bighexlist import HexList
-from .enemylist import EnemyList
+try:
+    from SPMDictionary.bighexlist import HexList
+    from SPMDictionary.enemylist import EnemyList
+except ImportError:
+    from bighexlist import HexList
+    from enemylist import EnemyList
 
 class Map():
     def __init__(self, MapType, MapEnemies, MapItems, ShopItems, MapEntrance):

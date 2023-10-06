@@ -1,5 +1,9 @@
-from bighexlist import HexList
-from watches import game_region, game_revision
+try:
+    from SPMDictionary.bighexlist import HexList
+    from SPMDictionary.watches import game_region, game_revision
+except ImportError:
+    from bighexlist import HexList
+    from watches import game_region, game_revision
 
 class EnemyEntry():
     def __init__ (self, EnemyName, EnemyData, EnemyID, DropTemplate, DropPercent, EnemyDrops):
@@ -3716,7 +3720,7 @@ EnemyList = {
         0x168,
         'Template 216',
         0.05,
-        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='POW Block', ItemID=0x45, ItemWeight=200), Drop(Itemname='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
+        [Drop(ItemName='Power Steak', ItemID=0x75, ItemWeight=100), Drop(ItemName='POW Block', ItemID=0x45, ItemWeight=200), Drop(ItemName='Shroom Shake', ItemID=0x50, ItemWeight=100), Drop(ItemName='Catch Card', ItemID=0x57, ItemWeight=30)],
     ),
     '217':EnemyEntry (
         'Crazee Dayzee',
