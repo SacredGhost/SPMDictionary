@@ -152,10 +152,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-us0.txt
-output_enemy_entries.txt
-Card_Output.txt
-enemycard.txt
 everything for hundo.txt
 
 # PyCharm
