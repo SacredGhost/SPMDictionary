@@ -1,0 +1,257 @@
+Card #,Name,Description,Location(s),Rarity,Sell Price
+1,Goomba,"Max HP: 1, Attack: 1. This lowly goon is always getting stepped on. It isn't easy being a soft, mushroomy minion.",Card Shop; Catch Card/SP; Chapter 1-1: Found in 3D behind a tall pipe in the second area.,★,1
+2,Dark Goomba,"Max HP: 10, Attack: 2. This Dark Goomba dwells in a certain secret pit. It's shadowy, adorable, and oh so stompable.",Card Shop; Catch Card/SP,★,2
+3,Spiked Goomba,"Max HP: 1, Attack: 2. A Goomba with a spike strapped to its helmet. Head spikes: The ultimate in antistomping technology.",Card Shop; Catch Card/SP,★,2
+4,Dark Spiked Goomba,"Max HP: 10, Attack: 4. This spiky guy dwells in a certain secret pit. It may be dark, but it's not dim. Or is it...?",Card Shop; Catch Card/SP,★,3
+5,Paragoomba,"Max HP: 1, Attack: 1. A Goomba that has been through airborne training. One stomp, and it's like it never went to flight school.",Card Shop; Catch Card/SP,★,2
+6,Dark Paragoomba,"Max HP: 10, Attack: 2. The Dark Paragoomba lives in a certain secret pit. Give it a friendly stomp to turn it into a Dark Goomba.",Card Shop; Catch Card/SP,★,2
+7,Gloomba,"Max HP: 2, Attack: 2. A Goomba that thrives in dank, depressing holes. A strict all-mushroom diet makes this guy extra fungal.",Card Shop; Catch Card/SP,★,2
+8,Headbonk Goomba,"Max HP: 1, Attack: 2. A tenacious Goomba that'll headbonk anything in sight. Caution: headbonking is a leading cause of headaches.",Card Shop; Catch Card/SP,★,12
+9,Dark Headbonk Goomba,"Max HP: 10, Attack: 4. Dark Headbonk Goombas live in a certain secret pit. They look like Dark Goombas, but they bonk!",Card Shop; Catch Card/SP,★,6
+10,Koopa Troopa,"Max HP: 1, Attack: 1, Defense: 1. Koopa Troopas have always been causing trouble. When they get attacked, they retreat into their shells. Of course, there's nothing stopping you from kicking it.",Card Shop; Catch Card/SP; Chapter 1-1: Found in a secret area via a 3D-accessible path near the Star Block.,★,2
+11,Mega Koopa,"Max HP: 1, Attack: 2, Defense: 1. This Koopa got a Mega Star. Now it's a mega problem. Don't look at it in 3-D, or it'll blow your mind!",Card Shop; Earn 100 shop points,★,100
+12,Dark Koopa,"Max HP: 10, Attack: 2, Defense: 3. This guy dwells in a certain secret pit. Like a Koopa, but somehow...darker.",Card Shop; Catch Card/SP,★,3
+13,Koopatrol,"Max HP: 15, Attack: 3, Defense: 4. The heavy-metal Koopatrol feels no remorse. It'll roll right over its own Koopa granny. But it's not well-suited for aquatic operations.",Card Shop; Catch Card/SP,★,12
+14,Dark Koopatrol,"Max HP: 30, Attack: 6, Defense: 8. Dark Koopatrols dwell in a certain secret pit. Stomp them to turn them into...dark shells. Shocker! (US)",Card Shop; Catch Card/SP,★,15
+15,Paratroopa,"Max HP: 1, Attack: 1, Defense: 1. This Koopa Troopa breezed through flight school. A quick stomp to the head will ground it. Forever.",Card Shop; Catch Card/SP; Chapter 1-2: Found in a hidden area via a 3D-accessible path behind the first set of mountain platforms in the first area.,★,2
+16,Dark Paratroopa,"Max HP: 10, Attack: 2, Defense: 3. Dark Paratroopas defend a certain secret pit. You think they'll turn into Dark Koopas when stomped? ...You'd be right.",Card Shop; Catch Card/SP,★,2
+17,Buzzy Beetle,"Max HP: 1, Attack: 1, Defense: 3. This little guy is built to withstand anything. Even a Muth stampede wouldn't flatten it. ...Probably.",Card Shop; Catch Card/SP; Chapter 1-4: Found in a secret area via a 3D-accessible path near the door to the Spiky Tromp trap area.,★,1
+18,Spike Top,"Max HP: 1, Attack: 2, Defense: 3. A Buzzy Beetle that's all spiked out and ready to go. Try to control your urge to stomp on it.",Card Shop; Catch Card/SP,★,6
+19,Dark Spike Top,"Max HP: 10, Attack: 4, Defense: 6. It's a Dark Spike Top from a certain secret pit. Still cute, despite looking noticeably more evil.",Card Shop; Catch Card/SP,★,2
+20,Parabuzzy,"Max HP: 1, Attack: 1, Defense: 3. Just look at this cute little Buzzy Beetle with wings. It'll lose its wings if you stomp on it. Of course, that would be totally heartless.",Card Shop; Catch Card/SP,★,2
+21,Spiky Parabuzzy,"Max HP: 1, Attack, 2, Defense: 3. Not so cute anymore, is it? Wings! Spikes! Come on! You can't stomp it, AND it's hard to hammer. Brutal.",Card Shop; Catch Card/SP,★,2
+22,Stone Buzzy,"Max HP: 3, Attack: 2. It's a Buzzy Beetle with a rock-hard shell. You'll have to stomp on it a few times to crack it. You may feel a little guilty, but push through it.",Card Shop; Catch Card/SP; Chapter 5-2: Found after gliding over the canyon with the Star Block as Peach and using Mario to flip into 3D.,★,3
+23,Dark Stone Buzzy,"Max HP: 3, Attack: 4. It's a Dark Stone Buzzy from a certain secret pit. They look the same, but they're definitely tougher.",Card Shop; Catch Card/SP,★,6
+24,Spiny,"Max HP: 4, Attack: 2, Defense: 3. You DO NOT want to step on this razor-sharp baddie. They're born covered in spiny spines. This makes hugging a Spiny a little...awkward.",Card Shop; Catch Card/SP,★,2
+25,Dark Spiny,"Max HP: 10, Attack: 4, Defense: 6. This Dark Spiny waddles in a certain secret pit. You can't see its beady little eyes, but it's watching...",Card Shop; Catch Card/SP,★,2
+26,Lakitu,"Max HP: 4, Attack: 1. Lakitu chucks Spinys like coins at a Pianta Parlor. What's its problem? Someone made fun of its glasses.",Card Shop; Catch Card/SP,★,7
+27,Dull Bones,"Max HP: 15, Attack: 4. This undead Koopa wanders around with a blank stare. It's not too psyched about being dead. It mostly throws bones out of sheer spite.",Card Shop; Catch Card/SP,★,2
+28,Dark Dull Bones,"Max HP: 20, Attack: 8. The Dark Dull Bones dwells in a certain secret pit. The bones it throws are really...shady.",Card Shop; Catch Card/SP,★,3
+29,Dry Bones,"Max HP: 10, Attack: 2. This resilient revenant won't rest in peace. Maybe it's its undying loyalty to Bowser. Or was it the pie it never got a chance to eat?",Card Shop; Catch Card/SP; Chapter 7-1: Found in a small alcove in 3D to the left of the moving fountains near when Mario found Luigi.,★,2
+30,Hammer Bro,"Max HP: 4, Attack: 1, Defense: 1. This elite Koopa has a hankering for hammers. It mostly likes to sit up high and toss down hammers. One day, it'll take the carpentry world by storm.",Card Shop; Catch Card/SP,★★,24
+31,Dark Hammer Bro,"Max HP: 20, Attack: 4, Defense: 3. Dark Hammer Bros. terrorize a certain secret pit. Fear them! Fear them or be struck with flying mallets.",Card Shop; Catch Card/SP,★,6
+32,Boomerang Bro,"Max HP: 10, Attack: 3, Defense: 1. This elite Koopa goes bananas for boomerangs. Unfortunately, they hurt when you try to eat them.",Card Shop; Catch Card/SP,★★,28
+33,Dark Boomerang Bro,"Max HP: 20, Attack: 6, Defense: 3. This Dark Boomerang Bro dwells in a certain secret pit. Is it all that smart to throw boomerangs in the dark?",Card Shop; Catch Card/SP,★,12
+34,Fire Bro,"Max HP: 10, Attack: 3, Defense: 1. This elite Koopa has an unhealthy fireball fixation. However, it's a big hit at Koopa cookouts.",Card Shop; Catch Card/SP,★★,28
+35,Dark Fire Bro,"Max HP: 20, Attack: 6, Defense: 3. This Dark Fire Bro dwells in a certain secret pit. Are pitch-black fireballs even hot?",Card Shop; Catch Card/SP,★,12
+36,Magikoopa,"Max HP: 6, Attack: 3. This elite Koopa is an expert hexologist. It also has questionable taste in eyewear.","Card Shop; Catch Card/SP; Chapter 3-1: Found in 3D in the secret area via the furthest pipe on the right of the ""Warp Zone"" pipe trio in the underground area.",★★,24
+37,Dark Magikoopa,"Max HP: 20, Attack: 6. Dark Magikoopas dwell in a certain secret pit. Too bad you can't see its face... It's wearing contacts!",Card Shop; Catch Card/SP,★,2
+38,Koopa Striker,"Max HP: 8, Attack: 2, Defense: 1. This Koopa Striker kicks for the love of the game. Its luxurious eyebrows are... Wait a sec... GOOOAAAALLLL!",Card Shop; Catch Card/SP,★,2
+39,Toopa Striker,"Max HP: 8, Attack: 2, Defense: 1. Toopa Strikers are true team players. Watch out for the no-look shell-to-face assists!",Card Shop; Catch Card/SP,★★,32
+40,Soopa Striker,"Max HP: 16, Attack: 5, Defense: 1. It's the star player of the Koopa Kickers. It's even on the cover of Koopa Kleats magazine!",Card Shop; Catch Card/SP,★,6
+41,Dark Striker,"Max HP: 20, Attack: 6, Defense: 3. Dark Strikers play in a certain secret pit. One red card too many, and they went to the dark side!",Card Shop; Catch Card/SP,★,2
+42,Clubba,"Max HP: 20, Attack: 3. This soldier would rather nap than face the front lines. Hauling that club around would make anyone tired.",Card Shop; Catch Card/SP,★,5
+43,Dark Clubba,"Max HP: 60, Attack: 6. This Dark Clubba stumbles around a certain secret pit. Dark Clubbas are still sleepy. Some things never change.",Card Shop; Catch Card/SP,★,3
+44,Squiglet,"Max HP: 2, Attack: 1. Awww... look at that adorable little Squiglet. So adorable under your foot.",Card Shop; Catch Card/SP; Chapter 1-1: Found on top of Bestovius' house.,★,1
+45,Squig,"Max HP: 4, Attack: 1. This nasty little guy needs to learn some manners. It spits rocks at people! Honestly, who does that?",Card Shop; Catch Card/SP; Chapter 1-3: Found after flipping to 3D behind a rock near the red palm tree.,★,7
+46,Squog,"Max HP: 10, Attack: 2. For wild, feral animals, Squogs are pretty cute. That is, until you see them eating.",Card Shop; Catch Card/SP,★,2
+47,Squoinker,"Max HP: 15, Attack: 4. Squoinkers are proud to be pretty in pink. The polka dots are for extra intimidation.",Card Shop; Catch Card/SP,★,6
+48,Dark Squiglet,"Max HP: 20, Attack: 8. The Dark Squiglet dwells in a certain secret pit. Awwww, it spits oily black rocks! Adorable!",Card Shop; Catch Card/SP,★,6
+49,Sproing-Oing,"Max HP: 4, Attack: 1. Sproing-Oings split into three when they get stomped. These little critters can throw off your timing, so watch it!",Card Shop; Catch Card/SP,★,2
+50,Boing-Oing,"Max HP: 8, Attack: 2. This bouncing bully splits in three when you stomp on it. Stomp your heart out before you get swarmed!",Card Shop; Catch Card/SP,★,2
+51,Zoing-Oing,"Max HP: 12, Attack: 3. This mad hopper splits in three when you stomp on it. It's looking a little on the pale side. Maybe it's all that late-night trampoline training.",Card Shop; Catch Card/SP,★,3
+52,Dark Sproing-Oing,"Max HP: 16, Attack: 4. The Dark Sproing-Oing dwells in a certain secret pit. This one doesn't split and clone... Haha, actually it does.",Card Shop; Catch Card/SP,★,2
+53,Boomboxer,"Max HP: 4, Attack: 2. This music maven will assault you with bowel-busting bass! What's with the face it makes when it rocks out?",Card Shop; Catch Card/SP; Chapter 1-2: Found on top of Watchitt's house.,★,3
+54,Beepboxer,"Max HP: 10, Attack: 4. This angry audiophile deafens you with sound. Loves loud music, but hates explosions. Go figure.",Card Shop; Catch Card/SP,★,3
+55,Blastboxer,"Max HP: 16, Attack: 6. You're going to be blown away by this mighty rocker. This one hates explosions, which is totally not metal.",Card Shop; Catch Card/SP,★,2
+56,Dark Boomboxer,"Max HP: 32, Attack: 8. The Dark Boomboxer rocks out in a certain secret pit. It's sad not to see that crazy face it makes.",Card Shop; Catch Card/SP,★,6
+57,Piranha Plant,"Max HP: 2, Attack: 1. This violent vine, lurks in pipes, waiting for a snack. You'd be surly too if you lived in a pipe.",Card Shop; Catch Card/SP; Chapter 3-1: Found on a platform after jumping along the coloured columns.,★,2
+58,Putrid Piranha,"Max HP: 5, Attack: 2. It's a poisonous Piranha Plant. As they say, every rose has its venomous bite.",Card Shop; Catch Card/SP,★,2
+59,Frost Piranha,"Max HP: 7, Attack: 3. Someone left this flower out in the winter cold. On the plus side, it can cool beverages in a hurry.",Card Shop; Catch Card/SP,★,6
+60,Crazee Dayzee,"Max HP: 10, Attack: 2. Crazee Dayzees are cute, but they'll put you to sleep. But sleeping really isn't all that Crazee...",Card Shop; Catch Card/SP,★,2
+61,Amazy Dayzee,"Max HP: 30, Attack: 10. This bashful bloom will run off if you get too close. What makes it so Amazy anyway? It seems like more of a wallflower.",Card Shop; Catch Card/SP; Prize in Flipside Arcade for 500 Flipside Tokens,★★★,300
+62,Dark Dayzee,"Max HP: 99, Attack: 20. Dark Dayzees sprout in a certain secret pit. Even in the dark... This flower's got style!",Card Shop; Catch Card/SP,★★,60
+63,Fuzzy,"Max HP: 5, Attack: 1. What dark and evil thoughts dwell in this beast's brain? And what's so fuzzy about it anyway? It doesn't look too cuddly.",Card Shop; Catch Card/SP,★,2
+64,Pink Fuzzy,"Max HP: 10, Attack: 2. If you had to be a Fuzzy, pink wouldn't be a bad color. Still, no one's winning any cuteness contests here.",Card Shop; Catch Card/SP,★,6
+65,Dark Fuzzy,"Max HP: 15, Attack: 4. This Dark Fuzzy squirms in a certain secret pit. This one must have come from a load of dark laundry.",Card Shop; Catch Card/SP,★,2
+66,Pokey,"Max HP: 6, Attack: 2. This cactus column wanders in the desert wasteland. When it attacks, it hurls parts of itself at you. Literally. Which is kind of sad, really.",Card Shop; Catch Card/SP,★,2
+67,Poison Pokey,"Max HP: 12, Attack: 2. With prickles and poison, this baddie is double trouble. All it needs is a big hug. Any volunteers?",Card Shop; Catch Card/SP,★,2
+68,Dark Pokey,"Max HP: 20, Attack: 4. The Dark Pokey teeters in a certain secret pit. It looks so serious when it wears black!",Card Shop; Catch Card/SP,★,6
+69,Cheep Cheep,"Max HP: 2, Attack: 1. These odd fish hurl themselves out of the water. For a fish, it's not the safest hobby.",Card Shop; Catch Card/SP,★,2
+70,Blooper,"Max HP: 1, Attack: 2. Bloopers love to laugh at other Bloopers' bloopers. Nobody wants to end up on the Blooper reel.",Card Shop; Catch Card/SP,★,3
+71,Bittacuda,"Max HP: 10, Attack: 2. This big fish could feed an army! ...Or eat an army.",Card Shop; Catch Card/SP,★,6
+72,Jawbus,"Max HP: 5, Attack: 1. Count on a Jawbus to stick its neck out for you. Or at you.",Card Shop; Catch Card/SP,★,12
+73,Rawbus,"Max HP: 10, Attack: 2. This nasty dino has always got to give you a jaw full. Flip to 3-D and check out its funny little limbs!","Card Shop; Catch Card/SP; Chapter 7-3: Found on the cloud with Rawbuses, which is next to cloud 25.",★★,48
+74,Dark Jawbus,"Max HP: 30, Attack: 8. This Dark Jawbus dwells in a certain secret Pit. It was so nice to see its face. Now it's all shadow...",Card Shop; Catch Card/SP,★,18
+75,Gawbus,"Max HP: 20, Attack: 4. This thing is always sticking its neck in your business. It'll flounder around when it's waiting to be picked up.",Card Shop; Catch Card/SP,★,18
+76,Spania,"Max HP: 6, Attack: 1. This horned beast will charge right at you. Stay light on your feet or you'll be skewered!",Card Shop; Catch Card/SP; Chapter 5-3: Found in a small 3D-accessible area under the blocks leading to Monzo.,★,7
+77,Dark Spania,"Max HP: 20, Attack: 2. This Dark Spania dwells in a certain secret pit. Think of it, just spinning around in the darkness...",Card Shop; Catch Card/SP,★,12
+78,Cursya,"Max HP: 1, Attack: 1. This nasty critter will slow you down. It's just so easy to get lost in those dreamy eyes.",Card Shop; Catch Card/SP; Chapter 2-2: Found on the balcony above the front door of Merlee's Mansion.,★,2
+79,Back Cursya,"Max HP: 1, Attack: 1. This pest will send you straight back to Flipside. Then again, it's one way to cut down on your commute.",Card Shop; Catch Card/SP; Map 18,★,12
+80,Tech Cursya,"Max HP: 1, Attack: 1. This evil baddie can whip up a helping of instant amnesia. Just like that, and you can't flip between dimensions! You never know what you had until it's gone, right?",Card Shop; Catch Card/SP,★,2
+81,Heavy Cursya,"Max HP: 1, Attack: 1. This thing will hit you like a ton of bricks. You'll barely be able to hop a few inches off the ground. Take it out from a distance.",Card Shop; Catch Card/SP,★,2
+82,Reversya Cursya,"Max HP: 1, Attack: 1. Hit this thing and you'll lose all sense of direction. Don't be alarmed: everything will be backwards. But if you relax a little, you'll figure it out.",Card Shop; Catch Card/SP,★,2
+83,Dark Cursya,"Max HP: 10, Attack: 2. Dark Cursyas live in a certain secret pit. Play the fun game and see which curse you'll get!",Card Shop; Catch Card/SP,★,3
+84,Dark Tech Cursya,"Max HP: 10, Attack: 2. This Dark Tech Cursya lives in a certain secret pit. This is the last place I want to meet one of these guys...",Card Shop; Catch Card/SP,★,3
+85,Dark Heavy Cursya,"Max HP: 10, Attack: 2. This Dark Heavy Cursya lives in a certain secret pit. Isn't it fun to guess which curse you'll get?",Card Shop; Catch Card/SP,★,3
+86,Dark Reversya Cursya,"Max HP: 10, Attack: 2. This Dark Reversya Cursya lives in a certain secret pit. You never know what curse you'll get until you touch it!",Card Shop; Catch Card/SP,★,3
+87,Swooper,"Max HP: 3, Attack: 1. Swoopers aren't so bad, they're just lonely. Strangely, they greet visitors by snacking on their heads. ...This could explain why they have no friends.",Card Shop; Catch Card/SP; Chapter 2-1: Found in an underground area under the Star Block via a 3D-accessible hole.,★,2
+88,Cherbil,"Max HP: 5, Attack: 2. This odd floating beast strikes with sleeping gas. One whiff of that gas and it's sweet dreams...",Card Shop; Catch Card/SP,★,2
+89,Ice Cherbil,"Max HP: 5, Attack: 2. This floating beast attacks with ferocious freezy gas. It loves blue raspberry snow cones...",Card Shop; Catch Card/SP,★,3
+90,Poison Cherbil,"Max HP: 5, Attack: 2. This floating beast attacks with perilous poison gas. I hear it smells awful.",Card Shop; Catch Card/SP,★,6
+91,Dark Cherbil,"Max HP: 15, Attack: 4. This odd gassy creature puffs itself up and explodes. They have sleepy, freezy, and poison gas, so watch out!",Card Shop; Catch Card/SP,★,15
+92,Boo,"Max HP: 4, Attack: 1. These spooks only approach when your back is turned. They'd be awesome at ""Red light, green light""! ...Except they bite you if they win.",Card Shop; Catch Card/SP; Chapter 2-3: Found in a small 3D-accessible area above the door to Mimi's office.,★,2
+93,Dark Boo,"Max HP: 13, Attack: 2. This ghastly ghost hates being stared at. Unlike other Boos, it will turn around in front of you.",Card Shop; Catch Card/SP; Chapter 7-2: Found on a top-right platform of the second area with the Dark Boos and Underhands.,★,2
+94,Dark Dark Boo,"Max HP: 20, Attack: 4. This Dark Dark Boo dwells in a certain secret pit. Dark sheets make it extra not-so-scary!",Card Shop; Catch Card/SP,★,3
+95,Atomic Boo,"Max HP: 10, Attack: 2. This gigantic Boo still hides when you look at it. Some say it's a gathering of many smaller Boos...",Card Shop; Catch Card/SP,★,12
+96,Growmeba,"Max HP: 2, Attack: 1. Growmebas copy themselves over and over and over. Just stomp the real one to make them all disappear.",Card Shop; Catch Card/SP,★,2
+97,Blomeba,"Max HP: 5, Attack: 2. This weird little guy can't stop copying itself. Try using an item to put them all out of their misery.",Card Shop; Catch Card/SP,★,2
+98,Chromeba,"Max HP: 10, Attack: 3. This devious doppelganger loves to copy itself. Stomp them all before the problem multiplies!",Card Shop; Catch Card/SP,★,3
+99,Dark Growmeba,"Max HP: 20, Attack: 4. This Dark Growmeba lurks in a certain secret pit. Which one's real?! Gah, it's very hard to tell.",Card Shop; Catch Card/SP,★,6
+100,Mister I,"Max HP: ??, Attack: 2. It's an eye. A big, juicy, unblinking, ever-watching eye. ...Gross.",Card Shop; Catch Card/SP,★,12
+101,Red I,"Max HP: ??, Attack: 4. This big, red eye looks a little irritated. It must not be getting much sleep these days.",Card Shop; Catch Card/SP,★,7
+102,Chain Chomp,"Max HP: 4, Attack: 1, Defense: 4. Chain Chomps are more bark than bite. But that's not much comfort for the mailman...",Card Shop; Catch Card/SP,★,12
+103,Red Chomp,"Max HP: 8, Attack: 3, Defense: 8. This bright red breed isn't very well behaved. That probably rules out winning best of show.",Card Shop; Catch Card/SP,★★,44
+104,The Underchomp,"Max HP: 16, Attack: 3, Defense: 4. The three Dorguys command this special breed of Chomp. In off-hours they like to practice their comedy act.",Card Shop; Map 41,★★,64
+105,Dark Chomp,"Max HP: 10, Attack: 4, Defense: 10. This Dark Chomp makes its home in a certain secret pit. Who's a good boy?! Who's a dark, evil boy! Yes you are!",Card Shop; Catch Card/SP,★,7
+106,Bald Cleft,"Max HP: 2, Attack: 1, Defense: 2. This hardheaded minion is easily mistaken for a rock. It'll turn around if it bumps into a wall. If hit with an explosion, its Defense drops to 0.",Card Shop; Catch Card/SP,★,2
+107,Moon Cleft,"Max HP: 5, Attack: 2, Defense: 4. It's an evil mineral that looks just like a rock. That is, until it's too late!",Card Shop; Catch Card/SP; Chapter 5-1: Found in a small 3D-accessible alcove below the canyon to the right of the first block puzzle.,★,3
+108,Dark Cleft,"Max HP: 10, Attack: 4, Defense: 10. This Dark Cleft dwells in a certain secret pit. You'd have to really try to mistake it for a rock...",Card Shop; Catch Card/SP,★,2
+109,Shlurp,"Max HP: ??, Attack: 2. This hungry beast really sucks...stuff up! Bombs give it a bad case of heartburn.",Card Shop; Catch Card/SP; Chapter 2-1: Found in an underground area under the Star Block via a 3D-accessible hole.,★,7
+110,Shlorp,"Max HP: ??, Attack: 3. It's a vacuum! It's a worm! It's both! Don't feed it bombs, or you'll ruin its supper. Forever.",Card Shop; Catch Card/SP,★,2
+111,Dark Shlurp,"Max HP: ??, Attack: 4. The Dark Shlurp dwells in a certain secret pit. Now with the cleaning power of darkness!",Card Shop; Catch Card/SP,★,12
+112,Thwomp,This block-headed rocker really loves making pancakes. All that macho pounding must be a sign of insecurity.,Card Shop; Flimm; Catch Card/SP,★★,36
+113,Spiny Tromp,"It's a massive, rolling pinwheel of doom. If it keeps rolling, maybe it'll aerate someone's lawn.",Card Shop; Flimm; Catch Card/SP,★★,40
+114,Spiky Tromp,"This bowling boulder rolls around in search of prey. Don't get caught under the spikes, or you'll be tenderized.",Card Shop; Flimm; Catch Card/SP,★★,32
+115,Bullet Bill,"Max HP: 1, Attack: 2. In our hearts, this monster is number one with a bullet. It does have a short fuse, though...",Card Shop; Catch Card/SP,★,3
+116,Bill Blaster,"Max HP: 5, Attack: 2, Defense: 3. It's a big, burly cannon. Where do all those bullets come from?",Card Shop; Catch Card/SP,★,6
+117,Ruff Puff,"Max HP: 15, Attack: 4. This little thundercloud is darkening a sky near you! Looks a little like cotton candy, but don't bite!",Card Shop; Catch Card/SP; Chapter 7-3: Found on the left of cloud 34.,★,3
+118,Dark Ruff Puff,"Max HP: 30, Attack: 6. This Dark Ruff Puff floats in a certain secret pit. Dark thunder... Wow... That is so METAL!",Card Shop; Catch Card/SP,★,6
+119,Lava Bubble,"Max HP: 1, Attack: 4. Lava Bubbles always have a bounce to their step. But watch out: they've got fiery tempers.",Card Shop; Catch Card/SP,★,6
+120,Tileoid G,"Max HP: 5, Attack: 1. These sticky creatures crawl along walls. They're like living, antigravity tumbleweeds!",Card Shop; Catch Card/SP,★,2
+121,Tileoid B,"Max HP: 10, Attack: 1. This sticky beast clings to any surface. Caution: it is not blue cotton candy.",Card Shop; Catch Card/SP,★,2
+122,Tileoid R,"Max HP: 15, Attack: 2. This gluey, gloppy animal will stick to any surface. Gluey and gloppy...not the best traits.",Card Shop; Catch Card/SP,★,2
+123,Tileoid Y,"Max HP: 10, Attack: 2. This tenaciously sticky beast slides along walls and ceilings. And it even doubles as an industrial adhesive!",Card Shop; Catch Card/SP,★,2
+124,Dark Tileoid,"Max HP: 25, Attack: 4. This Dark Tileoid scuttles around a certain secret pit. Yikes... This shadowy one is really tough!",Card Shop; Catch Card/SP,★,2
+125,Meowbomb,"Max HP: 1, Attack: 2, Defense: 1. These feline robo-bombs get shot out of SurpriseMeows. Strangely, they don't mind getting blown to meowbits.",Card Shop; Catch Card/SP,★,15
+126,PatrolMeow,"Max HP: 5, Attack: 2, Defense: 1. This patrol puss is the hall monitor of Fort Francis. Ever vigilant...and flea resistant!",Card Shop; Catch Card/SP,★,15
+127,AirMeow,"Max HP: 5, Attack: 2, Defense: 1. This AirMeow guards the skies over Fort Francis. It runs on a volatile mixture of catnip and cooking oil.",Card Shop; Catch Card/SP,★,15
+128,SurpriseMeow,"Max HP: 1, Attack: 2. It's the latest in feline firepower: a kitty cannon. Check out the visors they're sporting. Classy!",Card Shop; Catch Card/SP,★,15
+129,BigMeow,These robotic cat servants are loyal to their master. They're not designed for battle. But they aren't going to complain about it!,Card Shop; Catch Card/SP; Flimm,★★,60
+130,Meowmaid,No chore is a bore to this robotic housecleaner! She loves her master with endless devotion. ...Because he programmed her that way.,Card Shop,★,15
+131,SecuriMeow,No chore is a bore to this robotic housecleaner! This Meowmaid model can make advanced decisions.,Card Shop; Flimm,★★,50
+132,Jellien,"Max HP: 4, Attack: 2. Jelliens drift around the lonely ocean of space. Maybe they've discovered the best way to get around? Intergalactic jiggling: the newest form of space travel.",Card Shop; Catch Card/SP,★,2
+133,Foton,"Max HP: 8, Attack: 2. Fotons fire super-fast, superheated particles. Of course, they're big crowd-pleasers at parties.",Card Shop; Catch Card/SP; Chapter 4-1: Found in 3D behind an asteroid near the Jelliens.,★,2
+134,Warpid,"Max HP: 10, Attack: 2. This space case warps around here and there. It won't bother you. Just let it do its thing.",Card Shop; Catch Card/SP,★,2
+135,Eeligon,"Max HP: 10, Attack: 2. Eeligons slither through the murky bits of the cosmos. Hit them and they'll shrink faster than their egos.",Card Shop; Catch Card/SP,★,2
+136,Hooligon,"Max HP: 10, Attack: 2. Hooligons love to wreak havoc in the depths of space. They blend into their habitat, waiting to attack.",Card Shop; Catch Card/SP; Map 26,★,2
+137,Dark Eeligon,"Max HP: 30, Attack: 4. This Dark Eeligon flies around in a certain secret pit. So...this one's dark, but it's pretty much the same.",Card Shop; Catch Card/SP,★,3
+138,Longator,"Max HP: 12, Attack: 1. Longators get in your face. They have no respect for your personal space-bubble.",Card Shop; Catch Card/SP,★,1
+139,Longadile,"Max HP: 20, Attack: 2. Super-elastic Longadiles stretch out to slap you. It'd chap its hands on your face...if it had hands.",Card Shop; Catch Card/SP,★,1
+140,Dark Longator,"Max HP: 30, Attack: 4. This Dark Longator nests in a certain secret pit. It's just...weird.",Card Shop; Catch Card/SP,★,1
+141,Barribad,"Max HP: 4, Attack: 2. A round enemy that wraps itself in a force field. Round face, square shield... Triangle brain?",Card Shop; Catch Card/SP,★,2
+142,Sobarribad,"Max HP: 8, Attack: 4. A round enemy that wraps itself in a force field. Flip through dimensions to shred it like paper!",Card Shop; Catch Card/SP,★,2
+143,Dark Barribad,"Max HP: 12, Attack: 8. The Dark Barribad roams around in a certain secret pit. It looks eerily similar to a flying bowling ball.",Card Shop; Catch Card/SP,★,6
+144,Pigarithm,"Max HP: ??, Attack: 2. Takes three stomps to beat. Stomp the piggy back to get the golden goodness inside! Each time you stomp, the pig will get a little smaller.",Card Shop; Catch Card/SP,★,2
+145,Hogarithm,"Max HP: ??, Attack: 4. Takes three stomps to beat. Hop on this hog and ride it all the way to the bank! Soooooooie!",Card Shop; Catch Card/SP,★,2
+146,Dark Pigarithm,"Max HP: ??, Attack: 6. Takes three stomps to beat. This Dark Pigarithm wallows around in a certain secret pit. It may look weird, but it drops coins! Cha-ching!",Card Shop; Catch Card/SP,★,3
+147,Choppa,"Max HP: 5, Attack: 1. Check out this aerial alien's sweet midair tricks. It can appear and disappear in a flash. Not even fair.",Card Shop; Catch Card/SP,★,2
+148,Copta,"Max HP: 10, Attack: 3. This aerial alien has even sweeter midair maneuvers. You'll get dizzy just watching this thing.",Card Shop; Catch Card/SP,★,2
+149,Dark Choppa,"Max HP: 15, Attack: 5. This Dark Choppa dwells in a certain secret pit. It's all shadowy now, but still very, very nervous...",Card Shop; Catch Card/SP,★,2
+150,Muth,"Max HP: 100, Attack: 5. Fear the woolly foot of the mighty Muth! It'll trample you just for looking at it wrong.",Card Shop; Catch Card/SP; Map 30,★★,60
+151,Mega Muth,"Max HP: 200, Attack: 8. This hairy Muth is even grumpier than its herd mates. Probably not the best choice for a petting zoo.",Card Shop; Catch Card/SP,★,30
+152,Dark Muth,"Max HP: 255, Attack: 10. Dark Muths stomp around in a certain secret pit. Even in the dark, they still go with the herd. Fascinating.",Card Shop; Catch Card/SP,★,2
+153,Floro Sapien,"Max HP: 12, Attack: 3. Floro Sapiens serve their floral lord, King Croacus. Watch your head because they'll throw theirs at you!",Card Shop; Catch Card/SP,★,2
+154,Floro Cragnien,"Max HP: 10, Attack: 1. This poor Cragnon has been zombified by King Croacus. Don't beat on it, or you'll lose some serious points.",Card Shop; Catch Card/SP; Chapter 5-4: Found at the far left of room with the caged Floro Cragniens.,★★,40
+155,Ninjoe,"Max HP: 6, Attack: 2. Only the wind whispers the name of Ninjoe. Give him enough money, and he'll be your ninja minion.",Card Shop; Catch Card/SP,★,6
+156,Ninjohn,"Max HP: 8, Attack: 3. Ninjohn is an assassin from King Sammer's Kingdom. He really knows how to hurl a mean throwing star.",Card Shop; Catch Card/SP,★,7
+157,Ninjerry,"Max HP: 10, Attack: 4. Never mess with Ninjerry. He is a true ninja master! Of course, shape-shifting like that isn't exactly fair.",Card Shop; Catch Card/SP,★,12
+158,Dark Ninjoe,"Max HP: 20, Attack: 5. This Dark Ninjoe creeps around a certain secret pit. They move at the speed of DEADLY. Roundhouse kick!",Card Shop; Catch Card/SP,★,13
+159,Underhand,"This white-gloved weirdo will reach out and grab you. You can't beat it and it's creepy, so just steer clear. Just be glad it isn't inspecting your room.",Card Shop; Catch Card/SP; Map 39,★★,40
+160,Skellobit,"Max HP: 10, Attack: 2, Defense: 2. Skellobits roam the dark pits of The Underwhere. Their spears make them pretty much unstompable.",Card Shop; Catch Card/SP; Chapter 7-4: Found in an area via a pipe under the first cloud in Overthere Sector 5.,★,7
+161,Spiky Skellobit,"Max HP: 10, Attack: 2, Defense: 2. This fiend infests the dark depths of The Underwhere. Smack it from the side because you can't stomp it!",Card Shop; Catch Card/SP; Chapter 7-4: Found in 3D behind the stairs leading to Grambi.,★,6
+162,Dark Skellobit,"Max HP: 30, Attack: 4, Defense: 4. Dark Skellobits dwell in a certain secret pit. ...And that's about it.",Card Shop; Catch Card/SP,★,7
+163,Dark Spiky Skellobit,"Max HP: 30, Attack: 4, Defense: 4. Dark Spiky Skellobits dwell in a certain secret pit. It's got spikes... Other than that, not much else going on.",Card Shop; Catch Card/SP,★,12
+164,Skellobomber,"Max HP: 10, Attack: 2, Defense: 2. This airborne ghoul rules the foul skies of The Underwhere. It'll mostly try to impale you with Skellobaits. It'll also throw its own head at you. That's hard core.",Card Shop; Catch Card/SP; Chapter 7-4: Found in an area via a pipe under the first cloud in Overthere Sector 5.,★,3
+165,Skellobait,"Max HP: 5, Attack: 2, Defense: 1. Skellobombers use these as ammo. Their icy breath can cause freezebite.",Card Shop; Catch Card/SP,★,2
+166,Spiky Skellobait,"Max HP: 5, Attack: 2, Defense: 1. It's a Spiky Skellobait. Like a Skellobait, but spikier. You can't stomp on it or throw it, so don't even try. Just use a Skellobomber's head, why don't you?",Card Shop; Catch Card/SP,★,2
+167,Red Magiblot,"Max HP: 15, Attack: 6. This spellslinging stain can warp wherever it wants. It's red, but what's it so embarrassed about?",Card Shop; Catch Card/SP,★,12
+168,Blue Magiblot,"Max HP: 25, Attack: 4. This spellslinging stain curses like a...Magiblot. It's blue. Maybe it's not easy being a Magiblot.",Card Shop; Catch Card/SP,★,12
+169,Yellow Magiblot,"Max HP: 20, Attack: 5. This spellslinging stain is the enemy of fun. It's yellow. But it doesn't seem to be afraid of you!",Card Shop; Catch Card/SP,★,7
+170,Dark Magiblot,"Max HP: 40, Attack: 10. This Dark Magiblot dwells in a certain secret pit. Wandering in the dark has made it extra crabby.",Card Shop; Catch Card/SP,★,15
+171,Megabite,"Max HP: 4, Attack: 1. Only takes 1 point of damage. This disembodied head really knows how to ruin a picnic. Lay low until it finds someone else to terrorize.",Card Shop; Catch Card/SP,★★,56
+172,Gigabite,"Max HP: 6, Attack: 2. Only takes 1 point of damage. The best policy: keep away from angry floating heads. This thing will not leave you alone. Be warned!",Card Shop; Catch Card/SP,★★,60
+173,Dark Megabite,"Max HP: 8, Attack: 4. Only ever takes 1 damage. This dark Megabite dwells in a certain secret pit. This thing just wants to end you. That's all.",Card Shop; Catch Card/SP,★★,60
+174,Dark Mario,"Max HP: 100, Attack: 10. It's Mario's dark-power doppelganger! One of the last foes in the Flopside Pit of 100 Trials.",Earned after defeating Shadoo in the Flopside Pit of 100 Trials.,★★★,350
+175,Dark Luigi,"Max HP: 100, Attack: 10. It's a dark duplicate of Luigi! One of the last foes in the Flopside Pit of 100 Trials.",Earned after defeating Shadoo in the Flopside Pit of 100 Trials.,★★★,350
+176,Dark Peach,"Max HP: 100, Attack: 10. It's a dark duplicate of Peach! One of the last foes in the Flopside Pit of 100 Trials.",Earned after defeating Shadoo in the Flopside Pit of 100 Trials.,★★★,630
+177,Dark Bowser,"Max HP: 100, Attack: 20, Defense: 4. It's a dark duplicate of Bowser! One of the last foes in the Flopside Pit of 100 Trials.",Earned after defeating Shadoo in the Flopside Pit of 100 Trials.,★★★,350
+178,Zombie Shroom,"Max HP: 1, Attack: 2. It's a Zombie Shroom. They pop out of ? Blocks. It may look like a snack, but it'll snack on you!",Card Shop; Catch Card/SP; Chapter 7-3: Found at the far right of the Star Block by using Luigi to high jump to the roof and go to the other side.,★★,48
+179,Ghoul Shroom,"Max HP: 10, Attack: 5. Ghoul Shrooms sometimes pop out of ? Blocks. What went wrong in that Shroom's life?",Card Shop; Catch Card/SP,★★,36
+180,Fracktail,"Max HP: ??, Attack: 1. Fracktail valiantly guarded the Pure Heart inside Yold Ruins. That is, until Dimentio fried his processor.",Card Shop; Map 10,★★,100
+181,Wracktail,"Max HP: ??, Attack: 10. The baddest baddie in the Flipside Pit of 100 Trials. He may fight like Fracktail, but he's 100 times stronger.",Card Shop,★★,75
+182,Frackle,"Max HP: 1, Attack: 1. This bot defends Fracktail from foreign invaders. In off-hours, it relaxes on Fracktail's back...",Card Shop; Catch Card/SP,★,6
+183,Wrackle,"Max HP: 10, Attack: 10. This bot defends Wracktail from foreign invaders. It was made long ago, so its warranty has expired.",Card Shop; Catch Card/SP,★★,50
+184,Big Blooper,"Max HP: ??, Attack: 2. It's a giant, ten-tentacled squid! That's right...ten. How'd it get so big? Must be something in the water.",Card Shop; Map 20,★★,40
+185,Francis,"Max HP: 40, Attack: 1. Francis totally nerds out for rare collectibles. He takes geek chic to a totally new level.",Card Shop; Map 24,★★,60
+186,King Croacus,"Max HP: 50, Attack: 2. King Croacus cares about making the world beautiful. Too bad drinking polluted water has made him insane.",Card Shop; Map 37,★★,50
+187,Bonechill,"Max HP: 80, Attack: 4. Tremble before the frosty lord of The Underwhere! Bonechill's minty-fresh breath will freeze you solid!",Card Shop; Map 45,★★,70
+188,Count Bleck,"Max HP: 150, Attack: 8. This top-hatted villain is bent on ending the world! Fun fact: he was once known as Count Blumiere.",Card Shop; Map 48,★★★,240
+189,Nastasia,"Nastasia is Count Bleck's executive assistant. She's in charge of scheduling, organizing, and brain-control. Word is, she's got a secret crush on her boss.",Card Shop; Map 46,★★★,180
+190,O'Chunks,"Max HP: 100, Attack: 4. It's O'Chunks, the count's hulking, wild-eyed henchman! Word is, the count saved his life. Now he owes him big.",Card Shop; Map 5,★★,65
+191,Mimi,"Max HP: ??, Attack: 4. It's Mimi, the adorable, yet slightly unstable shape-shifter! Word is, she has a crush on Count Bleck.",Card Shop; Map 15,★★,75
+192,Mr. L,"Max HP: 40, Attack: 3. So...who's this mysterious Mr. L character? Is this what the Prognosticus foretold?",Card Shop; Map 27,★★,10
+193,Brobot,"Max HP: 255, Attack: 4, Defense: 3. This is Mr. L's hovering, head-shaped robot. He must have tricked it out with all kinds of weapons. I guess that means Mr. L is a pretty awesome inventor, huh?",Card Shop; Map 28,★★,60
+194,Brobot L-type,"Max HP: 64, Attack: 5, Defense: 4. This is a souped-up version of Mr. L's robot. It looks like he went all out with the customizations. Too bad they don't help much!",Card Shop; Map 8,★★,65
+195,Dimentio,"Max HP: 80, Attack: 4. Dimentio is Count Bleck's dimension-bending mercenary. The question is, do psycho jesters get good benefits?",Card Shop; Map 22,★★,60
+196,Super Dimentio,"Max HP: 200, Attack: 6. This monstrous clown was created by Dimentio. He used Luigi and the Chaos Heart to create it. In the end, it was no match for the power of love.",Card Shop; Map 47,★★★,198
+197,Merlon,This wizened old sage is a descendant of the Ancients. He helps Mario to decode the Light Prognosticus.,Card Shop; Flipside: Found in a secret area via a certain hole in the Flipside 1st Floor Outskirts.,★★,35
+198,Nolrem,This is Merlon's dimensional counterpart in Flopside. He is also a descendant of the Ancients.,Card Shop; Flopside: Found after using Piccolo near the coloured block in the Flopside 3rd Floor Outskirts.,★★,45
+199,Merluvlee,This fortune-teller with a wild laugh lives in Flipside. She uses the stars to read your future. Sorta.,Card Shop; Flipside: Found in a secret area via a certain hole in the Flipside 1st Floor Outskirts.,★★,55
+200,Merlee,This charmer uses the sun to work her magic. She is a descendant of the Tribe of Ancients.,Card Shop; Flipside: Found after using Piccolo near the coloured block in the Flipside 3rd Floor Outskirts.,★★,55
+201,Bestovius,"Bestovius taught Mario how to flip between dimensions. He talks about his beard and floats all the time. Other than that, he's perfectly normal.",Card Shop; Map 6,★★,40
+202,Old Man Watchitt,"Old Man Watchitt is the crotchety mayor of Yold Town. His job is to keep people from going to the ruins. You know, lawsuits and all that. WATCH IT!!!",Card Shop; Chapter 2-1: Found in a 3D-accessible area on the other side of the area with Boomer's chest via a hole in the wall blown up by Boomer.,★★,45
+203,Merlumina,She made a Pure Heart to stop the end of all worlds. She is an ancestor of Merlon and Bestovius.,Card Shop; Map 11,★★,45
+204,The InterNed,The InterNed knows all...and also moonlights as a game-show host.,Card Shop; Flipside: Found in 3D in Flipside B1 in a hidden alcove over the water leading to Flimm (and also where Captain Gills lives).,★★,65
+205,The InterChet,This owner of the arcade is a video-game savant. The arcade doesn't earn a lot of money... He invented The InterNed.,Card Shop; Flipside: Found in a 3D-accessible area on the other side of Flipside B1 Outskirts via a hole accessible after destroying the giant yellow block in Flopside B1 Outskirts with Cudge.,★★,75
+206,Welderberg,"This guy will dig a pipe tunnel wherever you want to go. He's a real go-getter, but sometimes he goes overboard.",Card Shop; Map 2,★★,60
+207,Red & Green,"These brothers guard the bridges in Yold Town. Brothers will be brothers, even in strange dimensions.",Card Shop; Chapter 1-2: Found in 3D behind Green's bed in his house.,★★,50
+208,Gnip (Howl in PAL versions),This faithful guard pup spits out trespassers. Being spit out is better than the alternative...,Card Shop; Map 14,★,6
+209,Gnaw (Growl in PAL versions),This mean mutt snacks on trespassers and spits them out. Nobody fights for scraps with this big dog.,Card Shop; Flimm,★★,60
+210,Squirps,This funky space kid drops some crazy outer-space lingo. His full name is Squirp Korogaline Squirpina!,Card Shop; Map 25,★★,85
+211,Flint Cragley,"It's the star of ""Flint Cragley, Cragtrotter""! His show is a smash-hit on crag-vision.",Card Shop; Map 31,★★,80
+212,Hornfels & Monzo,"These two Cragnons are Flint Cragley's assistants. Sadly, he doesn't treat them with proper crag.",Card Shop; Map 35,★★,45
+213,King Sammer,This overexcitable king hosts the Duel of 100! Martial-arts tournaments tickle his fancy.,Card Shop; Map 4,★★,65
+214,Sammer Guy,"Max HP: 10-80, Attack: 1-8, Defense: 0-3. This is one of King Sammer's legendary 100 Sammer Guys. They're pretty sensitive about their honor.",Card Shop,★★,75
+215,Small Sammer Guy,"Max HP: 1, Attack: 2-5. This diminutive Sammer Guy fights in the Duel of 100. He's small, wily, and not above smacking your shins!",Card Shop,★,12
+216,Big Sammer Guy,"Max HP: 30-99, Attack: 3-10, Defense: 0-4. This Big Sammer Guy fights in the Duel of 100. Too bad there aren't weight divisions in the Duel of 100...",Card Shop,★,12
+217,Luvbi,This spunky Nimbi was raised by Grambi and Jaydes. She is actually a Pure Heart who saved the world.,Card Shop; Map 44,★★,100
+218,Jaydes,This dark queen rules over The Underwhere. Her magic controls life... And game overs.,Card Shop; Map 38,★★,60
+219,Grambi,This elder Nimbi rules The Overthere. He deeply cares for Luvbi and misses her greatly...,Card Shop; Map 43,★★,60
+220,Whacka,"This odd guy sprouts pastries when whacked on the head. Sadly, his kind is on the verge of extinction. Please headwhack in moderation. (US)",Card Shop; Earn 300 shop points.,★★★,300
+221,Mario,Our hero is so busy he barely has time to wax his 'stache! He's always leaping between worlds to save the day.,Earned after defeating Shadoo in the Flopside Pit of 100 Trials.,★★★,999
+222,Luigi,The mean green bro is here again to back up his brother. He's got a vertical jump like you wouldn't believe.,Earned after defeating Shadoo in the Flopside Pit of 100 Trials.,★★★,999
+223,Princess Peach (1),Peach has this funny habit of getting kidnapped... But that parasol of hers is stylish and functional!,Earned after defeating Shadoo in the Flopside Pit of 100 Trials.,★★★,999
+224,Peach (2),"Peach is looking fabulous in her white wedding gown! It was conjured with magic, but who designed it?",Card Shop; Chapter 3-3: Found after defeating the Chain Chomps in an area via a pipe on the right in the tree.,★★,75
+225,Peach (3),Peach is sporting a fresh and breezy new hairstyle! It's perfect for the princess with an active lifestyle!,Card Shop; Chapter 7-1: Found after defeating the Gigabite in an area via pipes starting from the one next to three Brick Blocks at the top of the second area.,★★,100
+226,Bowser (1),Mario's mean-spirited rival needs no introduction. He's not too happy about having to help out Mario.,Earned after defeating Shadoo in the Flopside Pit of 100 Trials.,★★★,999
+227,Bowser (2),There's Bowser looking dapper in a white tux! Pity the minion that had to wax his shell...,Card Shop; Chapter 5-1: Found after defeating the Shlorps in an area via a pipe on the very right of the second area.,★★,70
+228,Tippi,"It's Tippi, your friendly...friend. And guide. Her name was Timpani before Merlon turned her into a Pixl.",Card Shop; Found in Room 10 in the Flipside Pit Of 100 Trials.,★★★,240
+229,Thoreau,This handy Pixl can pick things up and throw them. He's very...handy.,Card Shop; Found in Room 20 in the Flipside Pit Of 100 Trials.,★★★,180
+230,Boomer,"This Pixl has an appetite for demolition. ""You build it, I blast it."" That's his motto.",Card Shop; Found in Room 30 in the Flipside Pit Of 100 Trials.,★★★,168
+231,Slim,This sidestepping Pixl can turn you sideways in a snap. Slim likes close calls and hair-raising experiences.,Card Shop; Found in Room 40 in the Flipside Pit Of 100 Trials.,★★★,150
+232,Thudley,This former wrestling-star Pixl can pound the ground. A hip replacement kept him out of high-end competition.,Card Shop; Found in Room 50 in the Flipside Pit Of 100 Trials.,★★★,135
+233,Carrie,This platform Pixl will go where no other Pixl can. But she will only help heroes that are on her wavelength.,Card Shop; Found in Room 60 in the Flipside Pit Of 100 Trials.,★★★,144
+234,Fleep,"This flippy Pixl is really good at finding hidden goodies. Without you, he never would have left that outhouse...",Card Shop; Found in Room 70 in the Flipside Pit Of 100 Trials.,★★★,156
+235,Cudge,This hard-hitting Pixl can shatter yellow blocks. But he's a real people Pixl.,Card Shop; Found in Room 80 in the Flipside Pit Of 100 Trials.,★★★,174
+236,Dottie,"This puny Pixl can micro-size you. Sometimes, less is more! More or less...",Card Shop; Found in Room 90 in the Flipside Pit Of 100 Trials.,★★★,180
+237,Barry,This impenetrable Pixl repels enemy attacks. He waited in a bush for the hero to arrive.,Card Shop; Flopside: Found in a secret area via a certain hole in Flopside B2 Outskirts.,★★★,132
+238,Dashell,"This former track star brings some Pixl pep to your party. You could say he has wheels, but...he doesn't.",Card Shop; Found in Room 10 in the Flopside Pit Of 100 Trials.,★★★,126
+239,Piccolo,This pitch-perfect Pixl plays the most melodious tunes. She lived in Flopside before joining your ragtag group.,Card Shop; Flopside: Found in a 3D-accessible area on the other side of Flopside B1 Outskirts via a hole on top of the wall near the seventh Heart Pillar.,★★★,120
+240,Tiptron,"Francis made this 1:1-scale robotic version of Tippi. It's the ultimate rare collectible. Plus, it features realistic Tippi action!",Card Shop; Map 23,★★,300
+241,Goombario,Mario and Goombario go all the way back to Paper Mario. Enemies suffer when he uses his head.,Card Shop; Found in Room 20 in the Flopside Pit Of 100 Trials.,★★★,315
+242,Kooper,"This is Mario's good buddy Kooper from Paper Mario. His Power Shell move was, and is, a thing of beauty.",Card Shop; Found in Room 30 in the Flopside Pit Of 100 Trials.,★★★,329
+243,Bombette,Bombette was Paper Mario's bombastic starlet. Who knew a pink Bob-omb could pack such a punch?,Card Shop; Found in Room 40 in the Flopside Pit Of 100 Trials.,★★★,350
+244,Parakarry,Parakarry earned his fame from the original Paper Mario. He's the most fearsome mail carrier of them all!,Card Shop; Found in Room 50 in the Flopside Pit Of 100 Trials.,★★★,343
+245,Bow,This is Mario's good buddy Bow from Paper Mario. The mistress of Boo's Mansion slapped foes with panache!,Card Shop; Found in Room 60 in the Flopside Pit Of 100 Trials.,★★★,385
+246,Watt,This is Mario's good buddy Watt from Paper Mario. This guy was pretty bright for his age!,Card Shop; Found in Room 70 in the Flopside Pit Of 100 Trials.,★★★,367
+247,Sushie,"It's Sushie, the unfortunately-named star of Paper Mario. Being fishy doesn't always have to be a bad thing.",Card Shop; Found in Room 80 in the Flopside Pit Of 100 Trials.,★★★,329
+248,Lakilester,This is Mario's good buddy Lakilester from Paper Mario. He played it cool in shades as he flew over lava.,Card Shop; Found in Room 90 in the Flopside Pit Of 100 Trials.,★★★,350
+249,Goombella,It's Goombella from the last Paper Mario adventure. This extra-spunky university student knew it all.,Card Shop; Earned after finishing the Duel of 100 in Sammer's Kingdom.,★★★,357
+250,Koops,It's Koops from the last Paper Mario adventure. Kicking some shell never felt so good.,Card Shop; Earned after finishing the Duel of 100 in Sammer's Kingdom.,★★★,329
+251,Madame Flurrie,It's Madame Flurrie from the last Paper Mario adventure. The most Rubenesque Mario companion ever?,Card Shop; Earned after finishing the Duel of 100 in Sammer's Kingdom.,★★★,325
+252,Yoshi,It's Yoshi from the last Paper Mario adventure. This scrappy Yoshi was the only way to travel!,Card Shop; Earned after finishing the Duel of 100 in Sammer's Kingdom.,★★★,254
+253,Vivian,It's Vivian from the last Paper Mario adventure. She was a great friend once she split from her sisters.,Card Shop; Earned after finishing the Duel of 100 in Sammer's Kingdom.,★★★,378
+254,Admiral Bobbery,It's Admiral Bobbery from the last Paper Mario adventure. This salty dog knew how to blast his enemies broadside!,Card Shop; Earned after finishing the Duel of 100 in Sammer's Kingdom.,★★★,336
+255,Ms. Mowz,It's Ms. Mowz from the last Paper Mario adventure. This thief had a nose for rare badges. Great smoocher!,Card Shop; Earned after finishing the Duel of 100 in Sammer's Kingdom.,★★★,364
+256,Toad,This loyal subject comes from a very distant dimension. Many people in that world have strange head spots.,Card Shop,★★,50
