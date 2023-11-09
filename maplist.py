@@ -97,6 +97,7 @@ class EntranceType(Enum):
     CHAPTERDOOR = 5
     BACKPIPE = 6
     STARBLOCK = 7
+    MAGIC = 8
 
 class WelderBergPipe1(Enum):
     NOTEXIST = 0
@@ -342,8 +343,8 @@ MapList = {
         None,
         MapItems (
             Item (HexList["Dry Bones Card"], HexPos (ItemState.CHEST, -730, 0, 90), 0),
-            Item (HexList["Long-Last Shake"], HexPos (ItemState.GROUND3D, 605, 200, 100)),
-            Item (HexList["Luigi"], HexPos (ItemState.NPC, 400, 200, 0))
+            Item (HexList["Long-Last Shake"], HexPos (ItemState.GROUND3D, 605, 200, 100), 0),
+            Item (HexList["Luigi"], HexPos (ItemState.NPC, 400, 200, 0), 296)
         ),
         None,
         MapEntrance (
@@ -395,15 +396,167 @@ MapList = {
     'an1_11':Map (
         MapType.USELESS,
         MapEnemies (
-            Enemy ("Gigabite", EnemyList["265"], EnemyLocation (EnemyState.IN2D, 100, 50, 0))
+            Enemy ("Gigabite", EnemyList["265"], EnemyLocation (EnemyState.IN2D, 100, 50, 0), 0)
         ),
         MapItems (
-            Item (HexList["Peach (3) Card"], HexPos (ItemState.CHEST, 0, 0, 0))
+            Item (HexList["Peach (3) Card"], HexPos (ItemState.CHEST, 0, 0, 0), 0)
         ),
         None,
         MapEntrance (
             Entrance ("default", EntranceType.DEFAULT, Location (-254, 40, 0), None, EntranceKey (False, False, None)),
             Entrance ("dokan_01", EntranceType.PIPE, Location (-214, 0, -80), EntranceDest ("an1_10", [("an1_02", "dokan_01")]), EntranceKey (True, False, None))
+        )
+    ),
+    'an2_01':Map (
+        MapType.MAIN,
+        None,
+        MapItems (
+            Item (HexList["Diet Book"], HexPos (ItemState.NPC, 335, 0, 0), 320)
+        ),
+        None,
+        MapEntrance (
+            Entrance ("default", EntranceType.DEFAULT, Location (-150, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("dokan_m", EntranceType.PIPE, Location (0, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("doa1_l", EntranceType.DOOR, Location (250, 0, 0), EntranceDest ("an2_01", [("an2_02", "doa1_l", 0)]), EntranceKey (True, False, None)),
+            Entrance ("", EntranceType.DEFAULT, Location (-150, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("magic", EntranceType.MAGIC, Location (250, 0, 0), None, EntranceKey (False, False, None))
+        )
+    ),
+    'an2_02':Map (
+        MapType.MAIN,
+        MapEnemies (
+            Enemy ("Dark Boo", EnemyList["111"], EnemyLocation (EnemyState.IN2D, 187, 1150, 100)),
+            Enemy ("Dark Boo", EnemyList["111"], EnemyLocation (EnemyState.IN2D, 13, 1013, 50)),
+            Enemy ("Dark Boo", EnemyList["111"], EnemyLocation (EnemyState.IN2D, -150, 1338, -100)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, -300, 412, 50)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, 300, 750, 100)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, 300, 1338, -50)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, -300, 1013, 25)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, -300, 1100, -75)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, -300, 1150, -75))
+        ),
+        MapItems (
+            Item (HexList["Dark Boo Card"], HexPos (ItemState.CHEST, 175, 825, 100), 0)
+        ),
+        None,
+        MapEntrance (
+            Entrance ("default", EntranceType.DEFAULT, Location (210, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("doa1_l", EntranceType.DOOR, Location (-199, 0, 0), EntranceDest ("an2_02", [("an2_01", "doa1_l", 0)]), EntranceKey (True, False, None)),
+            Entrance ("doa2_l", EntranceType.DOOR, Location (200, 1450, 0), EntranceDest ("an2_02", [("an2_03", "doa1_l", 0)]), EntranceKey (True, False, None))
+        )
+    ),
+    'an2_03':Map (
+        MapType.MAIN,
+        None,
+        MapItems (
+            Item (HexList["Door Key 0x25"], HexPos (ItemState.NPC, 300, 0, 0), 314)
+        ),
+        None,
+        MapEntrance (
+            Entrance ("default", EntranceType.DEFAULT, Location (-261, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("doa1_l", EntranceType.DOOR, Location (-250, 0, 0), EntranceDest ("an2_03", [("an2_02", "doa2_l", 0)]), EntranceKey (True, False, None)),
+            Entrance ("doa2_l", EntranceType.DOOR, Location (25, 0, 0), EntranceDest ("an2_03", [("an2_05", "doa1_l", 315)]), EntranceKey (True, True, HexList["Door Key 0x25"])),
+            Entrance ("doa3_l", EntranceType.DOOR, Location (300, 0, 0), EntranceDest ("an2_03", [("an2_04", "doa1_l", 0)]), EntranceKey (True, False, None)),
+            Entrance ("magic", EntranceType.MAGIC, Location (-250, 0, 0), None, EntranceKey (False, False, None))
+        )
+    ),
+    'an2_04':Map (
+        MapType.MAIN,
+        None,
+        None,
+        None,
+        MapEntrance (
+            Entrance ("default", EntranceType.DEFAULT, Location (-410, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("doa1_l", EntranceType.DOOR, Location (-400, 0, 0), EntranceDest ("an2_04", [("an2_03", "doa3_l", 0)]), EntranceKey (True, False, None)),
+        )
+    ),
+    'an2_05':Map (
+        MapType.MAIN,
+        MapEnemies (
+            Enemy ("Dark Boo", EnemyList["111"], EnemyLocation (EnemyState.IN2D, -62, 3737, 75)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, 200, 1237, -50)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, 200, 1325, -50)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, -200, 963, -25)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, 200, 1750, -100)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, -200, 2800, 50)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, 200, 2525, 0)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, -200, 1187, 50)),
+            Enemy ("Underhand", EnemyList["249"], EnemyLocation (EnemyState.IN2D, 200, 1312, 25)),
+            Enemy ("Dark Boo", EnemyList["111"], EnemyLocation (EnemyState.IN2D, -87, 3787, -50)),
+            Enemy ("Dry Bones", EnemyList["36"], EnemyLocation (EnemyState.IN2D, 0, 200, 0)),
+            Enemy ("Dry Bones", EnemyList["36"], EnemyLocation (EnemyState.IN2D, 75, 3400, 100)),
+            Enemy ("Dry Bones", EnemyList["36"], EnemyLocation (EnemyState.IN2D, -88, 1900, -50)),
+            Enemy ("Dark Boo", EnemyList["111"], EnemyLocation (EnemyState.IN2D, 50, 2487, 62)),
+            Enemy ("Dark Boo", EnemyList["111"], EnemyLocation (EnemyState.IN2D, -63, 2550, 62)),
+            Enemy ("Dark Boo", EnemyList["111"], EnemyLocation (EnemyState.IN2D, 87, 3900, 62)),
+        ),
+        None,
+        None,
+        MapEntrance (
+            Entrance ("default", EntranceType.DEFAULT, Location (-10, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("dokan_1", EntranceType.PIPE, Location (265, 3400, 0), EntranceDest ("an2_05", [("an2_10", "dokan_1", 0)]), EntranceKey (True, False, None)),
+            Entrance ("doa1_l", EntranceType.DOOR, Location (0, 0, 0), EntranceDest ("an2_05", [("an2_03", "doa2_l", 0)]), EntranceKey (True, False, None)),
+            Entrance ("doa2_l", EntranceType.DOOR, Location (200, 4300, 0), EntranceDest ("an2_05", [("an2_06", "doa3_l", 0)]), EntranceKey (True, False, None)),
+        )
+    ),
+    'an2_06':Map (
+        MapType.MAIN,
+        None,
+        None,
+        None,
+        MapEntrance (
+            Entrance ("default", EntranceType.DEFAULT, Location (-267, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("dokan_m", EntranceType.PIPE, Location (0, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("doa1_l", EntranceType.DOOR, Location (-250, 0, 0), EntranceDest ("an2_06", [("an2_07", "doa1_l", 0)]), EntranceKey (True, False, None)),
+            Entrance ("doa2_l", EntranceType.DOOR, Location (25, 0, 0), EntranceDest ("an2_06", [("an2_08", "doa1_l", 322)]), EntranceKey (True, True, HexList["Door Key 0x26"])),
+            Entrance ("doa3_l", EntranceType.DOOR, Location (-250, 0, 0), EntranceDest ("an2_06", [("an2_05", "doa2_l", 0)]), EntranceKey (True, False, None))
+        )
+    ),
+    'an2_07':Map (
+        MapType.MAIN,
+        None,
+        None,
+        None,
+        MapEntrance (
+            Entrance ("default", EntranceType.DEFAULT, Location (190, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("doa1_l", EntranceType.DOOR, Location (200, 0, 0), EntranceDest ("an2_07", [("an2_06", "doa1_l", 0)]), EntranceKey (True, False, None)),
+        )
+    ),
+    'an2_08':Map (
+        MapType.MAIN,
+        MapEnemies (
+            Enemy ("Dull Bones", EnemyList["38"], EnemyLocation (EnemyState.IN2D, 1750, 450, 0)),
+        ),
+        None,
+        None,
+        MapEntrance (
+            Entrance ("default", EntranceType.DEFAULT, Location (-211, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("dokan_m", EntranceType.PIPE, Location (0, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("doa1_l", EntranceType.DOOR, Location (-200, 0, 0), EntranceDest ("an2_08", [("an2_06", "doa2_l", 0)]), EntranceKey (True, False, None)),
+            Entrance ("doa2_l", EntranceType.DOOR, Location (3475, 1000, 0), EntranceDest ("an2_08", [("an2_09", "doa1_l", 325)]), EntranceKey (True, False, None))
+        )
+    ),
+    'an2_09':Map (
+        MapType.MAIN,
+        None,
+        MapItems (
+            Item (HexList["The Underchomp Card"], HexPos (ItemState.MAP, 340, 140, 0), 0)
+        ),
+        None,
+        MapEntrance (
+            Entrance ("default", EntranceType.DEFAULT, Location (-611, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("doa1_l", EntranceType.DOOR, Location (-200, 0, 0), EntranceDest ("an2_09", [("an2_08", "doa2_l", 0)]), EntranceKey (True, False, None)),
+            Entrance ("Star Block", EntranceType.STARBLOCK, Location (550, 0, 0), EntranceDest ("an2_09", [("an3_01", "default", 0)]), EntranceKey (True, False, None))
+        )
+    ),
+    'an2_10':Map (
+        MapType.USELESS,
+        None,
+        None,
+        None,
+        MapEntrance (
+            Entrance ("default", EntranceType.DEFAULT, Location (0, 0, 0), None, EntranceKey (False, False, None)),
+            Entrance ("dokan_1", EntranceType.PIPE, Location (-214, 0, -132), EntranceDest ("an2_10" [("an2_05", "dokan_1", 0)]), EntranceKey (True, False, None))
         )
     ),
     'mac_02':Map (
